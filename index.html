@@ -358,348 +358,298 @@
 
 </header>
 
-    
     <style>
-      #screen1 {
-     color: #fff;
-     font-size: 18px;
-     line-height: 1.5;
-     text-align: left;
-     margin: 0;
-     padding: 50px 0;
-     width: 100%;
-     height: 1090px;
- 
-     background-size: cover;
-     background-repeat: no-repeat;
-     background-position: center center;
-     animation: switch-background 1s infinite; /* 切换图片动画 */
- }
- 
- 
-   @keyframes switch-background {
-     0%, 100% {
-         background-image: url("/hanxin/medias/bj.jpg"); /*第一张图片*/
- 
- }
- }
- 
-     /* ----------------------------------------------------------------文本样----------------------------------------------- */
- 
-         #text1 {
-       font-size: 50px;
-       opacity: 0;
-       animation: fade-in 2s forwards;
-     }
- 
-     @keyframes fade-in {
-       to {
-         opacity: 1;
-       }
-     }
+  #screen1 {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0;
+    padding: 50px 0;
+    width: 100%;
+    height: 1090px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: switch-background 1s infinite;
+  }
+
+  @keyframes switch-background {
+    0%, 100% {
+      background-image: url("/hanxin/medias/bj.jpg");
+    }
+  }
+
+  #text1 {
+    font-size: 50px;
+    opacity: 0;
+    animation: fade-in 2s forwards;
+  }
+
+  #text2 {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+  }
+
+  #text3 {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+  }
+
+  #screen12 {
+    background-color: #dd930a;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0;
+    padding: 50px 0;
+    width: 100%;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #screen2 {
+    background-color: #248dc1;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: right;
+    margin: 0;
+    padding: 50px 0;
+    width: 100%;
+    height: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #screen3 {
+    background-color: #b5748b;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0;
+    padding: 50px 0;
+    width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #screen4 {
+    background-color: #0f8cdc;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: right;
+    margin: 0;
+    padding: 50px 0;
+    width: 100%;
+    height: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #screen5 {
+    background-color: #dd930a;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: right;
+    margin: 0;
+    padding: 50px 0;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin: 50px 0;
+  }
+
+  h2 {
+    font-size: 36px;
+    margin: 50px 0 30px 0;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 30px 0;
+  }
+
+  ul,
+  ol {
+    margin: 30px 0;
+    text-align: left;
+  }
+
+  canvas {
+    border: 1px solid white;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container11 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    font-size: 16px;
+  }
+    #text11 {
+      font-size: 55px;
+  }
+  #text22, #text3, #text4, #text5 {
+      font-size: 20px;
+  }
+  .container123 {
+      margin-left: auto;
+      margin-right: auto;
+      width: 800px;
      
-         #text2 {
-       
-       opacity: 0;
-       animation: fade-in 2s forwards;
-     }
- 
-     @keyframes fade-in {
-       to {
-         opacity: 1;
-       }
-     }
-      #text3 {
-       
-       opacity: 0;
-       animation: fade-in 2s forwards;
-     }
- 
-     @keyframes fade-in {
-       to {
-         opacity: 1;
-       }
-     }
- 
- 
-         /* 第12个屏幕 */
-         #screen12 {
-             background-color: #dd930a;
-             color: #fff;
-             font-size: 18px;
-             line-height: 1.5;
-             text-align: left;
-             margin: 0;
-             padding: 50px 0;
-             width: 100%;
-             height: 900px;
-            display: flex;/* 垂直居中 */
-             justify-content: center;
-            align-items: center;
-         }
- 
- 
-         /* 第二个屏幕 */
-         #screen2 {
-             background-color: #248dc1;
-             color: #fff;
-             font-size: 18px;
-             line-height: 1.5;
-             text-align: right;
-             margin: 0;
-             padding: 50px 0;
-             width: 100%;
-             height: 850px;
-            display: flex;/* 垂直居中 */
-             justify-content: center;
-            align-items: center;
-         }
- 
-         /* 第三个屏幕 */
-         #screen3 {
-             background-color: #b5748b;
-             color: #fff;
-             font-size: 18px;
-             line-height: 1.5;
-             text-align: left;
-             margin: 0;
-             padding: 50px 0;
-             width: 100%;
-             height: 650px;
-     
-             display: flex;/* 垂直居中 */
-             justify-content: center;
-            align-items: center;
-        
- }
-       /* 第4个屏幕 */
-         #screen4 {
-             background-color: #0f8cdc;
-             color: #fff;
-             font-size: 18px;
-             line-height: 1.5;
-             text-align: right;
-             margin: 0;
-             padding: 50px 0;
-             width: 100%;
-             height: 850px;
-            display: flex;/* 垂直居中 */
-             justify-content: center;
-            align-items: center;
-         }
-          /* 第5个屏幕 */
-         #screen5 {
-             background-color: #dd930a;
-             color: #fff;
-             font-size: 18px;
-             line-height: 1.5;
-             text-align: right;
-             margin: 0;
-             padding: 50px 0;
-             width: 100%;
-             height: 400px;
-            display: flex;/* 垂直居中 */
-             justify-content: center;
-            align-items: center;
-          
-         }
- 
-         }
- 
-         /* 其他样式 */
-         h1 {
-             font-size: 48px;
-             margin: 50px 0;
-         }
- 
-         h2 {
-             font-size: 36px;
-             margin: 50px 0 30px 0;
-         }
- 
-         p {font-size: 18px;
-             margin: 30px 0;
- 
-         }
- 
-         ul,
-         ol {
-             margin: 30px 0;
-             text-align: left;
-         }
- 
-       /* li {
-         font-size: 18px;
-             margin: 30px 0;
-         } */
- 
-         canvas {
-             border: 1px solid white;
-         }
- 
-         body {
-             margin: 0;
-             padding: 0;
-         }
- 
-         .container11 {
-             margin-left: auto;
-             margin-right: auto;
-             width: 800px;
-             font-size: 16px;
-       
-         }
-         .STYLE22 {font-size: 24px}
-   
- 
- /* 创建自定义按钮 */
- .my-button {
-   background-color: white; /* 背景颜色为白色 */
-   border: none; /* 没有边框 */
-   color: black; /* 文本颜色为黑色 */
-   padding: 5px 15px; /* 内边距为 10 像素上下，20 像素左右 */
-   font-size: 12px; /* 字体大小为 14 像素 */
-   border-radius: 5px; /* 圆角半径为 5 像素 */
-   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25); /* 添加 2 像素的阴影效果 */
-   cursor: pointer; /* 鼠标悬停时显示指针 */
- }
- 
- .my-button1 {
-   position: fixed; /*设置元素的定位类型为固定定位----按钮*/
-   bottom: 10px; /*元素底部距离浏览器窗口底部的距离*/
-   left: 50%; /*元素左边距离浏览器窗口左边的距离*/
-   transform: translateX(-50%); /*将元素水平方向上居中*/
-   animation: floating 2s ease infinite; /*让按钮动起来*/
- }
- 
- @keyframes floating { /*定义按钮浮动的动画*/
-   0% {
-     transform: translateY(0px);
-   }
-   50% {
-     transform: translateY(-10px);
-   }
-   100% {
-     transform: translateY(0px);
-   }
- }
- 
-     </style>
-   
-   
- 
-  <style>
-       .fade-in {
-         opacity: 0;
-         animation: fadeIn 2s forwards;
-       }
- 
-       @keyframes fadeIn {
-         0% {
-           opacity: 0;
-         }
-         100% {
-           opacity: 1;
-         }
-       }
-     </style>
-   
-    <!-- 图片等待-->	
-  <style>
-       .hidden {
-         display: none;
-     
-     
-     
-     
-     
-       }
-     </style>
-     <script>
-       function delay() {
-         document.getElementById("img").classList.remove("hidden");
-       }
-       setTimeout(delay, 9000);
-     </script>
-  <!-- 悬浮-->	
-    <style>
-     .my-button1 {
-       position: fixed;
-       bottom: 10px;
-       left: 50%;
-       transform: translateX(-50%);
-     }
-      </style>
-   <!-- 下一屏-->
-   <script>
-     function scrollDown() {
-       window.scrollBy(0, window.innerHeight);
-     }
-   </script>
-   
-   
- </head>
+  }
+  .STYLE22 {
+    font-size: 24px;
+  }
+
+  .my-button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+
+  .my-button1 {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: floating 2s ease infinite;
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  function delay() {
+    document.getElementById("img").classList.remove("hidden");
+  }
+  setTimeout(delay, 9000);
+</script>
+
+<script>
+  function scrollDown() {
+    window.scrollBy(0, window.innerHeight);
+  }
+</script>
+
+
  <body>
-
-   
-
- 
-<div id="myy-div">
-
+  <!-- <style>
+    body {
+      transform: scale(0.5);
+    }
+  </style> -->
+  <div align="center">
+    <button class="my-button1" onClick="scrollDown()">下一屏</button>
+  </div>
+  <div>
     <a name="db"></a> <!-- 第一个屏幕----text2是第二行的代码,在最上面也要有text2 -->
-
-        <div id="screen1">
-          <div class="container11">
-
-    <div id="text1"></div>
-
-    <table width="100%" border="0">
-      <tr>
-        <td width="11%"> <p id="text"><button class="my-button" onClick="location.href='<http://www.ziranyixue.homes/1>'">主页</button></td>
-        <td width="89%"><div id="text2"></div></td>
-      </tr>
-    </table>
-
-
-          <p><hr style="border:border-color: white; 0.5px solid black;">
-          <div style="margin-top: 150px;">
-
-              <span class="STYLE22"> <div id="text3"></div>
-      </span>
-              <p><div id="text4"></div> </p>
-
-              <p><img id="img" class="hidden" src="/hanxin/medias/qp.gif"></p>
-
-                <p><div id="text5"></div></p>
-
-
-                <p align="center"><a href="<http://www.ziranyixue.homes/1/?id=41>" style="color: white;"></a></p>
+    <div id="screen1">
+      <div class="container123">
+        <div id="text11"></div>
+        <table width="100%" border="0">
+          <tr>
+            <td width="11%">
+              <p id="text"><button class="my-button" onClick="location.href='http://www.ziranyixue.homes/1'">主页</button></p>
+            </td>
+            <td width="89%">
+              <div id="text22"></div>
+            </td>
+          </tr>
+        </table>
+        <p><hr style="border:border-color: white; 0.5px solid black;">
+        <div style="margin-top: 150px;">
+          <span class="STYLE22">
+     
+            <div id="text3"></div>
+          </span>
+          <p>
+            <div id="text4"></div>
+          </p>
+          <p>
+            <img id="img" class="hidden" src="/hanxin/medias/qp.gif">
+          </p>
+          <p>
+            <div id="text5"></div>
+          </p>
+          <p align="center">
+            <a target="_blank" rel="noopener" href="http://www.ziranyixue.homes/1/?id=41" style="color: white;"></a>
+          </p>
         </div>
-
-        <div align="center">
-        <button class="my-button1" onClick="scrollDown()">下一屏</button>
+       
       </div>
-      <script>
-
-      
+     </div>
+  
+    <script>
       const texts = [
         "欢迎来到汉心快打输入法官网",
         "汉心码，易大师定字码，易学码，欢迎您！！",
         "汉心快打和汉心码是什么?",
         "它们是一种,用拼音打字还不用选字,提高打字速度的方法.如果打熟了还能实现盲打.",
-      "上面是汉心快打,盲打演示,用的是汉心拼音简码,不是五笔哦,它很容易学的,看看就会了"
+        "上面是汉心快打,盲打演示,用的是汉心拼音简码,不是五笔哦,它很容易学的,看看就会了"
       ];
-    
       const elements = [
-        document.querySelector("#text1"),
-        document.querySelector("#text2"),
+        document.querySelector("#text11"),
+        document.querySelector("#text22"),
         document.querySelector("#text3"),
         document.querySelector("#text4"),
-      document.querySelector("#text5")
+        document.querySelector("#text5")
       ];
-    
       let i = 0;
-    
       function typeWriter() {
         if (i < texts.length) {
           elements[i].innerHTML += texts[i].charAt(elements[i].innerHTML.length);
@@ -709,165 +659,137 @@
           setTimeout(typeWriter, 100);
         }
       }
-    
       window.onload = typeWriter;
     </script>
+  </div>
 
 
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-      
-      
-        <!-- 第1.2个屏幕 --><a name="下一个"></a>
-        <div id="screen12">
-            <div class="container11">
-                <h2 align="left">汉心打字不选字的原理:</h2>
-                <p><strong>用拼音加部首就可以做到打字不用选字</strong></p>
-                <p>然后部首字根的键位基本都和读音对应,所以不用像五笔那样背字根.基本不用学.</p>
-                <p>比如打"得"字</p>
-                <p>一般打"de"是第一个字是"的",但是其实我们想打的是"得",那只能用数字选</p>
-                <p><strong>输入法挂打字码后,直接打"de"后再打一个"r"就可以实现把"得"提到第一个显示</strong></p>
-                <p>这里的r就是彳字旁对应的键.大部分字根都是和读音对应,所以字根也不用背.</p>
-                <p><img src="/hanxin/medias/de.gif" width="584" height="146"></p>
-                <p>还能打简码,比如拼音就打pyf,后面的f就是扌旁.</p>
-                  
-          </div>
-        </div>
-    
-        <!-- 第二个屏幕 -->
-        <div id="screen2">
-            <div class="container11">
-                <h2 align="left">容易学吗?</h2>
-                <p align="left">首先普通拼音就可以使用,不用你学双拼,当然你会双拼会更好.</p>
-                <p align="left">字根也基本用不学的</p>
-                <p align="left"><img src="/hanxin/medias/zg.png" width="312" height="140"></p>
-                <p align="left">字根很少,而且大部分都是和读音对应</p>
-                <p align="left">你看看就会了</p>
-                <p align="left">比如</p>
-                
-              <div align="left">
-                    <ul>
-                      <li>
-                        田土字根就是在t上,和读音对应</li>
-                      <li>
-                        酉字根就是y上,也是和读音对应的</li>
-                      <li>
-                        饣字根对应u键,u键代表sh</li>
-                    </ul>
-                    <p>易系列都是容易学容易记的,打字不选字方案</p>
-              </div>
-          </div>
-        </div>
-    
-        <!-- 第三个屏幕 -->
-        <div id="screen3">
-            <div class="container11">
-              <div style="height: 90px;"> <h2>学汉心快打的理由?</h2>
-              </div>
-                <ol>
-                    <li>我们使用拼音很舒服,但是还是遇到个别字,需要选,选字就很烦,汉心码可以解决这个问题</li>
-                    <li>汉心码,基本不用学,你看看就会了.你如果不用,也不影响你使用拼音.</li>
-                    <li>如果你想提升打字速度,又不想学五笔.那用双拼加打字码,基本可以媲美五笔,这个学习成本也低</li>
-                    <li>汉心码用熟了,基本可以实现盲打</li>
-                    <li>汉心快打用普通拼音,也能提高打字速度,汉心码有2或3键一个词的简码系统</li>
-                </ol>
-                
-                <canvas id="myCanvas" width="800" height="100"></canvas>
-            <!-- js代码 -->
-                <script>
-                    var canvas = document.getElementById("myCanvas");
-                    var ctx = canvas.getContext("2d");
-                    var x = canvas.width / 2;
-                    var y = canvas.height - 30;
-                    var dx = 2;
-                    var dy = -2;
-    
-                    function drawBall() {
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        ctx.beginPath();
-                        ctx.arc(x, y, 10, 0, Math.PI * 2);
-                        ctx.fillStyle = "#fff";
-                        ctx.fill();
-                        ctx.closePath();
-                        x += dx;
-                        y += dy;
-                        if (x < 0 || x > canvas.width) {
-                            dx = -dx;
-                        }
-                        if (y < 0 || y > canvas.height) {
-                            dy = -dy;
-                        }
-                    }
-    
-                    setInterval(drawBall, 10);
-                </script>
-            </div>
-        
-          <!-- 第4个屏幕 -->
-        <div id="screen4">
-            <div class="container11">
-                <h2 align="left">选择汉心码的理由?</h2>
-              
-          <div>
-                  <div align="left">
-                    <p>1.字根少,容易记,过了很久也不会忘记.不怎么用也不会忘记.</p>
-                    <p>2.不会的可以直接oopp查,不学也会用</p>
-                    <p>3.功能丰富,一个字,可以先打首码,也可以先打尾码,不认识的字也能打出来</p>
-                    <p>4.打字打词,基本互不影响.专门针对性优化.字有五码设计,为了避词重</p>
-                    <p>5.重码低,加上避重码后,常用字基本无重码.非常用字,也可以做到基本没有重码.</p>
-                    <p>6.主打拼音挂码,支持度好.灵活度高,不影响以前的使用习惯</p>
-                    <p>7.使用体验流畅,因为难记的字根都没有.复杂的规则也没有.</p>
-                    <p>8.对全拼普通拼音也支持,并且作了很好的优化.能提升全拼打字的速度,有3键一个词设计</p>
-                  
-                  </div>
-          </div>
-            </div>
-        </div>
-          <!-- 5个屏幕 -->
-        <div id="screen5">
-            <div class="container11">
-                <h2 align="left">怎么选择?</h2>
-              
-          <div>
-                
-                    <div>
-                      <p align="left"><strong>目前打字码有很多种,推荐两个类型</strong></p>
-                      <p align="left">1.汉心系列,这个系列难一点，但是重码低一点(汉心码,和不选字码和易大师都是,名字不同而已)</p>
-                      <p align="left">2.易学系列,这个容易,字根就几个,基本不用学.(易学码,和简单版不选字码都是)</p>
-                      <div style="display: flex; justify-content: center;"><button class="my-button" onClick="location.href='#db'">回到顶部</button><div style="width: 5px;"></div><button class="my-button" onClick="location.href='http://www.ziranyixue.homes/1/?id=41'">去学习</button></div>
-                    </div>
-                  
-          </div>
-            </div>
-        </div>
-    
-</div>    
-  <script>
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      const myyDiv = document.getElementById('myy-div');
-     //  myyDiv.style.height = '100vh';
-      myyDiv.style.width = '100%';
-    }
-  </script>
 
  
+  <!-- 第1.2个屏幕 -->
+  <a name="下一个"></a>
+  <div id="screen12">
+    <div class="container11">
+      <h2 align="left">汉心打字不选字的原理:</h2>
+      <p><strong>用拼音加部首就可以做到打字不用选字</strong></p>
+      <p>然后部首字根的键位基本都和读音对应,所以不用像五笔那样背字根.基本不用学.</p>
+      <p>比如打"得"字</p>
+      <p>一般打"de"是第一个字是"的",但是其实我们想打的是"得",那只能用数字选</p>
+      <p><strong>输入法挂打字码后,直接打"de"后再打一个"r"就可以实现把"得"提到第一个显示</strong></p>
+      <p>这里的r就是彳字旁对应的键.大部分字根都是和读音对应,所以字根也不用背.</p>
+      <p><img src="/hanxin/medias/de.gif" width="584" height="146"></p>
+      <p>还能打简码,比如拼音就打pyf,后面的f就是扌旁.</p>
+    </div>
+  </div>
+  <!-- 第二个屏幕 -->
+  <div id="screen2">
+    <div class="container11">
+      <h2 align="left">容易学吗?</h2>
+      <p align="left">首先普通拼音就可以使用,不用你学双拼,当然你会双拼会更好.</p>
+      <p align="left">字根也基本用不学的</p>
+      <p align="left"><img src="/hanxin/medias/zg.png" width="312" height="140"></p>
+      <p align="left">字根很少,而且大部分都是和读音对应</p>
+      <p align="left">你看看就会了</p>
+      <p align="left">比如</p>
+      <div align="left">
+        <ul>
+          <li>
+            田土字根就是在t上,和读音对应
+          </li>
+          <li>
+            酉字根就是y上,也是和读音对应的
+          </li>
+          <li>
+            饣字根对应u键,u键代表sh
+          </li>
+        </ul>
+        <p>易系列都是容易学容易记的,打字不选字方案</p>
+      </div>
+    </div>
+  </div>
+  <!-- 第三个屏幕 -->
+  <div id="screen3">
+    <div class="container11">
+      <div style="height: 90px;"> 
+        <h2>学汉心快打的理由?</h2>
+      </div>
+      <ol>
+        <li>我们使用拼音很舒服,但是还是遇到个别字,需要选,选字就很烦,汉心码可以解决这个问题</li>
+        <li>汉心码,基本不用学,你看看就会了.你如果不用,也不影响你使用拼音.</li>
+        <li>如果你想提升打字速度,又不想学五笔.那用双拼加打字码,基本可以媲美五笔,这个学习成本也低</li>
+        <li>汉心码用熟了,基本可以实现盲打</li>
+        <li>汉心快打用普通拼音,也能提高打字速度,汉心码有2或3键一个词的简码系统</li>
+      </ol>
+      <canvas id="myCanvas" width="800" height="100"></canvas>
+      <!-- js代码 -->
+      <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var x = canvas.width / 2;
+        var y = canvas.height - 30;
+        var dx = 2;
+        var dy = -2;
+  
+        function drawBall() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.beginPath();
+          ctx.arc(x, y, 10, 0, Math.PI * 2);
+          ctx.fillStyle = "#fff";
+          ctx.fill();
+          ctx.closePath();
+          x += dx;
+          y += dy;
+          if (x < 0 || x > canvas.width) {
+            dx = -dx;
+          }
+          if (y < 0 || y > canvas.height) {
+            dy = -dy;
+          }
+        }
+  
+        setInterval(drawBall, 10);
+      </script>
+    </div>
+  </div>
+  <!-- 第4个屏幕 -->
+  <div id="screen4">
+    <div class="container11">
+      <h2 align="left">选择汉心码的理由?</h2>
+      <div>
+        <div align="left">
+          <p>1.字根少,容易记,过了很久也不会忘记.不怎么用也不会忘记.</p>
+          <p>2.不会的可以直接oopp查,不学也会用</p>
+          <p>3.功能丰富,一个字,可以先打首码,也可以先打尾码,不认识的字也能打出来</p>
+          <p>4.打字打词,基本互不影响.专门针对性优化.字有五码设计,为了避词重</p>
+          <p>5.重码低,加上避重码后,常用字基本无重码.非常用字,也可以做到基本没有重码.</p>
+          <p>6.主打拼音挂码,支持度好.灵活度高,不影响以前的使用习惯</p>
+          <p>7.使用体验流畅,因为难记的字根都没有.复杂的规则也没有.</p>
+          <p>8.对全拼普通拼音也支持,并且作了很好的优化.能提升全拼打字的速度,有3键一个词设计</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 5个屏幕 -->
+  <div id="screen5">
+    <div class="container11">
+      <h2 align="left">怎么选择?</h2>
+      <div>
+        <div>
+          <p align="left"><strong>目前打字码有很多种,推荐两个类型</strong></p>
+          <p align="left">1.汉心系列,这个系列难一点，但是重码低一点(汉心码,和不选字码和易大师都是,名字不同而已)</p>
+          <p align="left">2.易学系列,这个容易,字根就几个,基本不用学.(易学码,和简单版不选字码都是)</p>
+          <div style="display: flex; justify-content: center;">
+            <button class="my-button" onClick="location.href='#db'">回到顶部</button>
+            <div style="width: 5px;"></div>
+            <button class="my-button" onClick="location.href='http://www.ziranyixue.homes/1/?id=41'">去学习</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  </body>
 
     <footer class="page-footer bg-color">
     
