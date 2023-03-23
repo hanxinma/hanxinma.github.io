@@ -593,12 +593,12 @@
       transform: scale(0.5);
     }
   </style> -->
-  <script type="text/javascript">
+  <script >
     // 获取 myy-div 元素
 var myyDiv = document.querySelector('myy-div');
 
 // 如果不是移动设备
-if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.testi.test(navigator.userAgent)) {
   // 直接执行 myy-div 元素的内容
   myyDiv.click();
 } else {
@@ -611,7 +611,7 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navig
 
   // 修改子元素的样式
   var deviceWidth = window.innerWidth;
-  var halfWidth = deviceWidth / 2;
+  var halfWidth = deviceWidth / 5;
   element.style.width = halfWidth + "px";
 }
 
