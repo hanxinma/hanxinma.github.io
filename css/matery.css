@@ -1,37 +1,4 @@
-/*全局基础样式*/
-/*小屏幕下(手机类)的样式*/
-@media only screen and (max-width: 601px) {
-    .container {
-        width: 95%;
-    }
-}
 
-/*中等屏幕下(平板类)的样式*/
-@media only screen and (min-width: 600px) and (max-width: 992px) {
-    .container {
-        width: 90%;
-    }
-}
-
-/*大屏幕下(桌面类)的样式*/
-@media only screen and (min-width: 993px) {
-    .container {
-        width: 90%;
-        max-width: 1125px;
-    }
-
-    .head-container {
-        position: absolute;
-        padding: 0 30px;
-        width: 100%;
-    }
-
-    .post-container {
-        width: 90%;
-        margin: 0 auto;
-        max-width: 1250px;
-    }
-}
 
 body {
     background-color: #eaeaea;
