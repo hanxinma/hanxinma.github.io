@@ -373,8 +373,11 @@
     padding: 0;
     overflow-x: hidden;
   }
-</style>
 
+/* .my-button111 {
+  cursor: pointer;
+} */
+</style>
 
 <style>
   #screen1 {
@@ -452,6 +455,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
 
   #screen3 {
@@ -507,6 +511,24 @@
     justify-content: center;
     align-items: center;
   }
+  @media only screen and (max-width: 1200px) {
+      #screen12 {
+        font-size: 24px;
+      }
+      #screen2 {
+        font-size: 24px;
+      }
+      #screen3 {
+        font-size: 24px;
+      }
+      #screen4 {
+        font-size: 24px;
+      }
+      #screen5 {
+        font-size: 24px;
+      }
+
+    }
 
   h1 {
     font-size: 48px;
@@ -523,7 +545,7 @@
     margin: 30px 0;
   }
 
-  ul,
+  /* ul, */
   ol {
     margin: 30px 0;
     text-align: left;
@@ -569,14 +591,23 @@
     border-radius: 5px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+
+    
   }
 
-  .my-button1 {
+  .my-button111 {
     position: fixed;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     animation: floating 2s ease infinite;
+
+
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    right: 300px;
+    
   }
 
   @keyframes floating {
@@ -617,11 +648,7 @@
   setTimeout(delay, 9000);
 </script>
 
-<script>
-  function scrollDown() {
-    window.scrollBy(0, window.innerHeight);
-  }
-</script>
+
 </head>
 
  <body>
@@ -630,7 +657,9 @@
       transform: scale(0.5);
     }
   </style> -->
-  <script >
+
+
+  <!-- <script >
     // 获取 myy-div 元素
 var myyDiv = document.querySelector('myy-div');
 
@@ -652,12 +681,34 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
   element.style.width = halfWidth + "px !important";
 }
 
-  </script>
+  </script> -->
   
   <myy-div>
-    <div align="center">
-      <button class="my-button1" onClick="scrollDown()">下一屏</button>
+    <div style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);">
+      <button class="my-button111" onClick="scrollDown()">下一屏</button>
+      <!-- <button class="my-button111" onClick="scrollDown()">下一屏</button> -->
     </div>
+    
+    <!-- <style>
+      .my-button1112 {
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        right: 100px;
+      }
+    </style> -->
+    
+    <!-- <script>
+      function scrollDown() {
+        console.log(window.innerHeight); // 打印视口高度到控制台
+        window.scrollBy({
+          top: window.innerHeight, // 将页面滚动一个视口高度
+          left: 0,
+          behavior: 'smooth'
+        });
+      }
+    </script> -->
+    
     <div>
       <a name="db"></a> <!-- 第一个屏幕----text2是第二行的代码,在最上面也要有text2 -->
       <div id="screen1">
