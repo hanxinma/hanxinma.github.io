@@ -359,20 +359,17 @@
 </header>
 
     <html>
-  /* 导航栏透明 */
-<!-- /* header .nav-transparent {
-    background-color: rgb(18, 146, 1) !important;
-    background-image: none;
-    box-shadow: none;
-} */ -->
+
 <head>
 <!-- 其他的头部信息 -->
 <script>
-  // 判断当前页面是否为首页
-  if (location.pathname === '/') {
-    // 如果是首页，则不添加 viewport 元数据
+  // 获取首页的标题元素
+  var title = document.querySelector('.home .entry-title');
+  // 判断标题是否存在且等于特定文本
+  if (title && title.textContent.trim() === '欢迎来到汉心快打输入法官网') {
+    // 如果是首页并且标题等于特定文本，则不添加 viewport 元数据
   } else {
-    // 如果不是首页，则添加 viewport 元数据
+    // 如果不是首页或者标题不等于特定文本，则添加 viewport 元数据
     var meta = document.createElement('meta');
     meta.name = 'viewport';
     meta.content = 'width=device-width, initial-scale=1.0, user-scalable=no';
