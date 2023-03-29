@@ -1,4 +1,37 @@
+/*全局基础样式*/
+/*小屏幕下(手机类)的样式*/
+@media only screen and (max-width: 601px) {
+    .container {
+        width: 95%;
+    }
+}
 
+/*中等屏幕下(平板类)的样式*/
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/*大屏幕下(桌面类)的样式*/
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 90%;
+        max-width: 1125px;
+    }
+
+    .head-container {
+        position: absolute;
+        padding: 0 30px;
+        width: 100%;
+    }
+
+    .post-container {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1250px;
+    }
+}
 
 body {
     background-color: #eaeaea;
@@ -218,7 +251,7 @@ mark {
 .white-color {
     color: #fff;
 }
-/* 进度条 */
+
 .progress-bar {
     height: 4px;
     position: fixed;
@@ -228,27 +261,29 @@ mark {
     opacity: 0.8;
 }
 
-/* 侧边栏遮罩 */
 .sidenav-overlay {
     z-index: 500;
 }
 
-/* 导航栏标题 */
-header .brand-logo .logo-span {
-    font-size: 1.6rem;
+.pd-header {
+    margin-top: -64px;
 }
 
-/* 导航栏LOGO */
-header .brand-logo .logo-img {
-    height: 45px;
-    vertical-align: middle;
-    padding-bottom: 6px;
+header .side-nav {
+    width: 240px;
+    z-index: 999;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 7px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
-/* 导航栏标题 */
-header nav .brand-span {
-    font-size: 1.45rem;
+nav {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 7px 10px 0 rgba(0, 0, 0, 0.12);
 }
+
+/* header .nav-transparent {
+    background-color: transparent !important;
+    background-image: none;
+    box-shadow: none;
+} */
 
 /* 导航栏透明 */
 header .nav-transparent {
@@ -256,24 +291,19 @@ header .nav-transparent {
     background-image: none;
     box-shadow: none;
 }
-
-/* 侧边栏 */
-header .side-nav {
-    width: 240px;
-    z-index: 999;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 7px 10px 0 rgba(0, 0, 0, 0.12);
+header nav .brand-span {
+    font-size: 1.45rem;
 }
 
-/* 导航栏 */
-nav {
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 7px 10px 0 rgba(0, 0, 0, 0.12);
+header .brand-logo .logo-img {
+    height: 45px;
+    vertical-align: middle;
+    padding-bottom: 6px;
 }
 
-/* 移动端页眉 */
-.pd-header {
-    margin-top: -64px;
+header .brand-logo .logo-span {
+    font-size: 1.6rem;
 }
-
 
 /*修改顶部 logo 的文字垂直对齐为 top，避免默认 middle 看起来偏下*/
 header .brand-logo .waves-effect {
@@ -284,26 +314,22 @@ header .button-collapse i {
     font-size: 1.5rem;
 }
 
-/* 移动端头部 */
 header .side-nav .mobile-head {
     padding: 0 15px;
 }
 
-/* 移动端头部图片 */
 header .side-nav .mobile-head img {
     margin-top: 30px;
     width: 75px;
     height: 75px;
 }
 
-/* 移动端头部LOGO名称 */
 header .side-nav .mobile-head .logo-name {
     margin-top: -30px;
     padding-left: 10px;
     font-size: 1.5rem;
 }
 
-/* 移动端头部LOGO描述 */
 header .side-nav .mobile-head .logo-desc {
     margin-top: -10px;
     padding-left: 10px;
@@ -313,39 +339,33 @@ header .side-nav .mobile-head .logo-desc {
     color: #e3e3e3;
 }
 
-/* 移动端菜单列表 */
 header .side-nav .menu-list li {
     padding: 0;
     margin-left: -15px;
 }
 
-/* 移动端菜单链接 */
 header .side-nav .menu-list a {
     height: 50px;
     line-height: 50px;
     color: #34495e !important;
 }
 
-/* 移动端菜单图标 */
 .mobile-menu-list a i {
     margin-left: 8px !important;
     font-size: 1.16rem;
     color: #34495e !important;
 }
 
-/* 移动端字体图标 */
 header .side-nav .fa-fw {
     width: 3.3rem;
     text-align: left;
 }
 
-/* 移动端社交链接 */
 header .side-nav .social-link {
     position: absolute;
     bottom: 45px;
     padding-left: 15px;
 }
-
 
 .social-link a {
     font-size: 1.2rem;
@@ -583,17 +603,17 @@ header .go-back i {
 
     0%,
     100% {
-        background: rgba(4, 153, 71, 0.75);
-        background: linear-gradient(45deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: rgba(156, 39, 176, 0.75);
+        background: linear-gradient(45deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
     }
 
     16% {
-        background: rgba(4, 153, 71, 0.75);
-        background: linear-gradient(45deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: rgba(132, 13, 121, 0.75);
+        background: linear-gradient(45deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
     }
 
     32% {
@@ -618,10 +638,10 @@ header .go-back i {
     }
 
     80% {
-        background: rgba(4, 153, 71, 0.75);
-        background: linear-gradient(45deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: rgba(233, 30, 99, 0.75);
+        background: linear-gradient(45deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
     }
 }
 
@@ -629,17 +649,17 @@ header .go-back i {
 
     0%,
     100% {
-        background: rgba(4, 153, 71, 0.75);
-        background: linear-gradient(45deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: rgba(156, 39, 176, 0.75);
+        background: linear-gradient(45deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
     }
 
     16% {
-        background: rgba(4, 153, 71, 0.75);
-        background: linear-gradient(45deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: rgba(132, 13, 121, 0.75);
+        background: linear-gradient(45deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
     }
 
     32% {
@@ -664,10 +684,10 @@ header .go-back i {
     }
 
     80% {
-        background: rgba(4, 153, 71, 0.75);
-        background: linear-gradient(45deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: rgba(233, 30, 99, 0.75);
+        background: linear-gradient(45deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
     }
 }
 
@@ -1963,49 +1983,49 @@ footer .copy-right {
     overflow: hidden;
 }
 
-* 用于  的样式 */
+/* styles for '...' */
 .block-with-text {
-/* 如果文本超过N行，则隐藏文本 */
-overflow: hidden;
-/* 用于设置 '...' 的绝对位置 */
-position: relative;
-/* 使用此值计算块高度 */
-line-height: 1.5em;
-/* max-height = 行高(1.2) * 最大行数(3) */
-max-height: 4.5em;
-/* 修复最后一个可见单词不与右边对齐的问题 */
-text-align: justify;
-/* '...' 的位置 */
-margin-right: -1em;
-padding-right: 1em;
+    /* hide text if it more than N lines  */
+    overflow: hidden;
+    /* for set '...' in absolute position */
+    position: relative;
+    /* use this value to count block height */
+    line-height: 1.5em;
+    /* max-height = line-height (1.2) * lines max number (3) */
+    max-height: 4.5em;
+    /* fix problem when last visible word doesn't adjoin right side  */
+    text-align: justify;
+    /* place for '...' */
+    margin-right: -1em;
+    padding-right: 1em;
 }
 
-/* 创建 '...' 样式 */
+/* create the ... style */
 .block-with-text:before {
-/* 点在最后 */
-content: '...';
-/* 绝对定位 */
-position: absolute;
-/* 设置位置到块的右下角 */
-right: 0.2em;
-bottom: 0;
+    /* points in the end */
+    content: '...';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of block */
+    right: 0.2em;
+    bottom: 0;
 }
 
-/* 如果文本行数小于等于最大行数，则隐藏 '...' */
+/* hide ... if we have text, which is less than or equal to max lines */
 .block-with-text:after {
-/* 点在最后 */
-content: '';
-/* 绝对定位 */
-position: absolute;
-/* 设置位置到文本的右下角 */
-right: 0;
-/* 设置宽度和高度 */
-width: 1em;
-height: 1em;
-/* 修复隐藏失败的问题 */
-margin-top: 0.4em;
-/* 背景颜色 = 块下面的背景颜色 */
-background: white;
+    /* points in the end */
+    content: '';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of text */
+    right: 0;
+    /* set width and height */
+    width: 1em;
+    height: 1em;
+    /* fix the problem of hidden failure */
+    margin-top: 0.4em;
+    /* bg color = bg color under block */
+    background: white;
 }
 
 /*二级菜单*/
