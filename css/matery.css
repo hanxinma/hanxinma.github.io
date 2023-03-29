@@ -287,7 +287,7 @@ nav {
 
 /* 导航栏透明 */
 header .nav-transparent {
-    background-color: rgb(18, 146, 1);
+    background-color: rgb(18, 146, 1) !important;
     background-image: none;
     box-shadow: none;
 }
