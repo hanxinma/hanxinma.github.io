@@ -359,7 +359,26 @@
 </header>
 
     <html>
+  /* 导航栏透明 */
+<!-- /* header .nav-transparent {
+    background-color: rgb(18, 146, 1) !important;
+    background-image: none;
+    box-shadow: none;
+} */ -->
 <head>
+<!-- 其他的头部信息 -->
+<script>
+  // 判断当前页面是否为首页
+  if (location.pathname === '/') {
+    // 如果是首页，则不添加 viewport 元数据
+  } else {
+    // 如果不是首页，则添加 viewport 元数据
+    var meta = document.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width, initial-scale=1.0, user-scalable=no';
+    document.head.appendChild(meta);
+  }
+</script>
 
 <meta charset="UTF-8">
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
