@@ -1,6 +1,6 @@
 $(function () {
     /**
-     * 添加文章卡片hover效果.
+     * 添加文章卡片hover效果.   这个文件里,改了导航的颜色判断
      */
     let articleCardHover = function () {
         let animateClass = 'animated pulse';
@@ -136,15 +136,23 @@ $(function () {
     });
 
 /**
- * 控制导航栏的背景变化
+ * 判断当前页面是否为主页
+ * @returns {boolean} - 是否为主页（布尔值）
+ */
+    function isHomePage() {
+    const homePageText = '欢迎来到汉心快打输入法官网'; // 主页的特定文本
+    const pageContent = document.body.textContent; // 获取页面的全部文本内容
+    return pageContent.includes(homePageText); // 判断页面的文本内容是否包含主页的特定文本
+    }
+
 /**
  * 控制导航栏的背景变化
  * @param {number} position - 滚动条位置
  */
     function showOrHideNavBg(position) {
     const showPosition = 100; // 显示导航栏背景的位置
-    const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html'; // 是否为主页
-    if (isHomePage) {
+    const isHome = isHomePage(); // 判断当前页面是否为主页
+    if (isHome) {
         $nav.removeClass('nav-transparent'); // 移除`nav-transparent`样式，使导航栏背景不透明
         $backTop.slideDown(300); // 显示返回顶部按钮
         return;
@@ -157,6 +165,7 @@ $(function () {
         $backTop.slideDown(300); // 显示返回顶部按钮
     }
     }
+
 
     	
 	$(".nav-menu>li").hover(function(){
