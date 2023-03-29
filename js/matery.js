@@ -135,15 +135,27 @@ $(function () {
         showOrHideNavBg(scroll);
     });
 
+/**
+ * 控制导航栏的背景变化
+/**
+ * 控制导航栏的背景变化
+ * @param {number} position - 滚动条位置
+ */
     function showOrHideNavBg(position) {
-        let showPosition = 100;
-        if (position < showPosition) {
-            $nav.addClass('nav-transparent');
-            $backTop.slideUp(300);
-        } else {
-            $nav.removeClass('nav-transparent');
-            $backTop.slideDown(300);
-        }
+    const showPosition = 100; // 显示导航栏背景的位置
+    const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html'; // 是否为主页
+    if (isHomePage) {
+        $nav.removeClass('nav-transparent'); // 移除`nav-transparent`样式，使导航栏背景不透明
+        $backTop.slideDown(300); // 显示返回顶部按钮
+        return;
+    }
+    if (position < showPosition) {
+        $nav.addClass('nav-transparent'); // 添加`nav-transparent`样式，使导航栏背景透明
+        $backTop.slideUp(300); // 隐藏返回顶部按钮
+    } else {
+        $nav.removeClass('nav-transparent'); // 移除`nav-transparent`样式，使导航栏背景不透明
+        $backTop.slideDown(300); // 显示返回顶部按钮
+    }
     }
 
     	
