@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>辅助码查询系统</title>
+<!--<subtitle>汉心码学习训练系统 - 提高你的中文打字速度</subtitle>-->
+    <meta name="keywords" content="汉心码, 辅助码, 易大师, 汉心码官网,拼音打字如何变快,拼音打字如何不用选字">
+
+  <style>
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+
+    .myDiv {
+      background-color: #089168;
+      height: 300px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      padding: 40px;
+      color: #fff;
+      text-align: center;
+    }
+    #searchTool {
+      background-color: #089168;
+      height: calc(100% - 100px);
+    }
+    .result-item {
+      display: flex;
+      align-items: center;
+      margin-top: 50px;
+    }
+    .result-item:first-child {
+      font-weight: bold;
+    }
+    .result-item span {
+      margin-right: 10px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 50px;
+    }
+    td, th {
+      border: 1px solid black;
+      padding: 5px;
+    }
+
+    #search {
+
+    margin-right: 10px;
+    width: 300px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    }
+
+    #search-btn {
+    width: 80px;
+    height: 43px;
+    line-height: 30px; /* 修改为你需要的高度 */
+    border: none;
+    background-color: #ffffff;
+    color: rgb(22, 22, 22);
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    }
+    @media screen and (max-width: 768px) {
+      .myDiv {
+        flex-direction: column;
+      }
+      #search, #search-btn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      #search-btn {
+        width: 100%;
+      }
+      .myDiv {
+        padding: 10px;
+      }
+    }
+    
+    a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+header {
+
+  color: #fff;
+
+  font-size: 30px;
+}
+
+main {
+    color: #fff;
+  padding: 20px;
+} 
+  </style>
+</head>
+<body>
+  <div class="myDiv">
+    <div>
+    <div>
+    <header>
+      
+      <h1>汉心辅助码搜索</h1>
+    
+    </header>
+    
+   
+
+    </div>
+
+    <input type="text" id="search">
+    
+    <button id="search-btn">搜索</button>
+
+
+    <main>
+        <p><a href="https://hanxinma.gitee.io/hanxin">去首页</a></p>
+    </main>
+  </div></div>
+  <div id="result"></div>
+  <script>
+
+// 获取搜索按钮和结果元素
+var searchBtn = document.getElementById('search-btn');
+var result = document.getElementById('result');
+
+// 添加点击事件监听器
+searchBtn.addEventListener('click', function() {
+  // 获取用户输入的关键词
+  var keyword = document.getElementById('search').value;
+  // 检查关键词是否为空
+  if (keyword === '') {
+    alert('请输入关键词');
+    return;
+  }
+  // 设置请求的 URL
+  var url = './mbb/1.html';
+  // 发送请求并获取响应数据
+  fetch(url)
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(text) {
+      // 解析响应数据
+      var lines = text.split('\n');
+      var data = [lines[0].split(',')];
+      for (var i = 1; i < lines.length; i++) {
+        if (lines[i].includes(keyword)) {
+          data.push(lines[i].split(','));
+        }
+      }
+      // 处理搜索结果
+      if (data.length === 1) {
+        data.push(['搜索不到']);
+      }
+      // 生成 HTML 表格并显示搜索结果
+      var tableHtml = '<table>';
+      for (var i = 0; i < data.length; i++) {
+        tableHtml += '<tr>';
+        for (var j = 0; j < data[i].length; j++) {
+          tableHtml += '<td>' + data[i][j] + '</td>';
+        }
+        tableHtml += '</tr>';
+      }
+      tableHtml += '</table>';
+    //   result.innerHTML = '<div class="result-item"><span>关键词：</span><span>' + keyword + '</span></div>' + tableHtml;
+      result.innerHTML =  tableHtml;
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+    
+});
+ // 添加回车键事件监听器
+ window.onload = function() {
+      document.getElementById('search').addEventListener('keydown', function(event) {
+        if (event.keyCode === 13) {
+          document.getElementById('search-btn').click();
+        }
+      });
+    };
+  </script>
+</body>
+</html>
