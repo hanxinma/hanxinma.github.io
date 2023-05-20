@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>汉心码学习训练系统</title>
+    <!--<subtitle>汉心码学习训练系统 - 提高你的中文打字速度</subtitle>-->
+    <meta name="keywords" content="汉心码, 辅助码, 汉心, 汉心码官网,拼音打字如何变快,拼音打字如何不用选字">
+
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background-color: #089168;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        color: #fff;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #343a40;
+      }
+      .question-container {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      input[type="text"] {
+        width: 96%;
+        padding: 10px;
+        font-size: 20px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.2s ease-in-out;
+      }
+      input[type="text"]:focus {
+        border-color: #089168;
+      }
+      .invalid-feedback {
+        display: none;
+        color: #dc3545;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      .result-container {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 30px;
+      }
+      .btn-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+      .btn {
+        width: 48%;
+        padding: 10px;
+        font-size: 20px;
+        background-color: #ffffff;
+        color: rgb(24, 24, 24);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        border: 1px solid rgb(233, 232, 232);
+        box-shadow: 1px 1px 5px rgba(136, 136, 136, 0.2);
+
+
+  
+      }
+      .btn:hover {
+        background-color: #12aa7c;
+
+      }
+      .footer {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 30px;
+      }
+      .welcome {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 20px;
+      }
+      .greeting {
+        margin-top: 20px;
+        font-size: 24px;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: #089168;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #da0024;
+        border-bottom: none;
+      }
+      #question-number, #result {
+        color: #089168;
+      }
+      .daohang {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 18px;
+      }
+      .xiaozi {
+        width: 666px;
+        margin: 0 auto;
+        text-align: center;
+        color: gray;
+        font-size: 14px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="header">
+      <h1>汉心码学习训练系统</h1>
+    </div>
+
+    <div class="container">
+      <h2 id="question-number"></h2>
+      <div class="question-container">
+        <p id="question"></p>
+      </div>
+      <div class="answer-container">
+        <input type="text" id="answer" placeholder="请输入答案" onkeydown="if(event.keyCode===13) checkAnswer()">
+        <div class="invalid-feedback">请输入答案</div>
+      </div>
+      <div class="result-container">
+        <p id="result"></p>
+      </div>
+      <div class="btn-container">
+        <button class="btn" onclick="skipQuestion()">跳过</button>
+        <button class="btn" onclick="checkAnswer()">提交</button>
+      </div>
+    </div>
+    <div class="xiaozi">
+      <p>训练系统可以让你更快更好的掌握汉心码，建议字根训练和规则训练要做一下，注意的字，不一定要做，那个很难</p>
+    </div>
+    <div class="daohang">
+      <a href="https://hanxinma.gitee.io/hanxin/" style="border-bottom: none;" target="_blank">去首页</a>
+      <a href="./zy.html" style="border-bottom: none;" target="_blank">字元训练</a>
+      <a href="./gz.html" style="border-bottom: none;" target="_blank">规则训练</a>
+      <a href="./zy.html" style="border-bottom: none;" target="_blank">注意的字训练</a>
+      <a href="https://hanxinma.gitee.io/hanxin/2023/03/01/%E6%B1%89%E5%BF%83%E5%BF%AB%E6%89%93/" style="border-bottom: none;" target="_blank"><strong>去学习</strong></a>
+      <a href="    https://hanxinma.gitee.io/hanxin/2023/03/30/%E5%8F%8C%E6%8B%BC%E6%B1%89%E5%BF%83%E7%9A%84%E7%94%A8%E6%B3%95/" style="border-bottom: none;" target="_blank">去学习（双拼）</a>
+    </div>
+
+    <script>
+      var dataArray = [
+
+
+
+
+      "围[囗韦]这个字是哪两个首尾键位，小写字母两个.,ww,如果你不知道，点击下方的学习",
+"文[亠乂]这个字是哪两个首尾键位，小写字母两个.,wx,如果你不知道，点击下方的学习",
+"枚[木攵]这个字是哪两个首尾键位，小写字母两个.,lw,如果你不知道，点击下方的学习",
+"尔[（尔头）小]这个字是哪两个首尾键位，小写字母两个.,ex,如果你不知道，点击下方的学习",
+"鱼[（尔头）一]这个字是哪两个首尾键位，小写字母两个.,ea,如果你不知道，点击下方的学习",
+"叩[口卩]这个字是哪两个首尾键位，小写字母两个.,ke,如果你不知道，点击下方的学习",
+"学[⺍子]这个字是哪两个首尾键位，小写字母两个.,ez,如果你不知道，点击下方的学习",
+"黑[丨灬]这个字是哪两个首尾键位，小写字母两个.,ae,如果你不知道，点击下方的学习",
+"单[丷丨]这个字是哪两个首尾键位，小写字母两个.,ea,如果你不知道，点击下方的学习",
+"捷[扌人]这个字是哪两个首尾键位，小写字母两个.,fr,如果你不知道，点击下方的学习",
+"孩[子人]这个字是哪两个首尾键位，小写字母两个.,zr,如果你不知道，点击下方的学习",
+"酒[氵酉]这个字是哪两个首尾键位，小写字母两个.,dy,如果你不知道，点击下方的学习",
+"优[亻尤]这个字是哪两个首尾键位，小写字母两个.,ry,如果你不知道，点击下方的学习",
+"泰[一氺]这个字是哪两个首尾键位，小写字母两个.,au,如果你不知道，点击下方的学习",
+"幸[土十]这个字是哪两个首尾键位，小写字母两个.,tu,如果你不知道，点击下方的学习",
+"有[一月]这个字是哪两个首尾键位，小写字母两个.,ao,如果你不知道，点击下方的学习",
+"爱[爫又]这个字是哪两个首尾键位，小写字母两个.,py,如果你不知道，点击下方的学习",
+"被[礻又]这个字是哪两个首尾键位，小写字母两个.,py,如果你不知道，点击下方的学习",
+"杉[木彡]这个字是哪两个首尾键位，小写字母两个.,lp,如果你不知道，点击下方的学习",
+"邦[一阝]这个字是哪两个首尾键位，小写字母两个.,ae,如果你不知道，点击下方的学习",
+"岭[山厶]这个字是哪两个首尾键位，小写字母两个.,sv,如果你不知道，点击下方的学习",
+"罢[罒厶]这个字是哪两个首尾键位，小写字母两个.,sv,如果你不知道，点击下方的学习",
+"缺[缶乀]这个字是哪两个首尾键位，小写字母两个.,fn,如果你不知道，点击下方的学习",
+"越[土戈]这个字是哪两个首尾键位，小写字母两个.,tg,如果你不知道，点击下方的学习",
+"农[丶衣底部]这个字是哪两个首尾键位，小写字母两个.,dh,如果你不知道，点击下方的学习",
+"区[匚乂]这个字是哪两个首尾键位，小写字母两个.,kx,如果你不知道，点击下方的学习",
+"林[木木]这个字是哪两个首尾键位，小写字母两个.,ll,如果你不知道，点击下方的学习",
+"跳[（提足旁）兆]这个字是哪两个首尾键位，小写字母两个.,zv,如果你不知道，点击下方的学习",
+"杀[乂朩]这个字是哪两个首尾键位，小写字母两个.,xx,如果你不知道，点击下方的学习",
+"要[西女]这个字是哪两个首尾键位，小写字母两个.,xn,如果你不知道，点击下方的学习",
+"革[廿丨]这个字是哪两个首尾键位，小写字母两个.,ca,如果你不知道，点击下方的学习",
+"已[乛ㄥ]这个字是哪两个首尾键位，小写字母两个.,vv,如果你不知道，点击下方的学习",
+"乙[乛ㄥ]这个字是哪两个首尾键位，小写字母两个.,vv,如果你不知道，点击下方的学习",
+"九[丿ㄥ]这个字是哪两个首尾键位，小写字母两个.,pv,如果你不知道，点击下方的学习",
+"事[一乛]这个字是哪两个首尾键位，小写字母两个.,av,如果你不知道，点击下方的学习",
+"习[乛冫]这个字是哪两个首尾键位，小写字母两个.,vd,如果你不知道，点击下方的学习",
+"竭[立ㄥ]这个字是哪两个首尾键位，小写字母两个.,lv,如果你不知道，点击下方的学习",
+"鼎[目乛]这个字是哪两个首尾键位，小写字母两个.,mv,如果你不知道，点击下方的学习",
+"今[人乛]这个字是哪两个首尾键位，小写字母两个.,rv,如果你不知道，点击下方的学习",
+"亏[二乛]这个字是哪两个首尾键位，小写字母两个.,ev,如果你不知道，点击下方的学习",
+"民[乛ㄥ]这个字是哪两个首尾键位，小写字母两个.,vv,如果你不知道，点击下方的学习",
+"以[ㄥ人]这个字是哪两个首尾键位，小写字母两个.,vr,如果你不知道，点击下方的学习",
+"气[丿ㄥ]这个字是哪两个首尾键位，小写字母两个.,pv,如果你不知道，点击下方的学习",
+"云[二厶]这个字是哪两个首尾键位，小写字母两个.,ev,如果你不知道，点击下方的学习",
+"卷[丶]这个字是哪两个首尾键位，小写字母两个.,dv,如果你不知道，点击下方的学习",
+"父[八乂]这个字是哪两个首尾键位，小写字母两个.,bx,如果你不知道，点击下方的学习",
+"饮[饣人]这个字是哪两个首尾键位，小写字母两个.,ur,如果你不知道，点击下方的学习",
+"定[宀人]这个字是哪两个首尾键位，小写字母两个.,gr,如果你不知道，点击下方的学习",
+"罕[冖干]这个字是哪两个首尾键位，小写字母两个.,gg,如果你不知道，点击下方的学习",
+"到[至刂]这个字是哪两个首尾键位，小写字母两个.,vd,如果你不知道，点击下方的学习",
+"红[纟工]这个字是哪两个首尾键位，小写字母两个.,sg,如果你不知道，点击下方的学习",
+"建[廴一]这个字是哪两个首尾键位，小写字母两个.,za,如果你不知道，点击下方的学习",
+"过[辶寸]这个字是哪两个首尾键位，小写字母两个.,zc,如果你不知道，点击下方的学习",
+"等[⺮寸]这个字是哪两个首尾键位，小写字母两个.,vc,如果你不知道，点击下方的学习",
+"草[艹十]这个字是哪两个首尾键位，小写字母两个.,cu,如果你不知道，点击下方的学习",
+"疼[疒冬]这个字是哪两个首尾键位，小写字母两个.,bd,如果你不知道，点击下方的学习",
+"铁[钅失]这个字是哪两个首尾键位，小写字母两个.,ju,如果你不知道，点击下方的学习",
+"放[方攵]这个字是哪两个首尾键位，小写字母两个.,fw,如果你不知道，点击下方的学习",
+"幻[幺乛]这个字是哪两个首尾键位，小写字母两个.,sv,如果你不知道，点击下方的学习",
+"阳[阝日]这个字是哪两个首尾键位，小写字母两个.,eo,如果你不知道，点击下方的学习",
+"猫[犭田]这个字是哪两个首尾键位，小写字母两个.,qt,如果你不知道，点击下方的学习",
+"很[彳畏底部]这个字是哪两个首尾键位，小写字母两个.,rh,如果你不知道，点击下方的学习",
+
+
+
+
+
+      ];
+      var totalQuestions = dataArray.length;
+      var currentQuestion = 0;
+      document.getElementById("question-number").innerHTML = "字元，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+      document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
+
+      function checkAnswer() {
+        var input = document.getElementById("answer");
+        var feedback = input.nextElementSibling;
+        if (input.value.trim() === "") { // 如果输入的答案为空
+          input.classList.add("is-invalid"); // 添加is-invalid类
+          feedback.style.display = "block"; // 显示错误提示
+        } else {
+          input.classList.remove("is-invalid"); // 移除is-invalid类
+          feedback.style.display = "none"; // 隐藏错误提示
+          var correctAnswer = dataArray[currentQuestion].split(",")[1];
+          if (input.value === correctAnswer) {
+            document.getElementById("result").innerHTML = "恭喜你答对了！";
+            setTimeout(function(){
+                document.getElementById("result").innerHTML = "";
+            }, 1000); //1000毫秒 = 1秒钟
+                    
+   
+
+
+            currentQuestion++;
+            if (currentQuestion < dataArray.length) {
+              document.getElementById("question-number").innerHTML = "字元，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+              document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
+              input.value = "";
+            } else {
+              document.getElementById("question-number").innerHTML = "完成！";
+              document.getElementById("answer").style.display = "none";
+              document.getElementById("result").style.display = "none";
+              document.getElementById("question-number").style.display = "none";
+              document.getElementsByClassName("btn")[0].style.display = "none";
+              document.getElementsByClassName("btn")[1].style.width = "100%";
+              document.getElementById("question").innerHTML = "这批训练题已经做完了，请点下面新的题目！";
+              input.style.display = "none";
+            }
+          } else {
+            document.getElementById("result").innerHTML = dataArray[currentQuestion].split(",")[2];
+
+          }
+        }
+      }
+
+      function skipQuestion() {
+        currentQuestion++;
+        if (currentQuestion < dataArray.length) {
+          document.getElementById("question-number").innerHTML = "字元，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+          document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
+          document.getElementById("answer").value = "";
+          document.getElementById("result").innerHTML = "";
+        } else {
+          document.getElementById("question-number").innerHTML = "完成！";
+          document.getElementById("answer").style.display = "none";
+          document.getElementById("result").style.display = "none";
+          document.getElementById("question-number").style.display = "none";
+          document.getElementsByClassName("btn")[0].style.display = "none";
+          document.getElementsByClassName("btn")[1].style.width = "100%";
+          document.getElementById("question").innerHTML = "这批训练题已经没有了，请点下面下一批题目！";
+          document.getElementById("answer").style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
