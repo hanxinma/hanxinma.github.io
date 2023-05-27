@@ -387,7 +387,15 @@
     animation: switch-background 1s infinite;
   }
 
-
+  @keyframes switch-background {
+    0%, 100% {
+      background-image: url("/hanxin/medias/bj.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+    }
+  }
 
   #text1 {
     font-size: 50px;
@@ -495,6 +503,8 @@
     justify-content: center;
     align-items: center;
   }
+
+
   @media only screen and (max-width: 1200px) {
       #screen12 {
         font-size: 24px;
@@ -513,12 +523,6 @@
       }
 
     }
-    @media only screen and (max-width: 1500px) {
-  html {
-    transform: scale(0.1);
-    transform-origin: top;
-  }
-}
 
   h1 {
     font-size: 48px;
@@ -549,16 +553,6 @@
     margin: 0;
     padding: 0;
   }
-
-
-
-
-
-
-
-
-
-
 
   .container11 {
     margin-left: auto;
@@ -639,6 +633,12 @@
   .hidden {
     display: none;
   }
+  @media only screen and (max-width: 601px) {
+    .container {
+        width: auto !important;
+    }
+}
+
 </style>
 
 <script>

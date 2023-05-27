@@ -1,1 +1,6 @@
 /* Here is your custom css styles. */
+@media only screen and (max-width: 601px) {
+    .container {
+        width: auto !important;
+    }
+}
