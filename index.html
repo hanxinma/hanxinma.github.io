@@ -361,6 +361,17 @@
 <!-- 这里是让头部的那个手机端不生效 -->
 
 <style>
+
+@media only screen and (max-width: 1601px) {
+
+  .container123 {
+    width: 55%;
+  }
+  .container11 {
+    width: 55%;
+  }
+}
+
   #screen1 {
     color: #fff;
     font-size: 18px;
@@ -376,15 +387,7 @@
     animation: switch-background 1s infinite;
   }
 
-  @keyframes switch-background {
-    0%, 100% {
-      background-image: url("/hanxin/medias/bj.jpg");
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      min-height: 100vh;
-    }
-  }
+
 
   #text1 {
     font-size: 50px;
@@ -510,6 +513,12 @@
       }
 
     }
+    @media only screen and (max-width: 1500px) {
+  html {
+    transform: scale(0.1);
+    transform-origin: top;
+  }
+}
 
   h1 {
     font-size: 48px;
@@ -540,6 +549,16 @@
     margin: 0;
     padding: 0;
   }
+
+
+
+
+
+
+
+
+
+
 
   .container11 {
     margin-left: auto;
