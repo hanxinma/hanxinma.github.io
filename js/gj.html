@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 
+
+    <meta charset="utf-8">
+    <title>汉心原创工具</title>
+    <style>
+
+        
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.box {
+  width: 200px;
+  height: 300px;
+  line-height: 60px;
+  border-radius: 30px;
+
+  color: #fff;
+  text-align: center;
+  margin: 10px;
+
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+  border: 3px solid rgb(223, 223, 223); /* 添加边框 */
+  border-radius: 50px; /* 圆角边框 */
+  padding: 20px 10px; /* 添加内边距 */
+  display: flex; /* 添加flex布局 */
+  justify-content: center; /* 内容水平居中对齐 */
+}
+
+.box:hover {
+  cursor: pointer;
+}
+
+.box p {
+  margin: 16;
+  font-size: 40px; /* 修改字体大小 */
+  align-self: center; /* 文本垂直居中对齐 */
+}
+
+
+
+
+
+        /* 公共样式 */
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   
+            overflow-x: hidden;
+  
+             /* 消除导航手机右边没有背景 */
+
+
+        }
+
+        /* 标签 */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+        
+
+        .right + .right {
+  margin-left: 20px; /* 设置相邻元素之间的左边距 */
+}
+        /* 头部导航样式 */
+                                           
+   
+      
+
+        #header {
+            background: linear-gradient(#4CAF50, #259656);
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            /* 添加底部间距 */
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            align-items: center;
+            /* 垂直居中 */
+
+            display: flex;
+        }
+
+  
+ 
+
+
+
+
+
+
+
+
+        /* 导航栏样式 */
+        #bottom-bar {
+            position: fixed;
+            /* 将导航栏固定在页面上 */
+            right: 50px;
+            /* 导航栏右边距为50像素 */
+            bottom: 50px;
+            /* 导航栏底部距离页面底部为50像素 */
+            z-index: 999;
+            /* 将导航栏设置为最高层级 */
+            display: flex;
+            /* 将导航栏设置为flex布局 */
+        }
+
+        /* 导航栏项样式链接 */
+        #bottom-bar a {
+            display: inline-block;
+            /* 将a标签转换为内联块级元素 */
+            margin-right: 20px;
+            /* 每个链接右边距为20像素 */
+            padding: 10px;
+            /* 每个链接内边距为10像素 */
+            color: #fff;
+            /* 导航栏项颜色为白色 */
+            background-color: #4CAF50;
+            /* 导航栏项背景颜色为绿色 */
+            border-radius: 5px;
+            /* 设置圆角半径为5像素 */
+            text-decoration: none;
+            /* 不带有下划线或其他标记 */
+        }
+
+        /* 鼠标悬停时的样式 */
+        #bottom-bar a:hover {
+            background-color: #259656;
+            /* 当鼠标悬停在导航栏项上时，背景颜色变为橙色 */
+        }
+
+        /* 清除浮动 */
+        .clear-float {
+            clear: both;
+            /* 将父元素的浮动清除掉 */
+        }
+
+        /* 超链接 */
+        a {
+            color: green;
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+ /* 防止右边看不到列表 */
+        #right-list {
+  margin-right: 7%;
+}
+
+        /* 右侧列表容器 */
+        #right-list ul {
+            line-height: 2.0;
+            background-color: #fff;
+            padding: 17px;
+            height: 800px;
+            overflow-y: auto;
+            border: none;
+            word-wrap: break-word;
+            /* 文本换行 */
+
+  overflow-x: hidden;
+  /* 隐藏溢出的内容 */
+        }
+/* 
+        #content-1 {
+            white-space: pre-wrap;
+            text-indent: 103px;
+        } */
+
+
+        /* ---------------手机样式----------------------------- */
+        
+
+         /* 手机导航按钮展现右侧的样式 */
+
+         .toggle-right-list-btn {
+            position: fixed;
+            /* 设置元素为固定定位 */
+            bottom: 210px !important;
+            /* 距离视口底部 20 像素 */
+            left: 20px;
+            /* 距离视口左侧 20 像素 */
+            line-height: 120px; /* 设置为元素高度 */
+            border-radius: 50%;
+            /* 设置边框半径为元素宽度的一半，即创建一个圆形 */
+            background-image: linear-gradient(to bottom, #eeeeee, #e4e4e4);
+            /* 从亮绿色到深绿 */
+            width: 120px;
+            /* 设置宽度为50px */
+            height: 120px;
+            /* 设置高度为50px */
+            font-size: 45px;
+            color: rgb(26, 26, 26);
+            text-align: center;
+            border: 2px solid rgb(196, 196, 196);
+        
+            box-shadow: 0 2px 4px rgba(0, 0.5, 0, 0.5);
+            display: none
+            /* 投影 */
+
+          
+         
+            /* 投影 */
+
+
+
+      
+        
+
+
+        }
+
+        /* 放大手机导航上面的 */
+
+        @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        /* 小于max----如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {
+            #header {
+                font-size: 1.9em;
+                width: 100%;
+            
+            }
+        }
+
+        /* 手机放大字列表左侧 */
+        @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        /* 小于max----如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {
+            #left-column a {
+                font-size: 36px;
+            }
+        }
+
+        /* 手机放大字 */
+        @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        /*小于max---- 如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {
+            [id^="content-"] {
+                font-size: calc(20px + 20px * 1.2);
+                /* 20px + 6px = 26px */
+            }
+        }
+
+        /* 大屏右边去一点 */
+        @media only screen and (min-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        /* 大于min----如果屏幕宽度大于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        only screen and (min-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (min-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (min-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (min-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (min-width: 1500px) and (min-resolution: 2dppx) {
+            #right-column {
+                flex-basis: 150px;
+
+
+
+            }
+        }
+
+
+        @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        /*小于max---- 如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {
+
+            /* 在小于 1200 像素的屏幕中隐藏左侧列表 */
+            #left-column {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 1500px) {
+
+            /* 在大于等于 1200 像素的屏幕中隐藏导航按钮 */
+            #zoom-button {
+                display: none;
+            }
+        }
+
+        /* 隐藏右边的列表小于max---- 如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */ */
+        @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+    
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {  
+
+            /* #right-column {
+                padding-left: 110;
+            }*/
+
+          /*  #right-column>div {
+                padding-left: 0;
+            } */   /* 隐藏右边的列表 */
+           #right-list {
+            display: none;
+            }
+        }   
+
+        /* 手机导航按钮的样式 */
+
+        #zoom-button {
+            position: fixed;
+            /* 设置元素为固定定位 */
+            bottom: 50px !important;
+            /* 距离视口底部 20 像素 */
+            left: 20px;
+            /* 距离视口左侧 20 像素 */
+
+            border-radius: 50%;
+            /* 设置边框半径为元素宽度的一半，即创建一个圆形 */
+            background-image: linear-gradient(to bottom, #29ca29, #008000);
+            /* 从亮绿色到深绿 */
+            width: 120px;
+            /* 设置宽度为50px */
+            height: 120px;
+            /* 设置高度为50px */
+            font-size: 45px;
+            color: rgb(247, 245, 245);
+
+            border: 2px solid rgb(1, 126, 63);
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0.5, 0, 0.5);
+            /* 投影 */
+        
+
+
+        }
+/* 导航字体手机上*/
+        @media (max-width: 1500px) {
+            .right a {
+                writing-mode: vertical-lr;
+                font-family: "楷体", KaiTi, serif;
+            }
+        }
+/* 导航宽度手机*/
+        /* @media (max-width: 15000px) {
+            #header {
+                width: 1399px;
+            }
+        } */
+
+        /* 上导航左侧网站名称宽度电脑*/
+        .left h1 {
+        display: inline-block;
+        width: 300px; /* 控制宽度 */
+        margin-left: 10px;
+        }
+   /* 上导航左侧网站名称往右边去一点*/
+@media (max-width: 1480px) {
+        .left h1 { margin-left: 30px;    }    }
+        /* 上导航左侧网站名称宽度手机*/
+
+        /* @media (max-width: 1480px) {
+        .left h1 {
+
+        width: 270px; /* 控制宽度 */
+       
+
+
+     
+            /* -----------------------手机样式----------------------------- */
+            /* 当屏幕宽度小于等于 480px 时，将 .left 的样式设置为强制换行 */
+            @media (max-width: 1480px) {
+            .left {
+                white-space: normal;
+            }
+            }
+
+            
+    </style>
+</head>
+
+<body>
+
+
+    <div id="header">
+        <div class="left">
+            <h1>汉心原创工具</h1>
+        </div>
+        <!-- <div class="right">官方网站</div> -->
+
+        <div class="right">
+            <a href="https://hanxinma.gitee.io/hanxin/" target="_blank" style="text-decoration: none; color: white;">官方网站</a>
+        </div>
+   
+        <div class="right">
+            <a href="http://yaoxiazai.ysepan.com/" target="_blank" style="text-decoration: none; color: white;">下载站</a>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="box" onclick="window.open('https://hanxinma.gitee.io/hanxin/js/zy.html', '_blank');">
+            <p>汉心码字根练习</p>
+          </div>
+          <div class="box" onclick="window.open('https://hanxinma.gitee.io/hanxin/js/s.html', '_blank');">
+            <p>辅助码查询工具</p>
+          </div>
+          <div class="box" onclick="window.open('https://hanxinma.gitee.io/hanxin/js/lx.html', '_blank');">
+            <p>双拼强化练习</p>
+          </div>
+
+            <div class="box" onclick="window.open('https://hanxinma.gitee.io/hanxin/js/cs.html', '_blank');">
+                <p>打字练习和测试</p>
+          </div>
+      、
+
+          
+          
+        </div>
+      </div>
+      
+
+        
+      
+
+
+
+
+
+        <script>
+
+// 获取容器元素和颜色数组
+var container = document.querySelector('.container');
+var colors = ['#007bff', '#6c757d', '#28a745', '#dc3545', '#ffc107', '#673ab7', '#f44336', '#4caf50', '#795548', '#ff9800'];
+
+// 将颜色数组打乱顺序
+colors.sort(function() {return 0.5 - Math.random()});
+
+// 循环创建盒子
+for (var i = 0; i < container.children.length; i++) {
+  // 计算每个盒子的位置
+  var top = 100 * i + 50;
+  var left = Math.random() * 80 + 10 + '%';
+
+  // 为每个盒子设置不同的背景颜色和位置
+  var box = container.children[i];
+  var color = colors[i]; // 按照顺序使用每个颜色
+  box.style.backgroundColor = color;
+  box.style.top = top + 'px';
+  box.style.left = left;
+}
+
+        </script>
+
+
+
+
+
+
+
+</body>

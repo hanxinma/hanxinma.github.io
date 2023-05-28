@@ -185,6 +185,7 @@ pre code {
     padding: 0;
     color: #e8eaf6;
     background-color: #272822;
+  
 }
 
 /* 键盘 kbd 标签样式 */
@@ -226,6 +227,7 @@ mark {
 }
 
 .card {
+
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
 }
@@ -259,6 +261,7 @@ mark {
     z-index: 300;
     background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
     opacity: 0.8;
+    
 }
 
 .sidenav-overlay {
@@ -267,22 +270,27 @@ mark {
 
 .pd-header {
     margin-top: -64px;
+    
 }
 
 header .side-nav {
     width: 240px;
     z-index: 999;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 7px 10px 0 rgba(0, 0, 0, 0.12);
+    
 }
 
 nav {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 7px 10px 0 rgba(0, 0, 0, 0.12);
+  
+
 }
 
 header .nav-transparent {
     background-color: transparent !important;
     background-image: none;
     box-shadow: none;
+    
 }
 
 header nav .brand-span {
@@ -297,6 +305,7 @@ header .brand-logo .logo-img {
 
 header .brand-logo .logo-span {
     font-size: 1.6rem;
+    
 }
 
 /*修改顶部 logo 的文字垂直对齐为 top，避免默认 middle 看起来偏下*/
@@ -318,10 +327,15 @@ header .side-nav .mobile-head img {
     height: 75px;
 }
 
+
 header .side-nav .mobile-head .logo-name {
     margin-top: -30px;
     padding-left: 10px;
     font-size: 1.5rem;
+    text-overflow: ellipsis; /* 文字溢出时用省略号（...）代替 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 溢出部分隐藏 */
+    max-width: 1rem; /* 设置最大宽度 */
 }
 
 header .side-nav .mobile-head .logo-desc {
