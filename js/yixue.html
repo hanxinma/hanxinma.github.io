@@ -1,0 +1,1288 @@
+
+
+<!DOCTYPE html>
+<html>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>易学码官网</title><!-- 页面标题 -->
+    <meta name="description" content="本站是易学码双拼学习站，提供易学码学习技巧，提供易学码辅助码"><!-- 页面描述 -->
+    <meta name="keywords" content="自然吗双拼,辅助码下载,自然码网站，自然码辅助码,易学码辅助码,汉心辅助码,输入法,双拼输入法,小鹤双拼,小鹤音形,辅助码,鹤形,汉心官方网站"><!-- 关键词 -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+
+    <style>
+        /* 控制右边列表高亮显示的 */
+        
+        #right-list ul li a {
+            color: rgb(128, 128, 128);
+        }
+        
+        #right-list li.active a {
+            color: #007bff;
+            font-weight: bold;
+        }
+        /*        
+.toggle-right-list-btn {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 10px;
+  border-radius: 0 50% 50% 0;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: none
+} */
+        /* 根据 ID 选择器设置 iframe 的宽度和高度 */
+        
+        #my-iframe {
+            border: none;
+            overflow: hidden;
+        }
+        
+        hhh {
+            margin-top: 20px;
+            /* 将标题上方留出20px的空间 */
+            font-size: 40px;
+            font-weight: bold;
+            position: relative;
+            /* 开启相对定位 */
+            width: 100%;
+            /* 伪元素宽度与元素相等 */
+            line-height: 450px;
+            /* 行间距为 150 像素 */
+            line-height: 1.5;
+            /* 将行高设为1.5倍字体大小 */
+        }
+        ddd {
+            margin-top: 20px;
+            /* 将标题上方留出20px的空间 */
+            font-size: 60px;
+            font-weight: bold;
+            position: relative;
+            /* 开启相对定位 */
+            width: 100%;
+            /* 伪元素宽度与元素相等 */
+            line-height: 450px;
+            /* 行间距为 150 像素 */
+            line-height: 1.5;
+            /* 将行高设为1.5倍字体大小 */
+        }
+        
+        dluo {
+            text-indent: 20px;
+            /* 将段落首行缩进20px */
+            margin-bottom: 10px;
+            /* 将段落后空出10px的空间 */
+            opacity: 0.8;
+            /* 将段落的不透明度设为0.8 */
+            transform: translateY(10px);
+            /* 将段落向下移动10像素 */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            /* 添加段落过渡效果 */
+        }
+        
+        htjc {
+            font-family: "黑体", sans-serif;
+            /* 设置字体为黑体 */
+            font-size: 26px;
+            /* 设置字号为 30 像素 */
+            font-weight: bold;
+            color: #0a0a0a;
+        }
+        
+        htjchs {
+            font-family: "黑体", sans-serif;
+            /* 设置字体为黑体 */
+            font-size: 26px;
+            /* 设置字号为 30 像素 */
+            font-weight: bold;
+            color: #ce0303;
+        }
+        
+        stjc {
+            font-family: "宋体", sans-serif;
+            /* 设置字体为黑体 */
+            font-size: 26px;
+            /* 设置字号为 30 像素 */
+            font-weight: bold;
+            color: #0a0a0a;
+        }
+        
+        stjchs {
+            font-family: "宋体", sans-serif;
+            /* 设置字体为黑体 */
+            font-size: 26px;
+            /* 设置字号为 30 像素 */
+            font-weight: bold;
+            color: #cc0101;
+        }
+        /* 底部 */
+        /* 子元素需要设置 transform-origin 属性 */
+        /* 这里假设您要缩放的元素类名为 zoom-wrapper */
+        /*上面是手机 @media (max-width: 1200px) {
+  #right-column {
+    font-size: 10px;
+  }
+}
+} */
+        /* 右边栏的主题样式 */
+        
+        #right-column {
+    
+            /* 占据父容器除了左列的剩余宽度 */
+            padding: 30px;
+            /* padding-left: 503px; */
+            /* 内边距 */
+            font-family: '宋体', SimSun, sans-serif;
+            /* font-family: inherit; */
+            font-size: 26px;
+            /* 每行之间的行高为1.5倍字体高度 */
+            line-height: 2.5;
+            /* 控制内容区域的大小 */
+            /* padding-left: min(80%, max(10%, 10vw)); */
+            text-align: left;
+        }
+        /* 右侧内容div */
+        
+        #right-column>div {
+            white-space: pre-wrap;
+            /* 保留原有空格并自动换行 */
+            /* text-indent: 5em; */
+            /* 新行文本在左侧对齐,,可以控制h1 缩进 */
+        }
+        /* 非选中的内容隐藏,配合js用的 */
+        
+        #right-column>div:not(.active) {
+            display: none;
+        }
+        /* #right-column h1 {
+            margin: 130;
+        } */
+        /* #right-column>div {
+            
+            padding-left: min(80%, max(5%, 5vw));
+        } */
+        /* 公共样式 */
+        
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+            margin-right: -150px;
+            /* 消除导航手机右边没有背景 */
+        }
+        /* 标签 */
+        
+        h1 {
+  text-align: center;
+  margin: 0 ;
+  
+}
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+        /* 头部导航样式 */
+        
+        #header {
+            background: linear-gradient(#4CAF50, #259656);
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            /* 添加底部间距 */
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            align-items: center;
+            /* 垂直居中 */
+            display: flex;
+           
+        }
+        
+        .left {
+            order: 1;
+            margin-right: 20px;
+          
+            /* 头部样式 添加间距 */
+        }
+        #header .left {
+        float: left;
+        }
+        #header h1 {
+        display: inline-block;
+        text-align: left;
+        margin: 20;
+        }
+
+        
+        .right {
+            order: 2;
+            margin-right: 20px;
+            /* 头部样式 添加间距 */
+        }
+        
+        .right {
+            order: 3;
+            margin-right: 20px;
+            /* 头部样式 添加间距 */
+        }
+        /* 整个内容的布局 */
+        /* .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            } */
+        
+        #container {
+            display: flex;
+            /* 使用 Flex 布局 */
+            justify-content: space-between;
+            /* 横向排列子元素，并左右对齐 */
+            align-items: stretch;
+            /* 纵向拉伸子元素，占据整个高度 */
+            /*  height: calc(100vh - 50px); 高度为视口高度减去 header 的高度 */
+            height: 100%
+        }
+        /* 左边栏的样式,可以没有滑动条,但是还是可以滑动的 */
+        /* .left-column {
+            overflow-y: 200px;
+        } */
+        /* 左边栏的样式 */
+        
+        #left-column {
+            flex-basis: 200px;
+            /* 占据父容器的  宽度 */
+            border-right: 1px solid rgb(255, 255, 255);
+            /* 右侧边框 */
+            background-color: #ffffff;
+            /* 背景颜色 */
+            padding: 10px;
+            /* 内边距 */
+            /* overflow-y: auto;     
+            height: auto;
+    
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            z-index: 10; */
+            /* overflow-y: 200px; */
+        }
+        
+        #left-column::-webkit-scrollbar {
+            width: 6px;
+            /* 修改滚动条宽度 */
+        }
+        
+        #left-column::-webkit-scrollbar-thumb {
+            background-color: rgb(238, 238, 238);
+            /* 修改滚动条颜色 */
+            border-radius: 3px;
+            /* 让滚动条的两端更加圆润 */
+        }
+        
+        #left-column li {
+            margin-bottom: 0px;
+            /* 每个列表项之间留下 10px 的空白 */
+        }
+        
+        #left-column a {
+            display: block;
+            /* 将超链接转为块级元素，方便设置宽高及位置 */
+            padding: 10px;
+            /* 内边距 */
+            color: #333;
+            /* 文字颜色 */
+            text-decoration: none;
+            /* 去掉下划线 */
+            transition: background-color 0.3s ease;
+            /* 鼠标移过时有渐变效果 */
+            background-color: rgb(241, 241, 241);
+            /* 默认颜色按钮色 */
+        }
+        
+        #left-column a:hover {
+            background-color: #4CAF50;
+            /* 鼠标移过时的背景颜色 */
+        }
+        
+        #left-column a.active {
+            background-color: #4CAF50;
+            /* 选中时的背景颜色 */
+            color: #fff;
+            /* 选中时的文字颜色 */
+        }
+        
+        ul {
+            /* 去掉列表样式符号 左侧列表的li */
+            list-style-type: none;
+            /* 无外边距和内边距 */
+            margin: 0;
+            padding: 0;
+            /* 宽度为200像素 */
+            width: 200px;
+            /* 背景颜色为#f1f1f1 */
+            background-color: #f1f1f1;
+            /* 边框为1像素实线，颜色为#ccc */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            /* 防止圆角被压缩 */
+            /* 将导航栏固定在视口上方 */
+            position: sticky;
+            top: 0;
+            /* 每行之间的行高为1.5倍字体高度 */
+            line-height: 1.5;
+            /* 用SimSun字体代替默认字体 */
+            font-family: SimSun, sans-serif;
+        }
+        
+        li {
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+            /* 鼠标移上去时的形状---左侧列表的样式li */
+            font-size: 16px;
+            /* 列表项字体大小 */
+            font-family: "Microsoft YaHei", sans-serif;
+            /* 列表项字体 */
+        }
+        /* 导航栏样式 */
+        
+        #bottom-bar {
+            position: fixed;
+            /* 将导航栏固定在页面上 */
+            right: 50px;
+            /* 导航栏右边距为50像素 */
+            bottom: 50px;
+            /* 导航栏底部距离页面底部为50像素 */
+            z-index: 999;
+            /* 将导航栏设置为最高层级 */
+            display: flex;
+            /* 将导航栏设置为flex布局 */
+        }
+        /* 导航栏项样式链接 */
+        
+        #bottom-bar a {
+            display: inline-block;
+            /* 将a标签转换为内联块级元素 */
+            margin-right: 20px;
+            /* 每个链接右边距为20像素 */
+            padding: 10px;
+            /* 每个链接内边距为10像素 */
+            color: #fff;
+            /* 导航栏项颜色为白色 */
+            background-color: #4CAF50;
+            /* 导航栏项背景颜色为绿色 */
+            border-radius: 5px;
+            /* 设置圆角半径为5像素 */
+            text-decoration: none;
+            /* 不带有下划线或其他标记 */
+        }
+        /* 鼠标悬停时的样式 */
+        
+        #bottom-bar a:hover {
+            background-color: #259656;
+            /* 当鼠标悬停在导航栏项上时，背景颜色变为橙色 */
+        }
+        /* 清除浮动 */
+        
+        .clear-float {
+            clear: both;
+            /* 将父元素的浮动清除掉 */
+        }
+        /* 超链接 */
+        
+        a {
+            color: green;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* 防止右边看不到列表 */
+        
+        #right-list {
+            margin-right: 7%;
+        }
+        /* 右侧列表容器 */
+        
+        #right-list ul {
+            line-height: 2.0;
+            background-color: #fff;
+            padding: 17px;
+            height: 1500px;
+            overflow-y: auto;
+            border: none;
+            word-wrap: break-word;
+            /* 文本换行 */
+            overflow-x: hidden;
+            /* 隐藏溢出的内容 */
+        }
+        /* 
+        #content-1 {
+            white-space: pre-wrap;
+            text-indent: 103px;
+        } */
+        /* ---------------手机样式----------------------------- */
+        /* 手机导航按钮展现右侧的样式 */
+        
+        .toggle-right-list-btn {
+            position: fixed;
+            /* 设置元素为固定定位 */
+            bottom: 210px !important;
+            /* 距离视口底部 20 像素 */
+            left: 20px;
+            /* 距离视口左侧 20 像素 */
+            line-height: 120px;
+            /* 设置为元素高度 */
+            border-radius: 50%;
+            /* 设置边框半径为元素宽度的一半，即创建一个圆形 */
+            background-image: linear-gradient(to bottom, #eeeeee, #e4e4e4);
+            /* 从亮绿色到深绿 */
+            width: 120px;
+            /* 设置宽度为50px */
+            height: 120px;
+            /* 设置高度为50px */
+            font-size: 45px;
+            color: rgb(26, 26, 26);
+            text-align: center;
+            border: 2px solid rgb(196, 196, 196);
+            box-shadow: 0 2px 4px rgba(0, 0.5, 0, 0.5);
+            display: none
+            /* 投影 */
+            /* 投影 */
+        }
+        
+        @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        /* 小于max----如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {
+            #right-list {
+                margin-right: 1%;
+            }
+        }
+        /* 放大手机右边侧边栏的字体 */
+        
+        @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        /* 小于max----如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {
+            #right-list li a {
+                font-size: 32px;
+            }
+        }
+        /* 放大手机导航上面的 */
+        
+        @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        /* 小于max----如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {
+            #header {
+                font-size: 1.9em;
+                width: 100%;
+            }
+        }
+        /* 手机放大字列表左侧 */
+        
+        @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        /* 小于max----如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {
+            #left-column a {
+                font-size: 36px;
+            }
+        }
+        /* 手机放大字 */
+        
+        @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        /*小于max---- 如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {
+            [id^="content-"] {
+                font-size: calc(20px + 20px * 1.2);
+                /* 20px + 6px = 26px */
+            }
+        }
+        /* 大屏右边去一点 这个可以 */
+        
+        @media only screen and (min-width: 1500px)
+        {
+            #right-column {
+            
+                        flex-basis: calc(100% - 1000px);
+            }
+        }
+        
+        @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        /*小于max---- 如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {
+            /* 在小于 1200 像素的屏幕中隐藏左侧列表 */
+            #left-column {
+                display: none;
+            }
+        }
+        
+        @media only screen and (min-width: 1500px) {
+            /* 在大于等于 1200 像素的屏幕中隐藏导航按钮 */
+            #zoom-button {
+                display: none;
+            }
+        }
+        /* 隐藏右边的列表小于max---- 如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        */ @media only screen and (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1500px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1500px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1500px) and (min-resolution: 2dppx) {
+            /* #right-column {
+                padding-left: 110;
+            }*/
+            /*  #right-column>div {
+                padding-left: 0;
+            } */
+            /* 隐藏右边的列表 */
+            #right-list {
+                display: none;
+            }
+        }
+        /* 手机导航按钮的样式 */
+        
+        #zoom-button {
+            position: fixed;
+            /* 设置元素为固定定位 */
+            bottom: 50px !important;
+            /* 距离视口底部 20 像素 */
+            left: 20px;
+            /* 距离视口左侧 20 像素 */
+            border-radius: 50%;
+            /* 设置边框半径为元素宽度的一半，即创建一个圆形 */
+            background-image: linear-gradient(to bottom, #29ca29, #008000);
+            /* 从亮绿色到深绿 */
+            width: 120px;
+            /* 设置宽度为50px */
+            height: 120px;
+            /* 设置高度为50px */
+            font-size: 45px;
+            color: rgb(247, 245, 245);
+            border: 2px solid rgb(1, 126, 63);
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0.5, 0, 0.5);
+            /* 投影 */
+        }
+        /* 导航字体手机上*/
+        
+        @media (max-width: 1500px) {
+            .right a {
+                writing-mode: vertical-lr;
+                font-family: "楷体", KaiTi, serif;
+            }
+        }
+        /* 导航宽度手机*/
+        /* @media (max-width: 15000px) {
+            #header {
+                width: 1399px;
+            }
+        } */
+        /* 上导航左侧网站名称宽度电脑*/
+        
+        .left h1 {
+            display: inline-block;
+            width: 300px;
+            /* 控制宽度 */
+            margin-left: 10px;
+        }
+        /* 上导航左侧网站名称往右边去一点*/
+        
+        @media (max-width: 1480px) {
+            .left h1 {
+                margin-left: 30px;
+            }
+        }
+        /* 上导航左侧网站名称宽度手机*/
+        /* @media (max-width: 1480px) {
+        .left h1 {
+
+        width: 270px; /* 控制宽度 */
+        /* -----------------------手机样式----------------------------- */
+        /* 当屏幕宽度小于等于 480px 时，将 .left 的样式设置为强制换行 */
+        
+        @media (max-width: 1480px) {
+            .left {
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="header">
+        <div class="left">
+            <h1>易学码官网</h1>
+        </div>
+        <!-- <div class="right">官方网站</div> -->
+
+        <div class="right"><a href="https://hanxinma.gitee.io/hanxin/" target="_blank" style="text-decoration: none; color: white;">官方主站</a> </div>
+     
+        <!-- <div class="right"><a href="#" target="_blank" style="text-decoration: none; color: white;">汉心拼音</a> </div> -->
+        <div class="right"><a href="https://hanxinma.gitee.io/hanxin/" target="_blank" style="text-decoration: none; color: white;">汉心快打</a> </div>
+        <div class="right"><a href="https://hanxinma.gitee.io/hanxin/js/yixue " target="_blank" style="text-decoration: none; color: white;">自然易学版</a> </div>
+
+        <div class="right"><a href="http://yaoxiazai.ysepan.com/" target="_blank" style="text-decoration: none; color: white;">下载站</a> </div>
+
+
+
+    </div>
+
+
+    <div id="container">
+        <!-- 左边栏，包含一个无序列表 -->
+        <div id="left-column">
+            <!-- 左边栏 大区域 -->
+            <ul>
+                <li>
+                    <!-- 超链接，属性值为要显示的目标内容的 ID -->
+                    <a href="#" data-target="content-1">1</a>
+                </li>
+                <li>
+                    <a href="#" data-target="content-2">2</a>
+                </li>
+                <li>
+                    <a href="#" data-target="content-3">3</a>
+                </li>
+                <li>
+                    <a href="#" data-target="content-4">4</a>
+                </li>
+               
+
+
+
+
+            </ul>
+        </div>
+
+        <!-- 右边栏，包含个 div，每个 div 中是要显示的内容 -->
+
+        <div id="right-column">
+            <!-- 右边栏 大区域 -->
+         <!-- <iframe src="2.html" id="my-iframe" width="100%" height="800" scrolling="no"></iframe> -->
+            <div id="content-1" class="active"> 
+     <h1>易学码介绍</h1>
+易学码，提供拼音和双拼的辅助码
+辅助码，就是打字不用选字的东西，可以用在搜狗输入法上。
+比如打，皓，打haob就可以出皓，b就是辅助码白的音b
+易学码，设计思路是，用最大的可能，不要学习
+所以易学，人如其名。就是不用学直接可以用。
+不会的字，直接拼音+oopp查编码。
+
+
+            </div>
+
+
+            <div id="content-2">
+
+<h1>易学码码表</h1>
+
+<img src="tupian/202302261677401247357911.jpg" alt="图片描述">
+
+               
+            </div>
+
+            <div id="content-3">
+                <h1>易学码规则</h1>
+
+1.尽量取首,免得搞不清什么时候取尾.能取首码就绝不先取尾码
+2.因为尽量不取笔画,和首码取不了就先取尾码.所以易学码取单码更直观更容易,离散更好
+3.整体取大字优先,字根就少,不易认的字根都不用,字根更少.所以上手难度更低也更快
+4.遇到不会的字挂码方案中,直接打拼音后接oopp就可以查编码,更好用
+5.辅助码的第二个码必须打两次,这样直接避免和词语重码前期你不想学,可以直接用易学码,
+后期,轻松升级成汉心码,因为汉心就是易学的升级版,汉心取小字的规则多,重码低
+
+常用的部首对应的位置解说
+通人通犬i通言佳通足
+只要易认的常用部首都是这样取
+含戈的半包围和包围字先取内部民部类戈字都算戈(钱尾是戈,咸首码是口)
+边类型字先左后右(过先取之)叫不出名的字根不取，非常冷的字不取，被穿插的字不取，不是那个字，不取。
+例如 言对应就是y键
+日对应就是r
+            </div>
+
+
+            <div id="content-4">
+<h1>易学辅助码下载</h1>
+
+http://yaoxiazai.ysepan.com/
+
+复制到浏览器打开，然后找里面的易学码下载文件夹
+
+<h2>辅助码怎么使用和安装</h2>
+一般都是打开输入法设置里的自定义短语
+
+然后把你下载到的码复制到短语里即可。
+
+<img src="tupian/微信截图_20230530205144.png" alt="图片描述">
+
+这个是手心输入法安装自然码辅助码的方法
+
+<img src="tupian/微信截图_20230530205154.png" alt="图片描述">
+
+<h2>手机辅助码安装看这里</h2> 复制到浏览器打开
+https://www.ixigua.com/7231103593359605812
+
+            </div>
+
+
+
+
+
+            <!-- 上一下一 -->
+
+
+            <p style="text-align: center;  width: 100%; left: 0; bottom: 30px;">
+                <a href="#" id="previous-page">上一篇</a>
+                <a href="#" id="back-to-top">回到顶部</a>
+
+                <a href="#" id="next-page">下一篇</a>
+                <br>
+
+            </p>
+            <p style="text-align: center; color:  width: 100%; left: 0; bottom: 20px;">
+                <a href="#" id="back-to-top" style="color: rgb(199, 199, 199); font-size: 12px;">汉心码出品@2023</a>
+            </p>
+
+
+
+
+        </div>
+
+
+
+
+        <!-- 添加用于显示/隐藏列表的按钮 -->
+
+
+
+        <!-- 这里是右边的列表 -->
+
+
+        <div id="right-list">
+
+            <ul>
+                <il class="content-1">
+                    </li>
+
+
+            </ul>
+            <div id="right-content"></div>
+
+        </div>
+
+
+        <script>
+        $(document).ready(function(){
+            var li=$('#left-column ul li a');
+            var title_list=$('#right-column div');
+            for(var i=0;i<li.length;i++){
+                var title=title_list.eq(i).find(':first-child').html();
+                li.eq(i).html(title);
+            }
+
+            var scr_height=window.screen.height;
+            if(x==scr_height/2){
+                alert('ww');
+            }
+
+        });
+
+            const HEADER_SELECTOR = "hhh,h1,h2,h3,ddd"; // 标题元素的选择器
+
+            function getHeaderElements() {
+    // 获取当前活动 div 中所有标题元素
+    const activeDiv = document.querySelector("#right-column div.active");
+    const currentDivElements = activeDiv.querySelectorAll(HEADER_SELECTOR);
+
+    return Array.from(currentDivElements).map(function(element) {
+        const bounding = element.getBoundingClientRect();
+        return {
+            text: element.textContent,
+            anchor: element.id,
+            offsetTop: bounding.top + window.pageYOffset,
+        };
+    });
+}
+
+
+            function renderRightList() {
+                const rightList = document.querySelector("#right-list ul");
+
+                // 清空右侧列表中的所有内容
+                rightList.innerHTML = "";
+
+                // 获取当前活动 div 中的所有标题元素，并将它们添加到右侧列表中
+                getHeaderElements().forEach(function(headerItem) {
+                    const targetLi = document.createElement("li");
+                    targetLi.dataset.offsetTop = headerItem.offsetTop;
+                    targetLi.innerHTML = `<a href="#${headerItem.anchor}">${headerItem.text}</a>`;
+                    rightList.appendChild(targetLi);
+
+                    // 点击右侧列表项时，滑动到对应的位置
+                    targetLi.addEventListener("click", function(event) {
+                        event.preventDefault(); // 阻止默认的锚点跳转行为
+
+                        const targetOffsetTop = parseInt(this.dataset.offsetTop);
+                        window.scrollTo({
+                            top: targetOffsetTop,
+                            behavior: "smooth"
+                        });
+                    });
+                });
+            }
+
+            // 初始页面加载时渲染右侧列表
+            renderRightList();
+
+            // 监听整个页面的点击事件，当用户点击页面上的任何元素时重新渲染右侧列表
+            document.addEventListener("click", function() {
+                renderRightList();
+            });
+
+            //监听整个页面的滚动事件，当用户滚动页面时重新渲染右侧列表//监听窗口大小的变化事件，当用户调整窗口大小时重新渲染右侧列表
+            document.addEventListener("scroll", function() {
+                renderRightList();
+            });
+
+
+            window.addEventListener("resize", function() {
+                renderRightList();
+            });
+
+            // 监听当前页面的滚动事件，当发现页面滚动到锚点位置时标记相应的标题为红色
+
+
+            // 点击右侧列表项时，滑动到对应的位置，并标记相应的标题为红色
+            targetLi.addEventListener("click", function(event) {
+                event.preventDefault(); // 阻止默认的锚点跳转行为
+
+                const targetOffsetTop = parseInt(this.dataset.offsetTop);
+                window.scrollTo({
+                    top: targetOffsetTop,
+                    behavior: "smooth"
+                });
+
+                // 标记相应标题为红色
+                const targetHeaderElement = document.getElementById(headerItem.anchor);
+                if (targetHeaderElement) {
+                    const activeClass = "active";
+                    const prevActiveHeaderElement = document.querySelector(`.${activeClass}`);
+                    if (prevActiveHeaderElement) {
+                        prevActiveHeaderElement.classList.remove(activeClass);
+                    }
+                    targetHeaderElement.classList.add(activeClass);
+                }
+            });
+            // 监听当前页面的滚动事件，当发现页面滚动到锚点位置时标记相应的标题为红色
+            window.addEventListener("scroll", function() {
+                const headerElements = getHeaderElements();
+                headerElements.forEach(function(headerItem) {
+                    const targetHeaderElement = document.getElementById(headerItem.anchor);
+                    if (targetHeaderElement) {
+                        const bounding = targetHeaderElement.getBoundingClientRect();
+                        const threshold = 0.5; // 当视口包含标题元素一半及以上时标记为红色
+                        if (
+                            bounding.top >= 0 &&
+                            bounding.top <= window.innerHeight * threshold &&
+                            bounding.bottom >= 0 &&
+                            bounding.bottom <= window.innerHeight * threshold
+                        ) {
+                            const activeClass = "active";
+                            const prevActiveHeaderElement = document.querySelector(`.${activeClass}`);
+                            if (prevActiveHeaderElement) {
+                                prevActiveHeaderElement.classList.remove(activeClass);
+                            }
+                            targetHeaderElement.classList.add(activeClass);
+                        }
+                    }
+                });
+            });
+        </script>
+
+        <!-- 左侧的js... -->
+        <script>
+            // 左侧的js..............获取所有超链接元素
+            var links = document.querySelectorAll('#left-column a');
+
+            // 遍历每个超链接元素，并为其添加点击事件处理程序
+            links.forEach(function(link, index) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // 阻止默认的超链接行为
+
+                    // 获取该超链接要显示的目标内容的 ID
+                    var targetId = this.getAttribute('data-target');
+
+                    // 隐藏所有内容
+                    var contents = document.querySelectorAll('#right-column > div');
+                    contents.forEach(function(content) {
+                        content.classList.remove('active'); // 移除 active 类名
+                    });
+
+                    // 显示目标内容
+                    var targetContent = document.getElementById(targetId);
+                    targetContent.classList.add('active'); // 添加 active 类名
+
+                    // 更新选中状态的样式
+                    links.forEach(function(link) {
+                        link.classList.remove('active'); // 移除 active 类名
+                    });
+                    this.classList.add('active'); // 添加 active 类名
+
+                    // 隐藏其他的“上一”和“下一”链接
+                    var previousIndex = index - 1;
+                    var nextIndex = index + 1;
+                    if (previousIndex >= 0) {
+                        var previousLink = links[previousIndex];
+                        previousLink.style.display = 'block';
+                    }
+                    if (nextIndex < links.length) {
+                        var nextLink = links[nextIndex];
+                        nextLink.style.display = 'block';
+                    }
+
+                    // 页面滚动到顶部
+                    window.scrollTo(0, 0);
+                });
+            });
+
+            // 默认选中第一个列表项
+            links[0].click();
+        </script>
+
+
+
+
+
+
+
+
+
+        <script>
+            // 获取左侧列表中的所有链接元素-----------------上一篇下一篇js
+            var links = document.querySelectorAll('#left-column a');
+
+            // 处理链接元素的点击事件
+            links.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    // 切换内容
+                    var targetId = this.getAttribute('data-target');
+                    var targetContent = document.getElementById(targetId);
+                    switchContent(targetContent);
+                    // 更新选中状态
+                    setLinkActive(this);
+                    // 显示前一个和后一个链接
+                    var activeIndex = Array.from(links).findIndex(function(link) {
+                        return link.classList.contains('active');
+                    });
+                    var previousIndex = activeIndex - 1;
+                    var nextIndex = activeIndex + 1;
+                    if (previousIndex >= 0) {
+                        var previousLink = links[previousIndex];
+                        previousLink.style.display = 'block';
+                    }
+                    if (nextIndex < links.length) {
+                        var nextLink = links[nextIndex];
+                        nextLink.style.display = 'block';
+                    }
+
+                    // 滚到页面顶部
+                    scrollToTop();
+                });
+            });
+
+            // 回到顶部,上一片下一片
+            var previousPage = document.getElementById('previous-page');
+            var nextPage = document.getElementById('next-page');
+
+            previousPage.addEventListener('click', function(event) {
+                event.preventDefault();
+                // 获取当前选中列表项的索引
+                var activeIndex = Array.from(links).findIndex(function(link) {
+                    return link.classList.contains('active');
+                });
+
+                if (activeIndex > 0) {
+                    // 切换到前一个内容
+                    var previousLink = links[activeIndex - 1];
+                    var previousContent = document.getElementById(previousLink.getAttribute('data-target'));
+                    switchContent(previousContent);
+                    // 更新左侧列表的选中状态
+                    setLinkActive(previousLink);
+
+                    // 显示前一个和后一个链接
+                    var previousPreviousIndex = activeIndex - 2;
+                    var previousNextIndex = activeIndex;
+                    if (previousPreviousIndex >= 0) {
+                        var previousPreviousLink = links[previousPreviousIndex];
+                        previousPreviousLink.style.display = 'block';
+                    }
+                    if (previousNextIndex < links.length) {
+                        var previousNextLink = links[previousNextIndex];
+                        previousNextLink.style.display = 'block';
+                    }
+                }
+
+                // 滚到页面顶部
+                scrollToTop();
+            });
+
+            nextPage.addEventListener('click', function(event) {
+                event.preventDefault();
+                // 获取当前选中列表项的索引
+                var activeIndex = Array.from(links).findIndex(function(link) {
+                    return link.classList.contains('active');
+                });
+
+                if (activeIndex < links.length - 1) {
+                    // 切换到后一个内容
+                    var nextLink = links[activeIndex + 1];
+                    var nextContent = document.getElementById(nextLink.getAttribute('data-target'));
+                    switchContent(nextContent);
+                    // 更新左侧列表的选中状态
+                    setLinkActive(nextLink);
+
+                    // 显示前一个和后一个链接
+                    var nextPreviousIndex = activeIndex;
+                    var nextNextIndex = activeIndex + 2;
+                    if (nextPreviousIndex >= 0) {
+                        var nextPreviousLink = links[nextPreviousIndex];
+                        nextPreviousLink.style.display = 'block';
+                    }
+                    if (nextNextIndex < links.length) {
+                        var nextNextLink = links[nextNextIndex];
+                        nextNextLink.style.display = 'block';
+                    }
+                }
+
+                // 滚到页面顶部
+                scrollToTop();
+            });
+
+            // 切换内容的函数
+            function switchContent(newContent) {
+                // 隐藏所有内容
+                var contents = document.querySelectorAll('#right-column > div');
+                contents.forEach(function(content) {
+                    content.classList.remove('active'); // 移除 active 类名
+                });
+
+                // 显示新内容
+                newContent.classList.add('active'); // 添加 active 类名
+            }
+
+            // 更新选中状态的函数
+            function setLinkActive(linkElement) {
+                // 清除所有链接的选中状态
+                links.forEach(function(link) {
+                    link.classList.remove('active'); // 移除 active 类名
+                });
+
+                // 将传入的链接元素的选中状态设为 active
+                linkElement.classList.add('active'); // 添加 active 类名
+            }
+
+            // 滚到页面顶部的函数
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // 处理回到顶部按钮的点击事件
+            var backToTop = document.getElementById('back-to-top');
+            backToTop.addEventListener('click', function(event) {
+                event.preventDefault();
+                scrollToTop();
+            });
+        </script>
+
+
+
+
+        <!-- 导航按钮 -->
+
+
+        <button id="zoom-button">导航</button>
+
+        <!-- 按钮显示导航js -->
+
+        <script>
+            // 检测是否为手机设备
+            function isMobileDevice() {
+                return (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent));
+            }
+
+            var isLeftColumnVisible = false;
+            var zoomButton = document.getElementById('zoom-button');
+            var leftColumn = document.getElementById('left-column');
+
+            if (isMobileDevice()) {
+                // 获取所有列表项元素
+                var items = document.querySelectorAll('#left-column li');
+
+                // 为每个列表项元素添加点击事件监听器
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    item.addEventListener('click', function() {
+                        leftColumn.style.display = 'none';
+                        isLeftColumnVisible = false;
+                    });
+                }
+            }
+
+            zoomButton.addEventListener('click', function() {
+                // 切换左边栏的显示状态
+                if (isLeftColumnVisible) {
+                    leftColumn.style.display = 'none';
+                    isLeftColumnVisible = false;
+                } else {
+                    leftColumn.style.display = 'block';
+                    isLeftColumnVisible = true;
+                }
+            });
+
+            // 监听窗口大小变化事件
+            window.addEventListener('resize', function() {
+                if (isMobileDevice()) {
+                    // 如果是手机设备，则添加点击事件监听器
+                    var items = document.querySelectorAll('#left-column li');
+                    for (var i = 0; i < items.length; i++) {
+                        var item = items[i];
+                        item.addEventListener('click', function() {
+                            leftColumn.style.display = 'none';
+                            isLeftColumnVisible = false;
+                        });
+                    }
+                } else {
+                    // 如果不是手机设备，则移除所有点击事件监听器
+                    var items = document.querySelectorAll('#left-column li');
+                    for (var i = 0; i < items.length; i++) {
+                        var item = items[i];
+                        item.removeEventListener('click');
+                    }
+                }
+            });
+        </script>
+
+        <!-- 导航按钮 -->
+        <div class="toggle-right-list-btn">右列</div>
+
+
+
+        <script>
+            function isMobileDevice() {
+                var rightList = document.getElementById('right-list');
+                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && rightList && rightList.children && rightList.children.length > 0;
+            }
+
+            // 获取右侧列表元素和显示/隐藏按钮元素
+            // 获取右侧列表元素和显示/隐藏按钮元素
+            // 获取右侧列表元素和显示/隐藏按钮元素
+            var rightList = document.getElementById('right-list');
+            var toggleRightListBtn = document.querySelector('.toggle-right-list-btn');
+
+            // 判断当前用户是否为移动设备
+            if (isMobileDevice()) {
+                toggleRightListBtn.style.display = 'block';
+                rightList.style.display = 'none'; // 默认不显示右侧列表
+
+                // 添加点击事件监听器
+                toggleRightListBtn.addEventListener('click', function() {
+                    // 切换右侧列表的显示状态
+                    if (rightList.style.display === 'none') {
+                        rightList.style.display = 'block';
+                        toggleRightListBtn.textContent = '隐藏';
+                    } else {
+                        rightList.style.display = 'none';
+                        toggleRightListBtn.textContent = '右列';
+                    }
+                });
+
+                // 添加点击右侧列表项的事件监听器
+                rightList.addEventListener('click', function() {
+                    rightList.style.display = 'none';
+                    toggleRightListBtn.textContent = '右列';
+                });
+            }
+        </script>
+        <script>
+            // function updateRightList() {
+            //     const rightList = document.querySelector('#right-list ');
+            //     const h1Elements = getH1Elements();
+            //     const scrollTop = window.pageYOffset;
+
+            //     h1Elements.forEach(function(h1Item, index) {
+            //       const targetLi = rightList.children[index];
+            //       if (scrollTop >= h1Item.offsetTop - 50 && scrollTop < h1Item.offsetTop + 1100) {
+            //         targetLi.classList.add('active');
+            //       } else {
+            //         targetLi.classList.remove('active');
+            //       }
+            //     });
+            //   }
+
+            //   window.addEventListener('scroll', function() {
+            //     updateRightList();
+            //   });
+
+            // 获取被点击的列表项的锚点值
+            // const clickedAnchor = event.target.getAttribute("href");
+
+            // 获取当前活动 div 中的所有标题元素，并遍历其中的每一个元素
+            // getHeaderElements().forEach(headerItem => {
+
+            // 如果该元素的锚点值和被点击的列表项相同，则为标题文本添加下划线和加粗样式，否则重置标题样式
+            //   if ("#" + headerItem.anchor === clickedAnchor) {
+            //     headerItem.element.style.textDecoration = "underline";
+            //     headerItem.element.style.fontWeight = "bold";
+            //   } else {
+            //     headerItem.element.style.textDecoration = "";
+            //     headerItem.element.style.fontWeight = "";
+            //   }
+            // });
+        </script>
+
+</body>
