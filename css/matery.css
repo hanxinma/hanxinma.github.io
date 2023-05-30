@@ -1,3 +1,35 @@
+/全局基础样式/
+/小屏幕下(手机类)的样式/
+@media only screen and (max-width: 601px) {
+.container11 {
+width: 95%;
+}
+.container123 {
+width: 95%;
+}
+}
+
+/中等屏幕下(平板类)的样式/
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+.container11 {
+width: 90%;
+}
+.container123 {
+width: 90%;
+}
+}
+
+/大屏幕下(桌面类)的样式/
+@media only screen and (min-width: 993px) {
+.container11 {
+width: 90%;
+max-width: 1125px;
+}
+.container123 {
+width: 90%;
+max-width: 1125px;
+}
+}
 /*全局基础样式*/
 /*小屏幕下(手机类)的样式*/
 @media only screen and (max-width: 601px) {
