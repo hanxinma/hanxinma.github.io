@@ -56,9 +56,10 @@ h1 {
 <iframe src="daohang.html" frameborder="0" style="width: 100%;"></iframe>
 <!-- <div>请选择上方的,自然或小鹤码表下载</div> -->
 <!-- <p></p> -->
+
   <button id="download-btn">下载此码表</button>
 ↓
- <div id="loading">正在加载中，请稍等...</div> <!-- 新增代码 -->  
+ <div id="loading">正在加载中，请等会才点击下载...</div> <!-- 新增代码 -->  
 <div id="input-div" style="display: none;">
 ;这个是小鹤汉心的码表
 de,1=的
@@ -44721,7 +44722,11 @@ setTimeout(() => {
   // 隐藏加载提示，显示输入框内容
   loading.style.display = 'none';
   inputDiv.style.display = 'block';
-}, 3000);
+}, 500);
+
+
+
+
   </script>
 </body>
 </html>
