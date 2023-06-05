@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="双拼，拼音,辅助码,打字码,不选字码,易学码,汉心码,拼音快打,拼音怎么快速打字">
+  <meta name="description" content="普通拼音也能实现快速盲打,打字如何能变快,就用汉心快打">
+      <title>汉心码下载</title>
+</head>
+
+  <style>
+  
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  color: green;
+}
+#download-btn {
+  font-size: 20px;
+  padding: 10px;
+}
+
+#input-div {
+  white-space: pre-line;
+  text-align: center;
+}
+
+#input-div {
+  height: 500px;
+  text-align: left;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+
+  </style>
+<body>
+  <h1>汉心码下载</h1>
+<iframe src="daohang.html" frameborder="0" style="width: 100%;"></iframe>
+<div>请选择上方的,自然或小鹤码表下载</div>
+<p></p>
+  <button id="download-btn">提醒</button>
+  <p></p>
+
+  <div id="input-div">  
+点导航里的,你看要下载哪个
+
+下载好了,导入或粘贴入
+输入法设置里
+自定义短语里就可以用了
+
+如果不会,首页里
+找相关教程学习
+
+汉心码是什么?
+它是一种拼音打字不用选字的方案
+只需要普通拼音挂上码表
+就可以打拼音不选字
+普通拼音和双拼都可以
+
+它的优点
+字根很少,不用背
+普通输入法可直接查编码
+易学,好用
+
+
+  </div>
+
+
+  <script>
+function downloadTxtFile() {
+  // 获取 div 中的内容
+  var html = document.getElementById("input-div").innerHTML;
+
+  // 将 HTML 内容保存到本地存储中
+  localStorage.setItem("savedHtmlContent", html);
+
+  // 将 HTML 转换为纯文本
+  var text = html.replace(/<br>/g, "\r\n")
+    .replace(/<\/?[^>]+(>|$)/g, "")
+    .trim();
+
+  // 去掉 BOM 头
+  if (text.charCodeAt(0) === 0xFEFF) {
+    text = text.slice(1);
+  }
+
+  // 创建一个 Blob 对象
+  var data = new Blob([new TextEncoder().encode(text)], { type: "text/plain" });
+
+  // 创建一个链接用于下载
+  var url = window.URL.createObjectURL(data);
+
+  // 创建一个隐藏的链接并单击它以触发下载
+  var link = document.createElement("a");
+  link.setAttribute("href", url);
+  link.setAttribute("download", "易学码9.txt");
+  document.body.appendChild(link);
+  link.click();
+}
+
+var downloadBtn = document.getElementById("download-btn");
+downloadBtn.addEventListener("click", downloadTxtFile);
+
+// 当页面关闭时，将保存的 HTML 内容从本地存储中删除
+window.onbeforeunload = function () {
+  localStorage.removeItem("savedHtmlContent");
+  return "您正在离开此页面，是否确认？";
+};
+
+// 防止用户多次点击
+
+
+  </script>
+</body>
+</html>
