@@ -8,7 +8,9 @@
 </head>
 
   <style>
-  
+  #loading {
+  display: none;
+}
 body {
   display: flex;
   flex-direction: column;
@@ -26,6 +28,8 @@ h1 {
 #download-btn {
   font-size: 20px;
   padding: 10px;
+  margin: 0 auto;
+  display: block;
 }
 
 #input-div {
@@ -44,15 +48,18 @@ h1 {
 
   </style>
 <body>
+
+
   <h1>小鹤双拼汉心码下载</h1>
- <div id="loading">正在加载中，请稍等...</div> <!-- 新增代码 -->  
+
+
 <iframe src="daohang.html" frameborder="0" style="width: 100%;"></iframe>
 <!-- <div>请选择上方的,自然或小鹤码表下载</div> -->
 <!-- <p></p> -->
   <button id="download-btn">下载此码表</button>
 ↓
-
-  <div id="input-div">  
+ <div id="loading">正在加载中，请稍等...</div> <!-- 新增代码 -->  
+<div id="input-div" style="display: none;">
 ;这个是小鹤汉心的码表
 de,1=的
 yi,1=一
@@ -44701,11 +44708,20 @@ window.onbeforeunload = function () {
 
 // 加载中
 
-var loading = document.getElementById("loading");
+// 首先隐藏内容部分
+// 获取元素
+const inputDiv = document.getElementById('input-div');
+const loading = document.getElementById('loading');
 
-window.addEventListener("load", function() {
-  loading.style.display = "none";
-});
+// 显示加载提示
+loading.style.display = 'block';
+
+// 模拟加载时间
+setTimeout(() => {
+  // 隐藏加载提示，显示输入框内容
+  loading.style.display = 'none';
+  inputDiv.style.display = 'block';
+}, 3000);
   </script>
 </body>
 </html>
