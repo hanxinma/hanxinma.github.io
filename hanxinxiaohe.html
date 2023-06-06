@@ -8,6 +8,7 @@
 </head>
 
   <style>
+
   #loading {
   display: none;
 }
@@ -25,11 +26,20 @@ h1 {
   font-size: 60px;
   color: green;
 }
-#download-btn {
+  #download-btn1 {
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+  }
+#download-btn2 {
   font-size: 20px;
   padding: 10px;
   margin: 0 auto;
   display: block;
+  color: gray ;
+  cursor: pointer;
 }
 
 #input-div {
@@ -57,8 +67,11 @@ h1 {
 <!-- <div>请选择上方的,自然或小鹤码表下载</div> -->
 <!-- <p></p> -->
 
-  <button id="download-btn">下载此码表</button>
-↓
+<div>
+  <button id="download-btn1" style="display: inline-block;">下载此码表</button>
+  <button id="download-btn2" style="display: inline-block;">下载软件(可选)</button>
+</div>
+ <p></p>
  <div id="loading">正在加载中，请等会才点击下载...</div> <!-- 新增代码 -->  
 <div id="input-div" style="display: none;">
 ;这个是小鹤汉心的码表
@@ -44698,7 +44711,7 @@ function downloadTxtFile() {
   link.click();
 }
 
-var downloadBtn = document.getElementById("download-btn");
+var downloadBtn = document.getElementById("download-btn1");
 downloadBtn.addEventListener("click", downloadTxtFile);
 
 // 当页面关闭时，将保存的 HTML 内容从本地存储中删除
@@ -44725,6 +44738,74 @@ setTimeout(() => {
 }, 500);
 
 
+
+
+
+
+// 下载软件按钮
+var btn = document.getElementById('download-btn2');
+
+// 添加点击事件处理程序
+btn.addEventListener('click', function() {
+  // 创建一个新窗口
+// 获取屏幕宽度和高度
+var screenWidth = window.screen.width;
+var screenHeight = window.screen.height;
+
+// 计算窗口左上角的坐标
+var windowLeft = (screenWidth - 400) / 2;
+var windowTop = (screenHeight - 400) / 2;
+
+// 创建一个新窗口
+var newWindow = window.open('', 'newWindow', 'width=400,height=400,top=' + windowTop + ',left=' + windowLeft);
+// 设置新窗口的编码方式为UTF-8
+newWindow.document.charset = "UTF-8";
+  // 创建一个img元素
+  var img = document.createElement('img');
+  img.src = 'http://ys-d.ysepan.com/622839543/119651360/kVbqVnk581I6L4G5HP2I31/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-06%20141414.jpg'; // 相对路径
+
+  // 将img元素添加到新窗口中
+  newWindow.document.body.appendChild(img);
+
+// 创建一个p元素
+var p = newWindow.document.createElement('p');
+p.innerHTML = '<strong>图示里的-目录-下载</strong><br><br>双拼栏目下的，输入法软件里下载。<br><br>软件是集合了码表的输入法软件，一般是四键强出字。而且是小词库，一般人用可能不惯。';
+
+// 将p元素添加到新窗口中
+newWindow.document.body.appendChild(p);
+  
+  
+  
+  
+// 创建一个新的超链接元素
+var a = newWindow.document.createElement('a');
+a.href = 'http://yaoxiazai.ysepan.com/';
+a.textContent = '点我去下载';
+
+// 设置超链接的target属性为"_blank"
+a.target = "_blank";
+// 去掉超链接的下划线
+a.style.textDecoration = 'none';
+// 将超链接元素添加到新窗口中
+newWindow.document.body.appendChild(a);
+
+
+});
+
+
+var downloadBtn = document.getElementById("download-btn1");
+downloadBtn.addEventListener("click", function() {
+  var r = confirm("如果你不会安装码表,请点[上方首页].去查看安装方法,===如果浏览器阻止弹出,请点允许===.一般就是挂到输入法自定义短语即可.如果会安装,就点[取消].");
+  
+  if (r == true) {
+    window.open("https://www.baidu.com");
+  }
+});
+
+// 添加用于修改样式的 CSS 代码
+var confirmStyle = document.createElement("style");
+confirmStyle.innerHTML = ".confirm-popup { font-size: 30px !important; }";
+document.head.appendChild(confirmStyle);
 
 
   </script>
