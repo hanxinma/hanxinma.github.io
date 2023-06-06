@@ -10,7 +10,7 @@
     <script>
       $(document).ready(function() {
         $.ajax({
-          url: "https://api.github.com/repos/你的用户名/file-listing/contents/",
+          url: "https://api.github.com/repos/hanxinma/file-listing/contents/",
           success: function(data) {
             for (var i = 0; i < data.length; i++) {
               if (data[i].type === "file") {
