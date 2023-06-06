@@ -9,21 +9,23 @@
     <ul id="file-list"></ul>
     <script>
       var fileList = $("#file-list");
-      $.ajax({
-        url: ".",
-        success: function (data) {
-          $(data)
-            .find("a")
-            .attr("href", function (i, val) {
-              if (val.match(/\.(txt|md|html|css|js|json|xml|csv|log|rtf|tex|odt|jpg|jpeg|png|gif|bmp|svg|ico|mp3|wav|ogg|aac|flac|mp4|avi|mov|wmv|flv|mkv|zip|rar|tar|gz|7z|doc|docx|xls|xlsx|ppt|pptx|pdf|sql|db|mdb|accdb|exe|dll|bat|sh|jar)$/)) {
-                var li = $("<li></li>");
+      var owner = "hanxinma";
+      var repo = "hanxinma/hanxinma.github.io";
+      var path = "";
 
-                var link = $("<a></a>").attr("href", val).text(val);
-                li.append(link);
-                fileList.append(li);
-              }
-            });
-        },
+      $.ajax({
+        url: "https://api.github.com/repos/" + owner + "/" + repo + "/contents/" + path,
+        success: function(data) {
+          data.forEach(function(file) {
+            if (file.type === "file") {
+              var link = $("<a>")
+                .attr("href", file.html_url)
+                .text(file.name);
+              var item = $("<li>").append(link);
+              fileList.append(item);
+            }
+          });
+        }
       });
     </script>
   </body>
