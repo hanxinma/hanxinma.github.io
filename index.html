@@ -2,23 +2,28 @@
 <html>
   <head>
     <title>文件列表</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <h1>当前目录下的文件列表：</h1>
     <ul id="file-list"></ul>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-      $(document).ready(function() {
-        $.ajax({
-          url: "https://api.github.com/repos/hanxinma/file-listing/contents/",
-          success: function(data) {
-            for (var i = 0; i < data.length; i++) {
-              if (data[i].type === "file") {
-                $("#file-list").append("<li>" + data[i].name + "</li>");
+      var fileList = $("#file-list");
+      $.ajax({
+        url: ".",
+        success: function (data) {
+          $(data)
+            .find("a")
+            .attr("href", function (i, val) {
+              if (val.match(/\.(txt|md|html|css|js|json|xml|csv|log|rtf|tex|odt|jpg|jpeg|png|gif|bmp|svg|ico|mp3|wav|ogg|aac|flac|mp4|avi|mov|wmv|flv|mkv|zip|rar|tar|gz|7z|doc|docx|xls|xlsx|ppt|pptx|pdf|sql|db|mdb|accdb|exe|dll|bat|sh|jar)$/)) {
+                var li = $("<li></li>");
+
+                var link = $("<a></a>").attr("href", val).text(val);
+                li.append(link);
+                fileList.append(li);
               }
-            }
-          }
-        });
+            });
+        },
       });
     </script>
   </body>
