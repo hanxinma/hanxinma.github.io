@@ -12,7 +12,7 @@
 
 
 
-   <style>
+    <style>
         /* 控制右边列表高亮显示的 */
         
         #right-list ul li a {
@@ -177,7 +177,12 @@
         }
         /* 标签 */
         
-        h1,
+        h1 {
+  text-align: center;
+  margin: 0 ;
+  
+}
+
         h2,
         h3,
         h4,
@@ -200,13 +205,24 @@
             align-items: center;
             /* 垂直居中 */
             display: flex;
+           
         }
         
         .left {
             order: 1;
             margin-right: 20px;
+          
             /* 头部样式 添加间距 */
         }
+        #header .left {
+        float: left;
+        }
+        #header h1 {
+        display: inline-block;
+        text-align: left;
+        margin: 20;
+        }
+
         
         .right {
             order: 2;
@@ -877,7 +893,6 @@ eng eg
 一般情况打一个辅助码居多，两个辅助码用的比较少。
 一个辅助码也叫单辅
 
-https://zhuanlan.zhihu.com/p/633964212   更多举例,复制到浏览器打开
 
 <h2>字拆分规则</h2>
 <h2>独体字</h2>
@@ -1036,59 +1051,7 @@ http://yaoxiazai.ysepan.com/
 <h2>手机辅助码安装看这里</h2> 复制到浏览器打开
 https://www.ixigua.com/7231103593359605812
 
-自然码辅助码下载
-这里有很多版本的辅助码，可以下载使用。这个码表很全。基本上市面上有的这里都有了。
 
-有纯净一点的，也有里面有很多兼容码的版本的，辅助码基本都是第三方爱好者在维护。
-
-<h2>电脑版辅助码怎么使用和安装</h2>
-
-
-https://www.ixigua.com/7231104568191353344?logTag=770a29f1485f9699eece
-
-复制浏览器打开 看视频
-
-一般都是打开输入法设置里的自定义短语
-
-然后把你下载到的码复制到短语里即可。
-
-<img src="tupian/微信截图_20230530205144.png" alt="图片描述">
-
-这个是手心输入法安装自然码辅助码的方法
-
-<img src="tupian/微信截图_20230530205154.png" alt="图片描述">
-
-<h2>自然音形输入法的介绍</h2>
-音形和辅助码的区别
-
-音形基本等同辅助码
-
-但音形输入法软件一般指的是，不管在长的字词都只打4个键。有点类似五笔。
-
-比如，你好nihk
-
-记事本jsbf
-
-多于四字的，都是取，前3个字的首字母和最后一个字的首字母。
-
-然后自然音形输入法是小词库。也就是说很多词是没有的，你只能打单字。而且还是4键上屏。也就是说你打4个键，（不过这个也可以不启用）。只要没重码就会自动上屏。有点像五笔。这个就和小鹤音形是一样的。不过一般刚学的人不太用的惯。
-
-自然音形输入法怎么安装
-
-网盘里下载安装后即可使用
-
-自然音形的好处是，你打熟了，会很快，容易形成盲打。
-
-坏处是前期你很不适应。不追求绝对的速度，可以直接挂辅助码用即可。
-
-自然码你的选择余地很大。什么样的辅助码都可以用。也可以不用。但是一般建议还是加一个辅助码。他们都说。双拼不用辅助码是没有灵魂的。你感觉辅助码难学，可以用自然易学码，这个基本不用学，直接用。即可。你如果感觉取大字，会导致有些大字你不认识。你也可以用取小字的自然汉心码。
-
-
-
-看到这了，你还是感觉我不想学双拼，那你也可以用普通拼音加易学码辅助码，来提速。
-
-所以拼音打字，真的可以媲美五笔了。不用选字的。只是以前我们不知道有辅助码这个东西。
-               
             </div>
 
 
@@ -1138,8 +1101,22 @@ https://www.ixigua.com/7231104568191353344?logTag=770a29f1485f9699eece
         </div>
 
 
- <script>
-            
+        <script>
+        $(document).ready(function(){
+            var li=$('#left-column ul li a');
+            var title_list=$('#right-column div');
+            for(var i=0;i<li.length;i++){
+                var title=title_list.eq(i).find(':first-child').html();
+                li.eq(i).html(title);
+            }
+
+            var scr_height=window.screen.height;
+            if(x==scr_height/2){
+                alert('ww');
+            }
+
+        });
+
             const HEADER_SELECTOR = "hhh,h1,h2,h3,ddd"; // 标题元素的选择器
 
             function getHeaderElements() {
@@ -1250,13 +1227,6 @@ https://www.ixigua.com/7231104568191353344?logTag=770a29f1485f9699eece
                     }
                 });
             });
-            
-
-
-
-
-
-         
         </script>
 
         <!-- 左侧的js... -->

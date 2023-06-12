@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
 <head>
     <meta charset="UTF-8">
 
@@ -13,8 +13,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 
-
-    <style>
+ <style>
         /* 控制右边列表高亮显示的 */
         
         #right-list ul li a {
@@ -179,12 +178,7 @@
         }
         /* 标签 */
         
-        h1 {
-  text-align: center;
-  margin: 0 ;
-  
-}
-
+        h1,
         h2,
         h3,
         h4,
@@ -207,24 +201,13 @@
             align-items: center;
             /* 垂直居中 */
             display: flex;
-           
         }
         
         .left {
             order: 1;
             margin-right: 20px;
-          
             /* 头部样式 添加间距 */
         }
-        #header .left {
-        float: left;
-        }
-        #header h1 {
-        display: inline-block;
-        text-align: left;
-        margin: 20;
-        }
-
         
         .right {
             order: 2;
@@ -733,12 +716,17 @@
 后期,轻松升级成汉心码,因为汉心就是易学的升级版,汉心取小字的规则多,重码低
 
 常用的部首对应的位置解说
-通人通犬i通言佳通足
+亻通人
+犭通犬
+讠通言 例如 言对应就是y键 ,日对应就是r
+足字旁,通足
 只要易认的常用部首都是这样取
-含戈的半包围和包围字先取内部民部类戈字都算戈(钱尾是戈,咸首码是口)
-边类型字先左后右(过先取之)叫不出名的字根不取，非常冷的字不取，被穿插的字不取，不是那个字，不取。
-例如 言对应就是y键
-日对应就是r
+含戈的半包围和包围字
+先取内部民部类戈字都算戈(钱尾是戈,咸首码是口)
+边类型字先左后右(过先取之)
+叫不出名的字根不取，非常冷的字不取，被穿插的字不取，不是那个字，不取。
+
+
             </div>
 
 
@@ -813,21 +801,7 @@ https://www.ixigua.com/7231103593359605812
 
 
         <script>
-        $(document).ready(function(){
-            var li=$('#left-column ul li a');
-            var title_list=$('#right-column div');
-            for(var i=0;i<li.length;i++){
-                var title=title_list.eq(i).find(':first-child').html();
-                li.eq(i).html(title);
-            }
-
-            var scr_height=window.screen.height;
-            if(x==scr_height/2){
-                alert('ww');
-            }
-
-        });
-
+            
             const HEADER_SELECTOR = "hhh,h1,h2,h3,ddd"; // 标题元素的选择器
 
             function getHeaderElements() {
@@ -938,6 +912,13 @@ https://www.ixigua.com/7231103593359605812
                     }
                 });
             });
+            
+
+
+
+
+
+         
         </script>
 
         <!-- 左侧的js... -->
@@ -1284,5 +1265,6 @@ https://www.ixigua.com/7231103593359605812
             //   }
             // });
         </script>
+
 
 </body>
