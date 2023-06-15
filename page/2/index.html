@@ -998,6 +998,11 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
 
 let metaViewport = document.querySelector('meta[name="viewport"]');
 metaViewport.remove();
+
+let links = document.querySelectorAll('link[rel="stylesheet"]');
+links.forEach(link => {
+  link.disabled = true;
+});
   
   </script>
   </body>
