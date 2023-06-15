@@ -4,10 +4,12 @@
 
 
 <meta charset="UTF-8">
-<title><%= config.title %></title>
-
+<title>汉心码手机端</title>
+<meta name="viewport" content="width=device-width, initial-scale=0.4">
 <style>
-
+body {
+  font-size: 130%; /* 将页面中所有元素的字体大小放大 20% */
+}
 /全局基础样式/
 /小屏幕下(手机类)的样式/
 @media only screen and (max-width: 601px) {
@@ -51,10 +53,7 @@ max-width: 1125px;
 /* .my-button111 {
   cursor: pointer;
 } */
-</style>
-<!-- 这里是让头部的那个手机端不生效 -->
 
-<style>
 
 @media only screen and (max-width: 1601px) {
 
@@ -254,11 +253,13 @@ max-width: 1125px;
     width: 800px;
     font-size: 16px;
   }
-    #text11 {
+    #text11, text22 {
+    color: white;
       font-size: 55px;
   }
   #text22, #text3, #text4, #text5 {
       font-size: 20px;
+       
   }
   .container123 {
       margin-left: auto;
@@ -590,6 +591,12 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
           }
     
           setInterval(drawBall, 10);
+          
+          
+          
+          
+          
+          
         </script>
       </div>
     </div>
