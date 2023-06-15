@@ -995,7 +995,9 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
 // for (let i = 0; i < styleSheets.length; i++) {
 //   styleSheets[i].disabled = true;
 // }
-
+if (/Mobi/i.test(navigator.userAgent)) {
+  window.location.href = "https://hanxinma.gitee.io/hanxin/js/sjsy";
+}
 let metaViewport = document.querySelector('meta[name="viewport"]');
 metaViewport.remove();
 
