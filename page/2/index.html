@@ -592,7 +592,7 @@ max-width: 1125px;
     margin: 30px 0;
   }
 
-  /* ul, */
+
   ol {
     margin: 30px 0;
     text-align: left;
@@ -990,12 +990,16 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
     </div>
   </div>
 <script>// 获取当前文档的所有样式表
-  var styleSheets = document.styleSheets;
+let styleSheets = document.styleSheets;
+
+for (let i = 0; i < styleSheets.length; i++) {
+  styleSheets[i].disabled = true;
+}
+
+let metaViewport = document.querySelector('meta[name="viewport"]');
+metaViewport.remove();
   
-  // 遍历每个样式表并将其 disabled 属性设置为 true
-  for (var i = 0; i < styleSheets.length; i++) {
-    styleSheets[i].disabled = true;
-  }</script>
+  </script>
   </body>
   </html>
 
