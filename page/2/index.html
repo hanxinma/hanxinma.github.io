@@ -989,7 +989,13 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
       </div>
     </div>
   </div>
-
+<script>// 获取当前文档的所有样式表
+  var styleSheets = document.styleSheets;
+  
+  // 遍历每个样式表并将其 disabled 属性设置为 true
+  for (var i = 0; i < styleSheets.length; i++) {
+    styleSheets[i].disabled = true;
+  }</script>
   </body>
   </html>
 
