@@ -1,0 +1,26 @@
+<h1 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h1><h2 id="Use-Micro-Plum"><a href="#Use-Micro-Plum" class="headerlink" title="Use Micro Plum"></a>Use <a href="https://github.com/LibreService/micro_plum">Micro Plum</a></h2><p>Click <code>Micro Plum</code>.</p>
+<p>Either provide</p>
+<ul>
+<li>a single schema URL<br>(e.g. <a href="https://github.com/rime/rime-luna-pinyin/blob/master/luna_pinyin.schema.yaml">https://github.com/rime/rime-luna-pinyin/blob/master/luna_pinyin.schema.yaml</a>),</li>
+</ul>
+<p>or</p>
+<ul>
+<li>a plum target<br>(e.g. rime&#x2F;rime-luna-pinyin)<br>and a list of schema Ids<br>(e.g. luna_pinyin).</li>
+</ul>
+<p>Click <code>Install</code>.</p>
+<p>Select the schemas and click <code>Deploy</code>.</p>
+<h2 id="Manual-upload"><a href="#Manual-upload" class="headerlink" title="Manual upload"></a>Manual upload</h2><p>Turn on <code>Advanced</code> switch or append <code>debug=on</code> URL parameter,<br>so that you can interact with emscripten’s file system.</p>
+<p>The VSCode-like editor is powered by <a href="https://github.com/LibreService/wasm_code">Wasm Code</a>.</p>
+<p>You are able to download&#x2F;upload&#x2F;edit&#x2F;delete files.<br>After making changes, click <code>Deploy</code>.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> This functionality is disabled on mobile browsers.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> Because MEMFS is used, all changes will be lost after refresh.</p>
+</blockquote>
+<p>Some conventions:</p>
+<ul>
+<li>The rime directory is <code>/rime</code>.</li>
+<li>OpenCC files are at <code>/usr/local/share/opencc</code>.</li>
+<li>All files in <a href="../rime-config/">rime-config</a> will be available at <code>/rime</code> after you execute <code>pnpm run wasm</code>.</li>
+</ul>

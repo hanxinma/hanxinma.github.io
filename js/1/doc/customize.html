@@ -1,0 +1,69 @@
+<h1 id="Customize"><a href="#Customize" class="headerlink" title="Customize"></a>Customize</h1><p>Currently My RIME only distributes IMEs maintained by <a href="https://github.com/rime">RIME organization</a>.<br>For ease of maintenance, 3rd party IME integration request is usually not accepted.</p>
+<p>However, you are more than welcomed to host a customized version of My RIME to distribute 3rd party IME.</p>
+<h2 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h2><ul>
+<li>Your IME must work on Linux&#x2F;Windows&#x2F;macOS.<ul>
+<li>If your IME works on desktop but doesn’t work as expected when you port it to web, it may be the result of My RIME not fully utilizing librime functionalities, so I’m glad to help you resolve.</li>
+</ul>
+</li>
+<li>Your IME should be <a href="https://github.com/rime/plum">plum</a> compatible, otherwise you have to customize build script yourself.</li>
+</ul>
+<h2 id="Step"><a href="#Step" class="headerlink" title="Step"></a>Step</h2><ul>
+<li>Clone the repo. Do not use <code>--recurse-submodules</code>.</li>
+<li>Replicate build steps locally. You may reference <a href="../README.md">README</a>, <a href="../Dockerfile">Dockerfile</a> or <code>build</code> job of <a href="../.github/workflows/build.yml">CI script</a>.<br>Those steps work on Ubuntu latest stable and LTS release.<br>It’s highly recommended to be done BEFORE your customization, in order to locate problems.</li>
+<li>Customize <a href="../schemas.json">schemas.json</a>.</li>
+<li>If your IME uses lua, place your <code>rime.lua</code> and <code>lua</code> directory under <a href="../rime-config/">rime-config</a>.</li>
+<li>Run <code>pnpm run schema</code>.</li>
+<li>Run <code>pnpm run wasm</code> if the end of previous step’s output asks you to do, or if your IME uses lua.</li>
+<li>Test by <code>pnpm run dev</code>.</li>
+<li>Once everything works fine, run <code>pnpm run build</code>.</li>
+<li>The artifact is in <code>dist</code>, and you may deploy it to a static web server.</li>
+</ul>
+<h2 id="Specification"><a href="#Specification" class="headerlink" title="Specification"></a>Specification</h2><p><code>schemas.json</code> is a list of objects.<br>An IME corresponds to a schema id.</p>
+<ul>
+<li>IMEs in different plum-compatible repositories should be placed in different objects, e.g. <code>luna_pinyin</code> (in <a href="https://github.com/rime/rime-luna-pinyin">luna-pinyin</a>) and <code>jyut6ping3</code> (in <a href="https://github.com/rime/rime-cantonese">cantonese</a>), although there’s a reverse-lookup dependency between them.</li>
+<li>IMEs in one repository should be placed in one object if they share dictionary, e.g. <code>luna_pinyin</code> and <code>luna_pinyin_fluency</code> both use <code>luna_pinyin.dict.yaml</code>.</li>
+<li>IMEs in one repository should be placed in different objects if they don’t share dictionary, e.g. you define your own dictionary <code>fancy.dict.yaml</code>, but also copy <code>luna_pinyin.dict.yaml</code> into your repository for reverse-lookup.</li>
+</ul>
+<p>For each object, here are key and value definitions:</p>
+<ul>
+<li><p><code>id: string</code>, the schema id that you place in <code>default.yaml</code> for desktop RIME.</p>
+</li>
+<li><p><code>name: string</code>, the label you want to show as IME name for user to select.</p>
+</li>
+<li><p><code>disabled?: boolean</code>, whether the IME is only used for reverse-lookup by other IMEs so you don’t want to show it in select. Default <code>false</code>.</p>
+</li>
+<li><p><code>group?: string</code>, group of the IME. Default <code>undefined</code>.</p>
+</li>
+<li><p><code>emoji?: boolean</code>, whether integrate <a href="https://github.com/rime/rime-emoji">emoji</a>. Default <code>false</code>.</p>
+</li>
+<li><p><code>target: string</code>, the same argument you use when installing by plum: <code>bash rime-install &lt;target&gt;</code>.</p>
+</li>
+<li><p><code>dependencies?: string[]</code>, schema ids that are either a hard dependency (e.g. <code>luna_pinyin</code> for <code>double_pinyin</code>) or a soft (required by reverse-lookup) dependency (e.g. <code>stroke</code> for <code>luna_pinyin</code>). Make sure you have them defined in other objects. Default <code>[]</code>.</p>
+</li>
+<li><p><code>variants?: object[]</code>, simplified&#x2F;traditional&#x2F;… variants. Default <code>undefined</code> means the table is traditional, and simplified variant is available by OpenCC using <code>simplification</code> option, and you want simplified variant be the default variant, e.g. <code>luna_pinyin</code>. An empty <code>[]</code> means there are no variants and the variant switch button is disabled, e.g. <code>stroke</code>.</p>
+<ul>
+<li><code>id: string</code>, the corresponding <code>option</code> in <code>.schema.yaml</code>.</li>
+<li><code>name: string</code>, the label you want to show on the switch button.</li>
+</ul>
+<p>The first variant will be the default variant, regardless what default value is in <code>.schema.yaml</code>.</p>
+</li>
+</ul>
+<p>Switching to a variant will first set other <code>option</code>s to <code>0</code>, and then set this variant’s <code>option</code> to <code>1</code>.<br>So if there is only one <code>option</code> that controls 2 variants, you may use <code>[{&quot;id&quot;: &quot;option&quot;}, {&quot;id&quot;: &quot;random stuff&quot;}]</code> if the default variant should have <code>option</code> on, and <code>[{&quot;id&quot;: &quot;random stuff&quot;}, {&quot;id&quot;: &quot;option&quot;}]</code> if the default variant should have <code>option</code> off.<br>If you can understand this, you should agree that <code>undefined</code> is equivalent to <code>[{&quot;id&quot;: &quot;simplification&quot;, &quot;name&quot;: &quot;简&quot;}, {&quot;id&quot;: &quot;233&quot;, &quot;name&quot;: &quot;繁&quot;}]</code>.</p>
+<ul>
+<li><code>extended?: boolean</code>, whether the <code>.schema.yaml</code> supports common&#x2F;extended charset switch. Default <code>false</code>.</li>
+<li><code>hideComment?: boolean | &#39;emoji&#39;</code>, whether hide comment after candidate. <code>&#39;emoji&#39;</code> means only hide comment after emoji candidate. Default <code>false</code>.</li>
+<li><code>family?: object[]</code>, the other IMEs that share some files. Each shares the same <code>variants</code> with the major IME. Default <code>[]</code>.<ul>
+<li><code>id: string</code>, the schema id.</li>
+<li><code>name: string</code>, the label.</li>
+<li><code>disabled?: boolean</code>, same with the <code>disabled</code> in parent level.</li>
+</ul>
+</li>
+<li><code>license: string</code>, a SPDX license identifier used in <code>package.json</code>.</li>
+</ul>
+<h2 id="Distribute"><a href="#Distribute" class="headerlink" title="Distribute"></a>Distribute</h2><p>As per <a href="../LICENSE">LICENSE</a> requires, you have to</p>
+<ul>
+<li>Adopt the same AGPL license to your distribution.</li>
+<li>Include <a href="https://github.com/eagleoflqj">my</a> copyright.<br>The easiest way to comply is to put a link to <a href="https://github.com/LibreService/my_rime">https://github.com/LibreService/my_rime</a> in your site.</li>
+</ul>
+<p>if you distribute it to a public-accessible site.</p>
+<p>You are not required, but welcomed to make your IME (*.schema.yaml, *.dict.yaml, *.lua) <a href="https://opensource.org/osd/">Open Source</a> and plum compatible.</p>
