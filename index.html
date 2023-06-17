@@ -358,385 +358,285 @@
 </header>
 
     <html>
+
 <head>
 
 
 
-<meta charset="UTF-8">
-<title>易学汉心快打官网</title>
+  <meta charset="UTF-8">
+  <title>
+    易学汉心快打官网
+  </title>
 
-<style>
+  <style>
 
-/全局基础样式/
-/小屏幕下(手机类)的样式/
-@media only screen and (max-width: 601px) {
-.container11 {
-width: 95%;
-}
-.container123 {
-width: 95%;
-}
-}
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
 
-/中等屏幕下(平板类)的样式/
-@media only screen and (min-width: 600px) and (max-width: 992px) {
-.container11 {
-width: 90%;
-}
-.container123 {
-width: 90%;
-}
-}
-
-/大屏幕下(桌面类)的样式/
-@media only screen and (min-width: 993px) {
-.container11 {
-width: 90%;
-max-width: 1125px;
-}
-.container123 {
-width: 90%;
-max-width: 1125px;
-}
-}
-  html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-
-/* .my-button111 {
+    /* .my-button111 {
   cursor: pointer;
 } */
-</style>
-<!-- 这里是让头部的那个手机端不生效 -->
+  </style>
+  <!-- 这里是让头部的那个手机端不生效 -->
 
-<style>
+  <style>
+  
 
-@media only screen and (max-width: 1601px) {
+    #screen1 {
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: left;
+      margin: 0;
+      padding: 50px 0;
+      width: 100%;
+      height: 1090px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      animation: switch-background 1s infinite;
+    }
 
-  .container123 {
-    width: 55%;
-  }
-  .container11 {
-    width: 55%;
-  }
-}
+ 
 
-  #screen1 {
-    color: #fff;
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: left;
-    margin: 0;
-    padding: 50px 0;
-    width: 100%;
-    height: 1090px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    animation: switch-background 1s infinite;
-  }
+    #text1 {
+      font-size: 50px;
+      opacity: 0;
+      animation: fade-in 2s forwards;
+    }
 
-  @keyframes switch-background {
-    0%, 100% {
-      background-image: url("/hanxin/medias/bj.jpg");
+    #text2 {
+      opacity: 0;
+      animation: fade-in 2s forwards;
+    }
+
+    #text3 {
+      opacity: 0;
+      animation: fade-in 2s forwards;
+    }
+
+    #screen12 {
+      background-color: #dd930a;
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: left;
+      margin: 0;
+      padding: 50px 0;
+      width: 100%;
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-  }
 
-  #text1 {
-    font-size: 50px;
-    opacity: 0;
-    animation: fade-in 2s forwards;
-  }
+    #screen2 {
+      background-color: #248dc1;
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: right;
+      margin: 0;
+      padding: 50px 0;
+      width: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-  #text2 {
-    opacity: 0;
-    animation: fade-in 2s forwards;
-  }
+    }
 
-  #text3 {
-    opacity: 0;
-    animation: fade-in 2s forwards;
-  }
+    #screen3 {
+      background-color: #b5748b;
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: left;
+      margin: 0;
+      padding: 50px 0;
+      width: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  #screen12 {
-    background-color: #dd930a;
-    color: #fff;
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: left;
-    margin: 0;
-    padding: 50px 0;
-    width: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    #screen4 {
+      background-color: #0f8cdc;
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: right;
+      margin: 0;
+      padding: 50px 0;
+      width: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  #screen2 {
-    background-color: #248dc1;
-    color: #fff;
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: right;
-    margin: 0;
-    padding: 50px 0;
-    width: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-
-  #screen3 {
-    background-color: #b5748b;
-    color: #fff;
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: left;
-    margin: 0;
-    padding: 50px 0;
-    width: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #screen4 {
-    background-color: #0f8cdc;
-    color: #fff;
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: right;
-    margin: 0;
-    padding: 50px 0;
-    width: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #screen5 {
-    background-color: #dd930a;
-    color: #fff;
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: right;
-    margin: 0;
-    padding: 50px 0;
-    width: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    #screen5 {
+      background-color: #dd930a;
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: right;
+      margin: 0;
+      padding: 50px 0;
+      width: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
 
-  @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 1200px) {
       #screen12 {
         font-size: 24px;
       }
+
       #screen2 {
         font-size: 24px;
       }
+
       #screen3 {
         font-size: 24px;
       }
+
       #screen4 {
         font-size: 24px;
       }
+
       #screen5 {
         font-size: 33px;
       }
 
     }
 
-  h1 {
-    font-size: 48px;
-    margin: 50px 0;
-  }
+    h1 {
+      font-size: 48px;
+      margin: 50px 0;
+    }
 
-  h2 {
-    font-size: 36px;
-    margin: 50px 0 30px 0;
-  }
+    h2 {
+      font-size: 36px;
+      margin: 50px 0 30px 0;
+    }
 
-  p {
-    font-size: 18px;
-    margin: 30px 0;
-  }
+    p {
+      font-size: 18px;
+      margin: 30px 0;
+    }
 
 
-  ol {
-    margin: 30px 0;
-    text-align: left;
-  }
+    ol {
+      margin: 30px 0;
+      text-align: left;
+    }
 
-  canvas {
-    border: 1px solid white;
-  }
+    canvas {
+      border: 1px solid white;
+    }
 
-  body {
-    margin: 0;
-    padding: 0;
-  }
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-  .container11 {
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-    font-size: 16px;
-  }
-    #text11 {
-      font-size: 55px;
-  }
-  #text22, #text3, #text4, #text5 {
-      font-size: 20px;
-  }
-  .container123 {
+    .container11 {
       margin-left: auto;
       margin-right: auto;
       width: 800px;
-     
-  }
-  .STYLE22 {
-    font-size: 24px;
-  }
-
-  .my-button {
-    background-color: white;
-    border: none;
-    color: black;
-    padding: 5px 15px;
-    font-size: 12px;
-    border-radius: 5px;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-
-    
-  }
-
-  .my-button111 {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: floating 2s ease infinite;
-
-
-    margin: 0 auto;
-    display: block;
-    position: relative;
-    right: 300px;
-    
-  }
-
-  @keyframes floating {
-    0% {
-      transform: translateY(0px);
+      font-size: 16px;
     }
-    50% {
-      transform: translateY(-10px);
+
+    #text11 {
+      font-size: 55px;
     }
-    100% {
-      transform: translateY(0px);
+
+    #text22,
+    #text3,
+    #text4,
+    #text5 {
+      font-size: 20px;
     }
-  }
 
-  .fade-in {
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-  }
+    .container123 {
+      margin-left: auto;
+      margin-right: auto;
+      width: 800px;
 
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
     }
-    100% {
-      opacity: 1;
+
+    .STYLE22 {
+      font-size: 24px;
     }
-  }
 
-  .hidden {
-    display: none;
-  }
-  @media only screen and (max-width: 601px) {
-    .container {
-        width: auto !important;
+    .my-button {
+      background-color: white;
+      border: none;
+      color: black;
+      padding: 5px 15px;
+      font-size: 12px;
+      border-radius: 5px;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+
+
     }
-}
 
-/全局基础样式/
-/小屏幕下(手机类)的样式/
-@media only screen and (max-width: 601px) {
-.container11 {
-width: 95%;
-}
-.container123 {
-width: 95%;
-}
-}
+    .my-button111 {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: floating 2s ease infinite;
 
-/中等屏幕下(平板类)的样式/
-@media only screen and (min-width: 600px) and (max-width: 992px) {
-.container11 {
-width: 90%;
-}
-.container123 {
-width: 90%;
-}
-}
 
-/大屏幕下(桌面类)的样式/
-@media only screen and (min-width: 993px) {
-.container11 {
-width: 90%;
-max-width: 1125px;
-}
-.container123 {
-width: 90%;
-max-width: 1125px;
-}
-}
-</style>
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      right: 300px;
 
-<script>
-  function delay() {
-    document.getElementById("img").classList.remove("hidden");
-  }
-  setTimeout(delay, 9000);
-</script>
+    }
+
+ 
+  </style>
+
+  <script>
+    function delay() {
+      document.getElementById("img").classList.remove("hidden");
+    }
+    setTimeout(delay, 9000);
+  </script>
 
 
 </head>
 
- <body>
+<body>
   <!-- <style>
     body {
       transform: scale(0.5);
@@ -767,13 +667,13 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
 }
 
   </script> -->
-  
+
   <myy-div>
     <div style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);">
       <button class="my-button111" onClick="scrollDown()">下一屏</button>
       <!-- <button class="my-button111" onClick="scrollDown()">下一屏</button> -->
     </div>
-    
+
     <!-- <style>
       .my-button1112 {
         margin: 0 auto;
@@ -782,7 +682,7 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
         right: 100px;
       }
     </style> -->
-    
+
     <script>
       function scrollDown() {
         console.log(window.innerHeight); // 打印视口高度到控制台
@@ -793,7 +693,7 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
         });
       }
     </script>
-    
+
     <div>
       <a name="db"></a> <!-- 第一个屏幕----text2是第二行的代码,在最上面也要有text2 -->
       <div id="screen1">
@@ -801,40 +701,49 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
           <div id="text11"></div>
           <table width="100%" border="0">
             <tr>
-              <td width="18%"><table width="100%" border="0">
-                <tr>
-                  <td> <p id="text"><button class="my-button" onClick="location.href='https://hanxinma.gitee.io/hanxin/categories/'">主页</button></p></td>
-                  <td> <p id="text"><button class="my-button" onClick="location.href='http://yaoxiazai.ysepan.com/'">下载</button></p></td>
-                </tr>
-              </table>              </td>
+              <td width="18%">
+                <table width="100%" border="0">
+                  <tr>
+                    <td>
+                      <p id="text"><button class="my-button"
+                          onClick="location.href='https://hanxinma.gitee.io/hanxin/categories/'">主页</button></p>
+                    </td>
+                    <td>
+                      <p id="text"><button class="my-button"
+                          onClick="location.href='http://yaoxiazai.ysepan.com/'">下载</button></p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
               <td width="82%">
                 <div id="text22"></div>
               </td>
             </tr>
           </table>
-          <p><hr style="border:border-color: white; 0.5px solid black;">
+          <p>
+            <hr style="border:border-color: white; 0.5px solid black;">
           <div style="margin-top: 150px;">
             <span class="STYLE22">
-      
+
               <div id="text33"></div>
             </span>
             <p>
-              <div id="text4"></div>
+            <div id="text4"></div>
             </p>
             <p>
               <img id="img" class="hidden" src="/hanxin/medias/qp.gif">
             </p>
             <p>
-              <div id="text5"></div>
+            <div id="text5"></div>
             </p>
             <p align="center">
               <a href="https://hanxinma.gitee.io/hanxin/categories/" style="color: white;"></a>
             </p>
           </div>
-        
+
         </div>
       </div>
-    
+
       <script>
         const texts = [
           "欢迎来到汉心快打输入法官网",
@@ -866,7 +775,7 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
 
 
 
-  
+
     <!-- 第1.2个屏幕 -->
     <a name="下一个"></a>
     <div id="screen12">
@@ -911,7 +820,7 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
     <!-- 第三个屏幕 -->
     <div id="screen3">
       <div class="container11">
-        <div style="height: 90px;"> 
+        <div style="height: 90px;">
           <h2>学汉心快打的理由?</h2>
         </div>
         <ol>
@@ -930,7 +839,7 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
           var y = canvas.height - 30;
           var dx = 2;
           var dy = -2;
-    
+
           function drawBall() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.beginPath();
@@ -947,7 +856,7 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
               dy = -dy;
             }
           }
-    
+
           setInterval(drawBall, 10);
         </script>
       </div>
@@ -982,36 +891,35 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS/i.
             <div style="display: flex; justify-content: center;">
               <button class="my-button" onClick="location.href='#db'">回到顶部</button>
               <div style="width: 5px;"></div>
-              <button class="my-button" onClick="location.href='https://hanxinma.gitee.io/hanxin/categories/'">去学习</button>
+              <button class="my-button"
+                onClick="location.href='https://hanxinma.gitee.io/hanxin/categories/'">去学习</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-<script>// 获取当前文档的所有样式表
-// let styleSheets = document.styleSheets;
+    </div>
+    <script>// 获取当前文档的所有样式表
+      // let styleSheets = document.styleSheets;
 
-// for (let i = 0; i < styleSheets.length; i++) {
-//   styleSheets[i].disabled = true;
-// }
-if (/Mobi/i.test(navigator.userAgent)) {
-  window.location.href = "https://hanxinma.gitee.io/hanxin/js/sjsy";
-}
-let metaViewport = document.querySelector('meta[name="viewport"]');
-metaViewport.remove();
+      // for (let i = 0; i < styleSheets.length; i++) {
+      //   styleSheets[i].disabled = true;
+      // }
+      if (/Mobi/i.test(navigator.userAgent)) {
+        window.location.href = "https://hanxinma.gitee.io/hanxin/js/sjsy";
+      }
+// let metaViewport = document.querySelector('meta[name="viewport"]');
+// metaViewport.remove();
 
-let links = document.querySelectorAll('link[rel="stylesheet"]');
-links.forEach(link => {
-  link.disabled = true;
-});
-  
-  </script>
-  </body>
-  </html>
+// let links = document.querySelectorAll('link[rel="stylesheet"]');
+// links.forEach(link => {
+//   link.disabled = true;
+// });
 
-  
+    </script>
+</body>
 
+</html>
 
     <footer class="page-footer bg-color">
     
