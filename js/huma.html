@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>网页版虎码在线输入法</title>
+    <meta name="description" content="这是一款基于JavaScript实现的网页版拼音在线输入法，可在浏览器中轻松输入中文拼音。">
+    <meta name="keywords" content="网页版拼音输入法,网页版双拼输入法,在线拼音输入法,网页版小鹤输入法,中文输入法,在线网页五笔输入法">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="yidong.css">
+    <link rel="stylesheet" href="srf.css">
+    <script src="kfekowi.js"></script>
+    <script src="dhiowl.js"></script>
+    <script src="headke.js"></script>
+    <script src="mansi.js"></script>
+    <script src="vskel.js"></script>
+    <script src="fewsfle.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>虎码在线体验网页版</h1>
+            <ul>
+                <li><a href="https://tiger-code.com/" target="_blank">官网学习</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+
+    <div id="shurufa">
+
+        <div id="dali">
+            <div id="wenbenshang">
+             
+                <div id="zhong">
+                    <details>
+                        <summary>汉心快打输入法</summary>
+                        本输入法由虎码推崇者yidaui@qq.com提供
+               
+
+                        </details>
+                    </details>
+
+                </div>
+                <div id="qingchu">
+                    <button onclick="copyText()">复制CL+X</button>
+                </div>
+            </div>
+
+
+            <textarea id="da"
+                placeholder="本版是虎码在线体验小词库版。完整版,请官网下载使用。&#10;右下角可以拉大放小窗口。默认是自动复制,你直接CTRL+V就可以粘贴。打长文,可以关闭自动复制。否则切换页面会丢失内容。丢失了,ctrl+v就可以回来。&#10;&#10;网页版没有电脑版完善,只适合体检。或，临时不好装输入法使用。&#10;&#10; &#10;&#10;&#10;&#10;&#10;去掉电脑输入法,小写字母状态,点击下方输入...注意，勾选四键上屏"></textarea>
+
+        </div>
+
+        <div id="wenbenxia">
+            <div id="vtl">
+                <div id="xiaowb">
+                    <input type="text" id="xiao" oninput="document.getElementById('lb').innerHTML = this.value;"
+                        autocomplete="off"
+                        placeholder="←这里输入小写字母,汉心快打输入法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                </div>
+
+                <div id="lb">
+                </div>
+            </div>
+
+
+            <div id="anniu">
+
+                <label for="checkbox">四键上屏</label><input type="checkbox" id="checkbox">
+                <label for="gdbox">停止滚动</label> <input type="checkbox" id="gdbox">
+                <label for="sjbox">手机使用</label> <input type="checkbox" id="sjbox">
+                <label for="zdbox">自动复制停</label> <input type="checkbox" id="zdbox">
+
+            </div>
+
+
+            <br><br><br><br>
+           
+            </div>
+            <div id="kong"></div>
+        </div>
+
+
+
+        <script>
+
+            window.onload = function () {
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+
+                const link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = "style.css";
+                document.head.appendChild(link);
+
+
+                if (isMobile) {
+                    const mobileLink = document.createElement("link");
+                    mobileLink.rel = "stylesheet";
+                    mobileLink.href = "yidong.css";
+                    document.head.appendChild(mobileLink);
+                }
+
+                else {
+                    const desktopLink = document.createElement("link");
+                    desktopLink.rel = "stylesheet";
+                    desktopLink.href = "srf.css";
+                    document.head.appendChild(desktopLink);
+                }
+            };
+
+            window.onload = function () {
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+                if (isMobile) {
+                    const sjBox = document.getElementById('sjbox');
+                    sjBox.checked = true;
+                }
+            }
+
+        </script>
+        <script src="cidiana.js"></script>
+        <script src="eidksl.js"></script>
+        <script src="hxpytdy.js"></script>  
+        <script src="hedee.js"></script>
+        <script src="huma.js"></script>
+</body>
+
+</html>
