@@ -1,0 +1,145 @@
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+  <title>打字机效果</title>
+  <style>
+    #typewriter-container.hidden {
+      display: none;
+    }
+
+    #typewriter-container {
+      margin-top: 0;
+      /* 移除上边距 */
+    }
+
+
+    #daziji {
+
+      padding: 200px;
+      font-size: 30px;
+      color: white;
+      width: 800px;
+      margin: auto;
+    }
+
+    #typewriter {
+      width: 800px;
+      /* 设置宽度为 800px */
+      margin: 0 auto;
+      /* 左右居中对齐 */
+    }
+
+    .bg-img {
+      background-image: url("./bj.jpg");
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    .typewriter-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding-top: 30vh;
+      /* 根据需要调整垂直方向上的位置 */
+    }
+
+    #typewriter {
+      color: #fff;
+      font-size: 3rem;
+    }
+
+
+
+    #dazhi {
+      -webkit-user-select: none;
+      /* Safari */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* IE 10+ */
+      user-select: none;
+    }
+
+    nav {
+      margin-bottom: 0 !important;
+    }
+
+    @media screen and (max-width: 1000px) {
+      #typewriter-container {
+
+        width: 100vw;
+
+      }
+
+      .bg-img {
+
+        margin: 0;
+        padding: 0;
+  
+      }
+
+      #daziji {    overflow: hidden;
+        margin: 0;
+        padding: 0;
+        padding: 100px 50px 0px 50px;
+        height: 900px;
+        width: 80vw;
+      }
+
+      body {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+
+      #nav {
+
+        margin-top: 0px;
+        padding: 0;
+        margin-bottom: -0px !important;
+        margin-bottom: 1px !important;
+      }
+    }
+
+    #daziji {
+      font-weight: lighter;
+      /* 将字体变细 */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="typewriter-container">
+    <div class="bg-img">
+
+      <div id="daziji"></div>
+    </div>
+  </div>
+
+  <script>
+    const content =
+      "汉心快打是什么?--它们是一种,用拼音打字还不用选字,提高打字速度的方法。如果打熟了还能实现盲打。它的主要功能是拼音打字像五笔那样不用翻页找字。然后还加入了三键一词的打法。并且基本不用学,上手就能用。可以看下方的在线版学习和体验。";
+    const speed = 100; // 打字速度（每个字符间隔的时间）
+    let i = 0;
+    function type() {
+      if (i < content.length) {
+        document.getElementById("daziji").innerHTML += content.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      } else {
+        clearTimeout(); // 函数执行完毕，直接关闭定时器
+      }
+    }
+
+    window.onload = function () {
+      type();
+      setTimeout(function () {
+        clearTimeout(); // 函数执行完毕，直接关闭定时器
+      }, content.length * speed);
+    };
+  </script>
+</body>
+
+</html>
