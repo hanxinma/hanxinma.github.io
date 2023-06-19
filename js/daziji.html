@@ -1,7 +1,7 @@
 <html>
 
 <head>
-
+  <head>
     <meta charset="UTF-8">
   <title>打字机效果</title>
   <style>
@@ -31,12 +31,6 @@
       /* 左右居中对齐 */
     }
 
-    .bg-img {
-      background-image: url("./bj.jpg");
-      background-size: cover;
-      background-position: center;
-
-    }
 
     .typewriter-container {
       max-width: 800px;
@@ -50,7 +44,18 @@
       font-size: 3rem;
     }
 
+    html,
+body {
+  margin: 0;
+  padding: 0;
+}
 
+.bg-img {
+  background-image: url("./bj.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
 
     #dazhi {
       -webkit-user-select: none;
@@ -67,7 +72,7 @@
     }
 
     @media screen and (max-width: 1000px) {
-      #typewriter-container {
+      #typewriter-container {overflow: hidden;
 
         width: 100vw;
 
@@ -86,14 +91,12 @@
         padding: 100px 50px 0px 50px;
         height: 900px;
         width: 80vw;
+        font-weight: lighter;
+        font-size: 30px;
+      /* 将字体变细 */
       }
 
-      body {
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-      }
-
+   
       #nav {
 
         margin-top: 0px;
@@ -103,10 +106,7 @@
       }
     }
 
-    #daziji {
-      font-weight: lighter;
-      /* 将字体变细 */
-    }
+
   </style>
 </head>
 
