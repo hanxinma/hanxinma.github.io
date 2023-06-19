@@ -1,36 +1,6 @@
-/全局基础样式/
-/小屏幕下(手机类)的样式/
-@media only screen and (max-width: 601px) {
-.container11 {
-width: 95%;
-}
-.container123 {
-width: 95%;
-}
-}
-
-/中等屏幕下(平板类)的样式/
-@media only screen and (min-width: 600px) and (max-width: 992px) {
-.container11 {
-width: 90%;
-}
-.container123 {
-width: 90%;
-}
-}
-
-/大屏幕下(桌面类)的样式/
-@media only screen and (min-width: 993px) {
-.container11 {
-width: 90%;
-max-width: 1125px;
-}
-.container123 {
-width: 90%;
-max-width: 1125px;
-}
-}
 /*全局基础样式*/
+
+
 /*小屏幕下(手机类)的样式*/
 @media only screen and (max-width: 601px) {
     .container {
@@ -217,7 +187,6 @@ pre code {
     padding: 0;
     color: #e8eaf6;
     background-color: #272822;
-  
 }
 
 /* 键盘 kbd 标签样式 */
@@ -259,7 +228,6 @@ mark {
 }
 
 .card {
-
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
 }
@@ -275,7 +243,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #9d9b0f 100%);
+    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
 }
 
 .text-color {
@@ -293,7 +261,6 @@ mark {
     z-index: 300;
     background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
     opacity: 0.8;
-    
 }
 
 .sidenav-overlay {
@@ -302,27 +269,22 @@ mark {
 
 .pd-header {
     margin-top: -64px;
-    
 }
 
 header .side-nav {
     width: 240px;
     z-index: 999;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 7px 10px 0 rgba(0, 0, 0, 0.12);
-    
 }
 
 nav {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 7px 10px 0 rgba(0, 0, 0, 0.12);
-  
-
 }
 
 header .nav-transparent {
     background-color: transparent !important;
     background-image: none;
     box-shadow: none;
-    
 }
 
 header nav .brand-span {
@@ -337,7 +299,6 @@ header .brand-logo .logo-img {
 
 header .brand-logo .logo-span {
     font-size: 1.6rem;
-    
 }
 
 /*修改顶部 logo 的文字垂直对齐为 top，避免默认 middle 看起来偏下*/
@@ -359,15 +320,10 @@ header .side-nav .mobile-head img {
     height: 75px;
 }
 
-
 header .side-nav .mobile-head .logo-name {
     margin-top: -30px;
     padding-left: 10px;
     font-size: 1.5rem;
-    text-overflow: ellipsis; /* 文字溢出时用省略号（...）代替 */
-    white-space: nowrap; /* 不换行 */
-    overflow: hidden; /* 溢出部分隐藏 */
-    max-width: 1rem; /* 设置最大宽度 */
 }
 
 header .side-nav .mobile-head .logo-desc {
@@ -678,10 +634,10 @@ header .go-back i {
     }
 
     80% {
-        background: rgba(233, 30, 99, 0.75);
-        background: linear-gradient(45deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
-        background: -moz-linear-gradient(135deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
+        background: rgba(4, 153, 71, 0.75);
+        background: linear-gradient(45deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: -moz-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
     }
 }
 
@@ -710,10 +666,10 @@ header .go-back i {
     }
 
     48% {
-        background: rgba(255, 87, 34, 0.75);
-        background: linear-gradient(45deg, rgba(255, 87, 34, 0.75) 0%, rgba(255, 87, 34, 0.65) 100%);
-        background: -moz-linear-gradient(135deg, rgba(255, 87, 34, 0.75) 0%, rgba(255, 87, 34, 0.65) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(255, 87, 34, 0.75) 0%, rgba(255, 87, 34, 0.65) 100%);
+        background: rgba(4, 153, 71, 0.75);
+        background: linear-gradient(45deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: -moz-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
     }
 
     64% {
@@ -724,13 +680,12 @@ header .go-back i {
     }
 
     80% {
-        background: rgba(233, 30, 99, 0.75);
-        background: linear-gradient(45deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
-        background: -moz-linear-gradient(135deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
+        background: rgba(4, 153, 71, 0.75);
+        background: linear-gradient(45deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: -moz-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
     }
 }
-
 .index-card {
     margin-top: -10px;
     padding-top: 20px;
@@ -2184,3 +2139,11 @@ footer .copy-right {
     padding: 0;
     margin: 0;
 }
+@media only screen and (max-width: 1000px) {
+    .brand-logo {
+        width: 230px !important; /* 设置元素宽度为 3 像素，使用 !important 避免被其他 CSS 覆盖 */
+        overflow: hidden !important; /* 超出部分隐藏，使用 !important 避免被其他 CSS 覆盖 */
+        height: 50px!important;
+        overflow: hidden; /* 超出部分隐藏 */
+  
+      }  }
