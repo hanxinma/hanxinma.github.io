@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="双拼互转, 小鹤双拼转自然双拼, 自然转小鹤,在线双拼互转工具">
+    <title>汉心快打双拼互转工具</title>
+</head>
+
+<style>
+      #youbian {
+    position: absolute;
+    top: 20%;
+    right: calc(20% - 150px);
+}
+      #zuobian {
+    position: absolute;
+    top: 16%;
+    left: calc(20% - 150px);
+}
+#dh {
+    text-align: center;
+    font-size: 39px;
+     position: relative;
+   top: 20px;
+}
+
+#dh2 {
+    text-align: center;
+    font-size: 15px;
+       position: relative;
+   top: 20px;
+    
+  
+}
+body {
+    background-color: #f4f4f4;
+}
+  nav {
+            background: rgb(8, 198, 223);
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 30px;
+        }
+            body {
+
+            margin: 0 auto;
+
+        }
+    </style>
+<body>
+   <nav>
+        <a
+            href="http://yaoxiazai.ysepan.com/" target="_blank">汉心快打拼音双拼互转工具</a> <a href="https://hanxinma.gitee.io/hanxin/" target="_blank"><small>首页</small></a><a href="https://hanxinma.gitee.io/hanxin/js/gj.html"
+            target="_blank"><small>更多工具(转双拼)</small></a><a href="http://yaoxiazai.ysepan.com/"
+            target="_blank"><small>下载</small></a>
+    </nav>
+
+</div>
+
+
+</a>
+<div id="zuobian">
+ 由什么转成什么<br>
+  <textarea id="aaaTextArea" rows="5" cols="50"></textarea><br><br> 
+
+
+  
+<input type="text" id="shu1" style="width: 50px;" />
+<input type="text" id="shu2" style="width: 50px;" />
+
+
+
+
+<button onclick="sendColumns22()">填写数字,由右边里的什么转到什么</button>
+  
+  <br><br>
+  
+ 需要转换的数据<br>
+
+  <textarea id="textArea" rows="10" cols="50">复制进来,你需要转的数据.注意,这里数据格式有两种可以用,1,所有的拼音里都有空格隔开(例如: 你好 ni hao),2,搜狗格式的自定义短语(nihao,1=你好)能转前面两个字母,字母前面不要有东西.两个字母为一组转换,一般是转词,如果是全拼词转,需要字中间有空格,用空格区分转.</textarea><br><br>
+  <button onclick="replaceLetters()">以空格区分转换</button>
+    <button onclick="两个字母匹配()">前两个字母转换</button>
+    <button onclick="词转()">两个字母为一组转换</button>
+    <br> <br>
+
+  <br>
+  <textarea id="resultTextArea" rows="10" cols="50" readonly></textarea><br>
+ <button onclick="exportText()">导出为TXT utf8</button>
+ 
+ 
+
+</div>
+<textarea id="youbian" rows="60" cols="70">
+1全拼	2小鹤	3自然	4自定义
+a	aa	aa	
+ai	ai	ai	
+an	an	an	
+ang	ah	ah	
+ao	ao	ao	
+chuo	io	io	
+cuo	co	co	
+duo	do	do	
+e	ee	ee	
+ei	ei	ei	
+en	en	en	
+eng	eg	eg	
+er	er	er	
+guo	go	go	
+huo	ho	ho	
+kuo	ko	ko	
+lü	lv	lv	
+luo	lo	lo	
+nü	nv	nv	
+nuo	no	no	
+o	oo	oo	
+ruo	ro	ro	
+shuo	uo	uo	
+suo	so	so	
+tuo	to	to	
+zhuo	vo	vo	
+zuo	zo	zo	
+bang	bh	bh	
+beng	bg	bg	
+bian	bm	bm	
+biao	bn	bc	
+bing	bk	by	
+bai	bd	bl	
+ban	bj	bj	
+bao	bc	bk	
+bei	bw	bz	
+ben	bf	bf	
+bie	bp	bx	
+bin	bb	bn	
+ba	ba	ba	
+bi	bi	bi	
+bo	bo	bo	
+bu	bu	bu	
+cang	ch	ch	
+ceng	cg	cg	
+cong	cs	cs	
+cuan	cr	cr	
+cai	cd	cl	
+can	cj	cj	
+cao	cc	ck	
+cei	cw	cz	
+cen	cf	cf	
+cou	cz	cb	
+cun	cy	cp	
+ca	ca	ca	
+ce	ce	ce	
+ci	ci	ci	
+cu	cu	cu	
+cv	cv	cv	
+cui	cv	cv	
+chuang	il	id	
+chang	ih	ih	
+cheng	ig	ig	
+ching	ik	iy	
+chong	is	is	
+chuan	ir	ir	
+chai	id	il	
+chan	ij	ij	
+chao	ic	ik	
+chen	if	if	
+chou	iz	ib	
+chua	ix	iw	
+chun	iy	ip	
+cha	ia	ia	
+che	ie	ie	
+chi	ii	ii	
+chu	iu	iu	
+chv	iv	iv	
+chuai	ik	iy	
+chui	iv	iv	
+dang	dh	dh	
+deng	dg	dg	
+dian	dm	dm	
+diao	dn	dc	
+ding	dk	dy	
+dong	ds	ds	
+duan	dr	dr	
+dai	dd	dl	
+dan	dj	dj	
+dao	dc	dk	
+dei	dw	dz	
+den	df	df	
+die	dp	dx	
+diu	dq	dq	
+dou	dz	db	
+dua	dx	dw	
+dun	dy	dp	
+da	da	da	
+de	de	de	
+di	di	di	
+du	du	du	
+dv	dv	dv	
+dui	dv	dv	
+fang	fh	fh	
+feng	fg	fg	
+fan	fj	fj	
+fei	fw	fz	
+fen	ff	ff	
+fou	fz	fb	
+fa	fa	fa	
+fo	fo	fo	
+fu	fu	fu	
+guang	gl	gd	
+gang	gh	gh	
+geng	gg	gg	
+ging	gk	gy	
+gong	gs	gs	
+guan	gr	gr	
+gai	gd	gl	
+gan	gj	gj	
+gao	gc	gk	
+gei	gw	gz	
+gen	gf	gf	
+gou	gz	gb	
+gua	gx	gw	
+gun	gy	gp	
+ga	ga	ga	
+ge	ge	ge	
+gu	gu	gu	
+gv	gv	gv	
+guai	gk	gy	
+gui	gv	gv	
+huang	hl	hd	
+hang	hh	hh	
+heng	hg	hg	
+hong	hs	hs	
+huan	hr	hr	
+hai	hd	hl	
+han	hj	hj	
+hao	hc	hk	
+hei	hw	hz	
+hen	hf	hf	
+hou	hz	hb	
+hua	hx	hw	
+hun	hy	hp	
+ha	ha	ha	
+he	he	he	
+hu	hu	hu	
+hv	hv	hv	
+huai	hk	hy	
+hui	hv	hv	
+jian	jm	jm	
+jiao	jn	jc	
+jing	jk	jy	
+juan	jr	jr	
+jie	jp	jx	
+jin	jb	jn	
+jiu	jq	jq	
+jua	jx	jw	
+jun	jy	jp	
+jve	jt	jt	
+ji	ji	ji	
+ju	ju	ju	
+jia	jx	jw	
+jiang	jl	jd	
+jiong	js	js	
+jue	jt	jt	
+kuang	kl	kd	
+kang	kh	kh	
+keng	kg	kg	
+kong	ks	ks	
+kuan	kr	kr	
+kai	kd	kl	
+kan	kj	kj	
+kao	kc	kk	
+kei	kw	kz	
+ken	kf	kf	
+kou	kz	kb	
+kua	kx	kw	
+kun	ky	kp	
+ka	ka	ka	
+ke	ke	ke	
+ku	ku	ku	
+kuai	kk	ky	
+kui	kv	kv	
+lang	lh	lh	
+leng	lg	lg	
+lian	lm	lm	
+liao	ln	lc	
+ling	lk	ly	
+long	ls	ls	
+luan	lr	lr	
+lai	ld	ll	
+lan	lj	lj	
+lao	lc	lk	
+lei	lw	lz	
+lie	lp	lx	
+lin	lb	ln	
+liu	lq	lq	
+lou	lz	lb	
+lun	ly	lp	
+lve	lt	lt	
+la	la	la	
+le	le	le	
+li	li	li	
+lo	lo	lo	
+lu	lu	lu	
+lv	lv	lv	
+liang	ll	ld	
+lue	lt	lt	
+mang	mh	mh	
+meng	mg	mg	
+mian	mm	mm	
+miao	mn	mc	
+ming	mk	my	
+mai	md	ml	
+man	mj	mj	
+mao	mc	mk	
+mei	mw	mz	
+men	mf	mf	
+mie	mp	mx	
+min	mb	mn	
+miu	mq	mq	
+mou	mz	mb	
+ma	ma	ma	
+me	me	me	
+mi	mi	mi	
+mo	mo	mo	
+mu	mu	mu	
+nang	nh	nh	
+neng	ng	ng	
+nian	nm	nm	
+niao	nn	nc	
+ning	nk	ny	
+nong	ns	ns	
+nuan	nr	nr	
+nai	nd	nl	
+nan	nj	nj	
+nao	nc	nk	
+nei	nw	nz	
+nen	nf	nf	
+nie	np	nx	
+nin	nb	nn	
+niu	nq	nq	
+nou	nz	nb	
+nun	ny	np	
+nve	nt	nt	
+na	na	na	
+ne	ne	ne	
+ni	ni	ni	
+nu	nu	nu	
+nv	nv	nv	
+niang	nl	nd	
+nue	nt	nt	
+ou	ou	ou	
+pang	ph	ph	
+peng	pg	pg	
+pian	pm	pm	
+piao	pn	pc	
+ping	pk	py	
+pai	pd	pl	
+pan	pj	pj	
+pao	pc	pk	
+pei	pw	pz	
+pen	pf	pf	
+pie	pp	px	
+pin	pb	pn	
+pou	pz	pb	
+pa	pa	pa	
+pi	pi	pi	
+po	po	po	
+pu	pu	pu	
+qian	qm	qm	
+qiao	qn	qc	
+qing	qk	qy	
+qong	qs	qs	
+quan	qr	qr	
+qie	qp	qx	
+qin	qb	qn	
+qiu	qq	qq	
+qua	qx	qw	
+qun	qy	qp	
+qve	qt	qt	
+qi	qi	qi	
+qu	qu	qu	
+qia	qx	qw	
+qiang	ql	qd	
+qiong	qs	qs	
+que	qt	qt	
+rang	rh	rh	
+reng	rg	rg	
+rong	rs	rs	
+ruan	rr	rr	
+ran	rj	rj	
+rao	rc	rk	
+ren	rf	rf	
+rou	rz	rb	
+run	ry	rp	
+ra	ra	ra	
+re	re	re	
+ri	ri	ri	
+ru	ru	ru	
+rui	rv	rv	
+sang	sh	sh	
+seng	sg	sg	
+song	ss	ss	
+suan	sr	sr	
+sai	sd	sl	
+san	sj	sj	
+sao	sc	sk	
+sen	sf	sf	
+sou	sz	sb	
+sun	sy	sp	
+sa	sa	sa	
+se	se	se	
+si	si	si	
+su	su	su	
+sv	sv	sv	
+sui	sv	sv	
+shuang	ul	ud	
+shang	uh	uh	
+sheng	ug	ug	
+shing	uk	uy	
+shuan	ur	ur	
+shai	ud	ul	
+shan	uj	uj	
+shao	uc	uk	
+shei	uw	uz	
+shen	uf	uf	
+shou	uz	ub	
+shua	ux	uw	
+shun	uy	up	
+sha	ua	ua	
+she	ue	ue	
+shi	ui	ui	
+shu	uu	uu	
+shui	uv	uv	
+shuai	uk	uy	
+tang	th	th	
+teng	tg	tg	
+tian	tm	tm	
+tiao	tn	tc	
+ting	tk	ty	
+tong	ts	ts	
+tuan	tr	tr	
+tai	td	tl	
+tan	tj	tj	
+tao	tc	tk	
+tei	tw	tz	
+tie	tp	tx	
+tou	tz	tb	
+tun	ty	tp	
+ta	ta	ta	
+te	te	te	
+ti	ti	ti	
+tu	tu	tu	
+tv	tv	tv	
+tui	tv	tv	
+wang	wh	wh	
+weng	wg	wg	
+wai	wd	wl	
+wan	wj	wj	
+wei	ww	wz	
+wen	wf	wf	
+wa	wa	wa	
+wo	wo	wo	
+wu	wu	wu	
+xian	xm	xm	
+xiao	xn	xc	
+xing	xk	xy	
+xong	xs	xs	
+xuan	xr	xr	
+xie	xp	xx	
+xin	xb	xn	
+xiu	xq	xq	
+xua	xx	xw	
+xun	xy	xp	
+xve	xt	xt	
+xi	xi	xi	
+xu	xu	xu	
+xiong	xs	xs	
+xiang	xl	xd	
+xia	xx	xw	
+xue	xt	xt	
+yang	yh	yh	
+ying	yk	yy	
+yong	ys	ys	
+yuan	yr	yr	
+yan	yj	yj	
+yao	yc	yk	
+yin	yb	yn	
+you	yz	yb	
+yun	yy	yp	
+yve	yt	yt	
+ya	ya	ya	
+ye	ye	ye	
+yi	yi	yi	
+yo	yo	yo	
+yu	yu	yu	
+yue	yt	yt	
+zang	zh	zh	
+zeng	zg	zg	
+zong	zs	zs	
+zuan	zr	zr	
+zai	zd	zl	
+zan	zj	zj	
+zao	zc	zk	
+zei	zw	zz	
+zen	zf	zf	
+zou	zz	zb	
+zun	zy	zp	
+za	za	za	
+ze	ze	ze	
+zi	zi	zi	
+zu	zu	zu	
+zv	zv	zv	
+zui	zv	zv	
+zhuang	vl	vd	
+zhang	vh	vh	
+zheng	vg	vg	
+zhong	vs	vs	
+zhuan	vr	vr	
+zhai	vd	vl	
+zhan	vj	vj	
+zhao	vc	vk	
+zhei	vw	vz	
+zhen	vf	vf	
+zhou	vz	vb	
+zhua	vx	vw	
+zhun	vy	vp	
+zha	va	va	
+zhe	ve	ve	
+zhi	vi	vi	
+zhu	vu	vu	
+zhuai	vk	vy	
+zhui	vv	vv	
+yv	yv	yv	
+
+	a	a	
+	lx	lx	
+	og	og	
+	ak	ak	
+	a,	a,	
+	☆	☆	
+	op	op	
+
+
+
+</textarea><br>
+
+
+  <script>
+  
+var _0xd9e7d1=_0x2e68;(function(_0x1b8514,_0xcfae5b){var _0x57f89f=_0x2e68,_0x356eb1=_0x1b8514();while(!![]){try{var _0x3f80d4=parseInt(_0x57f89f(0xcd))/0x1+parseInt(_0x57f89f(0xea))/0x2+-parseInt(_0x57f89f(0xe5))/0x3+parseInt(_0x57f89f(0xf6))/0x4*(-parseInt(_0x57f89f(0xc8))/0x5)+parseInt(_0x57f89f(0xfd))/0x6*(parseInt(_0x57f89f(0xf7))/0x7)+-parseInt(_0x57f89f(0xe2))/0x8+parseInt(_0x57f89f(0xcc))/0x9;if(_0x3f80d4===_0xcfae5b)break;else _0x356eb1['push'](_0x356eb1['shift']());}catch(_0x23d33d){_0x356eb1['push'](_0x356eb1['shift']());}}}(_0x2f4f,0x96397));var _0x2f8052=(function(){var _0x3b8e24=!![];return function(_0x6d5eda,_0x5bbea0){var _0x438228=_0x3b8e24?function(){var _0x3fb4f0=_0x2e68;if(_0x5bbea0){var _0x3b3366=_0x5bbea0[_0x3fb4f0(0xc0)](_0x6d5eda,arguments);return _0x5bbea0=null,_0x3b3366;}}:function(){};return _0x3b8e24=![],_0x438228;};}()),_0x3900b4=_0x2f8052(this,function(){var _0x46ea8f=_0x2e68;return _0x3900b4[_0x46ea8f(0xcb)]()[_0x46ea8f(0x103)](_0x46ea8f(0xda))[_0x46ea8f(0xcb)]()[_0x46ea8f(0xd0)](_0x3900b4)['\x73\x65\x61\x72\x63\x68'](_0x46ea8f(0xda));});function _0x2f4f(){var _0x4d9f21=['\x39\x39\x38\x32\x37\x30\x79\x4f\x4b\x46\x4c\x52','\x63\x68\x61\x69\x6e','\x72\x65\x6d\x6f\x76\x65\x43\x68\x69\x6c\x64','\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72','\x73\x6c\x69\x63\x65','\x68\x72\x65\x66','\x62\x6f\x64\x79','\x73\x68\x75\x31','\x6a\x6f\x69\x6e','\x63\x6c\x69\x63\x6b','\x66\x69\x72\x73\x74\x43\x6f\x6c\x75\x6d\x6e','\x72\x65\x70\x6c\x61\x63\x65\x6d\x65\x6e\x74','\x69\x6e\x66\x6f','\x28\x28\x28\x2e\x2b\x29\x2b\x29\x2b\x29\x2b\x24','\x5c\x2b\x5c\x2b\x20\x2a\x28\x3f\x3a\x5b\x61\x2d\x7a\x41\x2d\x5a\x5f\x24\x5d\x5b\x30\x2d\x39\x61\x2d\x7a\x41\x2d\x5a\x5f\x24\x5d\x2a\x29','\x6c\x6f\x63\x61\x74\x69\x6f\x6e','\x63\x61\x6c\x6c','\x73\x68\x75\x32','\x6c\x65\x74\x74\x65\x72\x73','\x77\x61\x72\x6e','\x65\x78\x63\x65\x70\x74\x69\x6f\x6e','\x32\x31\x37\x39\x38\x35\x36\x68\x61\x6e\x70\x6a\x59','\x63\x6f\x6e\x73\x6f\x6c\x65','\x79\x6f\x75\x62\x69\x61\x6e','\x33\x30\x33\x37\x36\x31\x31\x74\x57\x73\x55\x4c\x56','\x73\x70\x6c\x69\x74','\x64\x61\x74\x61\x3a\x74\x65\x78\x74\x2f\x70\x6c\x61\x69\x6e\x3b\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38\x2c','\x70\x72\x6f\x74\x6f\x74\x79\x70\x65','\x74\x65\x73\x74','\x39\x39\x33\x33\x30\x38\x41\x42\x47\x58\x79\x78','\x64\x69\x73\x70\x6c\x61\x79','\x6e\x6f\x6e\x65','\x73\x74\x79\x6c\x65','\x70\x75\x73\x68','\x73\x74\x61\x74\x65\x4f\x62\x6a\x65\x63\x74','\x65\x72\x72\x6f\x72','\x72\x65\x73\x75\x6c\x74\x54\x65\x78\x74\x41\x72\x65\x61','\x61\x61\x61\x54\x65\x78\x74\x41\x72\x65\x61','\x7b\x7d\x2e\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72\x28\x22\x72\x65\x74\x75\x72\x6e\x20\x74\x68\x69\x73\x22\x29\x28\x20\x29','\x61\x63\x74\x69\x6f\x6e','\x72\x65\x74\x75\x72\x6e\x20\x28\x66\x75\x6e\x63\x74\x69\x6f\x6e\x28\x29\x20','\x32\x30\x58\x49\x55\x63\x65\x65','\x31\x36\x31\x49\x6e\x4f\x52\x6d\x5a','\x77\x68\x69\x6c\x65\x20\x28\x74\x72\x75\x65\x29\x20\x7b\x7d','\x64\x6f\x77\x6e\x6c\x6f\x61\x64','\x6c\x6f\x67','\x74\x72\x69\x6d','\x69\x6e\x70\x75\x74','\x32\x37\x36\x38\x38\x32\x77\x6b\x47\x50\x78\x6f','\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64','\x74\x65\x78\x74\x41\x72\x65\x61','\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74','\u6c49\u5fc3\u5feb\u6253\u8f6c\u7684\x2e\x74\x78\x74','\x74\x72\x61\x63\x65','\x73\x65\x61\x72\x63\x68','\x64\x65\x62\x75','\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64','\x67\x67\x65\x72','\x61\x70\x70\x6c\x79','\x62\x69\x6e\x64','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x68\x61\x6e\x78\x69\x6e\x6d\x61\x2e\x67\x69\x74\x65\x65\x2e\x69\x6f','\x69\x6e\x64\x65\x78\x4f\x66','\x76\x61\x6c\x75\x65','\x73\x65\x63\x6f\x6e\x64\x43\x6f\x6c\x75\x6d\x6e','\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65','\x63\x6f\x75\x6e\x74\x65\x72','\x31\x31\x37\x32\x30\x35\x35\x4b\x68\x49\x4b\x76\x54','\x74\x61\x62\x6c\x65','\x6c\x65\x6e\x67\x74\x68','\x74\x6f\x53\x74\x72\x69\x6e\x67','\x34\x36\x34\x34\x37\x39\x32\x51\x56\x44\x42\x6f\x4c'];_0x2f4f=function(){return _0x4d9f21;};return _0x2f4f();}_0x3900b4();var _0x50eefc=(function(){var _0x3dd504=!![];return function(_0x50f93b,_0x228956){var _0x244193=_0x3dd504?function(){if(_0x228956){var _0x5f18f0=_0x228956['\x61\x70\x70\x6c\x79'](_0x50f93b,arguments);return _0x228956=null,_0x5f18f0;}}:function(){};return _0x3dd504=![],_0x244193;};}());function _0x2e68(_0x582627,_0x24d53a){var _0x3a0e69=_0x2f4f();return _0x2e68=function(_0x2a791d,_0x4ab368){_0x2a791d=_0x2a791d-0xbd;var _0x4ec5b5=_0x3a0e69[_0x2a791d];return _0x4ec5b5;},_0x2e68(_0x582627,_0x24d53a);}(function(){_0x50eefc(this,function(){var _0x193543=_0x2e68,_0x5eea7c=new RegExp('\x66\x75\x6e\x63\x74\x69\x6f\x6e\x20\x2a\x5c\x28\x20\x2a\x5c\x29'),_0x322683=new RegExp(_0x193543(0xdb),'\x69'),_0x28ea31=_0x34aa40('\x69\x6e\x69\x74');!_0x5eea7c[_0x193543(0xe9)](_0x28ea31+_0x193543(0xce))||!_0x322683[_0x193543(0xe9)](_0x28ea31+_0x193543(0xfc))?_0x28ea31('\x30'):_0x34aa40();})();}());var _0x4ab368=(function(){var _0x575f7c=!![];return function(_0x2999ec,_0x301f25){var _0x5e953f=_0x575f7c?function(){var _0x432d6b=_0x2e68;if(_0x301f25){var _0x297f5a=_0x301f25[_0x432d6b(0xc0)](_0x2999ec,arguments);return _0x301f25=null,_0x297f5a;}}:function(){};return _0x575f7c=![],_0x5e953f;};}()),_0x2a791d=_0x4ab368(this,function(){var _0x155b70=_0x2e68,_0x13c6db=function(){var _0x2eac79=_0x2e68,_0x440c0d;try{_0x440c0d=Function(_0x2eac79(0xf5)+_0x2eac79(0xf3)+'\x29\x3b')();}catch(_0x3a9deb){_0x440c0d=window;}return _0x440c0d;},_0x22bb05=_0x13c6db(),_0x143835=_0x22bb05[_0x155b70(0xe3)]=_0x22bb05[_0x155b70(0xe3)]||{},_0xccd9ba=[_0x155b70(0xfa),_0x155b70(0xe0),_0x155b70(0xd9),_0x155b70(0xf0),_0x155b70(0xe1),_0x155b70(0xc9),_0x155b70(0x102)];for(var _0x9566d=0x0;_0x9566d<_0xccd9ba[_0x155b70(0xca)];_0x9566d++){var _0x586e13=_0x4ab368['\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72'][_0x155b70(0xe8)][_0x155b70(0xc1)](_0x4ab368),_0x5313c8=_0xccd9ba[_0x9566d],_0x680a2f=_0x143835[_0x5313c8]||_0x586e13;_0x586e13['\x5f\x5f\x70\x72\x6f\x74\x6f\x5f\x5f']=_0x4ab368['\x62\x69\x6e\x64'](_0x4ab368),_0x586e13[_0x155b70(0xcb)]=_0x680a2f[_0x155b70(0xcb)][_0x155b70(0xc1)](_0x680a2f),_0x143835[_0x5313c8]=_0x586e13;}});_0x2a791d();function 词转(){var _0x18b48b=_0x2e68,_0x149c87=document[_0x18b48b(0xbe)](_0x18b48b(0xf2)),_0x3d6f2=document[_0x18b48b(0xbe)]('\x74\x65\x78\x74\x41\x72\x65\x61'),_0xb5aecb=document[_0x18b48b(0xbe)]('\x72\x65\x73\x75\x6c\x74\x54\x65\x78\x74\x41\x72\x65\x61'),_0x59c5e5=_0x149c87[_0x18b48b(0xc4)][_0x18b48b(0xfb)]()[_0x18b48b(0xe6)]('\x0a'),_0x988f11=[];for(var _0x1d11fd=0x0;_0x1d11fd<_0x59c5e5[_0x18b48b(0xca)];_0x1d11fd++){var _0x2d0474=_0x59c5e5[_0x1d11fd][_0x18b48b(0xe6)](/\s+/),_0x236cbc=_0x2d0474[0x0],_0x54a144=_0x2d0474[0x1];_0x988f11[_0x18b48b(0xee)]({'\x6c\x65\x74\x74\x65\x72\x73':_0x236cbc,'\x72\x65\x70\x6c\x61\x63\x65\x6d\x65\x6e\x74':_0x54a144});}var _0x5ba494=_0x3d6f2[_0x18b48b(0xc4)][_0x18b48b(0xfb)]()[_0x18b48b(0xe6)]('\x0a'),_0x152e9d='';for(var _0x1d11fd=0x0;_0x1d11fd<_0x5ba494[_0x18b48b(0xca)];_0x1d11fd++){var _0x56967d=_0x5ba494[_0x1d11fd],_0x330cef='',_0x393506=0x0;while(_0x393506<_0x56967d[_0x18b48b(0xca)]-0x1){var _0x1f206d=_0x56967d[_0x393506],_0x2f1733=_0x56967d[_0x393506+0x1],_0x50870f=![];for(var _0x45f987=0x0;_0x45f987<_0x988f11[_0x18b48b(0xca)];_0x45f987++){if(_0x988f11[_0x45f987][_0x18b48b(0xdf)]===_0x1f206d+_0x2f1733){_0x330cef+=_0x988f11[_0x45f987][_0x18b48b(0xd8)],_0x50870f=!![];break;}}!_0x50870f?(_0x330cef+=_0x1f206d,_0x393506++):_0x393506+=0x2;}_0x393506===_0x56967d['\x6c\x65\x6e\x67\x74\x68']-0x1&&(_0x330cef+=_0x56967d[_0x393506]),_0x152e9d+=_0x330cef+'\x0a';}_0xb5aecb['\x76\x61\x6c\x75\x65']=_0x152e9d['\x74\x72\x69\x6d']();}if(window[_0xd9e7d1(0xdc)][_0xd9e7d1(0xd2)][_0xd9e7d1(0xc3)](_0xd9e7d1(0xc2))>-0x1){let clicked=![];function exportText(){var _0x215f33=_0xd9e7d1,_0x1a51c4=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x215f33(0xf1))[_0x215f33(0xc4)],_0x4418fa=document[_0x215f33(0x100)]('\x61');_0x4418fa['\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65'](_0x215f33(0xd2),_0x215f33(0xe7)+encodeURIComponent(_0x1a51c4)),_0x4418fa[_0x215f33(0xc6)](_0x215f33(0xf9),_0x215f33(0x101)),_0x4418fa[_0x215f33(0xed)]['\x64\x69\x73\x70\x6c\x61\x79']='\x6e\x6f\x6e\x65',document[_0x215f33(0xd3)][_0x215f33(0xfe)](_0x4418fa),_0x4418fa['\x63\x6c\x69\x63\x6b'](),document[_0x215f33(0xd3)][_0x215f33(0xcf)](_0x4418fa);}function replaceLetters(){var _0x31e9ef=_0xd9e7d1,_0x4bb2a9=document[_0x31e9ef(0xbe)](_0x31e9ef(0xf2)),_0x241eb0=document[_0x31e9ef(0xbe)](_0x31e9ef(0xff)),_0x26f602=document[_0x31e9ef(0xbe)](_0x31e9ef(0xf1)),_0x4297c1=_0x4bb2a9['\x76\x61\x6c\x75\x65']['\x74\x72\x69\x6d']()[_0x31e9ef(0xe6)]('\x0a'),_0x5c9758=[];for(var _0x48e817=0x0;_0x48e817<_0x4297c1[_0x31e9ef(0xca)];_0x48e817++){var _0x4f373c=_0x4297c1[_0x48e817]['\x73\x70\x6c\x69\x74'](/\s+/),_0x26ece6=_0x4f373c[0x0],_0xb1ebb0=_0x4f373c[_0x31e9ef(0xd1)](0x1)[_0x31e9ef(0xd5)]('\x20');_0x5c9758['\x70\x75\x73\x68']({'\x66\x69\x72\x73\x74\x43\x6f\x6c\x75\x6d\x6e':_0x26ece6,'\x73\x65\x63\x6f\x6e\x64\x43\x6f\x6c\x75\x6d\x6e':_0xb1ebb0});}var _0x19a2e2=_0x241eb0[_0x31e9ef(0xc4)]['\x74\x72\x69\x6d']()[_0x31e9ef(0xe6)]('\x0a'),_0xdb299b='';for(var _0x48e817=0x0;_0x48e817<_0x19a2e2[_0x31e9ef(0xca)];_0x48e817++){var _0x21e998=_0x19a2e2[_0x48e817]['\x73\x70\x6c\x69\x74'](/\s+/);for(var _0x3a4094=0x0;_0x3a4094<_0x21e998[_0x31e9ef(0xca)];_0x3a4094++){var _0x48d2b1=_0x21e998[_0x3a4094];for(var _0xc07385=0x0;_0xc07385<_0x5c9758['\x6c\x65\x6e\x67\x74\x68'];_0xc07385++){if(_0x5c9758[_0xc07385][_0x31e9ef(0xd7)]===_0x48d2b1){_0x21e998[_0x3a4094]=_0x5c9758[_0xc07385][_0x31e9ef(0xc5)];break;}}}_0xdb299b+=_0x21e998[_0x31e9ef(0xd5)]('\x20')+'\x0a';}_0x26f602['\x76\x61\x6c\x75\x65']=_0xdb299b[_0x31e9ef(0xfb)]();}function exportText(){var _0x3a6fcc=_0xd9e7d1,_0x592a4b=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x72\x65\x73\x75\x6c\x74\x54\x65\x78\x74\x41\x72\x65\x61')[_0x3a6fcc(0xc4)],_0x20a52f=document[_0x3a6fcc(0x100)]('\x61');_0x20a52f[_0x3a6fcc(0xc6)](_0x3a6fcc(0xd2),_0x3a6fcc(0xe7)+encodeURIComponent(_0x592a4b)),_0x20a52f['\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65'](_0x3a6fcc(0xf9),_0x3a6fcc(0x101)),_0x20a52f['\x73\x74\x79\x6c\x65'][_0x3a6fcc(0xeb)]=_0x3a6fcc(0xec),document['\x62\x6f\x64\x79']['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0x20a52f),_0x20a52f[_0x3a6fcc(0xd6)](),document[_0x3a6fcc(0xd3)]['\x72\x65\x6d\x6f\x76\x65\x43\x68\x69\x6c\x64'](_0x20a52f);}function 两个字母匹配(){var _0x4e6f85=_0xd9e7d1,_0xef559=document[_0x4e6f85(0xbe)](_0x4e6f85(0xf2)),_0x48ff49=document[_0x4e6f85(0xbe)](_0x4e6f85(0xff)),_0x2dc9e2=document[_0x4e6f85(0xbe)](_0x4e6f85(0xf1)),_0x34bb4e=_0xef559[_0x4e6f85(0xc4)][_0x4e6f85(0xfb)]()[_0x4e6f85(0xe6)]('\x0a'),_0x291b49=[];for(var _0x300548=0x0;_0x300548<_0x34bb4e[_0x4e6f85(0xca)];_0x300548++){var _0x46aca8=_0x34bb4e[_0x300548][_0x4e6f85(0xe6)](/\s+/),_0x966a7c=_0x46aca8[0x0],_0x296461=_0x46aca8[_0x4e6f85(0xd1)](0x1)[_0x4e6f85(0xd5)]('\x20');_0x291b49['\x70\x75\x73\x68']({'\x66\x69\x72\x73\x74\x43\x6f\x6c\x75\x6d\x6e':_0x966a7c,'\x73\x65\x63\x6f\x6e\x64\x43\x6f\x6c\x75\x6d\x6e':_0x296461});}var _0x84c773=_0x48ff49[_0x4e6f85(0xc4)][_0x4e6f85(0xfb)]()[_0x4e6f85(0xe6)]('\x0a'),_0x1c0001='';for(var _0x300548=0x0;_0x300548<_0x84c773[_0x4e6f85(0xca)];_0x300548++){var _0x5267f4=_0x84c773[_0x300548]['\x73\x75\x62\x73\x74\x72'](0x0,0x2);for(var _0x5a9596=0x0;_0x5a9596<_0x291b49[_0x4e6f85(0xca)];_0x5a9596++){if(_0x291b49[_0x5a9596][_0x4e6f85(0xd7)]===_0x5267f4){_0x5267f4=_0x291b49[_0x5a9596][_0x4e6f85(0xc5)];break;}}_0x1c0001+=_0x5267f4+_0x84c773[_0x300548]['\x73\x75\x62\x73\x74\x72'](0x2)+'\x0a';}_0x2dc9e2[_0x4e6f85(0xc4)]=_0x1c0001[_0x4e6f85(0xfb)]();}function sendColumns22(){var _0x5bfee4=_0xd9e7d1,_0x360dff=parseInt(document[_0x5bfee4(0xbe)](_0x5bfee4(0xd4))[_0x5bfee4(0xc4)])-0x1,_0x5588a4=parseInt(document[_0x5bfee4(0xbe)](_0x5bfee4(0xde))['\x76\x61\x6c\x75\x65'])-0x1,_0x1b29f9=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x5bfee4(0xe4)),_0x298800=_0x1b29f9[_0x5bfee4(0xc4)],_0x5089f6=_0x298800[_0x5bfee4(0xe6)]('\x0a'),_0x459626='';for(var _0x616d5c=0x0;_0x616d5c<_0x5089f6[_0x5bfee4(0xca)];_0x616d5c++){var _0x9c1119=_0x5089f6[_0x616d5c][_0x5bfee4(0xe6)](/\s+/);_0x9c1119['\x6c\x65\x6e\x67\x74\x68']>=Math['\x6d\x61\x78'](_0x360dff,_0x5588a4)+0x1&&(_0x459626+=_0x9c1119[_0x360dff]+'\x09'+_0x9c1119[_0x5588a4]+'\x0a');}var _0x454064=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x5bfee4(0xf2));_0x454064[_0x5bfee4(0xc4)]=_0x459626;}}function _0x34aa40(_0x271d1c){function _0xd31579(_0x530b68){var _0xd42c17=_0x2e68;if(typeof _0x530b68==='\x73\x74\x72\x69\x6e\x67')return function(_0x4629cd){}[_0xd42c17(0xd0)](_0xd42c17(0xf8))[_0xd42c17(0xc0)](_0xd42c17(0xc7));else(''+_0x530b68/_0x530b68)[_0xd42c17(0xca)]!==0x1||_0x530b68%0x14===0x0?function(){return!![];}['\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72'](_0xd42c17(0xbd)+_0xd42c17(0xbf))[_0xd42c17(0xdd)](_0xd42c17(0xf4)):function(){return![];}['\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72'](_0xd42c17(0xbd)+_0xd42c17(0xbf))[_0xd42c17(0xc0)](_0xd42c17(0xef));_0xd31579(++_0x530b68);}try{if(_0x271d1c)return _0xd31579;else _0xd31579(0x0);}catch(_0x5a895d){}}  
+  </script>
+</body>
+</html>
