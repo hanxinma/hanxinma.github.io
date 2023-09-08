@@ -1047,13 +1047,28 @@ ctrl+f可以搜索关键词,看有没有你要找的
 
 <script>
 // 判断是否是第一次进入
-if (sessionStorage.getItem('isFirstVisit') === null) {
+//if (sessionStorage.getItem('isFirstVisit') === null) {
   // 第一次进入，设置 sessionStorage，5 秒后跳转链接
+ // sessionStorage.setItem('isFirstVisit', 'true');
+ // setTimeout(function() {
+ //   window.location.href = "https://hanxinma.gitee.io/hanxin/js/sjsy";
+//  }, 1);
+//}
+
+
+if (sessionStorage.getItem('isFirstVisit') === null) {
+  // 第一次进入，设置 sessionStorage
   sessionStorage.setItem('isFirstVisit', 'true');
+  
+  // 弹出对话框
   setTimeout(function() {
-    window.location.href = "https://hanxinma.gitee.io/hanxin/js/sjsy";
-  }, 1);
+    var result = confirm("跳转到【汉心网页输入法】体验学习");
+    if (result) {
+      window.location.href = "https://hanxinma.gitee.io/hanxin/js/sjsy";
+    }
+  }, 2000);
 }
+
 </script>
 
     <footer class="page-footer bg-color">
