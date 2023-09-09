@@ -142,7 +142,7 @@
         <p id="question"></p>
       </div>
       <div class="answer-container">
-        <input type="text" id="answer" placeholder="请输入答案" onkeydown="if(event.keyCode===13) checkAnswer()">
+        <input type="text" id="answer" placeholder="请输入答案" onkeydown="if(event.keyCode===13) checkAnswer()" autocomplete="off">
         <div class="invalid-feedback">请输入答案</div>
       </div>
       <div class="result-container">
@@ -208,7 +208,7 @@
 
 "红[纟工]这个字是哪两个首尾键位，小写字母两个.,sg,如果你不知道，点击下方的字元字根图",
 "优[亻尤]这个字是哪两个首尾键位，小写字母两个.,ry,如果你不知道，点击下方的字元字根图",
-      "围[囗韦]这个字是哪两个首尾键位，小写字母两个.,ww,如果你不知道，点击下方的字元字根图",
+"围[囗韦]这个字是哪两个首尾键位，小写字母两个.,ww,如果你不知道，点击下方的字元字根图",
 "文[亠乂]这个字是哪两个首尾键位，小写字母两个.,wx,如果你不知道，点击下方的字元字根图",
 "枚[木攵]这个字是哪两个首尾键位，小写字母两个.,lw,如果你不知道，点击下方的字元字根图",
 "尔[⺈小]这个字是哪两个首尾键位，小写字母两个.,ex,如果你不知道，点击下方的字元字根图",
@@ -268,7 +268,6 @@
 "阳[阝日]这个字是哪两个首尾键位，小写字母两个.,eo,如果你不知道，点击下方的字元字根图",
 "猫[犭田]这个字是哪两个首尾键位，小写字母两个.,qt,如果你不知道，点击下方的字元字根图",
 "很[彳畏底部]这个字是哪两个首尾键位，小写字母两个.,rh,如果你不知道，点击下方的字元字根图",
-"围[囗韦]这个字是哪两个首尾键位，小写字母两个.,ww,如果你不知道，点击下方的字元字根图",
 "卫[卩一]这个字是哪两个首尾键位，小写字母两个.,ea,如果你不知道，点击下方的字元字根图,,小字元图不准,大版字根图,有明确标一样的字根",
 
 
@@ -281,51 +280,93 @@
       document.getElementById("question-number").innerHTML = "字元，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
       document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
 
-      function checkAnswer() {
-        var input = document.getElementById("answer");
-        var feedback = input.nextElementSibling;
-        if (input.value.trim() === "") { // 如果输入的答案为空
-          input.classList.add("is-invalid"); // 添加is-invalid类
-          feedback.style.display = "block"; // 显示错误提示
-        } else {
-          input.classList.remove("is-invalid"); // 移除is-invalid类
-          feedback.style.display = "none"; // 隐藏错误提示
-          var correctAnswer = dataArray[currentQuestion].split(",")[1];
-          if (input.value === correctAnswer) {
+
+
+
+var correctCount = 0; // 记录答对的题目数量
+var firstAttemptCorrectCount = 0; // 记录第一次就答对的题目数量
+var correctAnswers = {}; // 记录每个问题的正确答案，格式为 {question: answer}
+var isFirstAttempt = true; // 标记是否是第一次尝试回答
+
+function checkAnswer() {
+    var input = document.getElementById("answer");
+    var feedback = input.nextElementSibling;
+    if (input.value.trim() === "") { // 如果输入的答案为空
+        input.classList.add("is-invalid"); // 添加is-invalid类
+        feedback.style.display = "block"; // 显示错误提示
+    } else {
+        input.classList.remove("is-invalid"); // 移除is-invalid类
+        feedback.style.display = "none"; // 隐藏错误提示
+        var currentQuestionText = dataArray[currentQuestion].split(",")[0];
+        var correctAnswer = dataArray[currentQuestion].split(",")[1];
+        if (input.value === correctAnswer && !correctAnswers.hasOwnProperty(currentQuestionText)) {
             document.getElementById("result").innerHTML = "恭喜你答对了！";
             setTimeout(function(){
                 document.getElementById("result").innerHTML = "";
-            }, 1000); //1000毫秒 = 1秒钟
-                    
-   
+            }, 1000); // 1000毫秒 = 1秒钟
 
+            correctCount++; // 答对的题目数量加1
+
+            if (isFirstAttempt) {
+                firstAttemptCorrectCount++; // 第一次就答对的题目数量加1
+                isFirstAttempt = false; // 将标记设为false，表示已经回答过一次
+            }
+
+            correctAnswers[currentQuestionText] = correctAnswer; // 将本题答案加入已答对的答案列表
 
             currentQuestion++;
             if (currentQuestion < dataArray.length) {
-              document.getElementById("question-number").innerHTML = "字元，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
-              document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
-              input.value = "";
+                document.getElementById("question-number").innerHTML = "规则，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+                document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
+                input.value = "";
+                isFirstAttempt = true; // 进入下一题时重置标记为true，表示第一次尝试回答
             } else {
-              document.getElementById("question-number").innerHTML = "完成！";
-              document.getElementById("answer").style.display = "none";
-              document.getElementById("result").style.display = "none";
-              document.getElementById("question-number").style.display = "none";
-              document.getElementsByClassName("btn")[0].style.display = "none";
-              document.getElementsByClassName("btn")[1].style.width = "100%";
-              document.getElementById("question").innerHTML = "这批训练题已经做完了，请点下面新的题目！";
-              input.style.display = "none";
-            }
-          } else {
-            document.getElementById("result").innerHTML = dataArray[currentQuestion].split(",")[2];
+                document.getElementById("question-number").innerHTML = "完成！";
+                document.getElementById("answer").style.display = "none";
+                document.getElementById("result").style.display = "none";
+                document.getElementById("question-number").style.display = "none";
+                document.getElementsByClassName("btn")[0].style.display = "none";
+                document.getElementsByClassName("btn")[1].style.width = "100%";
+                
+              var multipliedCount = Math.floor(firstAttemptCorrectCount * 1.6);        
 
-          }
+if (multipliedCount > 100) {
+    multipliedCount = 100;
+} else {
+    multipliedCount = Math.floor(multipliedCount);
+}
+
+
+               var message;
+
+if (multipliedCount > 90) {
+    message = "恭喜你已经入门了！很优秀。可以接着学一下规则吧，点击下方规则训练！";
+} else {
+    message = "还需要继续学习哦！";
+}
+
+
+document.getElementById("question").innerHTML =  "答对的[得分]：" + multipliedCount +"分。"+message;
+input.style.display = "none";
+
+
+
+            }
+        } else if (correctAnswers.hasOwnProperty(currentQuestionText)) {
+            // 如果本题已经回答正确过了，不记录再次回答正确的情况
+            document.getElementById("result").innerHTML = "你已经回答正确过了！请回答下一题。";
+        } else {
+            document.getElementById("result").innerHTML = dataArray[currentQuestion].split(",")[2];
+            isFirstAttempt = false; // 如果第一次回答错误，将标记设为false，表示已经尝试过一次
         }
-      }
+    }
+}
+
 
       function skipQuestion() {
         currentQuestion++;
         if (currentQuestion < dataArray.length) {
-          document.getElementById("question-number").innerHTML = "字元，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+          document.getElementById("question-number").innerHTML = "注意的字，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
           document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
           document.getElementById("answer").value = "";
           document.getElementById("result").innerHTML = "";
