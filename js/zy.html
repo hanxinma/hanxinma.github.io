@@ -283,6 +283,7 @@
 
 
 
+
 var correctCount = 0; // 记录答对的题目数量
 var firstAttemptCorrectCount = 0; // 记录第一次就答对的题目数量
 var correctAnswers = {}; // 记录每个问题的正确答案，格式为 {question: answer}
@@ -328,21 +329,16 @@ function checkAnswer() {
                 document.getElementsByClassName("btn")[0].style.display = "none";
                 document.getElementsByClassName("btn")[1].style.width = "100%";
                 
-              var multipliedCount = Math.floor(firstAttemptCorrectCount * 1.6);        
-
-if (multipliedCount > 100) {
-    multipliedCount = 100;
-} else {
-    multipliedCount = Math.floor(multipliedCount);
-}
-
-
+                
+          var multipliedCount = Math.floor(firstAttemptCorrectCount * 1.6);
                var message;
 
-if (multipliedCount > 90) {
-    message = "恭喜你已经入门了！很优秀。可以接着学一下规则吧，点击下方规则训练！";
+
+if (multipliedCount > 80) {
+  message = "恭喜学会了汉心码,点<a href='biye/biyegl.html'>这里可以拿奖状</a>！还可以继续学习规则,可以拿毕业证(下方点击规则训练)";
+
 } else {
-    message = "还需要继续学习哦！";
+  message = "还需要继续学习哦！建议得分需要在80分以上。";
 }
 
 
