@@ -1,7 +1,7 @@
-# 汉心打字法介绍 
+# 汉心打字法介绍 [官网地址](https://hanxinma.gitee.io/hanxin/)
 
 #### 汉心官网,汉心码官网,汉心快打官网
-{**以下是 Gitee 平台说明，您可以替换此简介**[官网地址](https://hanxinma.gitee.io/hanxin/)}
+
 汉心码和汉心快打是什么?
 
 
