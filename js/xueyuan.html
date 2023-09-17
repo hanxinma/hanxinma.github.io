@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
   <style>
     body {
-      background-image: url("汉心快打.jpg");
-      background-size: 800px 800px; /* 背景图片的宽度和高度 */
+      background-image: url("https://hanxinma.gitee.io/hanxin/medias/img2/%E6%B1%89%E5%BF%83%E5%A4%A7%E5%AD%A6.jpg");
+      background-size: 800px 330px; /* 背景图片的宽度和高度 */
       background-position: top center;
       background-repeat: no-repeat; /* 禁止图片重复 */
       height: 800px;
@@ -13,7 +13,7 @@
     
     .container {
       text-align: center;
-      margin-top: 620px;
+      margin-top: 375px;
     }
     
     .input {
@@ -24,14 +24,36 @@
   <script>
     function redirectToBaidu() {
       var input = document.getElementById("inputText").value;
-      if (input === "9969") {
+      if (input === "1001") {
         window.location.href = "https://hanxinma.gitee.io/hanxin/js/zy.html";
       }
     }
-
     function handleInputKeyPress(event) {
       if (event.key === "Enter") {
         redirectToBaidu();
+      }
+    }
+    function redirectToBaidu2() {
+      var input = document.getElementById("inputText2").value;
+      if (input === "1002") {
+        window.location.href = "https://hanxinma.gitee.io/hanxin/js/gz.html";
+      }
+    }
+    function handleInputKeyPress2(event) {
+      if (event.key === "Enter") {
+        redirectToBaidu2();
+      }
+    }
+    function redirectToBaidu3() {
+      var input = document.getElementById("inputText3").value;
+      if (input === "1003") {
+        window.location.href = "https://hanxinma.gitee.io/hanxin/js/zyi.html";
+      }
+    }
+
+    function handleInputKeyPress3(event) {
+      if (event.key === "Enter") {
+        redirectToBaidu3();
       }
     }
   </script>
@@ -39,15 +61,22 @@
 <body>
   <div class="container">
     <div class="input">
-      <input type="text" id="inputText" placeholder="填写通知书报道号" onKeyDown="handleInputKeyPress(event)">
-      <button onClick="redirectToBaidu()">请输入你的录取通知书报道号，报道学习,字根基本课</button>
+      <input type="text" id="inputText" placeholder="填写学习班级号的数字" onKeyDown="handleInputKeyPress(event)">
+      <button onClick="redirectToBaidu()">拼音形码班第一学期,汉心码,字根课,网络班级教室在,1001号</button>
     </div>
+    <div class="input">
+      <input type="text" id="inputText2" placeholder="填写学习班级号的数字" onKeyDown="handleInputKeyPress2(event)">
+      <button onClick="redirectToBaidu2()">拼音形码班第二学期,汉心码,规则理论课,网络班级教室在,1002号</button>
+    </div>
+    <div class="input">
+      <input type="text" id="inputText3" placeholder="填写学习班级号的数字" onKeyDown="handleInputKeyPress3(event)">
+      <button onClick="redirectToBaidu3()">拼音形码班第三学期,汉心码,注意的字研究生课,网络班级教室在,1003号</button>
+    </div>
+    
     
 <div>
 </br></br></br>
-<span style="font-size: larger;">大学课程</span></div></td>
- <p><a href="https://hanxinma.gitee.io/hanxin/js/gz.html">规则理论课-学成颁发毕业证</a></p>
-  <p><a href="https://hanxinma.gitee.io/hanxin/js/zyi.html">注意的字研究生课-学成颁发专家证</a></p>
+
 
 <iframe src="https://hanxinma.gitee.io/hanxin/2023/09/01/%E6%B1%89%E5%BF%83%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%B3%BB%E7%BB%9F/" width="800" height="600"></iframe>
   </div>
