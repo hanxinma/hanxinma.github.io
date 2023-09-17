@@ -236,3 +236,32 @@ Expand View root Demolition example expand View other features expand View Compu
 一般化のまとめ
 展開繁体字版の表示に関する考慮事項
 展開表示ワードルート分解例展開表示その他の機能展開表示パソコン版インストール展開表示ダブルハートコード携帯版インストール使用展開表示ストラップ補助コード使用方法展開表示ホームページアドレス
+
+El método de mecanografía Hanxin introduce la dirección del sitio web oficial
+Sitio web oficial de hanxin, sitio web oficial de Hanxin code, Hanxin juega rápido en el sitio web oficial
+¿¿ qué es el Código Hanxin y el juego rápido hanxin?
+Es un método de entrada que escribe sin pasar página para encontrar palabras.
+El Código Hanxin es el Código radical auxiliar de pinyin o doble pinyin, es decir, cuando se escribe pinyin o doble pinyin, se añade la pronunciación de un radical más para lograr el Código radical auxiliar sin pasar página para seleccionar palabras.
+¿¿ qué es un golpe rápido en el corazón de han? En términos generales, una palabra se puede escribir con un máximo de cuatro teclas. una palabra, generalmente se pueden escribir con dos teclas, palabras comunes, tres teclas, salida directa. un poco similar a cinco bolígrafos, mecanografiar sin elegir, y hay menos teclas.
+Por ejemplo, si quieres jugar xiang, solo tienes que jugar XD en shuangpin, lo que significa que es xiang, es decir, solo tienes que escribir dos letras como máximo en una palabra. esto es shuangpin express.
+¿¿ cómo no tener que elegir palabras?
+Por ejemplo: golpeas "como", pero la primera palabra es "pensar", entonces tienes que elegir.
+Pero si agregas un código auxiliar hanxin, no tienes que elegir. xdr es "como", la primera letra es x, la segunda letra d Representa iang. la tercera letra R representa a la persona.
+En resumen, se trata de un método de mecanografía rápida que utiliza la ortografía doble de 2 teclas por palabra, acortando la longitud del Código. y el uso de radicales simples para volver a pesar, logrando así que mecanografiar sin pasar página para encontrar palabras. por supuesto, hay muchas versiones de hanxin, principalmente versiones auxiliares colgantes, versiones rápidas y versiones rápidas de palabras. son cuatro versiones de palabras clave, que se pueden agregar códigos auxiliares detrás de las palabras y frases, y se pueden escribir directamente sin presionar espacios. La versión auxiliar está colgada principalmente en el método de entrada de la palma de sogou.
+Características del Código Hanxin
+Hanxin es más como una familia, entiende lo que piensas y protege tu sensación de Seguridad de una manera integral. 1. hay menos raíces remotas, no hay necesidad de preocuparse por recordar las raíces, empezar más rápido y aprender más fácilmente. 2. las reglas son más fáciles de entender y más fáciles de aprender 3. no mecanografiar durante mucho tiempo, porque las raíces y las reglas son simples, no es fácil olvidarlas.
+4. hay muchas funciones, métodos de entrada ordinarios, todos tienen funciones de Codificación de búsqueda. no se atascarán, hay prisa. 5. la tasa de repetición alcanza el nivel principal. 6. desde el Código auxiliar, hasta el Código auxiliar de palabras, hasta la forma de sonido, hay, se puede actualizar más tarde, alguien está manteniendo. 7. hanxin, puede golpear el primer código primero o el código final primero. más libertad. 8. Hanxin tiene una versión web, y las computadoras de otras personas se encienden en segundos, lo que es tranquilizador y seguro.
+El Código Hanxin es un código auxiliar en forma de sonido desarrollado con la idea de blanco puro. Por lo tanto, el Código Hanxin entiende mejor que los recién llegados son más amigables con los recién llegados. la comodidad del código único también es muy alta. y la tasa de repetición no es alta, que es el nivel principal. Hay muchos comentarios de los usuarios que son fáciles de entender y cómodos.
+Especialmente para los códigos naturales y otros dobles deletreos relacionados, no hay códigos auxiliares precisos con menos raíces de palabras. Hanxin es una buena opción para los códigos auxiliares únicos naturales y menos, pero los códigos auxiliares dobles naturales son más del doble que los de hanxin. no es bueno para la actualización posterior de la voz.
+Por lo tanto, naturalmente con el corazón chino es una buena combinación.
+Software de método de entrada
+Hay códigos hanxin, formas de voz de grulla pequeña y formas de voz natural, así como el método de entrada rime universal de toda la plataforma, teléfonos informáticos, Apple y microsoft, Linux se puede usar. También hay muchas versiones. También hay una versión de cinco caracteres de sogou. Hanxin puede usar Hanxin para hacer cualquier herramienta de doble lucha, y se puede convertir en unos pocos pasos.
+Guía de instalación
+La versión de video de las reglas de explicación popular
+Aquí está el sistema de ejercicios que hemos desarrollado, y después de terminarlo, básicamente lo aprenderás.
+Ejercicio de raíz. este ejercicio es un ejercicio de reglas, esto se escribe mal. Él te dará consejos. este también es un ejercicio de palabras a las que prestar atención. esto lo haces mal, él te dará consejos. esto no tiene que practicar. esto es difícil.
+Herramientas para resolver dudas
+Por qué se toma de esta manera, se comprueba la razón y se comprueba la forma del Código.
+Resumen popularizado
+Despliegue para ver las precauciones de la versión tradicional
+Despliegue para ver el ejemplo de desmontaje de la raíz, despliegue para ver otras funciones, despliegue para ver la instalación de la versión informática, despliegue para ver la instalación de la versión móvil del Código de doble corazón chino, despliegue para ver el uso del Código auxiliar colgado, despliegue para ver la dirección del sitio web oficial
