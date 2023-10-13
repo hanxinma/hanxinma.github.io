@@ -1,6 +1,15 @@
 # 汉心打字法介绍 [官网地址](https://hanxinma.gitee.io/hanxin/)
 
 #### 汉心官网,汉心码官网,汉心快打官网
+汉心快打可以提供的功能
+举例
+keyi  刻意 keyiw kewyi kewyil keyiwl 几种词辅功能。当然不同版本功能略有差异。
+锝 dej dejc dejcc 都可以直接打出这个字。
+
+全拼版的，chuanglian 窗帘clg 简码打法
+
+
+主要功能就是打字就可以不用选字，打词不用选词。
 
 汉心码和汉心快打是什么?
 
