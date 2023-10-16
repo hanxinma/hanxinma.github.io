@@ -1,0 +1,230 @@
+schema:
+  schema_id: moran
+  name: 汉心快打-默认模式
+  version: "0.1"
+  icon: "hanxinkuaida.ico"           # string 方案图标，格式： .ico
+  ascii_icon: "aaa.ico"           # string 方案图标，格式： .ico
+
+  author:
+    - 唯一字词固定，不参与调频。其它参与调频。
+  description: |
+    默认模式
+  dependencies:
+    - moran_fixed
+    - moran_sentence
+    - moran_reverse
+    - moran_english
+
+    - stroke #笔画 
+    - tiger
+   # - cangjie5
+    - zrlf
+
+switches:
+  - name: ascii_mode
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: simplification
+    states: [ 漢字, 汉字 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+  - options: [ utf8, gbk, big5 ]
+    reset: 1
+    states:
+    - UTF-8
+    - GBK
+    - BIG5
+  - name: flexible
+    states: [ 固詞, 動詞 ] # 「固詞」表示「固頂詞」
+    reset: 1
+  - name: emoji
+    reset: 1
+    states: [ 🈚, 🈶 ]
+  - name: unicode_comment
+    states: [ U關, U開 ]
+  - name: dzing
+    states: [ 通, 寍 ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - lua_processor@*moran_launcher    
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - reverse_lookup_translator@reverse_universal
+    - reverse_lookup_translator@reverse_tiger
+    - reverse_lookup_translator@reverse_stroke
+    - reverse_lookup_translator@reverse_cangjie5
+    - reverse_lookup_translator@reverse_zrlf
+    - table_translator@custom_phrase       # 自定義短語
+    - table_translator@english             # 英語混輸
+    #- table_translator@japanese            # 日語混輸
+    - lua_translator@*moran_express_translator # 翻譯器
+    - lua_translator@*moran_shijian        # 日期orq 節氣ojq 星期oxq 時間osj
+    - lua_translator@*moran_number         # 數字轉大寫
+  filters:
+    - charset_filter@gbk
+    - charset_filter@big5
+    - simplifier@emoji
+    - simplifier
+    - simplifier@dzing
+  #  - lua_filter@*moran_charset_comment_filter  # Unicode 區位提示
+    #  - lua_filter@*moran_unicode_display_filter  # Unicode 編碼提示
+    - uniquifier
+
+speller:
+  alphabet: abcdefghijklmnopqrstuvwxyz
+  delimiter: " '"
+  algebra:
+    - derive/^(\w*);(\w)(\w)$/$1$2$3o/ # 全碼 YYXXo
+    #- derive/^(\w*);(\w)(\w)$/$1$2$3/  # 全碼 YYXX，優先級更低----开启默认模式单字2个辅码更优先。
+    - abbrev/^(\w*);(\w)(\w)$/$1$2$3/  # 全碼 YYXX，優先級更低
+    - abbrev/^(\w*);(\w)(\w)$/$1$2/    # 構詞可以用 YYX
+    - abbrev/^(\w*);(\w)(\w)$/$1/      # 構詞可以用 YY
+    #- abbrev/^([a-z]).+$/$1/           # 首字母簡拼（※ 嚴重影響出字速度，不建議開啓）
+
+ascii_composer:
+  switch_key:
+    Shift_L: commit_code
+
+translator:    # 整句輸入模式設置，在 top_translator 中被調用
+  dictionary: moran.extended
+  prism: moran.extended
+  initial_quality: 5
+  enable_commit_history: true
+  contextual_suggestions: true
+  max_homophones: 7
+  preedit_format:
+    - xform/([a-z][a-z][a-z][a-z])o/$1°/
+
+fixed:         # 固頂輸入模式設置，在 top_translator 中被調用
+  initial_quality: 100
+  dictionary: moran_fixed
+  enable_completion: false
+  enable_sentence: false
+  enable_user_dict: false
+  enable_encoder: false
+  encode_commit_history: true
+
+custom_phrase: # 自定義短語
+  dictionary: ""
+  user_dict: moran_custom
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 1000
+
+english:
+  dictionary: moran_english
+  enable_completion: true
+  enable_sentence: false
+  enable_user_dict: true
+  initial_quality: 1
+  enable_encoder: false
+  encode_commit_history: false
+  comment_format:
+    - xform/.*//
+
+
+
+emoji:
+  opencc_config: moran_emoji.json
+  option_name: emoji
+  tips: all
+
+dzing:
+  opencc_config: moran_dzing.json
+  option_name: dzing
+  tips: all
+
+reverse_format:
+  comment_format:
+    - xform/(\w\w);(\w\w)/$1[$2]/
+  preedit_format:
+    - xform/^o(lf|bh|cj)//
+
+reverse_tiger:
+  tag: reverse_tiger
+  dictionary: tiger
+  enable_completion: true
+  prefix: "`"
+  tips: 〔模糊音〕
+  __include: reverse_format
+
+reverse_universal:
+  tag: reverse_universal
+  dictionary: moran.main
+  tips: 〔通配〕
+  __include: reverse_format
+
+reverse_stroke:
+  tag: reverse_stroke
+  dictionary: stroke
+  prefix: "obh"
+  enable_completion: true
+  tips: 〔横提h竖s撇p捺点n折z〕
+  __include: reverse_format
+
+
+reverse_zrlf:
+  tag: reverse_zrlf
+  dictionary: zrlf
+  prefix: "oqp"
+  enable_completion: true
+  tips: 〔例如：数，打louwen。取字的大部首读音〕
+  __include: reverse_format
+
+reverse_lookup:
+  extra_tags:
+    - reverse_tiger
+    - reverse_universal
+    - reverse_stroke
+
+    - reverse_zrlf
+
+punctuator:
+  import_preset: symbols
+
+key_binder:
+  import_preset: default
+  bindings:
+    - {when: has_menu, accept: "Control+s", toggle: simplification}
+    - {when: has_menu, accept: "Control+u", toggle: unicode_comment}
+    - {when: has_menu, accept: "Control+q", toggle: emoji}  # q 表示表情，讓出 Ctrl+e
+    - {when: has_menu, accept: "Control+d", toggle: dzing}
+    - {when: has_menu, accept: semicolon, send: "2"}
+    - {when: has_menu, accept: "Tab", send: "Control+Right"}
+    - {when: composing, accept: "Tab", send: "Control+Right"}
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_universal: "(^(`[a-z`]+))|(^([a-z]{2}(`[a-z`]?|[a-z`]`)))"
+    reverse_tiger: "(^`$)|(^`[a-zA-Z]+$)"
+    reverse_stroke: "^obh[A-Za-z]*$"
+    reverse_cangjie5: "^ocj[A-Za-z]*$"
+    reverse_zrlf: "^oqp[A-Za-z]*$"
+    punct: '^/([0-9]0?|[A-Za-z]+)$'
+
+__patch:
+  - moran.custom.yaml:/patch?
+  - moran_patches.yaml:/fix_opencc_t2s?
+
+grammar:
+  language:zh-hans-t-essay-bgw
+  collocation_max_length:4
+  collocation_min_length:2
