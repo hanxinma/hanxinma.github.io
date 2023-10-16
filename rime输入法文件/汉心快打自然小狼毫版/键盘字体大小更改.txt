@@ -1,3 +1,0 @@
-  key_text_size: 20 #键字号
-
-    key_text_offset_y: 1 #键盘主字向下偏移
