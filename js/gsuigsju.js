@@ -1,1 +1,1565 @@
-function _0x1d15(_0x515474,_0x48a2e5){var _0x18d7ce=_0x3ab8();return _0x1d15=function(_0x4205d5,_0x1b15e6){_0x4205d5=_0x4205d5-0x1c4;var _0x6730da=_0x18d7ce[_0x4205d5];return _0x6730da;},_0x1d15(_0x515474,_0x48a2e5);}var _0x3642fd=_0x1d15;(function(_0x3fede8,_0x24e662){var _0x13c4a9=_0x1d15,_0x590b50=_0x3fede8();while(!![]){try{var _0x3127ea=-parseInt(_0x13c4a9(0x1e9))/0x1+parseInt(_0x13c4a9(0x209))/0x2*(-parseInt(_0x13c4a9(0x1e2))/0x3)+parseInt(_0x13c4a9(0x1f3))/0x4+-parseInt(_0x13c4a9(0x1d5))/0x5*(-parseInt(_0x13c4a9(0x238))/0x6)+-parseInt(_0x13c4a9(0x1d7))/0x7*(parseInt(_0x13c4a9(0x256))/0x8)+parseInt(_0x13c4a9(0x1ea))/0x9+parseInt(_0x13c4a9(0x239))/0xa*(parseInt(_0x13c4a9(0x237))/0xb);if(_0x3127ea===_0x24e662)break;else _0x590b50['push'](_0x590b50['shift']());}catch(_0x46aa51){_0x590b50['push'](_0x590b50['shift']());}}}(_0x3ab8,0x3d23c));var result=xmsj();if(result===_0x3642fd(0x246)){function convertbd(){var _0x1baa17=_0x3642fd,_0x668db4=document[_0x1baa17(0x1d6)](_0x1baa17(0x1fc))[_0x1baa17(0x258)],_0x46928a=_0x668db4['\x72\x65\x70\x6c\x61\x63\x65'](/([a-zA-Z]+),(\d+)=([a-zA-Z]?)/g,_0x1baa17(0x1cf));document[_0x1baa17(0x1d6)](_0x1baa17(0x1e1))[_0x1baa17(0x258)]=_0x46928a;}function convertqq(){var _0x4bf696=_0x3642fd,_0x181fdf=document[_0x4bf696(0x1d6)]('\x69\x6e\x70\x75\x74')[_0x4bf696(0x258)],_0xc8394f=_0x181fdf[_0x4bf696(0x23c)](/([a-zA-Z]+),(\d+)=([a-zA-Z]?)/g,_0x4bf696(0x21f));document[_0x4bf696(0x1d6)](_0x4bf696(0x1e1))[_0x4bf696(0x258)]=_0xc8394f;}function convertwubi(){return new Promise(function(_0x2d525a,_0x13231d){var _0x9d487e=_0x1d15,_0x328485=document[_0x9d487e(0x1d6)](_0x9d487e(0x1fc))[_0x9d487e(0x258)],_0x3bdb34=_0x328485[_0x9d487e(0x23c)](/([a-zA-Z]+),(\d+)=(.*)/g,_0x9d487e(0x21d));document[_0x9d487e(0x1d6)]('\x6f\x75\x74\x70\x75\x74')[_0x9d487e(0x258)]=_0x3bdb34,_0x2d525a();});}function convertdd(){var _0x177a18=_0x3642fd,_0x3d343c=document[_0x177a18(0x1d6)](_0x177a18(0x1fc))['\x76\x61\x6c\x75\x65'],_0x40d912=_0x3d343c[_0x177a18(0x23c)](/([a-zA-Z]+),(\d+)=(.*)/g,'\x24\x33\x09\x24\x31');document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x177a18(0x1e1))[_0x177a18(0x258)]=_0x40d912;}function 手心(){var _0x2e5657=_0x3642fd,_0x1e85d5=document[_0x2e5657(0x1d6)](_0x2e5657(0x1fc))['\x76\x61\x6c\x75\x65'],_0x75d120=_0x1e85d5['\x72\x65\x70\x6c\x61\x63\x65'](/([a-zA-Z]+),(\d+)=(.*)/g,_0x2e5657(0x1c9));document[_0x2e5657(0x1d6)](_0x2e5657(0x1e1))['\x76\x61\x6c\x75\x65']=_0x75d120;}function convertkj(){var _0x4b6069=_0x3642fd,_0x124ba0=document[_0x4b6069(0x1d6)]('\x69\x6e\x70\x75\x74')[_0x4b6069(0x258)],_0x3a940c='',_0x211ac0=/([a-zA-Z]+),(\d+)=(.*)/g,_0x396988,_0x910ae1={};while((_0x396988=_0x211ac0[_0x4b6069(0x20a)](_0x124ba0))!==null){var _0x481087=_0x396988[0x1],_0x3bf431=_0x396988[0x3];_0x910ae1[_0x481087]?_0x910ae1[_0x481087][_0x4b6069(0x1f7)](_0x3bf431)===-0x1&&(_0x910ae1[_0x481087]+='\x20'+_0x3bf431):_0x910ae1[_0x481087]=_0x3bf431;}for(var _0x481087 in _0x910ae1){_0x3a940c+=_0x481087+'\x20'+_0x910ae1[_0x481087]+'\x0a';}document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x4b6069(0x1e1))[_0x4b6069(0x258)]=_0x3a940c;}function convertwin(){var _0x45b88a=_0x3642fd,_0x1cb897=document[_0x45b88a(0x1d6)]('\x69\x6e\x70\x75\x74')[_0x45b88a(0x258)],_0x5084dd=_0x1cb897[_0x45b88a(0x23c)](/([a-zA-Z]+),(\d+)=(.*)/g,'\x24\x33\x24\x31');document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x6f\x75\x74\x70\x75\x74')['\x76\x61\x6c\x75\x65']=_0x5084dd;}function convertkongge(){var _0x4e436c=_0x3642fd,_0xa29d45=document[_0x4e436c(0x1d6)](_0x4e436c(0x1fc))['\x76\x61\x6c\x75\x65'],_0x2bbff6=_0xa29d45[_0x4e436c(0x23c)](/([a-zA-Z]+),(\d+)=(.*)/g,_0x4e436c(0x1ec));document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x4e436c(0x1e1))['\x76\x61\x6c\x75\x65']=_0x2bbff6;}function convertqqsg(){var _0x8ac34d=_0x3642fd,_0x299f54=document[_0x8ac34d(0x1d6)](_0x8ac34d(0x1fc))[_0x8ac34d(0x258)],_0x2d0749=/([a-zA-Z]+)=(\d+),([a-zA-Z\u4e00-\u9fa5]+)/g,_0x4e8d99=_0x299f54[_0x8ac34d(0x23c)](_0x2d0749,_0x8ac34d(0x213));document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x69\x6e\x70\x75\x74')[_0x8ac34d(0x258)]=_0x4e8d99;}function convertbdsg(){var _0xa9f68e=_0x3642fd,_0x43afcd=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0xa9f68e(0x1fc))[_0xa9f68e(0x258)],_0x587b36=/(\d+),([a-zA-Z]+)=([a-zA-Z\u4e00-\u9fa5]+)/g,_0x2f3568=_0x43afcd[_0xa9f68e(0x23c)](_0x587b36,'\x24\x32\x2c\x24\x31\x3d\x24\x33');document[_0xa9f68e(0x1d6)](_0xa9f68e(0x1fc))[_0xa9f68e(0x258)]=_0x2f3568;}function convertjiajia(){var _0xd6879f=_0x3642fd,_0x2eaf2e=document[_0xd6879f(0x1d6)](_0xd6879f(0x1fc))['\x76\x61\x6c\x75\x65'],_0x3e8a0a=_0x2eaf2e['\x72\x65\x70\x6c\x61\x63\x65'](/([a-zA-Z]+),(\d+)=([\u4e00-\u9fa5]+)/g,_0xd6879f(0x262));document[_0xd6879f(0x1d6)](_0xd6879f(0x1e1))[_0xd6879f(0x258)]=_0x3e8a0a;}function convertfzm(){var _0x1731b3=_0x3642fd,_0x675382=document[_0x1731b3(0x1d6)]('\x69\x6e\x70\x75\x74')['\x76\x61\x6c\x75\x65']['\x73\x70\x6c\x69\x74']('\x0a'),_0x67e479='',_0x2eba3c=[];for(var _0x3aef6a=0x0;_0x3aef6a<_0x675382[_0x1731b3(0x242)];_0x3aef6a++){var _0x455d21=_0x675382[_0x3aef6a],_0xeb3df8=_0x455d21['\x73\x70\x6c\x69\x74']('\x2c');if(_0xeb3df8[_0x1731b3(0x242)]>0x1){var _0x827688=_0xeb3df8[0x0],_0x44147e=_0x827688['\x6c\x65\x6e\x67\x74\x68'];if(_0x44147e==0x3||_0x44147e==0x4){var _0x2bea2c=_0x44147e==0x3?_0x827688[_0x1731b3(0x252)](-0x1):_0x827688['\x73\x6c\x69\x63\x65'](-0x2),_0x4f3a02=_0xeb3df8[0x1][_0x1731b3(0x252)](0x2,0x3)+'\x3d'+_0x2bea2c;!_0x2eba3c['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x4f3a02)&&(_0x67e479+=_0x4f3a02+'\x0a',_0x2eba3c[_0x1731b3(0x1f0)](_0x4f3a02));}}}_0x67e479===''&&(_0x67e479=_0x1731b3(0x202)),document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x6f\x75\x74\x70\x75\x74')['\x76\x61\x6c\x75\x65']=_0x67e479[_0x1731b3(0x266)]();}function convertfzmquliangwei(){var _0x151811=_0x3642fd,_0xa40fb1=document[_0x151811(0x1d6)](_0x151811(0x1fc))['\x76\x61\x6c\x75\x65'][_0x151811(0x25b)]('\x0a'),_0x29f2f7='',_0x5474d5=[];for(var _0x3db01b=0x0;_0x3db01b<_0xa40fb1[_0x151811(0x242)];_0x3db01b++){var _0x33ab6f=_0xa40fb1[_0x3db01b],_0x406ef8=_0x33ab6f['\x73\x70\x6c\x69\x74']('\x2c');if(_0x406ef8[_0x151811(0x242)]>0x1){var _0x55298b=_0x406ef8[0x0],_0x250c11=_0x55298b[_0x151811(0x242)];if(_0x250c11==0x4){var _0x40358f=_0x55298b[_0x151811(0x252)](-0x2),_0x2af348=_0x406ef8[0x1]['\x73\x6c\x69\x63\x65'](0x2,0x3)+'\x3d'+_0x40358f;!_0x5474d5['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x2af348)&&(_0x29f2f7+=_0x2af348+'\x0a',_0x5474d5[_0x151811(0x1f0)](_0x2af348));}}}_0x29f2f7===''&&(_0x29f2f7=_0x151811(0x202)),document[_0x151811(0x1d6)](_0x151811(0x1e1))[_0x151811(0x258)]=_0x29f2f7[_0x151811(0x266)]();}function convertfzmquyiwei(){var _0x9c4aea=_0x3642fd,_0x1c82cb=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x9c4aea(0x1fc))[_0x9c4aea(0x258)][_0x9c4aea(0x25b)]('\x0a'),_0x42e922='',_0x54fcb7=[];for(var _0x4e6af5=0x0;_0x4e6af5<_0x1c82cb['\x6c\x65\x6e\x67\x74\x68'];_0x4e6af5++){var _0x3a9843=_0x1c82cb[_0x4e6af5],_0x18d627=_0x3a9843[_0x9c4aea(0x25b)]('\x2c');if(_0x18d627[_0x9c4aea(0x242)]>0x1){var _0x9b0559=_0x18d627[0x0],_0x355df4=_0x9b0559[_0x9c4aea(0x242)];if(_0x355df4==0x4){var _0x33df1e=_0x9b0559[_0x9c4aea(0x1e7)](0x2),_0x1c3649=_0x18d627[0x1][_0x9c4aea(0x252)](0x2,0x3)+'\x3d'+_0x33df1e;!_0x54fcb7[_0x9c4aea(0x1ef)](_0x1c3649)&&(_0x42e922+=_0x1c3649+'\x0a',_0x54fcb7[_0x9c4aea(0x1f0)](_0x1c3649));}}}_0x42e922===''&&(_0x42e922=_0x9c4aea(0x202)),document[_0x9c4aea(0x1d6)](_0x9c4aea(0x1e1))[_0x9c4aea(0x258)]=_0x42e922[_0x9c4aea(0x266)]();}var result=xmsj();if(result===_0x3642fd(0x246)){function exportOutput(){var _0x340c97=_0x3642fd;const _0x5a9d22=document[_0x340c97(0x1d6)]('\x6f\x75\x74\x70\x75\x74'),_0x56e9b9=_0x5a9d22[_0x340c97(0x258)][_0x340c97(0x266)](),_0x4f4acd=document[_0x340c97(0x219)]('\x61');_0x4f4acd[_0x340c97(0x1c4)][_0x340c97(0x248)]=_0x340c97(0x26b),_0x4f4acd[_0x340c97(0x25a)]='\x64\x61\x74\x61\x3a\x74\x65\x78\x74\x2f\x70\x6c\x61\x69\x6e\x3b\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38\x2c'+encodeURIComponent(_0x56e9b9),_0x4f4acd['\x64\x6f\x77\x6e\x6c\x6f\x61\x64']=_0x340c97(0x1cc),document[_0x340c97(0x23b)]['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0x4f4acd),_0x4f4acd['\x63\x6c\x69\x63\x6b'](),document[_0x340c97(0x23b)][_0x340c97(0x244)](_0x4f4acd);}function importInput(){var _0x1d2974=_0x3642fd,_0x3ccdf8=document[_0x1d2974(0x1d6)]('\x69\x6d\x70\x6f\x72\x74\x46\x69\x6c\x65');_0x3ccdf8[_0x1d2974(0x1f1)](_0x1d2974(0x20f),function(){var _0x359b1b=_0x1d2974,_0x213e13=_0x3ccdf8[_0x359b1b(0x1cb)][0x0],_0x20dcdf=new FileReader();_0x20dcdf[_0x359b1b(0x235)](_0x213e13),_0x20dcdf[_0x359b1b(0x1ed)]=function(){var _0x297356=_0x359b1b;document[_0x297356(0x1d6)](_0x297356(0x1fc))[_0x297356(0x258)]=_0x20dcdf[_0x297356(0x21e)];};}),_0x3ccdf8[_0x1d2974(0x217)]();}}}function xmsj(){var _0x34a61a=_0x3642fd,_0x10627c=(function(){var _0x48dd41=!![];return function(_0x2eaccd,_0x3b4b79){var _0x1875e3=_0x48dd41?function(){if(_0x3b4b79){var _0x5980b7=_0x3b4b79['\x61\x70\x70\x6c\x79'](_0x2eaccd,arguments);return _0x3b4b79=null,_0x5980b7;}}:function(){};return _0x48dd41=![],_0x1875e3;};}()),_0x5468c0=_0x10627c(this,function(){var _0x2d6815=_0x1d15;return _0x5468c0[_0x2d6815(0x220)]()[_0x2d6815(0x1f4)](_0x2d6815(0x23e))[_0x2d6815(0x220)]()[_0x2d6815(0x240)](_0x5468c0)[_0x2d6815(0x1f4)](_0x2d6815(0x23e));});_0x5468c0();var _0x52e9e5=(function(){var _0x4aa615=!![];return function(_0x4c3adc,_0x1a0d61){var _0x3c47d9=_0x4aa615?function(){var _0x4f9cc6=_0x1d15;if(_0x1a0d61){var _0x2d90be=_0x1a0d61[_0x4f9cc6(0x1e6)](_0x4c3adc,arguments);return _0x1a0d61=null,_0x2d90be;}}:function(){};return _0x4aa615=![],_0x3c47d9;};}());(function(){_0x52e9e5(this,function(){var _0x18b1c4=_0x1d15,_0x21bf4b=new RegExp(_0x18b1c4(0x203)),_0x7f8ecb=new RegExp(_0x18b1c4(0x1da),'\x69'),_0x434a6e=_0x4986ba(_0x18b1c4(0x250));!_0x21bf4b[_0x18b1c4(0x1e3)](_0x434a6e+'\x63\x68\x61\x69\x6e')||!_0x7f8ecb['\x74\x65\x73\x74'](_0x434a6e+'\x69\x6e\x70\x75\x74')?_0x434a6e('\x30'):_0x4986ba();})();}());var _0x5bbcf0=(function(){var _0x5fb028=!![];return function(_0x135731,_0x200f1e){var _0x7bd7b6=_0x5fb028?function(){var _0x4750ea=_0x1d15;if(_0x200f1e){var _0x590f58=_0x200f1e[_0x4750ea(0x1e6)](_0x135731,arguments);return _0x200f1e=null,_0x590f58;}}:function(){};return _0x5fb028=![],_0x7bd7b6;};}()),_0x5c9a55=_0x5bbcf0(this,function(){var _0x5e2df1=_0x1d15,_0xac0f4f;try{var _0x33e937=Function(_0x5e2df1(0x1e8)+'\x7b\x7d\x2e\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72\x28\x22\x72\x65\x74\x75\x72\x6e\x20\x74\x68\x69\x73\x22\x29\x28\x20\x29'+'\x29\x3b');_0xac0f4f=_0x33e937();}catch(_0x3c9a7b){_0xac0f4f=window;}var _0x398b82=_0xac0f4f['\x63\x6f\x6e\x73\x6f\x6c\x65']=_0xac0f4f['\x63\x6f\x6e\x73\x6f\x6c\x65']||{},_0x1e301a=[_0x5e2df1(0x24b),'\x77\x61\x72\x6e',_0x5e2df1(0x236),_0x5e2df1(0x1df),_0x5e2df1(0x25c),'\x74\x61\x62\x6c\x65',_0x5e2df1(0x1dd)];for(var _0x55cd10=0x0;_0x55cd10<_0x1e301a[_0x5e2df1(0x242)];_0x55cd10++){var _0xfb906f=_0x5bbcf0[_0x5e2df1(0x240)]['\x70\x72\x6f\x74\x6f\x74\x79\x70\x65']['\x62\x69\x6e\x64'](_0x5bbcf0),_0x4e294e=_0x1e301a[_0x55cd10],_0x3413e1=_0x398b82[_0x4e294e]||_0xfb906f;_0xfb906f[_0x5e2df1(0x245)]=_0x5bbcf0[_0x5e2df1(0x22f)](_0x5bbcf0),_0xfb906f[_0x5e2df1(0x220)]=_0x3413e1['\x74\x6f\x53\x74\x72\x69\x6e\x67'][_0x5e2df1(0x22f)](_0x3413e1),_0x398b82[_0x4e294e]=_0xfb906f;}});_0x5c9a55();var _0x198358=document[_0x34a61a(0x23b)][_0x34a61a(0x1d9)],_0xb7e989=['\u9996\u9875',_0x34a61a(0x1e4),_0x34a61a(0x223),_0x34a61a(0x211),'\x51\x51\u53d8\u641c\u72d7'],_0x5b96e2=!![];for(var _0x4262b6=0x0;_0x4262b6<_0xb7e989[_0x34a61a(0x242)];_0x4262b6++){if(!_0x198358[_0x34a61a(0x1ef)](_0xb7e989[_0x4262b6])){_0x5b96e2=![];break;}}const _0x430b13=['\x68\x74\x74\x70\x73\x3a\x2f\x2f\x68\x61\x6e\x78\x69\x6e\x6d\x61\x2e\x67\x69\x74\x65\x65\x2e\x69\x6f\x2f\x68\x61\x6e\x78\x69\x6e\x2f',_0x34a61a(0x227),_0x34a61a(0x227),'\x68\x74\x74\x70\x73\x3a\x2f\x2f\x68\x61\x6e\x78\x69\x6e\x6d\x61\x2e\x67\x69\x74\x68\x75\x62\x2e\x69\x6f\x2f'];let _0x406ded=!![];for(const _0x29c291 of _0x430b13){if(!document[_0x34a61a(0x23b)][_0x34a61a(0x1d8)]['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x34a61a(0x1cd)+_0x29c291+'\x22')){_0x406ded=![];break;}}return _0x5b96e2&&_0x406ded?_0x34a61a(0x246):null;}function sortLines(){var _0xb8c8cb=_0x3642fd,_0x35f437=document[_0xb8c8cb(0x1d6)](_0xb8c8cb(0x1fc))[_0xb8c8cb(0x258)],_0x1c1067=_0x35f437[_0xb8c8cb(0x25b)]('\x0a'),_0xdf72de=[],_0x5f2e2f=[];_0x1c1067[_0xb8c8cb(0x22b)](function(_0x5e26b1){var _0x3b18fd=_0xb8c8cb;/\d/[_0x3b18fd(0x1e3)](_0x5e26b1)?_0xdf72de[_0x3b18fd(0x1f0)](_0x5e26b1):_0x5f2e2f[_0x3b18fd(0x1f0)](_0x5e26b1);}),_0xdf72de[_0xb8c8cb(0x1fa)](function(_0x30f58e,_0xec311f){var _0x55fd5f=_0xb8c8cb,_0x5cde7e=parseInt(_0x30f58e[_0x55fd5f(0x207)](/\d+/)),_0x339fcb=parseInt(_0xec311f[_0x55fd5f(0x207)](/\d+/));return _0x5cde7e-_0x339fcb;});var _0xc7c293=_0xdf72de[_0xb8c8cb(0x1d4)](_0x5f2e2f),_0x53d966=_0xc7c293['\x6a\x6f\x69\x6e']('\x0a');document[_0xb8c8cb(0x1d6)](_0xb8c8cb(0x1fc))['\x76\x61\x6c\x75\x65']=_0x53d966;}function reverseSortLines(){var _0x1affb1=_0x3642fd,_0x2badb8=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x1affb1(0x1fc))['\x76\x61\x6c\x75\x65'],_0x1e2079=_0x2badb8[_0x1affb1(0x25b)]('\x0a'),_0x4ec049=[],_0x2a0d6d=[];_0x1e2079['\x66\x6f\x72\x45\x61\x63\x68'](function(_0x493fa7){var _0xfef371=_0x1affb1;/\d/[_0xfef371(0x1e3)](_0x493fa7)?_0x4ec049[_0xfef371(0x1f0)](_0x493fa7):_0x2a0d6d[_0xfef371(0x1f0)](_0x493fa7);}),_0x4ec049['\x73\x6f\x72\x74'](function(_0x5cd128,_0x1c821d){var _0x4c4630=_0x1affb1,_0x9d39bd=parseInt(_0x5cd128[_0x4c4630(0x207)](/\d+/)),_0x2dd85f=parseInt(_0x1c821d[_0x4c4630(0x207)](/\d+/));return _0x2dd85f-_0x9d39bd;});var _0x2fe731=_0x4ec049[_0x1affb1(0x1d4)](_0x2a0d6d),_0x8ce909=_0x2fe731[_0x1affb1(0x24c)]('\x0a');document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x1affb1(0x1fc))[_0x1affb1(0x258)]=_0x8ce909;}function sortLines备份可以多次点击(_0x48c82e){var _0x1f2dd1=_0x3642fd,_0x56d9c1=document[_0x1f2dd1(0x1d6)](_0x1f2dd1(0x1fc))[_0x1f2dd1(0x258)],_0x1f21c9=_0x56d9c1[_0x1f2dd1(0x25b)]('\x0a');_0x1f21c9['\x73\x6f\x72\x74'](function(_0xfde15f,_0x541198){var _0x354230=_0x1f2dd1,_0x4ab911=parseInt(_0xfde15f['\x73\x70\x6c\x69\x74']('\x3d')[0x0][_0x354230(0x207)](/\d+/)),_0x1ffa45=parseInt(_0x541198[_0x354230(0x25b)]('\x3d')[0x0][_0x354230(0x207)](/\d+/));if(isNaN(_0x4ab911))return-0x1;else return isNaN(_0x1ffa45)?0x1:_0x4ab911-_0x1ffa45;});_0x48c82e&&_0x1f21c9['\x72\x65\x76\x65\x72\x73\x65']();var _0x45722b=_0x1f21c9['\x6a\x6f\x69\x6e']('\x0a');document[_0x1f2dd1(0x1d6)](_0x1f2dd1(0x1fc))[_0x1f2dd1(0x258)]=_0x45722b;}function reverseText(){var _0x1b71a8=_0x3642fd,_0xff56=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x1b71a8(0x1fc))['\x76\x61\x6c\x75\x65'],_0x452d73=_0xff56[_0x1b71a8(0x25b)]('\x0a'),_0x9456cf=_0x452d73[_0x1b71a8(0x229)](),_0x881187=_0x9456cf[_0x1b71a8(0x24c)]('\x0a');document[_0x1b71a8(0x1d6)](_0x1b71a8(0x1fc))['\x76\x61\x6c\x75\x65']=_0x881187;}function 去重(){var _0x49134b=_0x3642fd,_0x3ab4aa=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x49134b(0x1fc))[_0x49134b(0x258)],_0x130d00=_0x3ab4aa['\x73\x70\x6c\x69\x74']('\x0a'),_0x3c1876=_0x130d00[_0x49134b(0x269)](_0x518398=>_0x518398[_0x49134b(0x266)]()!==''),_0x373449=[...new Set(_0x3c1876)],_0x67c78f=_0x373449[_0x49134b(0x24c)]('\x0a');document[_0x49134b(0x1d6)](_0x49134b(0x1fc))[_0x49134b(0x258)]=_0x67c78f;}function oopp(){var _0x20b267=_0x3642fd,_0x588a6b=document[_0x20b267(0x1d6)](_0x20b267(0x1fc))[_0x20b267(0x258)],_0x3fce1c=_0x588a6b[_0x20b267(0x25b)]('\x0a');for(var _0x1fe102=_0x3fce1c[_0x20b267(0x242)]-0x1;_0x1fe102>=0x0;_0x1fe102--){var _0x56f48d=_0x3fce1c[_0x1fe102][_0x20b267(0x25b)]('\x09');if(_0x56f48d[_0x20b267(0x242)]>0x0&&_0x56f48d[0x0][_0x20b267(0x242)]===0x6)_0x56f48d[0x0]=_0x56f48d[0x0][_0x20b267(0x23c)](_0x20b267(0x261),'\x6f\x6f');else _0x56f48d[_0x20b267(0x242)]>0x0&&_0x56f48d[0x0]['\x6c\x65\x6e\x67\x74\x68']===0x7&&_0x56f48d[0x0][_0x20b267(0x1ef)](_0x20b267(0x261))&&_0x3fce1c[_0x20b267(0x251)](_0x1fe102,0x1);_0x3fce1c[_0x1fe102]=_0x56f48d['\x6a\x6f\x69\x6e']('\x09');}var _0x16704f=_0x3fce1c['\x6a\x6f\x69\x6e']('\x0a');document[_0x20b267(0x1d6)](_0x20b267(0x1fc))['\x76\x61\x6c\x75\x65']=_0x16704f;}function 首字母(){var _0x2cca26=_0x3642fd,_0x3520fe=document[_0x2cca26(0x1d6)]('\x69\x6e\x70\x75\x74')[_0x2cca26(0x258)],_0xce852a=_0x3520fe[_0x2cca26(0x25b)]('\x0a'),_0x4d4790='';for(var _0x40c39e=0x0;_0x40c39e<_0xce852a['\x6c\x65\x6e\x67\x74\x68'];_0x40c39e++){var _0x42445e=_0xce852a[_0x40c39e][_0x2cca26(0x25b)](/\s+/);for(var _0x5d566c=0x0;_0x5d566c<_0x42445e[_0x2cca26(0x242)];_0x5d566c++){_0x42445e[_0x5d566c][_0x2cca26(0x242)]>0x0&&(_0x4d4790+=_0x42445e[_0x5d566c][0x0]);}_0x4d4790+='\x0a';}document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x2cca26(0x1e1))[_0x2cca26(0x1c6)]=_0x4d4790;}function 匹配空(){var _0x42a30f=_0x3642fd,_0xf88521=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x42a30f(0x1fc))['\x76\x61\x6c\x75\x65'],_0x3fb5c1=document[_0x42a30f(0x1d6)](_0x42a30f(0x1e1))['\x76\x61\x6c\x75\x65'],_0x425798=_0xf88521['\x73\x70\x6c\x69\x74']('\x0a'),_0xe947bd=_0x3fb5c1['\x73\x70\x6c\x69\x74']('\x0a'),_0x27debd='';for(var _0x5e0958=0x0;_0x5e0958<_0xe947bd[_0x42a30f(0x242)];_0x5e0958++){var _0x51b19b=_0xe947bd[_0x5e0958]['\x74\x72\x69\x6d'](),_0x384ce8=![];for(var _0x13ea45=0x0;_0x13ea45<_0x425798['\x6c\x65\x6e\x67\x74\x68'];_0x13ea45++){var _0x10633e=_0x425798[_0x13ea45][_0x42a30f(0x25b)]('\x20'),_0x40f01f=_0x10633e[0x0][_0x42a30f(0x23c)](/\s+/g,'')['\x74\x72\x69\x6d']();if(_0x51b19b===_0x40f01f){_0x27debd+=_0x425798[_0x13ea45][_0x42a30f(0x266)]()+'\x0a',_0x384ce8=!![];break;}}!_0x384ce8&&(_0x27debd+=_0x51b19b+'\x0a');}document[_0x42a30f(0x1d6)]('\x6f\x75\x74\x70\x75\x74')[_0x42a30f(0x258)]=_0x27debd;}function 匹配引(){var _0x5baea8=_0x3642fd,_0x3f7b92=document[_0x5baea8(0x1d6)]('\x69\x6e\x70\x75\x74')[_0x5baea8(0x258)],_0x4ed52b=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x6f\x75\x74\x70\x75\x74')[_0x5baea8(0x258)],_0x5877bb=_0x3f7b92[_0x5baea8(0x25b)]('\x0a'),_0x4765e5=_0x4ed52b[_0x5baea8(0x25b)]('\x0a'),_0x3fa72a='';for(var _0x28ded4=0x0;_0x28ded4<_0x4765e5[_0x5baea8(0x242)];_0x28ded4++){var _0x4691b7=_0x4765e5[_0x28ded4][_0x5baea8(0x266)](),_0x5d5869=![];for(var _0x5d749a=0x0;_0x5d749a<_0x5877bb[_0x5baea8(0x242)];_0x5d749a++){var _0x11df53=_0x5877bb[_0x5d749a][_0x5baea8(0x25b)]('\x27'),_0x3f2af3=_0x11df53[0x0][_0x5baea8(0x23c)](/\s+/g,'')[_0x5baea8(0x266)]();if(_0x4691b7===_0x3f2af3){_0x3fa72a+=_0x5877bb[_0x5d749a][_0x5baea8(0x266)]()+'\x0a',_0x5d5869=!![];break;}}!_0x5d5869&&(_0x3fa72a+=_0x4691b7+'\x0a');}document[_0x5baea8(0x1d6)]('\x6f\x75\x74\x70\x75\x74')[_0x5baea8(0x258)]=_0x3fa72a;}function 匹配逗(){var _0x22b468=_0x3642fd,_0x36dd63=document[_0x22b468(0x1d6)](_0x22b468(0x1fc))['\x76\x61\x6c\x75\x65'],_0x2594ba=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x22b468(0x1e1))[_0x22b468(0x258)],_0x955f36=_0x36dd63[_0x22b468(0x25b)]('\x0a'),_0x27bf7d=_0x2594ba[_0x22b468(0x25b)]('\x0a'),_0x40eee4='';for(var _0x28b9f8=0x0;_0x28b9f8<_0x27bf7d['\x6c\x65\x6e\x67\x74\x68'];_0x28b9f8++){var _0x182466=_0x27bf7d[_0x28b9f8][_0x22b468(0x266)](),_0x5bb395=![];for(var _0x20e865=0x0;_0x20e865<_0x955f36[_0x22b468(0x242)];_0x20e865++){var _0x664dbd=_0x955f36[_0x20e865][_0x22b468(0x25b)]('\x2c'),_0x43e33f=_0x664dbd[0x0][_0x22b468(0x23c)](/\s+/g,'')[_0x22b468(0x266)]();if(_0x182466===_0x43e33f){_0x40eee4+=_0x955f36[_0x20e865]['\x74\x72\x69\x6d']()+'\x0a',_0x5bb395=!![];break;}}!_0x5bb395&&(_0x40eee4+=_0x182466+'\x0a');}document[_0x22b468(0x1d6)]('\x6f\x75\x74\x70\x75\x74')[_0x22b468(0x258)]=_0x40eee4;}function 长短排一(){var _0x5c278b=_0x3642fd,_0xe49598=document[_0x5c278b(0x1d6)](_0x5c278b(0x1fc))['\x76\x61\x6c\x75\x65'],_0xff96a6=_0xe49598[_0x5c278b(0x25b)]('\x0a');_0xff96a6[_0x5c278b(0x1fa)](function(_0x229e15,_0x4d867d){var _0x1726cb=_0x5c278b;return _0x229e15[_0x1726cb(0x242)]-_0x4d867d[_0x1726cb(0x242)];});var _0x29fbeb=_0xff96a6[_0x5c278b(0x24c)]('\x0a');document[_0x5c278b(0x1d6)]('\x69\x6e\x70\x75\x74')['\x76\x61\x6c\x75\x65']=_0x29fbeb;}function 长短排二(){var _0x338d16=_0x3642fd,_0x4949aa=document[_0x338d16(0x1d6)]('\x6f\x75\x74\x70\x75\x74')[_0x338d16(0x258)],_0x40f573=_0x4949aa[_0x338d16(0x25b)]('\x0a');_0x40f573[_0x338d16(0x1fa)](function(_0x5cccf0,_0x3d0fd8){var _0x5e1e66=_0x338d16;return _0x5cccf0['\x6c\x65\x6e\x67\x74\x68']-_0x3d0fd8[_0x5e1e66(0x242)];});var _0x5bdbe4=_0x40f573[_0x338d16(0x24c)]('\x0a');document[_0x338d16(0x1d6)](_0x338d16(0x1e1))[_0x338d16(0x258)]=_0x5bdbe4;}function 去首尾空格(){var _0x5d1306=_0x3642fd,_0x3ed1b6=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x5d1306(0x1fc))[_0x5d1306(0x258)],_0x4c5db6=_0x3ed1b6[_0x5d1306(0x25b)]('\x0a');for(var _0x41948b=0x0;_0x41948b<_0x4c5db6[_0x5d1306(0x242)];_0x41948b++){_0x4c5db6[_0x41948b]=_0x4c5db6[_0x41948b][_0x5d1306(0x266)]();}var _0x105508=_0x4c5db6['\x6a\x6f\x69\x6e']('\x0a');document[_0x5d1306(0x1d6)](_0x5d1306(0x1fc))[_0x5d1306(0x258)]=_0x105508;}function 去空行(){var _0x173fb3=_0x3642fd,_0xcbd8f5=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x173fb3(0x1fc))[_0x173fb3(0x258)],_0x47b574=_0xcbd8f5[_0x173fb3(0x25b)]('\x0a');_0x47b574=_0x47b574[_0x173fb3(0x269)](function(_0x5909ef){return _0x5909ef['\x74\x72\x69\x6d']()!=='';});var _0x6c2592=_0x47b574[_0x173fb3(0x24c)]('\x0a');document[_0x173fb3(0x1d6)](_0x173fb3(0x1fc))[_0x173fb3(0x258)]=_0x6c2592;}function 搜狗格式(){return new Promise(function(_0x396e32,_0x43ccd9){var _0x4b6448=_0x1d15,_0x5acefe=document[_0x4b6448(0x1d6)](_0x4b6448(0x1fc))[_0x4b6448(0x258)],_0x5b19ad=_0x5acefe['\x73\x70\x6c\x69\x74']('\x0a'),_0x29d8f6={};for(var _0x4e63d0=0x0;_0x4e63d0<_0x5b19ad[_0x4b6448(0x242)];_0x4e63d0++){var _0x27441e=_0x5b19ad[_0x4e63d0][_0x4b6448(0x25b)](/\s+/),_0x27f7a7=_0x27441e[0x0][_0x4b6448(0x266)](),_0x13485d=_0x27441e[0x1]?_0x27441e[0x1]['\x74\x72\x69\x6d']():'',_0x15865f=_0x27f7a7['\x73\x70\x6c\x69\x74']('\x20')[0x0],_0x165c1f=_0x27f7a7[_0x4b6448(0x25b)]('\x20')[0x1];!_0x29d8f6[_0x4b6448(0x24a)](_0x15865f)&&(_0x29d8f6[_0x15865f]=[]),_0x29d8f6[_0x15865f][_0x4b6448(0x1f0)]({'\x76\x61\x6c\x75\x65':_0x13485d,'\x67\x72\x6f\x75\x70\x56\x61\x6c\x75\x65':_0x165c1f});}var _0x15612c='';for(var _0x15865f in _0x29d8f6){if(_0x29d8f6[_0x4b6448(0x24a)](_0x15865f)){var _0x4019ce=_0x29d8f6[_0x15865f];for(var _0x40819d=0x0;_0x40819d<_0x4019ce[_0x4b6448(0x242)];_0x40819d++){var _0x2a2c1b=_0x4019ce[_0x40819d],_0x1f2baf=_0x40819d+0x1;_0x15865f==='\u51b7\u50fb\u5b57\u7b26'&&(_0x1f2baf=0x1),_0x15612c+=_0x15865f+'\x2c'+_0x1f2baf+'\x3d'+_0x2a2c1b[_0x4b6448(0x258)]+'\x0a';}}}document[_0x4b6448(0x1d6)](_0x4b6448(0x1e1))[_0x4b6448(0x258)]=_0x15612c,_0x396e32(),window[_0x4b6448(0x1fd)](_0x4b6448(0x247));});}function 搜狗格式二(){return new Promise(function(_0x10afca,_0x4e2375){var _0x12aaf1=_0x1d15,_0x488b33=document[_0x12aaf1(0x1d6)](_0x12aaf1(0x1e1))[_0x12aaf1(0x258)],_0x5bb0e2=_0x488b33[_0x12aaf1(0x25b)]('\x0a'),_0x5b8fa9={};for(var _0x524c77=0x0;_0x524c77<_0x5bb0e2[_0x12aaf1(0x242)];_0x524c77++){var _0x5f0a99=_0x5bb0e2[_0x524c77]['\x73\x70\x6c\x69\x74'](/\s+/),_0x59a6b6=_0x5f0a99[0x0][_0x12aaf1(0x266)](),_0x1873c0=_0x5f0a99[0x1]?_0x5f0a99[0x1]['\x74\x72\x69\x6d']():'',_0x4c0430=_0x59a6b6['\x73\x70\x6c\x69\x74']('\x20')[0x0],_0xdf4743=_0x59a6b6[_0x12aaf1(0x25b)]('\x20')[0x1];!_0x5b8fa9[_0x12aaf1(0x24a)](_0x4c0430)&&(_0x5b8fa9[_0x4c0430]=[]),_0x5b8fa9[_0x4c0430]['\x70\x75\x73\x68']({'\x76\x61\x6c\x75\x65':_0x1873c0,'\x67\x72\x6f\x75\x70\x56\x61\x6c\x75\x65':_0xdf4743});}var _0x1dff7a='';for(var _0x4c0430 in _0x5b8fa9){if(_0x5b8fa9[_0x12aaf1(0x24a)](_0x4c0430)){var _0x3b98d4=_0x5b8fa9[_0x4c0430];for(var _0x1d4ad9=0x0;_0x1d4ad9<_0x3b98d4[_0x12aaf1(0x242)];_0x1d4ad9++){var _0x188da6=_0x3b98d4[_0x1d4ad9],_0xfac706=_0x1d4ad9+0x1;_0x4c0430===_0x12aaf1(0x234)&&(_0xfac706=0x1),_0x1dff7a+=_0x4c0430+'\x2c'+_0xfac706+'\x3d'+_0x188da6[_0x12aaf1(0x258)]+'\x0a';}}}document[_0x12aaf1(0x1d6)](_0x12aaf1(0x1e1))[_0x12aaf1(0x258)]=_0x1dff7a,_0x10afca(),window[_0x12aaf1(0x1fd)](_0x12aaf1(0x247));});}function 左右互换(){var _0x32f4b2=_0x3642fd,_0x419f53=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x32f4b2(0x1fc))[_0x32f4b2(0x258)],_0x58dee4=_0x419f53[_0x32f4b2(0x25b)]('\x0a'),_0x38ce9e=_0x58dee4[_0x32f4b2(0x233)](function(_0x5df646){var _0x3be93e=_0x32f4b2,_0x487d5f=_0x5df646[_0x3be93e(0x266)]()[_0x3be93e(0x25b)](/\s+/);if(_0x487d5f['\x6c\x65\x6e\x67\x74\x68']>=0x2){var _0x13d459=_0x487d5f[0x0];_0x487d5f[0x0]=_0x487d5f[0x1],_0x487d5f[0x1]=_0x13d459;}return _0x487d5f[_0x3be93e(0x24c)]('\x09');}),_0x25f173=_0x38ce9e[_0x32f4b2(0x24c)]('\x0a');document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x32f4b2(0x1fc))['\x76\x61\x6c\x75\x65']=_0x25f173;}function 替换原本(){var _0x37e6a4=_0x3642fd,_0xf50918=document[_0x37e6a4(0x219)](_0x37e6a4(0x265));_0xf50918['\x73\x74\x79\x6c\x65'][_0x37e6a4(0x1f2)]=_0x37e6a4(0x263),_0xf50918['\x73\x74\x79\x6c\x65'][_0x37e6a4(0x1c7)]=_0x37e6a4(0x22a),_0xf50918['\x73\x74\x79\x6c\x65'][_0x37e6a4(0x214)]=_0x37e6a4(0x200),_0xf50918[_0x37e6a4(0x1c4)][_0x37e6a4(0x1ce)]=_0x37e6a4(0x224),_0xf50918[_0x37e6a4(0x1c4)][_0x37e6a4(0x1e5)]=_0x37e6a4(0x267),_0xf50918['\x73\x74\x79\x6c\x65'][_0x37e6a4(0x25f)]=_0x37e6a4(0x268),_0xf50918['\x73\x74\x79\x6c\x65'][_0x37e6a4(0x230)]=_0x37e6a4(0x1f8);var _0xf77dc2=document[_0x37e6a4(0x219)](_0x37e6a4(0x1fc));_0xf77dc2[_0x37e6a4(0x1de)](_0x37e6a4(0x20b),_0x37e6a4(0x20c)),_0xf77dc2[_0x37e6a4(0x1de)]('\x70\x6c\x61\x63\x65\x68\x6f\x6c\x64\x65\x72','\u67e5\u627e'),_0xf77dc2[_0x37e6a4(0x1c4)][_0x37e6a4(0x1c5)]=_0x37e6a4(0x21b);var _0x22f7f1=document['\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74']('\x69\x6e\x70\x75\x74');_0x22f7f1[_0x37e6a4(0x1de)](_0x37e6a4(0x20b),_0x37e6a4(0x20c)),_0x22f7f1[_0x37e6a4(0x1de)](_0x37e6a4(0x26a),'\u66ff\u6362'),_0x22f7f1[_0x37e6a4(0x1c4)][_0x37e6a4(0x1c5)]=_0x37e6a4(0x21b);var _0x4ec29b=document['\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74'](_0x37e6a4(0x260));_0x4ec29b[_0x37e6a4(0x1c4)]['\x6d\x61\x72\x67\x69\x6e\x52\x69\x67\x68\x74']='\x31\x30\x70\x78',_0x4ec29b[_0x37e6a4(0x1d8)]='\u67e5\u627e',_0x4ec29b['\x73\x74\x79\x6c\x65'][_0x37e6a4(0x231)]='\x31\x30\x70\x78',_0x4ec29b['\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72'](_0x37e6a4(0x217),function(){var _0x28c127=_0x37e6a4,_0x562de4=_0xf77dc2[_0x28c127(0x258)];findText(_0x562de4);});var _0x4ff6a2=document[_0x37e6a4(0x219)]('\x62\x75\x74\x74\x6f\x6e');_0x4ff6a2[_0x37e6a4(0x1d8)]='\u66ff\u6362',_0x4ff6a2[_0x37e6a4(0x1c4)]['\x6d\x61\x72\x67\x69\x6e\x52\x69\x67\x68\x74']='\x31\x30\x70\x78',_0x4ff6a2[_0x37e6a4(0x1f1)]('\x63\x6c\x69\x63\x6b',function(){var _0x2819be=_0x37e6a4,_0x4ac3b9=_0xf77dc2[_0x2819be(0x258)],_0x5412d3=_0x22f7f1['\x76\x61\x6c\x75\x65'];replaceTextFn(_0x4ac3b9,_0x5412d3);});var _0x20f200=document[_0x37e6a4(0x219)]('\x62\x75\x74\x74\x6f\x6e');_0x20f200['\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c']='\u5173\u95ed',_0x20f200[_0x37e6a4(0x1c4)]['\x66\x6c\x6f\x61\x74']=_0x37e6a4(0x228),_0x20f200['\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72']('\x63\x6c\x69\x63\x6b',function(){var _0x5f4fdf=_0x37e6a4;document['\x62\x6f\x64\x79'][_0x5f4fdf(0x244)](_0xf50918);}),_0xf50918[_0x37e6a4(0x24f)](_0xf77dc2),_0xf50918['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0x22f7f1),_0xf50918[_0x37e6a4(0x24f)](_0x4ec29b),_0xf50918['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0x4ff6a2),_0xf50918[_0x37e6a4(0x24f)](_0x20f200),document[_0x37e6a4(0x23b)]['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0xf50918);}function findText(_0x49a3d6){var _0x38f0d0=_0x3642fd,_0x1a9a67=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x69\x6e\x70\x75\x74')[_0x38f0d0(0x258)];_0x1a9a67[_0x38f0d0(0x1f7)](_0x49a3d6)!==-0x1?alert(_0x38f0d0(0x1fe)+_0x49a3d6):alert(_0x38f0d0(0x232)+_0x49a3d6);}function replaceTextFn(_0x4d8a24,_0x165881){var _0x26840a=_0x3642fd,_0x1d1c15=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x26840a(0x1fc)),_0x2cb056=_0x1d1c15[_0x26840a(0x258)],_0x6f1cbc=_0x2cb056[_0x26840a(0x23c)](new RegExp(_0x4d8a24,'\x67'),_0x165881);_0x1d1c15[_0x26840a(0x258)]=_0x6f1cbc,alert(_0x26840a(0x1f5));}function 替换(){var _0x1a54cd=_0x3642fd,_0x2fe485=document[_0x1a54cd(0x219)](_0x1a54cd(0x265));_0x2fe485[_0x1a54cd(0x1c4)][_0x1a54cd(0x1f2)]=_0x1a54cd(0x263),_0x2fe485[_0x1a54cd(0x1c4)][_0x1a54cd(0x1c7)]='\x36\x35\x25',_0x2fe485[_0x1a54cd(0x1c4)]['\x6c\x65\x66\x74']=_0x1a54cd(0x200),_0x2fe485[_0x1a54cd(0x1c4)]['\x74\x72\x61\x6e\x73\x66\x6f\x72\x6d']=_0x1a54cd(0x224),_0x2fe485['\x73\x74\x79\x6c\x65'][_0x1a54cd(0x1e5)]=_0x1a54cd(0x267),_0x2fe485['\x73\x74\x79\x6c\x65']['\x70\x61\x64\x64\x69\x6e\x67']=_0x1a54cd(0x212),_0x2fe485[_0x1a54cd(0x1c4)]['\x62\x6f\x72\x64\x65\x72']=_0x1a54cd(0x1f8),_0x2fe485['\x73\x74\x79\x6c\x65'][_0x1a54cd(0x23d)]='\x37\x30\x30\x70\x78';var _0x15737f=document['\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74']('\x69\x6e\x70\x75\x74');_0x15737f[_0x1a54cd(0x1de)](_0x1a54cd(0x20b),_0x1a54cd(0x20c)),_0x15737f['\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65'](_0x1a54cd(0x26a),'\u67e5\u627e'),_0x15737f[_0x1a54cd(0x1c4)]['\x6d\x61\x72\x67\x69\x6e\x42\x6f\x74\x74\x6f\x6d']=_0x1a54cd(0x21b);var _0x4cabfd=document[_0x1a54cd(0x219)](_0x1a54cd(0x1fc));_0x4cabfd[_0x1a54cd(0x1de)](_0x1a54cd(0x20b),_0x1a54cd(0x20c)),_0x4cabfd['\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65'](_0x1a54cd(0x26a),'\u66ff\u6362'),_0x4cabfd[_0x1a54cd(0x1c4)]['\x6d\x61\x72\x67\x69\x6e\x42\x6f\x74\x74\x6f\x6d']='\x31\x30\x70\x78';var _0x2791f6=document[_0x1a54cd(0x219)](_0x1a54cd(0x1fc));_0x2791f6[_0x1a54cd(0x1de)](_0x1a54cd(0x20b),'\x63\x68\x65\x63\x6b\x62\x6f\x78'),_0x2791f6[_0x1a54cd(0x1c4)][_0x1a54cd(0x1c5)]=_0x1a54cd(0x21b);var _0x4925da=document[_0x1a54cd(0x219)](_0x1a54cd(0x21a));_0x4925da['\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c']=_0x1a54cd(0x1ff),_0x4925da[_0x1a54cd(0x24f)](_0x2791f6);var _0x17ec24=document[_0x1a54cd(0x219)](_0x1a54cd(0x260));_0x17ec24[_0x1a54cd(0x1c4)][_0x1a54cd(0x231)]=_0x1a54cd(0x21b),_0x17ec24[_0x1a54cd(0x1d8)]='\u67e5\u627e',_0x17ec24['\x73\x74\x79\x6c\x65'][_0x1a54cd(0x231)]=_0x1a54cd(0x21b),_0x17ec24[_0x1a54cd(0x1f1)](_0x1a54cd(0x217),function(){var _0x370a23=_0x1a54cd,_0x243df1=_0x15737f[_0x370a23(0x258)],_0x3d3f0e=_0x2791f6[_0x370a23(0x1f9)];findText(_0x243df1,_0x3d3f0e);});var _0x2856f5=document[_0x1a54cd(0x219)](_0x1a54cd(0x260));_0x2856f5[_0x1a54cd(0x1d8)]='\u66ff\u6362',_0x2856f5[_0x1a54cd(0x1c4)][_0x1a54cd(0x231)]=_0x1a54cd(0x21b),_0x2856f5[_0x1a54cd(0x1f1)]('\x63\x6c\x69\x63\x6b',function(){var _0x1e0cf4=_0x1a54cd,_0x2e3c82=_0x15737f[_0x1e0cf4(0x258)],_0x4d8557=_0x4cabfd[_0x1e0cf4(0x258)],_0x2e84c7=_0x2791f6[_0x1e0cf4(0x1f9)];replaceTextFn(_0x2e3c82,_0x4d8557,_0x2e84c7);});var _0x597b6b=document[_0x1a54cd(0x219)](_0x1a54cd(0x260));_0x597b6b[_0x1a54cd(0x1d8)]='\u5173\u95ed',_0x597b6b[_0x1a54cd(0x1c4)][_0x1a54cd(0x216)]='\x72\x69\x67\x68\x74',_0x597b6b[_0x1a54cd(0x1f1)]('\x63\x6c\x69\x63\x6b',function(){var _0x33bf3a=_0x1a54cd;document[_0x33bf3a(0x23b)]['\x72\x65\x6d\x6f\x76\x65\x43\x68\x69\x6c\x64'](_0x2fe485);}),_0x2fe485[_0x1a54cd(0x24f)](_0x15737f),_0x2fe485[_0x1a54cd(0x24f)](_0x4cabfd),_0x2fe485[_0x1a54cd(0x24f)](_0x4925da),_0x2fe485['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0x17ec24),_0x2fe485[_0x1a54cd(0x24f)](_0x2856f5),_0x2fe485[_0x1a54cd(0x24f)](_0x597b6b),document['\x62\x6f\x64\x79']['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0x2fe485);}function findText(_0x56beef,_0x31570e){var _0x4fd516=_0x3642fd,_0x52ddde=document[_0x4fd516(0x1d6)](_0x4fd516(0x1fc))['\x76\x61\x6c\x75\x65'],_0xb0b205=_0x31570e?new RegExp(_0x56beef,'\x67'):_0x56beef;if(_0x31570e&&!isValidRegexPattern(_0x56beef)){alert('\u8f93\u5165\u7684\u6b63\u5219\u8868\u8fbe\u5f0f\u65e0\u6548\uff0c\u8bf7\u91cd\u65b0\u8f93\u5165');return;}_0x52ddde[_0x4fd516(0x1f4)](_0xb0b205)!==-0x1?alert('\u6709\u627e\u5230\x2c\u76f8\u5173\u5185\u5bb9\x2c\u5982\u679c\u9700\u8981\u9ad8\u4eae\u663e\u793a\x2c\u8bf7\u70b9\u786e\u5b9a\u540e\x2c\u6309\x63\x74\x72\x6c\x2b\x66\u67e5\u627e\uff1a'+_0x56beef):alert(_0x4fd516(0x232)+_0x56beef);}function replaceTextFn(_0x1b9657,_0x54561d,_0xfcce0e){var _0x209c8c=_0x3642fd,_0x2cb1b4=document[_0x209c8c(0x1d6)](_0x209c8c(0x1fc)),_0x3b2d2f=_0x2cb1b4['\x76\x61\x6c\x75\x65'],_0x3f07a0=_0xfcce0e?new RegExp(_0x1b9657,'\x67'):_0x1b9657;if(_0xfcce0e&&!isValidRegexPattern(_0x1b9657)){alert(_0x209c8c(0x20d));return;}var _0x2d0d19=_0x3b2d2f,_0x4e9ce=_0x2d0d19['\x6d\x61\x74\x63\x68'](_0x3f07a0);while(_0x4e9ce!==null){_0x2d0d19=_0x2d0d19[_0x209c8c(0x23c)](_0x3f07a0,_0x54561d),_0x4e9ce=_0x2d0d19[_0x209c8c(0x207)](_0x3f07a0);}_0x2cb1b4[_0x209c8c(0x258)]=_0x2d0d19,alert(_0x209c8c(0x215));}function isValidRegexPattern(_0x2c8b5e){try{return new RegExp(_0x2c8b5e),!![];}catch(_0x50f647){return![];}}function 查找(){alert('\u8bf7\u6309\u4e0b\x20\x43\x74\x72\x6c\x20\x2b\x20\x46\x20\u7ec4\u5408\u952e\u8c03\u51fa\u6d4f\u89c8\u5668\u7684\u67e5\u627e\u529f\u80fd');}function 转双拼(){var _0x165165=_0x3642fd;window['\x6f\x70\x65\x6e'](_0x165165(0x253),'\x5f\x62\x6c\x61\x6e\x6b');}function 删多余(){var _0x3e601f=_0x3642fd,_0xae0d70=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x69\x6e\x70\x75\x74')['\x76\x61\x6c\x75\x65'],_0x21ea9c=_0xae0d70[_0x3e601f(0x25b)]('\x0a'),_0x338ce5=_0x21ea9c[_0x3e601f(0x269)](function(_0x10becf){var _0x18c277=_0x3e601f;return!(_0x10becf['\x69\x6e\x63\x6c\x75\x64\x65\x73']('\x3d')&&_0x10becf[_0x18c277(0x1ef)]('\u2606'));}),_0x351c09=_0x338ce5[_0x3e601f(0x24c)]('\x0a');document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x69\x6e\x70\x75\x74')['\x76\x61\x6c\x75\x65']=_0x351c09;}function 删无等号的行(){var _0x2d23e2=_0x3642fd,_0x597ba5=document[_0x2d23e2(0x1d6)]('\x69\x6e\x70\x75\x74')[_0x2d23e2(0x258)],_0x499ce4=_0x597ba5['\x73\x70\x6c\x69\x74']('\x0a'),_0x47339f=_0x499ce4[_0x2d23e2(0x269)](function(_0x13c003){var _0x138a0a=_0x2d23e2;return _0x13c003[_0x138a0a(0x1ef)]('\x3d');}),_0x3fca9e=_0x47339f[_0x2d23e2(0x24c)]('\x0a');document[_0x2d23e2(0x1d6)]('\x69\x6e\x70\x75\x74')[_0x2d23e2(0x258)]=_0x3fca9e;}function 音形(){var _0x400491=_0x3642fd,_0x22d0fa=document[_0x400491(0x1d6)](_0x400491(0x1fc))['\x76\x61\x6c\x75\x65'],_0x11a6fb=_0x22d0fa[_0x400491(0x25b)]('\x0a'),_0x573286=_0x11a6fb['\x6d\x61\x70'](function(_0x4d8bc8){var _0x2386d9=_0x400491,_0x17f809=_0x4d8bc8[_0x2386d9(0x25b)]('');if(_0x17f809['\x6c\x65\x6e\x67\x74\x68']<0x4)return _0x4d8bc8;else{if(_0x17f809[_0x2386d9(0x242)]===0x4)return _0x4d8bc8;else{if(_0x17f809['\x6c\x65\x6e\x67\x74\x68']===0x6)return _0x17f809[0x0]+_0x17f809[0x2]+_0x17f809[0x4]+_0x17f809[0x5];else{if(_0x17f809[_0x2386d9(0x242)]===0x8)return _0x17f809[0x0]+_0x17f809[0x2]+_0x17f809[0x4]+_0x17f809[0x6];else return _0x17f809[_0x2386d9(0x242)]>0x8?_0x17f809[0x0]+_0x17f809[0x2]+_0x17f809[0x4]+_0x17f809[_0x17f809[_0x2386d9(0x242)]-0x2]:'';}}}}),_0x34be36=_0x573286[_0x400491(0x24c)]('\x0a');document[_0x400491(0x1d6)](_0x400491(0x1e1))[_0x400491(0x258)]=_0x34be36;}function 删无等号的行二(){var _0x4cee80=_0x3642fd,_0x1e4fa4=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x4cee80(0x1fc))[_0x4cee80(0x258)],_0x91c123=_0x1e4fa4['\x73\x70\x6c\x69\x74']('\x0a'),_0x4b180f=_0x91c123[_0x4cee80(0x269)](function(_0x4ede8b){return _0x4ede8b['\x69\x6e\x63\x6c\x75\x64\x65\x73']('\x3d');}),_0x3dbe84=_0x4b180f[_0x4cee80(0x24c)]('\x0a');document[_0x4cee80(0x1d6)](_0x4cee80(0x1fc))[_0x4cee80(0x258)]=_0x3dbe84;}function 转js字典(){var _0x205d8a=_0x3642fd;const _0x559579=document[_0x205d8a(0x1d6)](_0x205d8a(0x1e1))[_0x205d8a(0x258)],_0x22ae28={},_0x533c5d=_0x559579[_0x205d8a(0x266)]()['\x73\x70\x6c\x69\x74']('\x0a');for(let _0x26522f=0x0;_0x26522f<_0x533c5d['\x6c\x65\x6e\x67\x74\x68'];_0x26522f++){const _0x3bf541=_0x533c5d[_0x26522f]['\x74\x72\x69\x6d']();if(_0x3bf541){const [_0xde6518,..._0x1fda3b]=_0x3bf541[_0x205d8a(0x25b)](/\s+/);_0x22ae28[_0xde6518]=_0x1fda3b[_0x205d8a(0x233)](_0x1e6556=>'\x27'+_0x1e6556+'\x27');}}const _0xad8080=JSON[_0x205d8a(0x1dc)](_0x22ae28)[_0x205d8a(0x23c)](/"([^"]+)":/g,'\x27\x24\x31\x27\x3a')['\x72\x65\x70\x6c\x61\x63\x65'](/"},/g,_0x205d8a(0x257))['\x72\x65\x70\x6c\x61\x63\x65'](/"/g,'');document[_0x205d8a(0x1d6)]('\x6f\x75\x74\x70\x75\x74')[_0x205d8a(0x258)]=_0xad8080;}function 字典换行(){var _0x1b5a6d=_0x3642fd;const _0x44cfd6=document[_0x1b5a6d(0x1d6)](_0x1b5a6d(0x1e1))['\x76\x61\x6c\x75\x65'][_0x1b5a6d(0x266)]();if(!_0x44cfd6){alert(_0x1b5a6d(0x1d2));return;}const _0x472604=JSON[_0x1b5a6d(0x24e)](_0x44cfd6[_0x1b5a6d(0x25b)]('\x27')[_0x1b5a6d(0x24c)]('\x22'));let _0x76304f='';for(const _0x3a128b in _0x472604){const _0x5f0220=_0x472604[_0x3a128b]['\x6d\x61\x70'](_0x3c0999=>'\x27'+_0x3c0999+'\x27')[_0x1b5a6d(0x24c)]('\x2c\x20');_0x76304f+='\x27'+_0x3a128b+_0x1b5a6d(0x208)+_0x5f0220+'\x5d\x2c\x0a';}_0x76304f=_0x76304f[_0x1b5a6d(0x252)](0x0,-0x2),document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x1b5a6d(0x1e1))[_0x1b5a6d(0x258)]=_0x76304f;}function 一个空格(){var _0x1c199f=_0x3642fd;const _0x31df9a=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x1c199f(0x1fc))[_0x1c199f(0x258)][_0x1c199f(0x266)]();if(!_0x31df9a){alert(_0x1c199f(0x264));return;}const _0x25b3cd=_0x31df9a[_0x1c199f(0x23c)](/\t/g,'\x20');document[_0x1c199f(0x1d6)](_0x1c199f(0x1e1))[_0x1c199f(0x258)]=_0x25b3cd;}function 排序一(){return new Promise(function(_0x4ff5fe,_0x2bae63){var _0x5014c8=_0x1d15,_0x458ec7=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x5014c8(0x1fc))[_0x5014c8(0x258)],_0x3aa6f2=_0x458ec7[_0x5014c8(0x25b)]('\x0a'),_0x49649f={};_0x3aa6f2[_0x5014c8(0x22b)](function(_0x1d1938){var _0x42fb37=_0x5014c8,_0x33225d=_0x1d1938[_0x42fb37(0x1f7)]('\x2c');if(_0x33225d>=0x0){var _0xbf9bea=_0x1d1938[_0x42fb37(0x23f)](0x0,_0x33225d);!_0x49649f[_0xbf9bea]&&(_0x49649f[_0xbf9bea]=[]),_0x49649f[_0xbf9bea][_0x42fb37(0x1f0)](_0x1d1938);}});var _0x34cfce=[];for(var _0x2b26be in _0x49649f){if(_0x49649f[_0x5014c8(0x24a)](_0x2b26be)){var _0x29babb=_0x49649f[_0x2b26be];_0x29babb[_0x5014c8(0x1fa)](function(_0x3d8304,_0x20974d){var _0x533601=_0x5014c8,_0x1b01f3=parseInt(_0x3d8304[_0x533601(0x23f)](_0x3d8304[_0x533601(0x1f7)]('\x2c')+0x1)),_0x16b9ec=parseInt(_0x20974d['\x73\x75\x62\x73\x74\x72\x69\x6e\x67'](_0x20974d[_0x533601(0x1f7)]('\x2c')+0x1));return _0x1b01f3-_0x16b9ec;}),_0x34cfce=_0x34cfce[_0x5014c8(0x1d4)](_0x29babb);}}var _0x15fa97=_0x34cfce['\x6a\x6f\x69\x6e']('\x0a');document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x69\x6e\x70\x75\x74')['\x76\x61\x6c\x75\x65']=_0x15fa97,_0x4ff5fe(),window[_0x5014c8(0x1fd)](_0x5014c8(0x254));});}function 排序二(){return new Promise(function(_0x4fc322,_0x54f9b3){var _0x35de02=_0x1d15,_0x342d9d=document[_0x35de02(0x1d6)]('\x69\x6e\x70\x75\x74')[_0x35de02(0x258)],_0x143a74=_0x342d9d[_0x35de02(0x25b)]('\x0a'),_0x14b4c3={},_0x179094=[];_0x143a74['\x66\x6f\x72\x45\x61\x63\x68'](function(_0x2445d1){var _0x5383f6=_0x35de02,_0x491bb4=_0x2445d1['\x69\x6e\x64\x65\x78\x4f\x66']('\x3d');if(_0x491bb4>=0x0){var _0x2e3111=_0x2445d1['\x73\x75\x62\x73\x74\x72\x69\x6e\x67'](0x0,_0x491bb4);!_0x14b4c3[_0x2e3111]&&(_0x14b4c3[_0x2e3111]=[]),_0x14b4c3[_0x2e3111][_0x5383f6(0x1f0)](_0x2445d1);}});for(var _0x10f580 in _0x14b4c3){if(_0x14b4c3[_0x35de02(0x24a)](_0x10f580)){var _0x4dcc96=_0x14b4c3[_0x10f580];_0x179094['\x70\x75\x73\x68'](_0x4dcc96[0x0]);}}for(var _0x10f580 in _0x14b4c3){if(_0x14b4c3[_0x35de02(0x24a)](_0x10f580)){var _0x4dcc96=_0x14b4c3[_0x10f580];_0x4dcc96[_0x35de02(0x242)]>0x1&&(_0x179094=_0x179094['\x63\x6f\x6e\x63\x61\x74'](_0x4dcc96['\x73\x6c\x69\x63\x65'](0x1)));}}var _0x55c964=_0x179094[_0x35de02(0x24c)]('\x0a');document[_0x35de02(0x1d6)](_0x35de02(0x1fc))[_0x35de02(0x258)]=_0x55c964,_0x4fc322(),window[_0x35de02(0x1fd)]('\u6267\u884c\u5b8c\u6bd5\u6392\u5e8f\u4e8c');});}function 排序三(){return new Promise(function(_0xd2757b,_0x180f3c){var _0x2f5990=_0x1d15,_0x4fa8a2=document[_0x2f5990(0x1d6)](_0x2f5990(0x1fc))['\x76\x61\x6c\x75\x65'],_0x3a9445=_0x4fa8a2[_0x2f5990(0x25b)]('\x0a'),_0x1e9dbb={},_0x38513f=[];_0x3a9445[_0x2f5990(0x22b)](function(_0xffe0f){var _0x37021d=_0x2f5990,_0x2c066d=_0xffe0f['\x69\x6e\x64\x65\x78\x4f\x66']('\x2c');if(_0x2c066d>=0x0){var _0x326aec=_0xffe0f[_0x37021d(0x23f)](0x0,_0x2c066d)['\x74\x72\x69\x6d']();!_0x1e9dbb[_0x326aec]&&(_0x1e9dbb[_0x326aec]=[]),_0x1e9dbb[_0x326aec]['\x70\x75\x73\x68'](_0xffe0f);}});for(var _0x3d322d in _0x1e9dbb){if(_0x1e9dbb[_0x2f5990(0x24a)](_0x3d322d)){var _0xd2b3c0=_0x1e9dbb[_0x3d322d];_0x38513f=_0x38513f[_0x2f5990(0x1d4)](_0xd2b3c0);}}_0x38513f=Array[_0x2f5990(0x23a)](new Set(_0x38513f));var _0x182d54=_0x38513f[_0x2f5990(0x24c)]('\x0a');document[_0x2f5990(0x1d6)](_0x2f5990(0x1fc))[_0x2f5990(0x258)]=_0x182d54,_0xd2757b(),window[_0x2f5990(0x1fd)](_0x2f5990(0x225));});}async function 排序组合(){var _0x3cf153=_0x3642fd;try{await 排序一(),await 排序二(),await 排序三(),提示音(),window[_0x3cf153(0x1fd)](_0x3cf153(0x201));}catch(_0x128d04){window[_0x3cf153(0x1fd)]('\u9519\u8bef');}}async function 排序新搜狗(){var _0x819387=_0x3642fd;try{await 排序一(),await 排序二(),await 排序三(),await convertwubi(),await 搜狗格式二(),提示音(),window[_0x819387(0x1fd)]('\u6240\u6709\u6392\u5e8f\u51fd\u6570\u6267\u884c\u5b8c\u6bd5');}catch(_0x3c22af){window[_0x819387(0x1fd)]('\u9519\u8bef');}}async function 五笔变搜狗(){var _0x3e2e4b=_0x3642fd;try{await convertwubi(),await 搜狗格式二(),提示音(),window[_0x3e2e4b(0x1fd)](_0x3e2e4b(0x201));}catch(_0x37df1e){window[_0x3e2e4b(0x1fd)]('\u9519\u8bef');}}async function 排序加五笔(){var _0x3084b5=_0x3642fd;try{await 排序一(),await 排序二(),await 排序三(),await convertwubi(),提示音(),window['\x61\x6c\x65\x72\x74'](_0x3084b5(0x201));}catch(_0x50d160){window[_0x3084b5(0x1fd)]('\u9519\u8bef');}}async function 排序加多多(){var _0x2ca4a1=_0x3642fd;try{await 排序一(),await 排序二(),await 排序三(),await convertdd(),提示音(),window[_0x2ca4a1(0x1fd)]('\u6240\u6709\u6392\u5e8f\u51fd\u6570\u6267\u884c\u5b8c\u6bd5');}catch(_0x218035){window[_0x2ca4a1(0x1fd)]('\u9519\u8bef');}}function 同类后排(){var _0x18412d=_0x3642fd;const _0x57afbb=document[_0x18412d(0x1d6)](_0x18412d(0x1fc))[_0x18412d(0x258)],_0x5ef516=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x6f\x75\x74\x70\x75\x74');let _0xa2cf04='';const _0x293cfc=new Map(),_0x37d2ed=_0x57afbb[_0x18412d(0x1db)](/^(\w+)\s+(.*)$/gm);for(const _0x22154e of _0x37d2ed){const _0x529e74=_0x22154e[0x1],_0x1231d2=_0x22154e[0x2];_0x293cfc[_0x18412d(0x243)](_0x529e74)?_0x293cfc[_0x18412d(0x25d)](_0x529e74,_0x293cfc[_0x18412d(0x22c)](_0x529e74)+'\x09'+_0x1231d2):_0x293cfc[_0x18412d(0x25d)](_0x529e74,_0x1231d2);}for(const [_0x9f5a89,_0x4cdaef]of _0x293cfc){_0xa2cf04+=_0x9f5a89+'\x09'+_0x4cdaef+'\x0a';}_0x5ef516[_0x18412d(0x258)]=_0xa2cf04;}function 还原(){var _0x2b1fd8=_0x3642fd;const _0x1f6edb=document[_0x2b1fd8(0x1d6)](_0x2b1fd8(0x1e1))[_0x2b1fd8(0x258)],_0xf31aa6=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x2b1fd8(0x1e1));let _0x516f86='';const _0x3e13c3=_0x1f6edb[_0x2b1fd8(0x25b)]('\x0a');for(const _0x57a2de of _0x3e13c3){const _0x21f62c=_0x57a2de[_0x2b1fd8(0x25b)](/\s+/),_0x459a5f=_0x21f62c[0x0],_0x4cd3c5=_0x21f62c[_0x2b1fd8(0x252)](0x1);for(const _0x40bdee of _0x4cd3c5){_0x516f86+=_0x459a5f+'\x20'+_0x40bdee+'\x0a';}}_0xf31aa6[_0x2b1fd8(0x258)]=_0x516f86;}function 提示音(){var _0x3bb821=_0x3642fd;const _0x272a3b=new AudioContext(),_0x43b77d=_0x272a3b[_0x3bb821(0x226)]();_0x43b77d[_0x3bb821(0x1d0)][_0x3bb821(0x258)]=0x1f4,_0x43b77d[_0x3bb821(0x1ee)](_0x272a3b['\x64\x65\x73\x74\x69\x6e\x61\x74\x69\x6f\x6e']),_0x43b77d[_0x3bb821(0x1eb)](),_0x43b77d[_0x3bb821(0x255)](_0x272a3b['\x63\x75\x72\x72\x65\x6e\x74\x54\x69\x6d\x65']+0.5);}function _0x3ab8(){var _0x1e9b69=['\x31\x31\x39\x35\x35\x31\x32\x65\x68\x4e\x45\x5a\x69','\x73\x65\x61\x72\x63\x68','\u66ff\u6362\u5b8c\u6210','\x0a\u3010\u9a8c\u8bc1\u7801\u3011\x0a\u8bf7\u95ee\x20\u68ee\x20\u8fd9\u4e2a\u5b57\x2c\u6c49\u5fc3\u7801\u4e24\u4e2a\u5f62\u7801\u662f\u4ec0\u4e48\x2c\u586b\u4e24\u4e2a\u5c0f\u5199\u5b57\u6bcd\uff1f','\x69\x6e\x64\x65\x78\x4f\x66','\x31\x70\x78\x20\x73\x6f\x6c\x69\x64\x20\x23\x63\x63\x63','\x63\x68\x65\x63\x6b\x65\x64','\x73\x6f\x72\x74','\x64\x65\x62\x75','\x69\x6e\x70\x75\x74','\x61\x6c\x65\x72\x74','\u627e\u5230\u4e86\u5339\u914d\u7684\u6587\u672c\uff1a','\u542f\u7528\u6b63\u5219','\x35\x30\x25','\u6240\u6709\u6392\u5e8f\u51fd\u6570\u6267\u884c\u5b8c\u6bd5','\u6ca1\u6709\u7b26\u5408\u6761\u4ef6\u7684\u6570\u636e','\x66\x75\x6e\x63\x74\x69\x6f\x6e\x20\x2a\x5c\x28\x20\x2a\x5c\x29','\x0a\u3010\u3010\u9a8c\u8bc1\u7801\u3011\u3011\x0a\u8bf7\u95ee\x20\u56fd\x20\u8fd9\u4e2a\u5b57\x2c\u6c49\u5fc3\u7801\u4e24\u4e2a\u5f62\u7801\u662f\u4ec0\u4e48\x2c\u586b\u4e24\u4e2a\u5c0f\u5199\u5b57\u6bcd\uff1f','\x71\x75\x65\x73\x74\x69\x6f\x6e','\x65\x78\x65\x63\x75\x74\x65\x42\x74\x6e','\x6d\x61\x74\x63\x68','\x27\x3a\x20\x5b','\x33\x39\x37\x30\x39\x34\x59\x53\x6d\x4a\x68\x4e','\x65\x78\x65\x63','\x74\x79\x70\x65','\x74\x65\x78\x74','\u8f93\u5165\u7684\u6b63\u5219\u8868\u8fbe\u5f0f\u65e0\u6548\uff0c\u8bf7\u91cd\u65b0\u8f93\u5165','\x56\x49\x50\u529f\u80fd\x2c\x20\u8bf7\u8f93\u5165\x3a\x20\x20\u53bb\u91cd\x2c\x20\x6f\x6f\x70\x70\x2c\x20\u9996\u5b57\u6bcd\x2c\x20\u53bb\u9996\u5c3e\u7a7a\u683c\x2c\x20\u53bb\u7a7a\u884c\x2c\x20\u957f\u77ed\u6392\u4e00\x2c\u4e8c\uff0c\u624b\u5fc3\uff0c\u5339\u914d\u7a7a\x2c\u5f15\x2c\u9017\uff0c\u5de6\u53f3\u4e92\u6362\uff0c\u67e5\u627e\x2c\x20\u641c\u72d7\u683c\u5f0f\x2c\x20\u66ff\u6362\x2c\x20\u8f6c\u53cc\u62fc\x2c\x20\u5220\u65e0\u7b49\u53f7\u7684\u884c\x2c\x20\u4e8c\uff0c\u5b57\u5178\u6362\u884c\uff0c\u8f6c\x6a\x73\u5b57\u5178\x2c\u6392\u5e8f\u7ec4\u5408\x2c\u4e00\x2c\u4e8c\u4e09\x2c\u8fc7\u6ee4\x6a\x73\x2c\u4e94\u4e2a\u5b57\u6bcd\u8fc7\u6ee4\u6389\x2c\u540c\u7c7b\u540e\u6392\x2c\u8fd8\u539f\x2c\u6392\u5e8f\u52a0\u591a\u591a\x2c\u6392\u5e8f\u52a0\u4e94\u7b14\uff0c\u97f3\u5f62\uff0c\u5220\u591a\u4f59','\x63\x68\x61\x6e\x67\x65','\x66\x75\x6e\x63\x74\x69\x6f\x6e','\x57\x49\x4e','\x32\x33\x70\x78','\x24\x31\x2c\x24\x32\x3d\x24\x33','\x6c\x65\x66\x74','\u66ff\u6362\u5b8c\u6210\x2c\u5982\u6570\u636e\u5f88\u591a\x2c\u8bf7\u7b49\u5f85\u4e00\u4f1a','\x66\x6c\x6f\x61\x74','\x63\x6c\x69\x63\x6b','\u56de\u7b54\u9519\u8bef\uff01\u53ef\u4ee5\u70b9\u9996\u9875\x2c\u627e\u6c49\u5fc3\u7801\u8868\u627e\u7b54\u6848','\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74','\x6c\x61\x62\x65\x6c','\x31\x30\x70\x78','\u8f93\u5165\u9519\u8bef\uff01','\x24\x31\x09\x24\x33','\x72\x65\x73\x75\x6c\x74','\x24\x31\x3d\x24\x32\x2c\x24\x33','\x74\x6f\x53\x74\x72\x69\x6e\x67','\x73\x74\x61\x74\x65\x4f\x62\x6a\x65\x63\x74','\x67\x67\x65\x72','\u6c49\u5fc3\u7801\u8f6c\u6362\u683c\u5f0f\u5de5\u5177','\x74\x72\x61\x6e\x73\x6c\x61\x74\x65\x28\x2d\x35\x30\x25\x2c\x20\x2d\x35\x30\x25\x29','\u6267\u884c\u5b8c\u6bd5\u6392\u5e8f\u4e09','\x63\x72\x65\x61\x74\x65\x4f\x73\x63\x69\x6c\x6c\x61\x74\x6f\x72','\x68\x74\x74\x70\x3a\x2f\x2f\x79\x61\x6f\x78\x69\x61\x7a\x61\x69\x2e\x79\x73\x65\x70\x61\x6e\x2e\x63\x6f\x6d\x2f','\x72\x69\x67\x68\x74','\x72\x65\x76\x65\x72\x73\x65','\x37\x30\x25','\x66\x6f\x72\x45\x61\x63\x68','\x67\x65\x74','\x0a\u3010\u9a8c\u8bc1\u7801\u3011\x0a\u8bf7\u95ee\x20\u9c7c\x20\u8fd9\u4e2a\u5b57\x2c\u6c49\u5fc3\u7801\u4e24\u4e2a\u5f62\u7801\u662f\u4ec0\u4e48\x2c\u586b\u4e24\u4e2a\u5c0f\u5199\u5b57\u6bcd\uff1f','\x61\x6e\x73\x77\x65\x72','\x62\x69\x6e\x64','\x62\x6f\x72\x64\x65\x72','\x6d\x61\x72\x67\x69\x6e\x52\x69\x67\x68\x74','\u672a\u627e\u5230\u5339\u914d\u7684\u6587\u672c\uff1a','\x6d\x61\x70','\u51b7\u50fb\u5b57\u7b26','\x72\x65\x61\x64\x41\x73\x54\x65\x78\x74','\x69\x6e\x66\x6f','\x32\x32\x6a\x56\x6c\x58\x4e\x63','\x33\x30\x30\x35\x38\x38\x6d\x6e\x7a\x6b\x4c\x6e','\x31\x31\x34\x38\x33\x34\x30\x53\x41\x47\x69\x49\x4e','\x66\x72\x6f\x6d','\x62\x6f\x64\x79','\x72\x65\x70\x6c\x61\x63\x65','\x77\x69\x64\x74\x68','\x28\x28\x28\x2e\x2b\x29\x2b\x29\x2b\x29\x2b\x24','\x73\x75\x62\x73\x74\x72\x69\x6e\x67','\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72','\x0a\u3010\u9a8c\u8bc1\u7801\u3011\x0a\u8bf7\u95ee\x20\u5b9d\x20\u8fd9\u4e2a\u5b57\x2c\u6c49\u5fc3\u7801\u4e24\u4e2a\u5f62\u7801\u662f\u4ec0\u4e48\x2c\u586b\u4e24\u4e2a\u5c0f\u5199\u5b57\u6bcd\uff1f','\x6c\x65\x6e\x67\x74\x68','\x68\x61\x73','\x72\x65\x6d\x6f\x76\x65\x43\x68\x69\x6c\x64','\x5f\x5f\x70\x72\x6f\x74\x6f\x5f\x5f','\x79\x73\x65','\u6267\u884c\u5b8c\u6bd5','\x64\x69\x73\x70\x6c\x61\x79','\x63\x6f\x75\x6e\x74\x65\x72','\x68\x61\x73\x4f\x77\x6e\x50\x72\x6f\x70\x65\x72\x74\x79','\x6c\x6f\x67','\x6a\x6f\x69\x6e','\x66\x6c\x6f\x6f\x72','\x70\x61\x72\x73\x65','\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64','\x69\x6e\x69\x74','\x73\x70\x6c\x69\x63\x65','\x73\x6c\x69\x63\x65','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x68\x61\x6e\x78\x69\x6e\x6d\x61\x2e\x67\x69\x74\x65\x65\x2e\x69\x6f\x2f\x68\x61\x6e\x78\x69\x6e\x2f\x6a\x73\x2f\x73\x68\x75\x61\x6e\x67\x70\x69\x6e\x2e\x68\x74\x6d\x6c','\u6267\u884c\u5b8c\u6bd5\u6392\u5e8f\u4e00','\x73\x74\x6f\x70','\x32\x33\x32\x52\x6d\x68\x75\x49\x55','\x22\x7d\x2c\x0a','\x76\x61\x6c\x75\x65','\x73\x74\x61\x72\x74\x73\x57\x69\x74\x68','\x68\x72\x65\x66','\x73\x70\x6c\x69\x74','\x65\x78\x63\x65\x70\x74\x69\x6f\x6e','\x73\x65\x74','\x73\x74\x72\x69\x6e\x67','\x70\x61\x64\x64\x69\x6e\x67','\x62\x75\x74\x74\x6f\x6e','\x6f\x6f\x70\x70','\x24\x31\x3d\x24\x33','\x66\x69\x78\x65\x64','\u8bf7\u5148\u8f93\u5165\u9700\u8981\u66ff\u6362\u7684\u6570\u636e\uff01','\x64\x69\x76','\x74\x72\x69\x6d','\x23\x66\x66\x66','\x32\x30\x70\x78','\x66\x69\x6c\x74\x65\x72','\x70\x6c\x61\x63\x65\x68\x6f\x6c\x64\x65\x72','\x6e\x6f\x6e\x65','\x73\x74\x79\x6c\x65','\x6d\x61\x72\x67\x69\x6e\x42\x6f\x74\x74\x6f\x6d','\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74','\x74\x6f\x70','\x63\x61\x6c\x6c','\x24\x33\x09\x24\x31\x09\x24\x32','\x56\x49\x50\u529f\u80fd\x2c\x20\u6709\x3a\x20\x20\u53bb\u91cd\x2c\x20\x6f\x6f\x70\x70\x2c\x20\u9996\u5b57\u6bcd\x2c\x20\u53bb\u9996\u5c3e\u7a7a\u683c\x2c\x20\u53bb\u7a7a\u884c\x2c\x20\u957f\u77ed\u6392\uff0c\u5339\u914d\u7a7a\x2c\u5f15\x2c\u9017\uff0c\u5de6\u53f3\u4e92\u6362\uff0c\u67e5\u627e\x2c\x20\u8f6c\u641c\u72d7\u683c\u5f0f\x2c\x20\u66ff\u6362\x2c\x20\u8f6c\u53cc\u62fc\x2c\x20\u5220\u65e0\u7b49\u53f7\u7684\u884c\x2c\x20\u4e8c\uff0c\u5b57\u5178\u6362\u884c\uff0c\u8f6c\x6a\x73\u5b57\u5178\x2c\u65b0\u6392\u5e8f\x2c\u8fc7\u6ee4\x6a\x73\x2c\u4e94\u4e2a\u5b57\u6bcd\u8fc7\u6ee4\u6389\x2c\u540c\u7c7b\u540e\u6392\x2c\u8fd8\u539f\x2c\x2c\x2c\u8fd8\u6709\u66f4\u591a\x2c\x2c\x2c\x2c','\x66\x69\x6c\x65\x73','\u6c49\u5fc3\u5de5\u5177\u5bfc\u51fa\u7684\x2e\x74\x78\x74','\x3c\x61\x20\x68\x72\x65\x66\x3d\x22','\x74\x72\x61\x6e\x73\x66\x6f\x72\x6d','\x24\x32\x2c\x24\x31\x3d\x24\x33','\x66\x72\x65\x71\x75\x65\x6e\x63\x79','\x6c\x6f\x63\x61\x74\x69\x6f\x6e','\u8bf7\u5148\u8f93\u5165\u9700\u8981\u6362\u884c\u7684\u6570\u636e\uff01','\x0a\u3010\u9a8c\u8bc1\u7801\u3011\x0a\u8bf7\u95ee\x20\u5b66\x20\u8fd9\u4e2a\u5b57\x2c\u6c49\u5fc3\u7801\u4e24\u4e2a\u5f62\u7801\u662f\u4ec0\u4e48\x2c\u586b\u4e24\u4e2a\u5c0f\u5199\u5b57\u6bcd\uff1f','\x63\x6f\x6e\x63\x61\x74','\x35\x62\x4a\x66\x43\x4c\x46','\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64','\x36\x37\x36\x38\x33\x68\x64\x66\x72\x63\x75','\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c','\x69\x6e\x6e\x65\x72\x54\x65\x78\x74','\x5c\x2b\x5c\x2b\x20\x2a\x28\x3f\x3a\x5b\x61\x2d\x7a\x41\x2d\x5a\x5f\x24\x5d\x5b\x30\x2d\x39\x61\x2d\x7a\x41\x2d\x5a\x5f\x24\x5d\x2a\x29','\x6d\x61\x74\x63\x68\x41\x6c\x6c','\x73\x74\x72\x69\x6e\x67\x69\x66\x79','\x74\x72\x61\x63\x65','\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65','\x65\x72\x72\x6f\x72','\x72\x61\x6e\x64\x6f\x6d','\x6f\x75\x74\x70\x75\x74','\x33\x59\x53\x55\x69\x68\x46','\x74\x65\x73\x74','\u767e\u5ea6\u53d8\u641c\u72d7','\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64','\x61\x70\x70\x6c\x79','\x63\x68\x61\x72\x41\x74','\x72\x65\x74\x75\x72\x6e\x20\x28\x66\x75\x6e\x63\x74\x69\x6f\x6e\x28\x29\x20','\x33\x31\x35\x30\x30\x35\x76\x66\x6f\x4f\x43\x4a','\x34\x31\x39\x31\x36\x33\x33\x52\x47\x52\x69\x76\x48','\x73\x74\x61\x72\x74','\x24\x33\x20\x24\x31','\x6f\x6e\x6c\x6f\x61\x64','\x63\x6f\x6e\x6e\x65\x63\x74','\x69\x6e\x63\x6c\x75\x64\x65\x73','\x70\x75\x73\x68','\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72','\x70\x6f\x73\x69\x74\x69\x6f\x6e'];_0x3ab8=function(){return _0x1e9b69;};return _0x3ab8();}function 五个字母过滤掉(){var _0x5a4ddf=_0x3642fd,_0x36357d=document[_0x5a4ddf(0x1d6)](_0x5a4ddf(0x1fc))['\x76\x61\x6c\x75\x65'],_0x490fb9=_0x36357d[_0x5a4ddf(0x25b)]('\x0a'),_0x3e5328=_0x490fb9['\x66\x69\x6c\x74\x65\x72'](_0x504b2a=>{var _0x4b81cc=_0x5a4ddf,_0x2eb136=_0x504b2a[_0x4b81cc(0x266)]()['\x73\x70\x6c\x69\x74'](/\s+/),_0x29fa2e=_0x2eb136[0x0]||'';return!(countLetters(_0x29fa2e)>0x4);}),_0x3201db=_0x3e5328[_0x5a4ddf(0x24c)]('\x0a');document[_0x5a4ddf(0x1d6)](_0x5a4ddf(0x1e1))[_0x5a4ddf(0x258)]=_0x3201db;}function countLetters(_0x147d4e){var _0x4842ba=_0x3642fd;return _0x147d4e[_0x4842ba(0x23c)](/[^a-zA-Z]/g,'')[_0x4842ba(0x242)];}function 过滤js(){var _0x25dcf2=_0x3642fd;const _0x49d31d=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x25dcf2(0x1fc))[_0x25dcf2(0x258)],_0x3d4df2=_0x49d31d[_0x25dcf2(0x23c)](/^(<img\s+src=[^>]+>|[^\n]*$)/gm,function(_0x1cabc2,_0x21c5ee){var _0x25aa5c=_0x25dcf2;return _0x1cabc2[_0x25aa5c(0x259)]('\x3c\x69\x6d\x67\x20\x73\x72\x63\x3d')?_0x1cabc2:_0x1cabc2['\x72\x65\x70\x6c\x61\x63\x65'](/<!--[\s\S]*?-->|(?<!\S)\/\/[^\n]*|\/\*[\s\S]*?\*\//g,'');}),_0x42fad7=_0x3d4df2[_0x25dcf2(0x23c)](/\n{2,}/g,'\x0a');document[_0x25dcf2(0x1d6)]('\x6f\x75\x74\x70\x75\x74')[_0x25dcf2(0x258)]=_0x42fad7;}if(window[_0x3642fd(0x1d1)][_0x3642fd(0x25a)][_0x3642fd(0x1f7)]('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x68\x61\x6e\x78\x69\x6e\x6d\x61\x2e\x67\x69\x74\x65\x65\x2e\x69\x6f')>-0x1){var questions=[{'\x71\x75\x65\x73\x74\x69\x6f\x6e':_0x3642fd(0x1d3),'\x61\x6e\x73\x77\x65\x72':'\x65\x7a'},{'\x71\x75\x65\x73\x74\x69\x6f\x6e':_0x3642fd(0x1f6),'\x61\x6e\x73\x77\x65\x72':'\x6c\x6c'},{'\x71\x75\x65\x73\x74\x69\x6f\x6e':_0x3642fd(0x22d),'\x61\x6e\x73\x77\x65\x72':'\x65\x61'},{'\x71\x75\x65\x73\x74\x69\x6f\x6e':_0x3642fd(0x241),'\x61\x6e\x73\x77\x65\x72':'\x67\x79'},{'\x71\x75\x65\x73\x74\x69\x6f\x6e':_0x3642fd(0x204),'\x61\x6e\x73\x77\x65\x72':'\x77\x79'}],answered=![];document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x3642fd(0x206))[_0x3642fd(0x1f1)]('\x63\x6c\x69\x63\x6b',function(){var _0x4ccc87=_0x3642fd;if(answered){var _0x3c4f10=prompt(_0x4ccc87(0x20e));typeof window[_0x3c4f10]===_0x4ccc87(0x210)?window[_0x3c4f10]():alert(_0x4ccc87(0x21c));}else{var _0x5d9128=Math[_0x4ccc87(0x24d)](Math[_0x4ccc87(0x1e0)]()*questions[_0x4ccc87(0x242)]),_0x4b068d=questions[_0x5d9128],_0x3281e2=prompt(_0x4b068d['\x71\x75\x65\x73\x74\x69\x6f\x6e']);if(_0x3281e2===_0x4b068d[_0x4ccc87(0x22e)]){answered=!![];var _0x3c4f10=prompt(_0x4ccc87(0x20e));typeof window[_0x3c4f10]===_0x4ccc87(0x210)?window[_0x3c4f10]():alert(_0x4ccc87(0x21c));}else alert(_0x4ccc87(0x218));}});var reference=_0x3642fd(0x1ca);questions[_0x3642fd(0x22b)](function(_0x17d978){var _0x4f6852=_0x3642fd;_0x17d978[_0x4f6852(0x205)]=reference+_0x17d978[_0x4f6852(0x205)];});}function _0x4986ba(_0x306ba6){function _0x50ad86(_0x614adf){var _0x29f6f6=_0x1d15;if(typeof _0x614adf===_0x29f6f6(0x25e))return function(_0x1598e){}[_0x29f6f6(0x240)]('\x77\x68\x69\x6c\x65\x20\x28\x74\x72\x75\x65\x29\x20\x7b\x7d')['\x61\x70\x70\x6c\x79'](_0x29f6f6(0x249));else(''+_0x614adf/_0x614adf)[_0x29f6f6(0x242)]!==0x1||_0x614adf%0x14===0x0?function(){return!![];}[_0x29f6f6(0x240)]('\x64\x65\x62\x75'+_0x29f6f6(0x222))[_0x29f6f6(0x1c8)]('\x61\x63\x74\x69\x6f\x6e'):function(){return![];}[_0x29f6f6(0x240)](_0x29f6f6(0x1fb)+'\x67\x67\x65\x72')[_0x29f6f6(0x1e6)](_0x29f6f6(0x221));_0x50ad86(++_0x614adf);}try{if(_0x306ba6)return _0x50ad86;else _0x50ad86(0x0);}catch(_0x210f75){}}
+
+
+var result = xmsj();
+
+
+if (result === "yse")
+
+ {
+
+
+        function convertbd() {
+            var input = document.getElementById("input").value;
+            var output = input.replace(/([a-zA-Z]+),(\d+)=([a-zA-Z]?)/g, "$2,$1=$3");
+            document.getElementById("output").value = output;
+        }
+
+
+        function convertqq() {
+            // 获取输入框中的字符串
+            var input = document.getElementById("input").value;
+
+            // 将字符串中的 "字母类型,数字=" 或 "字母类型,数字=字母" 替换为 "字母类型=数字," 或 "字母类型=数字,字母"
+            var output = input.replace(/([a-zA-Z]+),(\d+)=([a-zA-Z]?)/g, "$1=$2,$3");
+
+            // 将转换后的字符串输出到输出框中
+            document.getElementById("output").value = output;
+        }
+
+        function convertwubi() {
+         return new Promise(function(resolve, reject) {
+            var input = document.getElementById("input").value;
+            var output = input.replace(/([a-zA-Z]+),(\d+)=(.*)/g, "$1	$3");
+            document.getElementById("output").value = output;
+          
+    resolve();  // 表示排序三执行完毕
+ 
+  });
+}
+        function convertdd() {
+            var input = document.getElementById("input").value;
+            var output = input.replace(/([a-zA-Z]+),(\d+)=(.*)/g, "$3	$1");
+            document.getElementById("output").value = output;
+
+
+        }
+
+function 手心() {
+    var input = document.getElementById("input").value;
+    var output = input.replace(/([a-zA-Z]+),(\d+)=(.*)/g, "$3	$1	$2");
+    document.getElementById("output").value = output;
+}
+
+function convertkj() {
+  var input = document.getElementById("input").value;
+  var output = "";
+  var pattern = /([a-zA-Z]+),(\d+)=(.*)/g; // 定义正则表达式
+  var match; // 声明变量用于保存匹配结果
+  var map = {}; // 定义一个对象用于保存每个字母对应的字符串
+
+  while ((match = pattern.exec(input)) !== null) {
+    var letter = match[1]; // 取出匹配到的第一个分组
+    var value = match[3]; // 取出匹配到的第三个分组
+
+    if (map[letter]) {
+      // 判断是否已存在相同字母的字符串，若不存在才追加
+      if (map[letter].indexOf(value) === -1) {
+        map[letter] += " " + value;
+      }
+    } else {
+      map[letter] = value; // 如果不存在该字母对应的字符串，则直接赋值
+    }
+  }
+
+  // 将 map 对象转换成字符串形式，并输出到输出框中
+  for (var letter in map) {
+    output += letter + " " + map[letter] + "\n";
+  }
+
+  document.getElementById("output").value = output;
+}
+
+
+        function convertwin() {
+            var input = document.getElementById("input").value;
+            var output = input.replace(/([a-zA-Z]+),(\d+)=(.*)/g, "$3$1");
+            document.getElementById("output").value = output;
+        }
+        function convertkongge() {
+            var input = document.getElementById("input").value;
+            var output = input.replace(/([a-zA-Z]+),(\d+)=(.*)/g, "$3 $1");
+            document.getElementById("output").value = output;
+        }
+
+        function convertqqsg() {
+            var input = document.getElementById("input").value;
+            var re = /([a-zA-Z]+)=(\d+),([a-zA-Z\u4e00-\u9fa5]+)/g;
+            var output = input.replace(re, "$1,$2=$3");
+            document.getElementById("input").value = output;
+        }
+
+        function convertbdsg() {
+            var input = document.getElementById("input").value;
+            var re = /(\d+),([a-zA-Z]+)=([a-zA-Z\u4e00-\u9fa5]+)/g;
+            var output = input.replace(re, "$2,$1=$3");
+            document.getElementById("input").value = output;
+        }
+
+
+
+
+        function convertjiajia() {
+            var input = document.getElementById("input").value;
+            var output = input.replace(/([a-zA-Z]+),(\d+)=([\u4e00-\u9fa5]+)/g, "$1=$3");
+            document.getElementById("output").value = output;
+        }
+
+
+
+
+
+
+        function convertfzm() {
+
+            var inputs = document.getElementById("input").value.split("\n"); // 将输入按照换行符分割成数组
+            var output = "";
+            var usedLetters = []; // 用于存储已经输出的字母
+
+            for (var i = 0; i < inputs.length; i++) {
+                var input = inputs[i];
+                var parts = input.split(","); // 将字符串按照逗号和等号分割成数组
+
+                if (parts.length > 1) { // 如果找到了逗号
+                    var letter = parts[0]; // 取逗号之前的字母
+                    var length = letter.length; // 获取字母的长度
+
+                    if (length == 3 || length == 4) { // 如果字母的长度为3或4，则进行转换
+                        var lastTwo = length == 3 ? letter.slice(-1) : letter.slice(-2); // 根据字母的长度来取后几位
+
+                        var combination = parts[1].slice(2, 3) + "=" + lastTwo; // 组合出新的组合体
+
+                        if (!usedLetters.includes(combination)) { // 如果新的组合体没有出现过，则将其添加到输出中，并将其添加到 usedLetters 中
+                            output += combination + "\n";
+                            usedLetters.push(combination);
+                        }
+                    }
+
+                }
+            }
+
+            if (output === "") { // 如果输出为空，则说明没有符合条件的数据
+                output = "没有符合条件的数据";
+            }
+
+            document.getElementById("output").value = output.trim(); // 去掉最后一个换行符，并将结果输出
+        }
+
+
+        function convertfzmquliangwei() {
+
+            var inputs = document.getElementById("input").value.split("\n"); // 将输入按照换行符分割成数组
+            var output = "";
+            var usedLetters = []; // 用于存储已经输出的字母
+
+            for (var i = 0; i < inputs.length; i++) {
+                var input = inputs[i];
+                var parts = input.split(","); // 将字符串按照逗号和等号分割成数组
+
+                if (parts.length > 1) { // 如果找到了逗号
+                    var letter = parts[0]; // 取逗号之前的字母
+                    var length = letter.length; // 获取字母的长度
+
+                    if (length == 4) { // 如果字母的长度为4，则进行转换
+                        var lastTwo = letter.slice(-2); // 取后两位
+
+                        var combination = parts[1].slice(2, 3) + "=" + lastTwo; // 组合出新的组合体
+
+                        if (!usedLetters.includes(combination)) { // 如果新的组合体没有出现过，则将其添加到输出中，并将其添加到 usedLetters 中
+                            output += combination + "\n";
+                            usedLetters.push(combination);
+                        }
+                    }
+
+                }
+            }
+
+            if (output === "") { // 如果输出为空，则说明没有符合条件的数据
+                output = "没有符合条件的数据";
+            }
+
+            document.getElementById("output").value = output.trim(); // 去掉最后一个换行符，并将结果输出
+        }
+
+
+
+        function convertfzmquyiwei() {
+            var inputs = document.getElementById("input").value.split("\n");
+            var output = "";
+            var usedLetters = [];
+
+            for (var i = 0; i < inputs.length; i++) {
+                var input = inputs[i];
+                var parts = input.split(",");
+
+                if (parts.length > 1) {
+                    var letter = parts[0];
+                    var length = letter.length;
+
+                    if (length == 4) {
+                        var secondLast = letter.charAt(2);
+                        var combination = parts[1].slice(2, 3) + "=" + secondLast;
+
+                        if (!usedLetters.includes(combination)) {
+                            output += combination + "\n";
+                            usedLetters.push(combination);
+                        }
+                    }
+                }
+            }
+
+            if (output === "") {
+                output = "没有符合条件的数据";
+            }
+
+            document.getElementById("output").value = output.trim();
+        }
+
+
+
+// 先var调用函数,然后if=yes..里面包含代码.是yes才执行
+var result = xmsj();
+
+
+if (result === "yse")
+
+ {
+ 
+
+
+
+   function exportOutput() {
+  // 获取 <textarea> 元素
+  const textarea = document.getElementById("output");
+
+  // 获取文本内容
+  const outputText = textarea.value.trim();
+
+  // 创建一个隐藏的 <a> 元素
+  const downloadLink = document.createElement("a");
+  downloadLink.style.display = "none";
+
+  // 设置下载链接的属性，包括文件名和编码格式
+  downloadLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent(outputText);
+  downloadLink.download = "汉心工具导出的.txt";
+
+  // 将下载链接添加到页面中，并触发点击事件开始下载
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+
+  // 清理下载链接对象
+  document.body.removeChild(downloadLink);
+}
+
+
+        function importInput() {
+            var input = document.getElementById("importFile");
+            input.addEventListener("change", function () {
+                var file = input.files[0];
+                var reader = new FileReader();
+                reader.readAsText(file);
+                reader.onload = function () {
+                    document.getElementById("input").value = reader.result;
+                };
+            });
+            input.click();
+        }
+        
+   }  }
+
+function xmsj() {
+
+  var pageText = document.body.innerText;
+
+
+  var keywords = ["首页", "百度变搜狗", "汉心码转换格式工具", "WIN", "QQ变搜狗"];
+
+
+  var allKeywordsFound = true;
+  for (var i = 0; i < keywords.length; i++) {
+    if (!pageText.includes(keywords[i])) {
+      allKeywordsFound = false;
+      break;
+    }
+  }
+
+
+  const urls = [
+    "https://hanxinma.gitee.io/hanxin/",
+    "http://yaoxiazai.ysepan.com/",
+    "http://yaoxiazai.ysepan.com/",
+    "https://hanxinma.github.io/"
+  ];
+
+  let allUrlsFound = true;
+
+  for (const url of urls) {
+    if (!document.body.innerHTML.includes(`<a href="${url}"`)) {
+      allUrlsFound = false;
+      break;
+    }
+  }
+
+  // 如果所有关键词和链接地址都被找到，则返回结果"yse"，否则返回null
+  if (allKeywordsFound && allUrlsFound) {
+    return "yse";
+  } else {
+    return null;
+  }
+}
+
+
+function sortLines() {
+  var inputText = document.getElementById('input').value;
+  var lines = inputText.split('\n');
+
+  var linesWithNumbers = [];
+  var linesWithoutNumbers = [];
+
+  // 将有数字和没有数字的行分别保存到不同的数组中
+  lines.forEach(function(line) {
+    if (/\d/.test(line)) {
+      linesWithNumbers.push(line);
+    } else {
+      linesWithoutNumbers.push(line);
+    }
+  });
+
+  // 只对有数字的行进行排序
+  linesWithNumbers.sort(function(a, b) {
+    var numA = parseInt(a.match(/\d+/));
+    var numB = parseInt(b.match(/\d+/));
+    return numA - numB;
+  });
+
+  var sortedLines = linesWithNumbers.concat(linesWithoutNumbers); // 合并有数字的行和没有数字的行
+
+  var outputText = sortedLines.join('\n');
+  document.getElementById('input').value = outputText;
+}
+
+
+function reverseSortLines() {
+  var inputText = document.getElementById('input').value;
+  var lines = inputText.split('\n');
+
+  var linesWithNumbers = [];
+  var linesWithoutNumbers = [];
+
+  // 将有数字和没有数字的行分别保存到不同的数组中
+  lines.forEach(function(line) {
+    if (/\d/.test(line)) {
+      linesWithNumbers.push(line);
+    } else {
+      linesWithoutNumbers.push(line);
+    }
+  });
+
+  // 只对有数字的行进行排序
+  linesWithNumbers.sort(function(a, b) {
+    var numA = parseInt(a.match(/\d+/));
+    var numB = parseInt(b.match(/\d+/));
+    return numB - numA; // 倒序排序
+  });
+
+  var sortedLines = linesWithNumbers.concat(linesWithoutNumbers); // 合并有数字的行和没有数字的行
+
+  var outputText = sortedLines.join('\n');
+  document.getElementById('input').value = outputText;
+}
+
+
+
+function sortLines备份可以多次点击(reverse) {
+			// 获取输入框内容
+			var inputText = document.getElementById('input').value;
+			// 将文本分割成行
+			var lines = inputText.split('\n');
+			// 对每一行进行排序
+			lines.sort(function(a, b) {
+				var numA = parseInt(a.split('=')[0].match(/\d+/));
+				var numB = parseInt(b.split('=')[0].match(/\d+/));
+				if (isNaN(numA)) {
+					return -1; // 如果a没有数字，则排在前面
+				} else if (isNaN(numB)) {
+					return 1; // 如果b没有数字，则排在前面
+				} else {
+					return numA - numB; // 否则按数字大小排序
+				}
+			});
+			if (reverse) {
+				lines.reverse(); // 如果需要倒序排序，则调用reverse()方法
+			}
+			// 将排好序的文本重新组合成字符串
+			var outputText = lines.join('\n');
+			// 将结果写入输出框
+			document.getElementById('input').value = outputText;
+		}
+		
+		   function reverseText() {
+      var inputText = document.getElementById('input').value;  // 获取a文本框的值  反序反排
+      var lines = inputText.split('\n');  // 将文本按行分割成数组
+      var reversedLines = lines.reverse();  // 倒序排列数组元素
+      var reversedText = reversedLines.join('\n');  // 将倒序后的数组元素按行拼接为字符串
+      document.getElementById('input').value = reversedText;  // 将倒序后的值设置给b文本框
+    }
+    
+ 
+function 去重() {
+
+  var inputText = document.getElementById('input').value;  // 获取input文本框的值
+  var lines = inputText.split('\n');  // 将文本按行分割成数组
+  var nonEmptyLines = lines.filter(line => line.trim() !== '');  // 过滤掉空白行
+  var uniqueLines = [...new Set(nonEmptyLines)]; // 使用Set数据结构去除重复行，并转换为数组
+  var resultText = uniqueLines.join('\n');  // 将去重后的数组元素按行拼接为字符串
+  document.getElementById('input').value = resultText;  // 将去重后的值设置给input文本框
+}
+
+
+function oopp() {
+  var inputText = document.getElementById('input').value;  // 获取input文本框的值
+  var lines = inputText.split('\n');  // 将文本按行分割成数组
+
+  // 遍历每一行进行处理
+  for (var i = lines.length - 1; i >= 0; i--) {
+    var words = lines[i].split('	');  // 将当前行按制表符分割成单词数组
+    
+    // 判断第一个单词是否满足条件（6个字母）
+    if (words.length > 0 && words[0].length === 6) {
+      words[0] = words[0].replace('oopp', 'oo');  // 替换第一个单词中的'oopp'
+    } else if (words.length > 0 && words[0].length === 7 && words[0].includes('oopp')) {
+      lines.splice(i, 1);  // 删除这一行
+    }
+    
+    lines[i] = words.join('	');  // 将处理后的单词数组按制表符拼接为字符串
+  }
+
+  var resultText = lines.join('\n');  // 将处理后的数组元素按行拼接为字符串
+  document.getElementById('input').value = resultText;  // 将处理后的值设置给input文本框
+}
+
+
+
+
+
+ function 首字母() {
+            var inputText  = document.getElementById("input").value;
+            var lines = inputText.split("\n"); // 以换行符分割成多行文本
+            var convertedText = "";
+
+            for (var i = 0; i < lines.length; i++) {
+                var words = lines[i].split(/\s+/); // 在每行中以空格分割成单词
+                for (var j = 0; j < words.length; j++) {
+                    if (words[j].length > 0) {
+                        convertedText += words[j][0]; // 取每个单词的第一个字母
+                    }
+                }
+                convertedText += "\n"; // 每行结尾添加换行符
+            }
+
+            document.getElementById("output").textContent = convertedText;
+        }
+        
+        
+        
+        
+function 匹配空() {
+  var sourceData = document.getElementById("input").value;
+  var matchText = document.getElementById("output").value;
+
+  var sourceLines = sourceData.split("\n");
+  var matchLines = matchText.split("\n");
+
+  var result = "";
+
+  for (var i = 0; i < matchLines.length; i++) {
+    var matchLine = matchLines[i].trim();
+    var foundMatch = false;
+
+    for (var j = 0; j < sourceLines.length; j++) {
+      var sourceLineParts = sourceLines[j].split(" ");
+      var sourceLine = sourceLineParts[0].replace(/\s+/g, "").trim();
+
+      if (matchLine === sourceLine) {
+        result += sourceLines[j].trim() + "\n";
+        foundMatch = true;
+        break;
+      }
+    }
+
+    if (!foundMatch) {
+      result += matchLine + "\n";
+    }
+  }
+
+  document.getElementById("output").value = result;
+}
+
+
+        
+function 匹配引() {
+  var sourceData = document.getElementById("input").value;
+  var matchText = document.getElementById("output").value;
+
+  var sourceLines = sourceData.split("\n");
+  var matchLines = matchText.split("\n");
+
+  var result = "";
+
+  for (var i = 0; i < matchLines.length; i++) {
+    var matchLine = matchLines[i].trim();
+    var foundMatch = false;
+
+    for (var j = 0; j < sourceLines.length; j++) {
+      var sourceLineParts = sourceLines[j].split("'");
+      var sourceLine = sourceLineParts[0].replace(/\s+/g, "").trim();
+
+      if (matchLine === sourceLine) {
+        result += sourceLines[j].trim() + "\n";
+        foundMatch = true;
+        break;
+      }
+    }
+
+    if (!foundMatch) {
+      result += matchLine + "\n";
+    }
+  }
+
+  document.getElementById("output").value = result;
+}
+
+        
+function 匹配逗() {
+  var sourceData = document.getElementById("input").value;
+  var matchText = document.getElementById("output").value;
+
+  var sourceLines = sourceData.split("\n");
+  var matchLines = matchText.split("\n");
+
+  var result = "";
+
+  for (var i = 0; i < matchLines.length; i++) {
+    var matchLine = matchLines[i].trim();
+    var foundMatch = false;
+
+    for (var j = 0; j < sourceLines.length; j++) {
+      var sourceLineParts = sourceLines[j].split(",");
+      var sourceLine = sourceLineParts[0].replace(/\s+/g, "").trim();
+
+      if (matchLine === sourceLine) {
+        result += sourceLines[j].trim() + "\n";
+        foundMatch = true;
+        break;
+      }
+    }
+
+    if (!foundMatch) {
+      result += matchLine + "\n";
+    }
+  }
+
+  document.getElementById("output").value = result;
+}
+
+
+
+function 长短排一() {
+var inputText = document.getElementById("input").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  // 对每行文本按字符长度进行排序
+  lines.sort(function(a, b) {
+    return a.length - b.length;
+  });
+
+  var sortedText = lines.join("\n"); // 将排序后的每行文本重新连接起来
+
+  document.getElementById("input").value = sortedText; // 使用value属性将排好序的文本放回输入文本框中
+}
+function 长短排二() {
+  var outputText = document.getElementById("output").value;
+  var lines = outputText.split("\n"); // 以换行符分割成多行文本
+
+  // 对每行文本按字符长度进行排序
+  lines.sort(function (a, b) {
+    return a.length - b.length;
+  });
+
+  var sortedText = lines.join("\n"); // 将排序后的每行文本重新连接起来
+
+  document.getElementById("output").value = sortedText; // 使用value属性将排好序的文本放回输出文本框中
+}
+
+function 去首尾空格() {
+  var inputText = document.getElementById("input").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  // 遍历每行文本并去除首尾空格
+  for (var i = 0; i < lines.length; i++) {
+    lines[i] = lines[i].trim();
+  }
+
+  var modifiedText = lines.join("\n"); // 将修改后的每行文本重新连接起来
+
+  document.getElementById("input").value = modifiedText; // 使用value属性将修改后的文本放回输入文本框中
+}
+
+function 去空行() {
+  var inputText = document.getElementById("input").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  // 过滤掉空行
+  lines = lines.filter(function(line) {
+    return line.trim() !== "";
+  });
+
+  var modifiedText = lines.join("\n"); // 将修改后的每行文本重新连接起来
+
+  document.getElementById("input").value = modifiedText; // 使用value属性将修改后的文本放回输入文本框中
+}
+
+
+
+
+
+function 搜狗格式() {
+  return new Promise(function(resolve, reject) {
+  var inputText = document.getElementById("input").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  var groups = {}; // 使用对象来存储每个字符组
+  for (var i = 0; i < lines.length; i++) {
+    // 使用正则表达式按照多个空格符进行分割键值对
+    var pair = lines[i].split(/\s+/); 
+    var key = pair[0].trim(); // 去除键的首尾空格
+    var value = pair[1] ? pair[1].trim() : ""; // 如果第二列存在，则去除其首尾空格，否则设为空字符串
+
+    var groupKey = key.split(" ")[0]; // 使用第一个字符组作为键
+    var groupValue = key.split(" ")[1]; // 使用第二个字符作为值
+
+    if (!groups.hasOwnProperty(groupKey)) {
+      groups[groupKey] = [];
+    }
+    groups[groupKey].push({ value: value, groupValue: groupValue });
+  }
+
+  var sortedText = "";
+  for (var groupKey in groups) {
+    if (groups.hasOwnProperty(groupKey)) {
+      var group = groups[groupKey];
+
+      for (var j = 0; j < group.length; j++) {
+        var item = group[j];
+        var sortNumber = j + 1;
+
+        if (groupKey === "冷僻字符") {
+          sortNumber = 1; // 如果第一列是冷僻字符，直接将序号设为1
+        }
+
+        sortedText += groupKey + "," + sortNumber + "=" + item.value + "\n";
+      }
+    }
+  }
+
+  document.getElementById("output").value = sortedText; // 使用value属性将排好序的文本放入输出文本框中
+   
+   
+    resolve();  // 表示排序三执行完毕
+    window.alert('执行完毕');
+  });
+}
+
+
+
+
+function 搜狗格式二() {
+  return new Promise(function(resolve, reject) {
+  var inputText = document.getElementById("output").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  var groups = {}; // 使用对象来存储每个字符组
+  for (var i = 0; i < lines.length; i++) {
+    // 使用正则表达式按照多个空格符进行分割键值对
+    var pair = lines[i].split(/\s+/); 
+    var key = pair[0].trim(); // 去除键的首尾空格
+    var value = pair[1] ? pair[1].trim() : ""; // 如果第二列存在，则去除其首尾空格，否则设为空字符串
+
+    var groupKey = key.split(" ")[0]; // 使用第一个字符组作为键
+    var groupValue = key.split(" ")[1]; // 使用第二个字符作为值
+
+    if (!groups.hasOwnProperty(groupKey)) {
+      groups[groupKey] = [];
+    }
+    groups[groupKey].push({ value: value, groupValue: groupValue });
+  }
+
+  var sortedText = "";
+  for (var groupKey in groups) {
+    if (groups.hasOwnProperty(groupKey)) {
+      var group = groups[groupKey];
+
+      for (var j = 0; j < group.length; j++) {
+        var item = group[j];
+        var sortNumber = j + 1;
+
+        if (groupKey === "冷僻字符") {
+          sortNumber = 1; // 如果第一列是冷僻字符，直接将序号设为1
+        }
+
+        sortedText += groupKey + "," + sortNumber + "=" + item.value + "\n";
+      }
+    }
+  }
+
+  document.getElementById("output").value = sortedText; // 使用value属性将排好序的文本放入输出文本框中
+   
+  
+    resolve();  // 表示排序三执行完毕
+    window.alert('执行完毕');
+  });
+}
+
+
+
+function 左右互换() {
+  var inputText = document.getElementById("input").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  // 处理每一行的文本
+  var modifiedLines = lines.map(function(line) {
+    var columns = line.trim().split(/\s+/); // 以空格区分列，并去除首尾空白字符
+
+    // 检查是否有足够的列进行交换
+    if (columns.length >= 2) {
+      // 交换第一列和第二列的位置
+      var temp = columns[0];
+      columns[0] = columns[1];
+      columns[1] = temp;
+    }
+
+    return columns.join("	"); // 将修改后的列重新连接起来，用空格分隔
+  });
+
+  var modifiedText = modifiedLines.join("\n"); // 将修改后的每行文本重新连接起来
+
+  document.getElementById("input").value = modifiedText; // 使用value属性将修改后的文本放回输入文本框中
+}
+
+
+
+function 替换原本() {
+
+  var dialog = document.createElement('div');
+  dialog.style.position = 'fixed';
+  dialog.style.top = '70%';
+  dialog.style.left = '50%';
+  dialog.style.transform = 'translate(-50%, -50%)';
+  dialog.style.background = '#fff';
+  dialog.style.padding = '20px';
+  dialog.style.border = '1px solid #ccc';
+  
+  
+  var findInput = document.createElement('input');
+  findInput.setAttribute('type', 'text');
+  findInput.setAttribute('placeholder', '查找');
+  findInput.style.marginBottom = '10px';
+  
+  var replaceInput = document.createElement('input');
+  replaceInput.setAttribute('type', 'text');
+  replaceInput.setAttribute('placeholder', '替换');
+  replaceInput.style.marginBottom = '10px';
+
+  var findButton = document.createElement('button');
+   findButton.style.marginRight = '10px';
+  findButton.innerHTML = '查找';
+  findButton.style.marginRight = '10px';
+  findButton.addEventListener('click', function() {
+    var searchText = findInput.value;
+    findText(searchText);
+  });
+
+  var replaceButton = document.createElement('button');
+  replaceButton.innerHTML = '替换';
+  replaceButton.style.marginRight = '10px';
+  replaceButton.addEventListener('click', function() {
+    var searchText = findInput.value;
+    var replaceText = replaceInput.value;
+    replaceTextFn(searchText, replaceText);
+  });
+
+  var closeButton = document.createElement('button');
+  closeButton.innerHTML = '关闭';
+  closeButton.style.float = 'right';
+  closeButton.addEventListener('click', function() {
+    document.body.removeChild(dialog);
+  });
+
+  dialog.appendChild(findInput);
+  dialog.appendChild(replaceInput);
+  dialog.appendChild(findButton);
+  dialog.appendChild(replaceButton);
+  dialog.appendChild(closeButton);
+
+  document.body.appendChild(dialog);
+}
+
+function findText(searchText) {
+  var text = document.getElementById('input').value;
+  if (text.indexOf(searchText) !== -1) {
+    alert('找到了匹配的文本：' + searchText);
+  } else {
+    alert('未找到匹配的文本：' + searchText);
+  }
+}
+
+function replaceTextFn(searchText, replaceText) {
+  var inputElement = document.getElementById('input');
+  var text = inputElement.value;
+  var newText = text.replace(new RegExp(searchText, 'g'), replaceText);
+  inputElement.value = newText;
+  alert('替换完成');
+}
+
+
+function 替换() {
+
+  var dialog = document.createElement('div');
+  dialog.style.position = 'fixed';
+  dialog.style.top = '65%';
+  dialog.style.left = '50%';
+  dialog.style.transform = 'translate(-50%, -50%)';
+  dialog.style.background = '#fff';
+  dialog.style.padding = '23px';
+  dialog.style.border = '1px solid #ccc';
+  dialog.style.width = '700px';  // 设置宽度为 400px
+  
+  var findInput = document.createElement('input');
+  findInput.setAttribute('type', 'text');
+  findInput.setAttribute('placeholder', '查找');
+  findInput.style.marginBottom = '10px';
+  
+  var replaceInput = document.createElement('input');
+  replaceInput.setAttribute('type', 'text');
+  replaceInput.setAttribute('placeholder', '替换');
+  replaceInput.style.marginBottom = '10px';
+  
+  var regexCheckbox = document.createElement('input');
+  regexCheckbox.setAttribute('type', 'checkbox');
+  regexCheckbox.style.marginBottom = '10px';
+
+  var regexLabel = document.createElement('label');
+  regexLabel.innerHTML = '启用正则';
+  regexLabel.appendChild(regexCheckbox);
+  
+  var findButton = document.createElement('button');
+  findButton.style.marginRight = '10px';
+  findButton.innerHTML = '查找';
+  findButton.style.marginRight = '10px';
+  findButton.addEventListener('click', function() {
+    var searchText = findInput.value;
+    var useRegex = regexCheckbox.checked;
+    findText(searchText, useRegex);
+  });
+  
+  var replaceButton = document.createElement('button');
+  replaceButton.innerHTML = '替换';
+  replaceButton.style.marginRight = '10px';
+  replaceButton.addEventListener('click', function() {
+    var searchText = findInput.value;
+    var replaceText = replaceInput.value;
+    var useRegex = regexCheckbox.checked;
+    replaceTextFn(searchText, replaceText, useRegex);
+  });
+  
+  var closeButton = document.createElement('button');
+  closeButton.innerHTML = '关闭';
+  closeButton.style.float = 'right';
+  closeButton.addEventListener('click', function() {
+    document.body.removeChild(dialog);
+  });
+  
+  dialog.appendChild(findInput);
+  dialog.appendChild(replaceInput);
+  dialog.appendChild(regexLabel);
+  dialog.appendChild(findButton);
+  dialog.appendChild(replaceButton);
+  dialog.appendChild(closeButton);
+  
+  document.body.appendChild(dialog);
+}
+
+function findText(searchText, useRegex) {
+  var text = document.getElementById('input').value;
+  var pattern = useRegex ? new RegExp(searchText, 'g') : searchText;
+  
+  if (useRegex && !isValidRegexPattern(searchText)) {
+    alert('输入的正则表达式无效，请重新输入');
+    return;
+  }
+  
+  if (text.search(pattern) !== -1) {
+    alert('有找到,相关内容,如果需要高亮显示,请点确定后,按ctrl+f查找：' + searchText);
+  } else {
+    alert('未找到匹配的文本：' + searchText);
+  }
+}
+
+function replaceTextFn(searchText, replaceText, useRegex) {
+  var inputElement = document.getElementById('input');
+  var text = inputElement.value;
+  var pattern = useRegex ? new RegExp(searchText, 'g') : searchText;
+
+  if (useRegex && !isValidRegexPattern(searchText)) {
+    alert('输入的正则表达式无效，请重新输入');
+    return;
+  }
+
+
+
+  var newText = text;
+  var match = newText.match(pattern);
+  while (match !== null) {
+    newText = newText.replace(pattern, replaceText);
+    match = newText.match(pattern);
+  }
+
+  inputElement.value = newText;
+  alert('替换完成,如数据很多,请等待一会');
+}
+
+function isValidRegexPattern(pattern) {
+  try {
+    new RegExp(pattern);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+
+function 查找() {
+
+    alert('请按下 Ctrl + F 组合键调出浏览器的查找功能');
+}
+
+
+
+function 转双拼() {
+  window.open("https://hanxinma.gitee.io/hanxin/js/shuangpin.html", "_blank");
+}
+
+function 删多余() {
+ var inputText = document.getElementById("input").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  // 过滤出有等号且不含有☆的行，并返回新的行数组
+  var filteredLines = lines.filter(function(line) {
+    return !(line.includes("=") && line.includes("☆")); // 只保留不同时包含 "=" 和 "☆" 的行
+  });
+
+  var modifiedText = filteredLines.join("\n"); // 将过滤后的每行文本重新连接起来
+
+  document.getElementById("input").value = modifiedText; // 使用 value 属性将修改后的文本放回输入文本框中
+}
+
+function 删无等号的行() {
+  var inputText = document.getElementById("input").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  // 过滤出有等号的行，并返回新的行数组
+  var filteredLines = lines.filter(function(line) {
+    return line.includes("="); // 只保留包含 "=" 的行
+  });
+
+  var modifiedText = filteredLines.join("\n"); // 将过滤后的每行文本重新连接起来
+
+  document.getElementById("input").value = modifiedText; // 使用 value 属性将修改后的文本放回输入文本框中
+}
+
+
+function 音形() {
+  var inputText = document.getElementById("input").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  var processedLines = lines.map(function(line) {
+    var letters = line.split(""); // 将每行文本转换为字符数组
+    if (letters.length < 4) {
+      return line; // 如果小于4个字母，直接返回原始文本
+    } else if (letters.length === 4) {
+      return line; // 如果是4个字母，直接返回原始文本
+    } else if (letters.length === 6) {
+      return letters[0] + letters[2] + letters[4] + letters[5]; // 取第1, 3, 5和6个字母
+    } else if (letters.length === 8) {
+      return letters[0] + letters[2] + letters[4] + letters[6]; // 取第1, 3, 5, 7和倒数第2个字母
+    } else if (letters.length > 8) {
+      return letters[0] + letters[2] + letters[4] + letters[letters.length - 2]; // 取第1, 3, 5个字母和倒数第2个字母
+    } else {
+      return ""; // 其他情况返回空字符串
+    }
+  });
+
+  var modifiedText = processedLines.join("\n"); // 将处理后的每行文本重新连接起来
+
+  document.getElementById("output").value = modifiedText; // 使用 value 属性将修改后的文本放回输入文本框中
+}
+
+function 音形二() {
+  var inputText = document.getElementById("input").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  var processedLines = lines.map(function(line) {
+    var letters = line.split(""); // 将每行文本转换为字符数组
+    if (letters.length < 4) {
+      return line; // 如果小于4个字母，直接返回原始文本
+    } else if (letters.length === 4) {
+      return line; // 如果是4个字母，直接返回原始文本
+    } else if (letters.length === 6) {
+      return letters[0] + letters[1] + letters[2] + letters[4]; // 取第1, 3, 5和6个字母
+    } else if (letters.length === 8) {
+      return letters[0] + letters[2] + letters[4] + letters[6]; // 取第1, 3, 5, 7和倒数第2个字母
+    } else if (letters.length > 8) {
+      return letters[0] + letters[2] + letters[4] + letters[letters.length - 2]; // 取第1, 3, 5个字母和倒数第2个字母
+    } else {
+      return ""; // 其他情况返回空字符串
+    }
+  });
+
+  var modifiedText = processedLines.join("\n"); // 将处理后的每行文本重新连接起来
+
+  document.getElementById("output").value = modifiedText; // 使用 value 属性将修改后的文本放回输入文本框中
+}
+
+function 删无等号的行二() {
+  var inputText = document.getElementById("input").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  // 过滤出有等号的行，并返回新的行数组
+  var filteredLines = lines.filter(function(line) {
+    return line.includes("="); // 只保留包含 "=" 的行
+  });
+
+  var modifiedText = filteredLines.join("\n"); // 将过滤后的每行文本重新连接起来
+
+  document.getElementById("input").value = modifiedText; // 使用 value 属性将修改后的文本放回输入文本框中
+}
+
+      function 转js字典() {
+        // 获取输入框的值
+        const input = document.getElementById('output').value;
+
+        // 将输入的文本转换为对象
+        const obj = {};
+        const lines = input.trim().split('\n');
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i].trim();
+          if (line) {
+            const [key, ...values] = line.split(/\s+/);
+            obj[key] = values.map(value => `'${value}'`);
+          }
+        }
+
+        // 将对象转换为 JavaScript 的字面量表达式
+        const jsCode = JSON.stringify(obj)
+          .replace(/"([^"]+)":/g, '\'$1\':')
+          .replace(/"},/g, '"},\n')
+          .replace(/"/g, '');
+
+        // 显示转换结果
+        document.getElementById('output').value = jsCode;
+      }
+
+
+function 字典换行() {
+  const inputData = document.getElementById("output").value.trim();
+  if (!inputData) {
+    alert("请先输入需要换行的数据！");
+    return;
+  }
+
+  const data = JSON.parse(inputData.split("'").join('"')); // 将单引号替换为双引号，再解析为JS对象
+
+  let outputStr = "";
+  for (const key in data) {
+    const values = data[key].map(item => `'${item}'`).join(", ");
+    outputStr += `'${key}': [${values}],\n`;
+  }
+  outputStr = outputStr.slice(0, -2); // 去掉最后一个逗号和换行符
+
+  // 输出数据到输出文本框
+  document.getElementById("output").value = outputStr;
+}
+function 一个空格() {
+const inputData = document.getElementById("input").value.trim();
+  if (!inputData) {
+    alert("请先输入需要替换的数据！");
+    return;
+  }
+
+  const outputData = inputData.replace(/\t/g, " ");
+
+  // 输出数据到输出文本框
+  document.getElementById("output").value = outputData;
+}
+
+// 999
+
+
+function 排序一() {
+  return new Promise(function(resolve, reject) {
+  var inputText = document.getElementById('input').value;
+  var lines = inputText.split('\n');
+
+  var groups = {};
+
+  lines.forEach(function(line) {
+    var index = line.indexOf(',');
+    if (index >= 0) {
+      var key = line.substring(0, index);
+      if (!groups[key]) {
+        groups[key] = [];
+      }
+      groups[key].push(line);
+    }
+  });
+
+  var sortedLines = [];
+  for (var key in groups) {
+    if (groups.hasOwnProperty(key)) {
+      var groupLines = groups[key];
+      
+      // 对组内的数字进行排序  同字母组的,数字全部放一起
+      groupLines.sort(function(a, b) {
+        var numberA = parseInt(a.substring(a.indexOf(',') + 1));
+        var numberB = parseInt(b.substring(b.indexOf(',') + 1));
+        return numberA - numberB;
+      });
+      
+      // 将排序后的行加入到 sortedLines 数组中
+      sortedLines = sortedLines.concat(groupLines);
+    }
+  }
+
+  var outputText = sortedLines.join('\n');
+  document.getElementById('input').value = outputText;
+ resolve();  // 表示排序一执行完毕
+  window.alert('执行完毕排序一');
+  });
+}
+function 排序二() {
+  return new Promise(function(resolve, reject) {
+  var inputText = document.getElementById('input').value;
+  var lines = inputText.split('\n');
+
+  var groups = {};
+  var sortedLines = [];
+
+  lines.forEach(function(line) {
+    var index = line.indexOf('=');
+    if (index >= 0) {
+      var key = line.substring(0, index);
+      if (!groups[key]) {
+        groups[key] = [];
+      }
+      groups[key].push(line);
+    }
+  });
+
+  for (var key in groups) {
+    if (groups.hasOwnProperty(key)) {
+      var groupLines = groups[key];
+
+      // 只保留第一个行  其他重码数字行.放下面
+      sortedLines.push(groupLines[0]);
+      
+    }
+  }
+
+  for (var key in groups) {
+    if (groups.hasOwnProperty(key)) {
+      var groupLines = groups[key];
+
+      // 将相同组的其他行放到最下方
+      if (groupLines.length > 1) {
+        sortedLines = sortedLines.concat(groupLines.slice(1));
+      }
+    }
+  }
+
+  var outputText = sortedLines.join('\n');
+  document.getElementById('input').value = outputText;
+    resolve();  // 表示排序二执行完毕
+     window.alert('执行完毕排序二');
+  });
+}
+
+function 排序三() {
+  return new Promise(function(resolve, reject) {
+    var inputText = document.getElementById('input').value;
+    var lines = inputText.split('\n');
+
+    var groups = {};
+    var sortedLines = [];
+
+    lines.forEach(function(line) {
+      var index = line.indexOf(',');
+      if (index >= 0) {
+        var key = line.substring(0, index).trim();
+        if (!groups[key]) {
+          groups[key] = [];
+        }
+        groups[key].push(line);
+      }
+    });
+
+    for (var key in groups) {
+      if (groups.hasOwnProperty(key)) {
+        var groupLines = groups[key];
+        sortedLines = sortedLines.concat(groupLines);
+      }
+    }
+    
+    // 去除重复行  没有,号的会删了
+    sortedLines = Array.from(new Set(sortedLines));
+
+    var outputText = sortedLines.join('\n');
+    document.getElementById('input').value = outputText;
+    
+    resolve();  // 表示排序三执行完毕
+    window.alert('执行完毕排序三');
+  });
+}
+
+
+async function 排序组合() {
+  try {
+    await 排序一();
+    await 排序二();
+    await 排序三();
+   
+    提示音();  // 提示音调用
+    window.alert('所有排序函数执行完毕');
+  } catch (error) {
+
+    window.alert('错误');
+  }
+}
+
+
+async function 排序新搜狗() {
+  try {
+    await 排序一();
+    await 排序二();
+    await 排序三();
+     await convertwubi();
+     await 搜狗格式二();
+   
+    提示音();  // 提示音调用
+    window.alert('所有排序函数执行完毕');
+  } catch (error) {
+
+    window.alert('错误');
+  }
+}
+
+
+async function 五笔变搜狗() {
+  try {
+  
+     await convertwubi();
+     await 搜狗格式二();
+   
+    提示音();  // 提示音调用
+    window.alert('所有排序函数执行完毕');
+  } catch (error) {
+
+    window.alert('错误');
+  }
+}
+
+
+async function 排序加五笔() {
+  try {
+    await 排序一();
+    await 排序二();
+    await 排序三();
+     await convertwubi();
+    
+   
+    提示音();  // 提示音调用
+    window.alert('所有排序函数执行完毕');
+  } catch (error) {
+
+    window.alert('错误');
+  }
+}
+
+async function 排序加多多() {
+  try {
+    await 排序一();
+    await 排序二();
+    await 排序三();
+     await convertdd();
+    
+   
+    提示音();  // 提示音调用
+    window.alert('所有排序函数执行完毕');
+  } catch (error) {
+
+    window.alert('错误');
+  }
+}
+
+
+function 同类后排() {
+      const input = document.getElementById('input').value;
+      const output = document.getElementById('output');
+
+      let result = '';
+      const map = new Map();
+
+      // 利用正则表达式将输入的文本解析成键值对
+      const matches = input.matchAll(/^(\w+)\s+(.*)$/gm);
+      for (const match of matches) {
+        const key = match[1];
+        const value = match[2];
+
+          // 检查当前键是否已存在，若存在，则将对应的值追加到已有的值后面，中间添加一个空格
+    if (map.has(key)) {
+      map.set(key, map.get(key) + '	' + value);
+    } else {
+      map.set(key, value);
+    }
+  }
+
+      // 将合并后的结果拼接为字符串
+      for (const [key, value] of map) {
+        result += key + '\t' + value + '\n';
+      }
+
+      output.value = result;
+    }
+    
+    
+    
+    
+       function 还原() {
+  const input = document.getElementById('output').value;
+  const output = document.getElementById('output');
+
+  let result = '';
+
+  // 利用正则表达式解析输入的文本
+  const lines = input.split('\n');
+  for (const line of lines) {
+    const items = line.split(/\s+/);
+    const key = items[0];
+    const values = items.slice(1);
+
+    for (const value of values) {
+      result += key + ' ' + value + '\n'; // 按照要求添加 键值对
+    }
+  }
+
+  output.value = result;
+}
+
+
+
+    function 提示音() {
+      const audio = new AudioContext();
+      const oscillator = audio.createOscillator();
+      oscillator.frequency.value = 500; // 提示音音色
+      oscillator.connect(audio.destination);
+      oscillator.start();
+      oscillator.stop(audio.currentTime + 0.5); // 提示音时间
+    }
+
+
+function 五个字母过滤掉() {
+            var input = document.getElementById("input").value;
+            var lines = input.split("\n");
+            var filteredLines = lines.filter(line => {
+                var columns = line.trim().split(/\s+/); // 使用正则表达式分割多个空格
+                var firstColumn = columns[0] || ""; // 获取第一列内容（如果没有，则为空字符串）
+                return !(countLetters(firstColumn) > 4); // 判断第一列字母数是否大于4
+            });
+
+            var output = filteredLines.join("\n");
+            document.getElementById("output").value = output;
+        }
+
+        function countLetters(word) {
+            return word.replace(/[^a-zA-Z]/g, "").length; // 使用正则表达式替换非字母字符，并计算长度
+        }
+
+
+
+  function 过滤js() {
+    // 获取输入框中的内容
+    const input = document.getElementById('input').value;
+
+    // 对于以 <img 开头的行，保留其中的图片链接
+    const filteredInput = input.replace(/^(<img\s+src=[^>]+>|[^\n]*$)/gm, function(match, group) {
+      if (match.startsWith('<img src=')) {
+        return match; // 如果以 <img src= 开头，不做处理
+      } else {
+        return match.replace(/<!--[\s\S]*?-->|(?<!\S)\/\/[^\n]*|\/\*[\s\S]*?\*\//g, '');
+      }
+    });
+
+    // 删除多余的空行
+    const finalOutput = filteredInput.replace(/\n{2,}/g, '\n');
+
+    // 将处理后的内容显示在输出框中
+    document.getElementById('output').value = finalOutput;
+    
+  }
+  
+function 去除等号() {
+  const input = document.getElementById('input').value;
+  const output = document.getElementById('output');
+
+  // 进行数据处理
+  const processedData = processInput(input);
+
+  // 将处理后的结果显示在输出框中，使用innerHTML属性保留换行符
+  output.innerHTML = processedData;
+}
+
+function processInput(input) {
+  // 删除",数字="引号中的数据类型，并将其替换为制表符，并保留输入中的换行符
+  const regex = /,(\w+)=/g;
+  const replacedInput = input.replace(regex, '\t');
+
+  // 将数据存储到临时列表
+  const tempList = replacedInput.split('\n');
+
+  // 对换位置并过滤掉值为0和undefined的数据
+  const processedData = tempList.map(item => {
+    const [key, value] = item.split('\t');
+    return `${value}\t${key}`;
+  }).filter(item => {
+    const [value, key] = item.split('\t');
+    return parseFloat(value) !== 0 && value !== "undefined";
+  }).join('\n');
+
+  return processedData;
+}
+
+
+
+  function 左右互换2() {
+  var inputText = document.getElementById("output").value;
+  var lines = inputText.split("\n"); // 以换行符分割成多行文本
+
+  // 处理每一行的文本
+  var modifiedLines = lines.map(function(line) {
+    var columns = line.trim().split(/\s+/); // 以空格区分列，并去除首尾空白字符
+
+    // 检查是否有足够的列进行交换
+    if (columns.length >= 2) {
+      // 交换第一列和第二列的位置
+      var temp = columns[0];
+      columns[0] = columns[1];
+      columns[1] = temp;
+    }
+
+    return columns.join("	"); // 将修改后的列重新连接起来，用空格分隔
+  });
+
+  var modifiedText = modifiedLines.join("\n"); // 将修改后的每行文本重新连接起来
+
+  document.getElementById("output").value = modifiedText; // 使用value属性将修改后的文本放回输入文本框中
+}
+
+  
+  
+  
+if (window.location.href.indexOf("https://hanxinma.gitee.io") > -1 || window.location.href.indexOf("https://hanxinma.github.io") > -1) { 
+// if (window.location.href.indexOf("https://hanxinma.gitee.io") > -1 || window.location.href.indexOf("https://hanxinma.github.io") > -1) {
+// 打字触发功能
+
+var questions = [
+  {
+    question: "\n【验证码】\n请问 学 这个字,汉心码两个形码是什么,填两个小写字母？",
+    answer: "ez"
+  },
+    {
+    question: "\n【验证码】\n请问 森 这个字,汉心码两个形码是什么,填两个小写字母？",
+    answer: "ll"
+  },
+      {
+    question: "\n【验证码】\n请问 鱼 这个字,汉心码两个形码是什么,填两个小写字母？",
+    answer: "ea"
+  },
+        {
+    question: "\n【验证码】\n请问 宝 这个字,汉心码两个形码是什么,填两个小写字母？",
+    answer: "gy"
+  },
+          {
+    question: "\n【【验证码】】\n请问 国 这个字,汉心码两个形码是什么,填两个小写字母？",
+    answer: "wy"
+  },
+];
+
+var answered = false;
+
+document.getElementById("executeBtn").addEventListener("click", function() {
+  if (answered) {
+  
+         var functionName = prompt("VIP功能, 请输入:  去重, oopp, 首字母, 去首尾空格, 去空行, 长短排一,二，手心，匹配空,引,逗，左右互换，查找, 搜狗格式, 替换, 转双拼, 删无等号的行, 二，字典换行，转js字典,排序组合,一,二三,过滤js,五个字母过滤掉,同类后排,还原,排序加多多,排序加五笔，音形，删多余");
+         
+
+    if (typeof window[functionName] === "function") {
+      window[functionName]();
+    } else {
+      alert("输入错误！");
+    }
+  } else {
+    var randomIndex = Math.floor(Math.random() * questions.length);
+    var questionObj = questions[randomIndex];
+    var answer = prompt(questionObj.question);
+
+    if (answer === questionObj.answer) {
+      answered = true;
+      
+
+         var functionName = prompt("VIP功能, 请输入:  去重, oopp, 首字母, 去首尾空格, 去空行, 长短排一,二，手心，匹配空,引,逗，左右互换，查找, 搜狗格式, 替换, 转双拼, 删无等号的行, 二，字典换行，转js字典,排序组合,一,二三,过滤js,五个字母过滤掉,同类后排,还原,排序加多多,排序加五笔，音形，删多余");
+
+         
+      
+
+      if (typeof window[functionName] === "function") {
+        window[functionName]();
+      } else {
+        alert("输入错误！");
+      }
+    } else {
+      alert("回答错误！可以点首页,找汉心码表找答案");
+    }
+  }
+});
+
+var reference = 
+
+"VIP功能, 有:  去重, oopp, 首字母, 去首尾空格, 去空行, 长短排，匹配空,引,逗，左右互换，查找, 转搜狗格式, 替换, 转双拼, 删无等号的行, 二，字典换行，转js字典,新排序,过滤js,五个字母过滤掉,同类后排,还原,,,还有更多,,,,"
+
+;
+
+questions.forEach(function(question) {
+  question.question = reference + question.question;
+});
+
+
+
+}
