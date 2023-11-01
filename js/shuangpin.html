@@ -88,14 +88,17 @@ body {
   <textarea id="textArea" rows="10" cols="50">复制进来,你需要转的数据.注意,这里数据格式有两种可以用,1,所有的拼音里都有空格隔开(例如: 你好 ni hao),2,搜狗格式的自定义短语(nirx,1=你)如果你要转自己自定义双拼,那先要给双拼加空格后转...1,右侧有自定义,填写自己的双拼.2,由什么转什么里,先设置源双拼转成全拼的......3,把搜狗格式的数据放到(需要转的数据里),然后点击为,第2个字母后加空格,然后点以空格转换.4,把双拼转成全拼的后,把全拼从下面复制到(需要转换的数据)中.然后再由什么转什么,改成,由全拼转成你的自定义双拼.最后点击删除多余的空格就可以了.......为什么要这样做,如果直接用双拼转自定义双拼,因为一键多音的问题,会导致个别字转错了.....所以如果转自定义双拼,建议,先把双拼转成全拼后,在转成你的自定义双拼.</textarea><br><br>
  <button onclick="空格()">第2个字母后加空格</button>
      <button onclick="replaceLetters()">以空格区分转换</button>
-    
+<input id="functionInput" type="text" style="width: 60px;">
+<button onclick="executeFunction()">确认</button>
      
     <br> <br>
     <button onclick="两个字母匹配()">前两个字母转换</button>
     <button onclick="词转()">两个字母为一组转换</button>
 
          <button onclick="判断汉字数量()">汉字数</button>
-        <br> <br>
+             <button onclick="高级()">...</button>
+        <br>               
+        <br>
   <br>
   <textarea id="resultTextArea" rows="10" cols="50" ></textarea><br>
 
