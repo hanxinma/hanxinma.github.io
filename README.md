@@ -6,6 +6,8 @@
 keyi  刻意 keyiw kewyi kewyil keyiwl 几种词辅功能。当然不同版本功能略有差异。
 锝 dej dejc dejcc 都可以直接打出这个字。
 
+[汉心快打输入法软件下载](https://gitee.com/hanxinma/hanxinma/releases)
+
 全拼版的，chuanglian 窗帘clg 简码打法
 
 
