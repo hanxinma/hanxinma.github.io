@@ -20,10 +20,13 @@ j=钅，c=寸 汉字的偏旁部首的读音首字母
 
 [汉心快打输入法软件下载1地址](https://gitee.com/hanxinma/ruanjian/releases/)
 
-[备份下载2地址](https://hanxinma.gitee.io/hanxin/)
+
+
+[备份下载2地址](https://g-zxos5608.coding.net/public/hanxinma/hanxinma/git/files)
 
 [备份下载3地址](https://github.com/hanxinma/hanxinma)
 
+[网盘下载地址](http://yaoxiazai.ysepan.com/)
 
 搜狗 QQ 微软 百度等输入法，可以直接导入码表使用，下载上方，（汉心码***包）或相关码表文件，导入后即可使用。
 
@@ -45,6 +48,7 @@ w=亥上亠(文)，l=立 也就是汉字的偏旁部首的读音首字母
 
 2,或者直接上方下载，rime小狼毫配置文件，也可以。点进去下。
 
+[网盘下载地址](http://yaoxiazai.ysepan.com/)
 
 
 ---
