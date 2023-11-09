@@ -18,13 +18,7 @@ j=钅，c=寸 汉字的偏旁部首的读音首字母
 #### 快打输入法软件下载地址
 
 
-[汉心快打输入法软件下载1地址](https://gitee.com/hanxinma/ruanjian/releases/)
-
-
-
-[备份下载2地址](https://g-zxos5608.coding.net/public/hanxinma/hanxinma/git/files)
-
-[备份下载3地址](https://github.com/hanxinma/hanxinma)
+[汉心快打输入法-软件直接下载](https://gitee.com/hanxinma/ruanjian/releases/)
 
 [网盘下载地址](http://yaoxiazai.ysepan.com/)
 
@@ -41,15 +35,19 @@ w=亥上亠(文)，l=立 也就是汉字的偏旁部首的读音首字母
 
 
 
-#### 小狼毫rime下载地址
+#### 码表或小狼毫rime配置文件下载地址
 
+直接上方下载，rime小狼毫配置文件或相关码表，点进去即可下载。有些大文件可能需要登录。
 
-[1,软件里-先安装后配置版下载](http://yaoxiazai.ysepan.com/)
-
-2,或者直接上方下载，rime小狼毫配置文件，也可以。点进去下。
+或
 
 [网盘下载地址](http://yaoxiazai.ysepan.com/)
 
+[备份下载1地址](https://g-zxos5608.coding.net/public/hanxinma/hanxinma/git/files)
+
+[备份下载2地址](https://github.com/hanxinma/hanxinma)
+
+小狼毫配置文件需要放到小狼毫输入法用户文件里，小狼毫输入法下载地址 https://rime.im/ 
 
 ---
 
