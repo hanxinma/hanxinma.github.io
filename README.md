@@ -8,10 +8,10 @@
  [网盘下载 http://yaoxiazai.ysepan.com/](http://yaoxiazai.ysepan.com/)
 
 
- [码表下载1站 https://gitee.com/hanxinma/hanxinma](https://gitee.com/hanxinma/hanxinma)
+ [码表下载1站 https://gitee.com/hanxinma/hanxin](https://gitee.com/hanxinma/hanxin)
 
 
- [码表下载2站 https://github.com/hanxinma/hanxinma](https://github.com/hanxinma/hanxinma)
+ [码表下载2站 https://github.com/hanxinma/hanxin](https://github.com/hanxinma/hanxin)
 
 
 [汉心快打输入法软件下载](https://gitee.com/hanxinma/ruanjian/releases/)
@@ -61,8 +61,3 @@ chuanglian 窗帘 双拼打法 idlm ，i=ch，d=uang，l=l，m=ian。这是双�
 
  ---
 
-。
-
----
----
----
