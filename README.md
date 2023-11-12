@@ -1,8 +1,8 @@
 # 汉心码官网码云git站
 
-[官网地址1 https://hanxinma.gitee.io/hanxin](https://hanxinma.gitee.io/hanxin/)访问 汉心码官网,汉心快打官网,自然音形官网
+[官网地址1 https://hanxinma.gitee.io](https://hanxinma.gitee.io)访问 汉心码官网,汉心快打官网,自然音形官网
 
-[官网地址2 https://hanxinma.github.io/](https://hanxinma.github.io/)访问hanxinma official website,汉心官网,双拼辅助码官网
+[官网地址2 https://hanxinma.github.io](https://hanxinma.github.io/)访问hanxinma official website,汉心官网,双拼辅助码官网
 
 
  [网盘下载 http://yaoxiazai.ysepan.com/](http://yaoxiazai.ysepan.com/)
