@@ -908,6 +908,47 @@ if (sessionStorage.getItem('isFirstVisit') === null) {
 }
 
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var spans = document.querySelectorAll(".hide-on-med-and-down.nav-item a span"); // 获取所有符合条件的 <span> 元素
+
+  var currentIndex = 0; // 当前正在闪烁的 <span> 元素索引
+  var blinkCount = 0; // 记录已经闪烁的次数
+
+  var intervalId = setInterval(function() {
+    // 将上一个 <span> 元素恢复为白色
+    if (currentIndex > 0) {
+      spans[currentIndex - 1].style.color = "white";
+    } else if (currentIndex === 0) {
+      spans[spans.length - 1].style.color = "white"; // 如果是第一个 <span> 元素，需将最后一个元素恢复为白色
+    }
+
+    // 将当前 <span> 元素设置为黄色
+    spans[currentIndex].style.color = "yellow";
+
+    currentIndex++; // 指向下一个要闪烁的 <span> 元素
+
+    if (currentIndex >= spans.length) {
+      currentIndex = 0; // 如果超出了索引范围，回到第一个 <span> 元素
+      blinkCount++; // 增加闪烁次数
+    }
+
+    if (blinkCount >= 3) {
+      clearInterval(intervalId); // 达到指定的闪烁次数后停止循环
+
+      // 移除闪烁效果
+      spans.forEach(function(span) {
+        span.style.color = ""; // 恢复默认颜色
+        span.style.textDecoration = "none"; // 移除下划线效果（如果有）
+        // 如果还有其他样式需要移除，请在这里添加相应的代码
+      });
+    }
+  }, 500); // 每隔0.5秒执行一次切换操作
+});
+
+</script>
+
+
 
     <footer class="page-footer bg-color">
     
