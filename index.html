@@ -1100,26 +1100,26 @@ if (sessionStorage.getItem('isFirstVisit') === null) {
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  var spans = document.querySelectorAll(".hide-on-med-and-down.nav-item a span"); // 获取所有符合条件的 <span> 元素
+  var liItems = document.querySelectorAll(".hide-on-med-and-down.nav-item"); // 获取所有符合条件的 <li> 元素
 
-  var currentIndex = 0; // 当前正在闪烁的 <span> 元素索引
+  var currentIndex = 0; // 当前正在闪烁的 <li> 元素索引
   var blinkCount = 0; // 记录已经闪烁的次数
 
   var intervalId = setInterval(function() {
-    // 将上一个 <span> 元素恢复为白色背景
+    // 将上一个 <li> 元素恢复为白色背景
     if (currentIndex > 0) {
-      spans[currentIndex - 1].style.backgroundColor = "transparent";
+      liItems[currentIndex - 1].style.backgroundColor = "transparent";
     } else if (currentIndex === 0) {
-      spans[spans.length - 1].style.backgroundColor = "transparent"; // 如果是第一个 <span> 元素，需将最后一个元素恢复为透明背景
+      liItems[liItems.length - 1].style.backgroundColor = "transparent"; // 如果是第一个 <li> 元素，需将最后一个元素恢复为透明背景
     }
 
-    // 将当前 <span> 元素设置为黄色背景
-    spans[currentIndex].style.backgroundColor = "#03865b";
+    // 将当前 <li> 元素设置为透明背景
+    liItems[currentIndex].style.backgroundColor = "rgba(3, 132, 89, 0.3)";
 
-    currentIndex++; // 指向下一个要闪烁的 <span> 元素
+    currentIndex++; // 指向下一个要闪烁的 <li> 元素
 
-    if (currentIndex >= spans.length) {
-      currentIndex = 0; // 如果超出了索引范围，回到第一个 <span> 元素
+    if (currentIndex >= liItems.length) {
+      currentIndex = 0; // 如果超出了索引范围，回到第一个 <li> 元素
       blinkCount++; // 增加闪烁次数
     }
 
@@ -1127,14 +1127,13 @@ document.addEventListener("DOMContentLoaded", function() {
       clearInterval(intervalId); // 达到指定的闪烁次数后停止循环
 
       // 移除闪烁效果
-      spans.forEach(function(span) {
-        span.style.backgroundColor = ""; // 恢复默认背景色
+      liItems.forEach(function(li) {
+        li.style.backgroundColor = ""; // 恢复默认背景色
         // 如果还有其他样式需要移除，请在这里添加相应的代码
       });
     }
   }, 500); // 每隔0.5秒执行一次切换操作
 });
-
 
 </script>
 
