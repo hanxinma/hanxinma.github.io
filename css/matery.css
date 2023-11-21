@@ -1173,17 +1173,29 @@ article .article-tags .chip {
     text-indent: 0.2rem;
 }
 
-#articleContent a {
+/* #articleContent a {
     padding: 0 2px;
-    color: #42b983;
+    color: #34495e;
     font-weight: 500;
     text-decoration: underline;
     word-wrap: break-word;
 }
-
-#articleContent .img-item {
+/* 原来的 */
+/* #articleContent .img-item {
     text-align: center;
-}
+} */ 
+
+#articleContent a {
+    padding: 0 2px;
+    color: #34495e;
+    font-weight: 500;
+    /* text-decoration: underline; */
+    word-wrap: break-word;
+    }
+    
+    #articleContent a:hover {
+    color: red;
+    }
 
 #articleContent img {
     max-width: 100%;
