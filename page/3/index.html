@@ -381,9 +381,16 @@ var _hmt = _hmt || [];
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
     var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    var bgCover = document.querySelector('.bg-cover');
+
+    bgCover.style.backgroundImage = 'url(' + bannerUrl + ')';
+    bgCover.addEventListener('error', function() {
+        this.style.backgroundColor = 'green';
+    });
+    bgCover.addEventListener('load', function() {
+        this.style.backgroundColor = ''; // 清除背景色
+    });
 </script>
 
 
