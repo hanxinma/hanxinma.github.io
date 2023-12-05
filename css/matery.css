@@ -228,6 +228,7 @@ mark {
 }
 
 .card {
+  
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
 }
@@ -862,11 +863,16 @@ header .go-back i {
     margin-top: -10px;
 }
 
-/*文章列表卡片各样式*/
-#articles {
-    margin-top: 10px;
+/*文章列表卡片各样式据顶部*/
+/* #articles {
+    margin-top: 100px;
     margin-bottom: 10px;
+} */
+#articles {
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
+
 
 article a {
     margin-right: 0 !important;
@@ -1285,8 +1291,9 @@ thead {
 }
 
 .chip-container {
-    margin-top: -60px;
+    margin-top: -300px;
 }
+/* 全部内容导航上边距 */
 
 .chip-container .tag-title {
     margin-bottom: 10px;
