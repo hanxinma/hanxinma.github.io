@@ -1,6 +1,5 @@
 /* Here is your custom css styles. */
 
-
 .xinde {
     width: 100%;
     /* 设置宽度为100% */
@@ -15,7 +14,13 @@
     display: flex;
     /* 启用Flexbox布局 */
 }
-
+.xinde6 {
+    width: 100%;
+    /* 设置宽度为100% xinde2 是非浮卡片手机不够而做的*/
+    height: 300px;
+    display: flex;
+    /* 启用Flexbox布局 */
+}
 .xinde .left1,
 .xinde .right1 {
     width: 50%;
@@ -23,6 +28,14 @@
     box-sizing: border-box;
     /* 防止padding和border影响最终尺寸 */
 }
+.xinde6 .left1,
+.xinde6 .right1 {
+    width: 50%;
+    /* 设置每个子元素的宽度为50% */
+    box-sizing: border-box;
+    /* 防止padding和border影响最终尺寸 */
+}
+
 
 
 .xinde2 .left1,
@@ -33,7 +46,13 @@
     /* 防止padding和border影响最终尺寸 */
 }
 
+.right0 h2 {
+    /* 您可以在此处定义h2元素的样式 */
 
+    margin-left: 3px;
+
+
+}
 
 
 /* .my-image1 {
@@ -42,8 +61,25 @@
     max-height: 70%;
 } */
 
-.my-image1 { border-radius: 20px; max-width: 70%; max-height: 70%;
+
+
+.my-image1 {
+
+  
+    margin-left: 30px;
+      /* 
+   * 设置元素的圆角边框大小为20px
+   * 设置元素的最大宽度为70%
+   * 设置元素的最大高度为70%
+   * 设置元素的边框为1px的solid线，颜色为#fdfdfd
+   */
+     border-radius: 20px;
+      max-width: 100%; 
+      max-height: 100%;
      border:1px solid #fdfdfd; }
+
+
+
 
 .left1 {
     position: relative;
@@ -57,6 +93,8 @@
     top: 50%;
     left: 40%;
     transform: translate(-50%, -50%);
+    border: 2px solid rgb(236, 235, 235);
+    
 }
 
 /* 居中显示 */
@@ -98,7 +136,18 @@
         /* 设置Flex容器的主轴方向为垂直方向 */
     }
     .xinde2 {
-        height: 450px;
+        height: 500px;
+        width: 100%;
+        /* 设置宽度为100% xinde2,非浮起来的卡片的手机高度不高而做的*/
+        margin-bottom: 0px;
+
+
+
+        flex-direction: column;
+        /* 设置Flex容器的主轴方向为垂直方向 */
+    }
+    .xinde6 {
+        height: 570px;
         width: 100%;
         /* 设置宽度为100% xinde2,非浮起来的卡片的手机高度不高而做的*/
         margin-bottom: 0px;
@@ -138,15 +187,15 @@
         /* 将元素的左边界距离其父元素左边界50%的位置 */
         transform: translate(-50%, -50%);
         /* 将元素的左上角平移至其父元素的中心位置 */
+
     }
 
 
 }
 
-/* 
-    .xinde .left1选择器和.xinde .right1选择器选择在.xinde类下的.left1元素和.right1元素
-    设置宽度为100%
-    */
+/*.xinde .left1选择器和.xinde .right1选择器选择在.xinde类下的.left1元素和.right1元素
+    设置宽度为100% */
+   
 @media only screen and (max-width: 900px) {
 
     .xinde .left1,
@@ -163,13 +212,18 @@
 
     }
 
+    
+    .xinde6 .left1,
+    .xinde6 .right1 {
+        width: 100%;
+        
 
+    }
 
 /* 这个是为了让h标题和下面的很多小字居中用的一个辅助div */
     .juzhongyongde {
         width: 100%;
  
-
     }
 /* right0 是右边的h标题的div */
     .right0 {
@@ -184,17 +238,18 @@
     .right0 h2 {
         /* 您可以在此处定义h2元素的样式 */
         margin-top: 0.5em;
+        margin-left: 0px;
         font-size: 24px;
 
     }
     .right1 {
         width: 100%;
         padding: 0px 0px 0px 0px;
-
+        font-size: 20px;
 
     }
     .right2 {
-        font-size: 16px;
+        font-size: 20px;
   
         padding-left: 10px;
 
@@ -213,12 +268,23 @@
  
     }
 
+    .my-image1 {
+
+        margin-left: 0px;
+    
+    }
+        
+
 }
 
-@media only screen and (max-width: 900px) {
+
+/* ---------------------------------------电脑的大屏效果-------------------------------------------- */
+
+@media only screen and (max-width: 900px) { /* 电脑的大屏效果 */
     hr {
       display: none; /* 在媒体查询中，将`<hr>`标签的`display`属性设置为`none`，以在手机屏幕上不显示 */
     }
+ 
   }
 
 
@@ -261,8 +327,11 @@ font-size: 20px;
     line-height: 1.5;
     margin: 0;
 
-}
 
+}
+.pre-line a {
+    color: green;
+    }
 .card5 .card-image img {
     border-radius: 8px 8px 0 0;
  

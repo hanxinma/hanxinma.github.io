@@ -32,6 +32,8 @@ const dict = {
 	'dej': ['锝', '涛dc', '掏ff', '陶ef', '滔dj', '萄cf', '淘df', '韬wj', '啕kf', '饕kh', '绦sx'],
 	'guang': ['广', '涛dc', '掏ff', '陶ef', '滔dj', '萄cf', '淘df', '韬wj', '啕kf', '饕kh', '绦sx'],
 	'guange': ['光', '涛dc', '掏ff', '陶ef', '滔dj', '萄cf', '淘df', '韬wj', '啕kf', '饕kh', '绦sx'],
+	'tian': ['天', '田', '掏ff', '陶ef', '滔dj', '萄cf', '淘df', '韬wj', '啕kf', '饕kh', '绦sx'],
+	'tianj': ['钿', '涛dc', '掏ff', '陶ef', '滔dj', '萄cf', '淘df', '韬wj', '啕kf', '饕kh', '绦sx'],
 	'rong': ['容', '涛dc', '掏ff', '陶ef', '滔dj', '萄cf', '淘df', '韬wj', '啕kf', '饕kh', '绦sx'],
 	'rongc': ['荣', '涛dc', '掏ff', '陶ef', '滔dj', '萄cf', '淘df', '韬wj', '啕kf', '饕kh', '绦sx'],
 	'hao': ['好', '涛dc', '掏ff', '陶ef', '滔dj', '萄cf', '淘df', '韬wj', '啕kf', '饕kh', '绦sx'],
