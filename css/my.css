@@ -73,7 +73,7 @@
 .my-image1 {
 
   
-    margin-left: 30px;
+    margin-left: 50px;
       /* 
    * 设置元素的圆角边框大小为20px
    * 设置元素的最大宽度为70%
@@ -113,6 +113,7 @@
 
     align-items: center;
     /* 在交叉轴上居中子元素 */
+    margin-right: 10px;
 
 
 }
@@ -183,7 +184,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        /* margin: 5px; */
+        margin-top: 20px;
 
     }
 
@@ -210,6 +212,7 @@
     .xinde .left1,
     .xinde .right1 {
         width: 100%;
+            
         
 
     }
@@ -247,7 +250,8 @@
     .right0 h2 {
         /* 您可以在此处定义h2元素的样式 */
         margin-top: 0.5em;
-        margin-left: 0px;
+        margin-left: 5px;
+        margin-right: 5px;
         font-size: 24px;
 
     }
@@ -259,7 +263,7 @@
     }
     .right2 {
         font-size: 20px;
-  
+   
         padding-left: 10px;
 
     }
@@ -282,8 +286,14 @@
         margin-left: 0px;
     
     }
-        
 
+
+    .juzhongyongde{
+        margin-right: 6px;
+        margin-left: 6px;
+        
+        }
+     
 }
 
 
