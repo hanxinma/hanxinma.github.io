@@ -7,6 +7,7 @@
     display: flex;
     /* 启用Flexbox布局 */
 }
+
 .xinde6 {
     width: 100%;
     /* 设置宽度为100% */
@@ -14,6 +15,7 @@
     display: flex;
     /* 启用Flexbox布局 */
 }
+
 .xinde2 {
     width: 100%;
     /* 设置宽度为100% xinde2 是非浮卡片手机不够而做的*/
@@ -21,6 +23,7 @@
     display: flex;
     /* 启用Flexbox布局 */
 }
+
 .xinde6 {
     width: 100%;
     /* 设置宽度为100% xinde2 是非浮卡片手机不够而做的*/
@@ -28,6 +31,7 @@
     display: flex;
     /* 启用Flexbox布局 */
 }
+
 .xinde .left1,
 .xinde .right1 {
     width: 50%;
@@ -35,6 +39,7 @@
     box-sizing: border-box;
     /* 防止padding和border影响最终尺寸 */
 }
+
 .xinde6 .left1,
 .xinde6 .right1 {
     width: 50%;
@@ -72,18 +77,19 @@
 
 .my-image1 {
 
-  
+
     margin-left: 50px;
-      /* 
+    /* 
    * 设置元素的圆角边框大小为20px
    * 设置元素的最大宽度为70%
    * 设置元素的最大高度为70%
    * 设置元素的边框为1px的solid线，颜色为#fdfdfd
    */
-     border-radius: 20px;
-      max-width: 100%; 
-      max-height: 100%;
-     border:1px solid #fdfdfd; }
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid #fdfdfd;
+}
 
 
 
@@ -101,7 +107,7 @@
     left: 40%;
     transform: translate(-50%, -50%);
     border: 2px solid rgb(236, 235, 235);
-    
+
 }
 
 /* 居中显示 */
@@ -145,6 +151,7 @@
         flex-direction: column;
         /* 设置Flex容器的主轴方向为垂直方向 */
     }
+
     .xinde2 {
         height: 500px;
         width: 100%;
@@ -156,6 +163,7 @@
         flex-direction: column;
         /* 设置Flex容器的主轴方向为垂直方向 */
     }
+
     .xinde6 {
         height: calc(100% + 100% + 100%);
         width: 100%;
@@ -209,40 +217,41 @@
 
 /*.xinde .left1选择器和.xinde .right1选择器选择在.xinde类下的.left1元素和.right1元素
     设置宽度为100% */
-   
+
 @media only screen and (max-width: 900px) {
 
     .xinde .left1,
     .xinde .right1 {
         width: 100%;
-            
-        
+
+
 
     }
 
     .xinde2 .left1,
     .xinde2 .right1 {
         width: 100%;
-        
+
 
     }
 
-    
+
     .xinde6 .left1,
     .xinde6 .right1 {
         width: 100%;
-        
+
 
     }
 
-/* 这个是为了让h标题和下面的很多小字居中用的一个辅助div */
+    /* 这个是为了让h标题和下面的很多小字居中用的一个辅助div */
     .juzhongyongde {
         width: 100%;
- 
+
     }
-/* right0 是右边的h标题的div */
+
+    /* right0 是右边的h标题的div */
     .right0 {
-        
+
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -250,14 +259,16 @@
 
 
     }
+
     .right0 h2 {
         /* 您可以在此处定义h2元素的样式 */
         margin-top: 0.5em;
 
         font-size: 24px;
-     
+
 
     }
+
     .right1 {
         width: 100%;
         padding: 0px 0px 0px 0px;
@@ -266,12 +277,15 @@
 
 
     }
+
     .right2 {
         font-size: 20px;
-        padding-right: 2px;
+        /* 字体大小为20像素 */
 
-        padding-left: 2px;
-  
+        margin-right: 1px;
+        /* 右外边距为1像素 */
+        margin-left: 4px;
+        /* 左外边距为4像素 */
 
     }
 
@@ -283,55 +297,57 @@
         align-items: center;
         /* 内部交叉轴上元素居中对齐 */
     }
+
     .card2 {
         padding: 2px 4px;
- 
+
     }
 
     .my-image1 {
 
         margin-left: 0px;
-    
+
     }
 
 
-      
- 
-    .juzhongyongde{
 
 
-        margin-right: 10px;
-        margin-left: 14px;
-   
-        
-        }
+    /* .juzhongyongde {} */
 
-        .cover-social-link {
-        
-            margin-bottom: 50px; 
-         }
-         .pre-line {
-        
-      
-              
-            
-            
-            }
-      
+    .cover-social-link {
+
+        margin-bottom: 50px;
+    }
+
+    .pre-line {
+
+
+        padding-right: 10px;
+        /* 右内边距为2像素 */
+
+        padding-left: 11px;
+        /* 左内边距为2像素 */
+
+
+    }
+
 }
 
 
 /* ---------------------------------------电脑的大屏效果-------------------------------------------- */
 
-@media only screen and (max-width: 900px) { /* 电脑的大屏效果 */
+@media only screen and (max-width: 900px) {
+
+    /* 电脑的大屏效果 */
     hr {
-      display: none; /* 在媒体查询中，将`<hr>`标签的`display`属性设置为`none`，以在手机屏幕上不显示 */
+        display: none;
+        /* 在媒体查询中，将`<hr>`标签的`display`属性设置为`none`，以在手机屏幕上不显示 */
     }
- 
-  }
+
+}
 
 
-  
+
 
 
 /* 彩色背景色
@@ -354,13 +370,14 @@
     border-radius: 10px;
     box-shadow: 0 0 0 1px #e4e4e4;
     */
-    
 
-   
+
+
 }
+
 .card3 .card-image img {
     border-radius: 8px 8px 0 0;
-    
+
     object-fit: cover;
 
 }
@@ -370,29 +387,31 @@
     height: 300px;
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
-    background-color:#fff;
+    background-color: #fff;
 }
 
-.pre-line{
-font-size: 20px;
+.pre-line {
+    font-size: 20px;
     font-weight: 300;
     line-height: 1.5;
     margin: 0;
 
 
 }
+
 .pre-line a {
     color: green;
-    }
+}
+
 .card5 .card-image img {
     border-radius: 8px 8px 0 0;
- 
+
     object-fit: cover;
 
 }
 
 .card9 {
-   background-color: #fff;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
 }
