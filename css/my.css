@@ -242,7 +242,7 @@
     }
 /* right0 是右边的h标题的div */
     .right0 {
-        margin-left: 10px;
+        
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -253,9 +253,9 @@
     .right0 h2 {
         /* 您可以在此处定义h2元素的样式 */
         margin-top: 0.5em;
-        margin-left: 5px;
-        margin-right: 5px;
+
         font-size: 24px;
+     
 
     }
     .right1 {
@@ -266,8 +266,10 @@
     }
     .right2 {
         font-size: 20px;
-   
-        padding-left: 10px;
+        padding-right: 2px;
+
+        padding-left: 2px;
+  
 
     }
 
@@ -296,6 +298,11 @@
         margin-left: 6px;
         
         }
+
+        .cover-social-link {
+        
+            margin-bottom: 50px; 
+         }
      
 }
 

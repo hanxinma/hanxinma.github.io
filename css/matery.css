@@ -506,7 +506,7 @@ header .side-nav .social-link {
 .cover-social-link {
     position: relative; /* 设置元素的定位方式为相对定位 */
     top: 23vh; /* 设置元素距离视口顶部的高度为23倍视口高度 */
-    margin-bottom: 50px;
+  
     width: 100%; /* 设置元素的宽度为100% */
     text-align: center; /* 设置元素的文本居中对齐 */
 }
