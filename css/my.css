@@ -135,7 +135,7 @@
 
 
     .xinde {
-        height: 400px;
+        height: 450px;
         width: 100%;
         /* 设置宽度为100% */
         margin-bottom: 20px;
@@ -185,12 +185,15 @@
         flex-direction: column;
         align-items: center;
         /* margin: 5px; */
-        margin-top: 20px;
+        /* margin-top: 20px; */
+        /* margin-left: 20px;
+        margin-right: 20px; */
 
     }
 
     .my-image1 {
         position: absolute;
+        width: 90%;
         /* 设置元素的定位方式为绝对定位 */
         top: 50%;
         /* 将元素的上边界距离其父元素上边界50%的位置 */
