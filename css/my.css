@@ -262,6 +262,8 @@
         width: 100%;
         padding: 0px 0px 0px 0px;
         font-size: 20px;
+        margin-right: 0px;
+
 
     }
     .right2 {
@@ -293,9 +295,14 @@
     }
 
 
+      
+ 
     .juzhongyongde{
-        margin-right: 6px;
-        margin-left: 6px;
+
+
+        margin-right: 10px;
+        margin-left: 14px;
+   
         
         }
 
@@ -303,7 +310,14 @@
         
             margin-bottom: 50px; 
          }
-     
+         .pre-line {
+        
+      
+              
+            
+            
+            }
+      
 }
 
 
@@ -358,9 +372,7 @@
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
     background-color:#fff;
 }
-.card6 .card-image img {
 
-}
 .pre-line{
 font-size: 20px;
     font-weight: 300;
