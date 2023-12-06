@@ -193,7 +193,7 @@
         flex-direction: column;
         align-items: center;
         /* margin: 5px; */
-        /* margin-top: 20px; */
+       /* margin-top: 10px;  */
         /* margin-left: 20px;
         margin-right: 20px; */
 
@@ -215,6 +215,15 @@
 
 }
 
+/* pad */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .left1 {
+   
+      margin-top: 10px;
+    }
+    .my-image1 {
+        width: 85%;}
+  }
 /*.xinde .left1选择器和.xinde .right1选择器选择在.xinde类下的.left1元素和.right1元素
     设置宽度为100% */
 
