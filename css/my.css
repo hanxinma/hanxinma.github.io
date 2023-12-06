@@ -147,7 +147,7 @@
         /* 设置Flex容器的主轴方向为垂直方向 */
     }
     .xinde6 {
-        height: 570px;
+        height: calc(100% + 100% + 100%);
         width: 100%;
         /* 设置宽度为100% xinde2,非浮起来的卡片的手机高度不高而做的*/
         margin-bottom: 0px;
