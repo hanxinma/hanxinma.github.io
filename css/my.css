@@ -7,6 +7,13 @@
     display: flex;
     /* 启用Flexbox布局 */
 }
+.xinde6 {
+    width: 100%;
+    /* 设置宽度为100% */
+    height: 300px;
+    display: flex;
+    /* 启用Flexbox布局 */
+}
 .xinde2 {
     width: 100%;
     /* 设置宽度为100% xinde2 是非浮卡片手机不够而做的*/
@@ -124,6 +131,8 @@
 
 
 @media only screen and (max-width: 900px) {
+
+
     .xinde {
         height: 400px;
         width: 100%;
@@ -321,6 +330,17 @@
     object-fit: cover;
 
 }
+
+
+.card6 {
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
+    background-color:#fff;
+}
+.card6 .card-image img {
+
+}
 .pre-line{
 font-size: 20px;
     font-weight: 300;
@@ -337,4 +357,16 @@ font-size: 20px;
  
     object-fit: cover;
 
+}
+
+.card9 {
+   background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
+}
+
+.card9 .card-image img {
+    border-radius: 8px 8px 0 0;
+    /* 修改文章列表图片填充样式为 cover 以覆盖整个区域而不会被缩放 */
+    object-fit: cover;
 }
