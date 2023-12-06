@@ -35,10 +35,28 @@
                 padding: 0;
             }
 
+            .background {
+                width: 100%;
+                height: 100vh;
+                animation: color-change 5s infinite;
+            }
 
+            @keyframes color-change {
+                0% {
+                    background-color: rgb(33, 155, 192);
+                }
+
+                70% {
+                    background-color: rgb(180, 76, 15);
+                }
+
+                100% {
+                    background-color: rgb(71, 134, 29);
+                }
+            }
 
             .background {
-        background-image: linear-gradient(to right, #4cbf30 -30%, #0f9d58);
+                /* background-color: rgb(199, 122, 8); */
                 height: 100vh;
                 display: flex;
                 flex-direction: column;
@@ -56,15 +74,7 @@
                 justify-content: center;
                 margin-top: 2rem;
             }
-@media only screen and (max-width: 1100px) {
 
-  .buttons button {
-    font-size: 1.2em; /* 设置放大后的字体大小 */
-  }
-    h1{
-    font-size: 3.2em; 
-    }
-}
             h1 {
                 font-weight: 500;
             }
