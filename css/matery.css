@@ -2158,6 +2158,9 @@ footer .copy-right {
     padding: 0;
     margin: 0;
 }
+iframe {
+    height: 230px;
+}
 @media only screen and (max-width: 1000px) {
     .brand-logo {
         width: 230px !important; /* 设置元素宽度为 3 像素，使用 !important 避免被其他 CSS 覆盖 */
@@ -2165,4 +2168,12 @@ footer .copy-right {
         height: 50px!important;
         overflow: hidden; /* 超出部分隐藏 */
   
-      }  }
+      }  
+    
+      iframe {
+        height: 390px;
+    }
+       
+  
+    }
+  
