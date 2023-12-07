@@ -438,3 +438,11 @@
 }
 
 
+iframe::-webkit-scrollbar {
+    width: 1px;
+}
+
+iframe::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3;
+    border-radius: 1.5px;
+}
