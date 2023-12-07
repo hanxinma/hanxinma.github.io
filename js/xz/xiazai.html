@@ -5,7 +5,11 @@
   <meta charset="UTF-8" />
   <title>汉心码下载</title>
   <style>
+      .container {
+  overflow: scroll;
+}
     body {
+      height: 80vh;
 
       background-image: linear-gradient(to right, #4cbf30 -30%, #0f9d58);
 
@@ -60,7 +64,10 @@ h1 {
 
     }
 
+     /* 媒体查询，应用于屏幕设备且屏幕宽度大于1200像素 */
     @media screen and (min-width: 1200px) {
+        /* 在屏幕宽度不小于1200像素时应用的样式规则 */
+  
   .links {
     display: flex;
     flex-wrap: wrap;
@@ -219,6 +226,11 @@ h1 {
       }, 100);
     }
   }
+
+
+  window.onload = function() {
+    window.scrollTo(0, 0);
+  };
 </script>
 
 </html>
