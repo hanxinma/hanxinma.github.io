@@ -141,7 +141,7 @@
 
 
     .xinde {
-        height: 450px;
+        height: 500px;
         width: 100%;
         /* 设置宽度为100% */
         margin-bottom: 20px;
@@ -193,7 +193,7 @@
         flex-direction: column;
         align-items: center;
         /* margin: 5px; */
-       /* margin-top: 10px;  */
+        /* margin-top: 10px;  */
         /* margin-left: 20px;
         margin-right: 20px; */
 
@@ -215,15 +215,19 @@
 
 }
 
-/* pad */
+/* pad平板 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    .left1 {
-   
-      margin-top: 10px;
-    }
+    /* .left1 {
+
+        margin-top: 10px;
+    } */
+
     .my-image1 {
-        width: 85%;}
-  }
+        width: 85%;
+    }
+}
+
+
 /*.xinde .left1选择器和.xinde .right1选择器选择在.xinde类下的.left1元素和.right1元素
     设置宽度为100% */
 
