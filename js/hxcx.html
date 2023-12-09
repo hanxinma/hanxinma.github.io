@@ -11,7 +11,10 @@
     <!--<subtitle>汉心码学习训练系统 - 提高你的中文打字速度</subtitle>-->
     <meta name="keywords" content="汉心码, 辅助码查询, 自然辅助码查询，小雨点辅助码查询，快手辅助码查询，小鹤辅助码查询，汉心, 汉心码官网,拼音打字如何变快,拼音打字如何不用选字">
   <style>
-
+	#tixin {
+			color: #05abd4;
+			margin-top: 20px;
+		}
         #div {
             padding-left: 20px;
             padding-right: 20px;
@@ -161,20 +164,33 @@ main {
 
     <input type="text" id="search">
     
-    <button id="search-btn">查询</button>
+
+    	<button id="search-btn" onclick="showTip()">查询</button>
 
 
     <main>
         <p><a href="https://hanxinma.gitee.io" >去首页</a></p>
     </main>
   </div></div>
+  <div id="tixin" style="display: none;"></div>
    <div style="margin-top: 20px; color: gray;    padding-left: 20px;            padding-right: 20px;" >请输入一个汉字检索。提醒:以字母为准，字根部首是用户提供的,没有仔细校对，可能会有错的。发现错误可以yaoxiazai.yespan.com导航上留言给我们<br>汉心码可以在输入法里直接用拼音+oopp直接可查编码. Ctrl+D可以收藏网页. 网址hanxinma.gitee.io/js/hxcx<br>如果对字的拆法有疑问,请仔细阅读规则,或可以到后面这个检索答案<a href=" https://hanxinma.gitee.io/js/weishenme.html" style="color: #05abd4;">搜为什么这样取</a></div>  
   
               <div style="margin-top: 10px; color: gray;" >以字母为准,字根部首是用户编写,仅供参考 </div>
     
    
-  <div id="result"></div>
+  <div id="result"></div><br/>
  <script src="./汉心码查码.js"></script>
+	<script>
+		function showTip() {
+			// 获取 #tixin 元素
+			var tixinElement = document.getElementById("tixin");
 
+			// 设置提示信息
+			tixinElement.innerHTML = "看下方";
+
+			// 显示 #tixin 元素
+			tixinElement.style.display = "block";
+		}
+	</script>
 </body>
 </html>
