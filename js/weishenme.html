@@ -3,6 +3,7 @@
 <head>
 
     <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>汉心码取码理由</title>
 
 
@@ -112,6 +113,29 @@ main {
     color: #fff;
   padding: 20px;
 } 
+
+     @media only screen and (max-width: 1000px) {
+            /* 在屏幕宽度小于等于 600px 时应用下面的样式 */
+
+      
+       #search {
+            width: 76%;
+            margin-top: 20px;
+        }
+
+        #search-btn {
+            width: 80%;
+            color: gray;
+        }
+        
+        header {
+			padding-top: 70px; }
+	    .myDiv {
+   
+      height: 500px;		
+  }
+			
+          }
   </style>
 
 </head>
@@ -138,8 +162,8 @@ main {
         <p><a href="https://hanxinma.gitee.io">去首页</a></p>
     </main>
   </div></div>
-    <div style="margin-top: 30px; color: gray;" >请输入一个字母或两个辅码检索，第二种检索方法，先输入一个1加一个空格然后加汉字检索。如果里面没有就没有，第三种字根检索，直接输入字根检索。搜不到就说明，没有这方面解释</div>
-    <div style="margin-top: 30px; color: gray;" >汉心码拼音+oopp直接可查编码. Ctrl+D可以收藏网页. 网址hanxinma.gitee.io</div>
+   <div style="margin-top: 20px; color: gray;    padding-left: 20px;            padding-right: 20px;" >请输入一个字母或两个辅码检索，第二种检索方法，先输入一个1加一个空格然后加汉字检索。如果里面没有就没有，第三种字根检索，直接输入字根检索。搜不到就说明，没有这方面解释</div>
+   <div style="margin-top: 20px; color: gray;    padding-left: 20px;            padding-right: 20px;" >汉心码拼音+oopp直接可查编码. Ctrl+D可以收藏网页. 网址hanxinma.gitee.io</div>
   <div id="result"></div>
  <script>
  
