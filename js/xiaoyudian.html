@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自然音形官网</title><!-- 页面标题 -->
+    <meta name="description" content="本站是自然码双拼学习站，粉丝自然码官网，提供自然码学习技巧，提供自然码音形输入法"><!-- 页面描述 -->
+    <meta name="keywords" content="自然音形,辅助码下载,自然码网站，自然码辅助码,易学码辅助码,汉心辅助码,输入法,双拼输入法,小鹤双拼,小鹤音形,辅助码,自然码官网，鹤形,汉心官方网站"><!-- 关键词 -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+
+   <style>
+        /* 控制右边列表高亮显示的 */
+        
+        #right-list ul li a {
+            color: rgb(128, 128, 128);
+        }
+        
+        #right-list li.active a {
+            color: #007bff;
+            font-weight: bold;
+        }
+        /*        
+.toggle-right-list-btn {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 10px;
+  border-radius: 0 50% 50% 0;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: none
+} */
+        /* 根据 ID 选择器设置 iframe 的宽度和高度 */
+        
+        #my-iframe {
+            border: none;
+            overflow: hidden;
+        }
+        
+        hhh {
+            margin-top: 20px;
+            /* 将标题上方留出20px的空间 */
+            font-size: 40px;
+            font-weight: bold;
+            position: relative;
+            /* 开启相对定位 */
+            width: 100%;
+            /* 伪元素宽度与元素相等 */
+            line-height: 450px;
+            /* 行间距为 150 像素 */
+            line-height: 1.5;
+            /* 将行高设为1.5倍字体大小 */
+        }
+        ddd {
+            margin-top: 20px;
+            /* 将标题上方留出20px的空间 */
+            font-size: 60px;
+            font-weight: bold;
+            position: relative;
+            /* 开启相对定位 */
+            width: 100%;
+            /* 伪元素宽度与元素相等 */
+            line-height: 450px;
+            /* 行间距为 150 像素 */
+            line-height: 1.5;
+            /* 将行高设为1.5倍字体大小 */
+        }
+        
+        dluo {
+            text-indent: 20px;
+            /* 将段落首行缩进20px */
+            margin-bottom: 10px;
+            /* 将段落后空出10px的空间 */
+            opacity: 0.8;
+            /* 将段落的不透明度设为0.8 */
+            transform: translateY(10px);
+            /* 将段落向下移动10像素 */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            /* 添加段落过渡效果 */
+        }
+        
+        htjc {
+            font-family: "黑体", sans-serif;
+            /* 设置字体为黑体 */
+            font-size: 26px;
+            /* 设置字号为 30 像素 */
+            font-weight: bold;
+            color: #0a0a0a;
+        }
+        
+        htjchs {
+            font-family: "黑体", sans-serif;
+            /* 设置字体为黑体 */
+            font-size: 26px;
+            /* 设置字号为 30 像素 */
+            font-weight: bold;
+            color: #ce0303;
+        }
+        
+        stjc {
+            font-family: "宋体", sans-serif;
+            /* 设置字体为黑体 */
+            font-size: 26px;
+            /* 设置字号为 30 像素 */
+            font-weight: bold;
+            color: #0a0a0a;
+        }
+        img {
+  max-width: 100%;
+  height: auto;
+}
+        stjchs {
+            font-family: "宋体", sans-serif;
+            /* 设置字体为黑体 */
+            font-size: 26px;
+            /* 设置字号为 30 像素 */
+            font-weight: bold;
+            color: #cc0101;
+        }
+        /* 底部 */
+        /* 子元素需要设置 transform-origin 属性 */
+        /* 这里假设您要缩放的元素类名为 zoom-wrapper */
+        /*上面是手机 @media (max-width: 1200px) {
+  #right-column {
+    font-size: 10px;
+  }
+}
+} */
+        /* 右边栏的主题样式 */
+        
+        #right-column {
+    
+            /* 占据父容器除了左列的剩余宽度 */
+            padding: 30px;
+            /* padding-left: 503px; */
+            /* 内边距 */
+            font-family: '宋体', SimSun, sans-serif;
+            /* font-family: inherit; */
+            font-size: 26px;
+            /* 每行之间的行高为1.5倍字体高度 */
+            line-height: 2.5;
+            /* 控制内容区域的大小 */
+            /* padding-left: min(80%, max(10%, 10vw)); */
+            text-align: left;
+        }
+        /* 右侧内容div */
+        
+        #right-column>div {
+            white-space: pre-wrap;
+            /* 保留原有空格并自动换行 */
+            /* text-indent: 5em; */
+            /* 新行文本在左侧对齐,,可以控制h1 缩进 */
+        }
+        /* 非选中的内容隐藏,配合js用的 */
+        
+        #right-column>div:not(.active) {
+            display: none;
+        }
+        /* #right-column h1 {
+            margin: 130;
+        } */
+        /* #right-column>div {
+            
+            padding-left: min(80%, max(5%, 5vw));
+        } */
+        /* 公共样式 */
+        
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+            margin-right: -150px;
+            /* 消除导航手机右边没有背景 */
+        }
+        /* 标签 */
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+        /* 头部导航样式 */
+        
+        #header {
+            background: linear-gradient(#4CAF50, #259656);
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            /* 添加底部间距 */
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            align-items: center;
+            /* 垂直居中 */
+            display: flex;
+        }
+        
+        .left {
+            order: 1;
+            margin-right: 20px;
+            /* 头部样式 添加间距 */
+        }
+        
+        .right {
+            order: 2;
+            margin-right: 20px;
+            /* 头部样式 添加间距 */
+        }
+        
+        .right {
+            order: 3;
+            margin-right: 20px;
+            /* 头部样式 添加间距 */
+        }
+        /* 整个内容的布局 */
+        /* .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            } */
+        
+        #container {
+            display: flex;
+            /* 使用 Flex 布局 */
+            justify-content: space-between;
+            /* 横向排列子元素，并左右对齐 */
+            align-items: stretch;
+            /* 纵向拉伸子元素，占据整个高度 */
+            /*  height: calc(100vh - 50px); 高度为视口高度减去 header 的高度 */
+            height: 100%
+        }
+        /* 左边栏的样式,可以没有滑动条,但是还是可以滑动的 */
+        /* .left-column {
+            overflow-y: 200px;
+        } */
+        /* 左边栏的样式 */
+        
+        #left-column {
+            flex-basis: 200px;
+            /* 占据父容器的  宽度 */
+            border-right: 1px solid rgb(255, 255, 255);
+            /* 右侧边框 */
+            background-color: #ffffff;
+            /* 背景颜色 */
+            padding: 10px;
+            /* 内边距 */
+            /* overflow-y: auto;     
+            height: auto;
+    
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            z-index: 10; */
+            /* overflow-y: 200px; */
+        }
+        
+        #left-column::-webkit-scrollbar {
+            width: 6px;
+            /* 修改滚动条宽度 */
+        }
+        
+        #left-column::-webkit-scrollbar-thumb {
+            background-color: rgb(238, 238, 238);
+            /* 修改滚动条颜色 */
+            border-radius: 3px;
+            /* 让滚动条的两端更加圆润 */
+        }
+        
+        #left-column li {
+            margin-bottom: 0px;
+            /* 每个列表项之间留下 10px 的空白 */
+        }
+        
+        #left-column a {
+            display: block;
+            /* 将超链接转为块级元素，方便设置宽高及位置 */
+            padding: 10px;
+            /* 内边距 */
+            color: #333;
+            /* 文字颜色 */
+            text-decoration: none;
+            /* 去掉下划线 */
+            transition: background-color 0.3s ease;
+            /* 鼠标移过时有渐变效果 */
+            background-color: rgb(241, 241, 241);
+            /* 默认颜色按钮色 */
+        }
+        
+        #left-column a:hover {
+            background-color: #4CAF50;
+            /* 鼠标移过时的背景颜色 */
+        }
+        
+        #left-column a.active {
+            background-color: #4CAF50;
+            /* 选中时的背景颜色 */
+            color: #fff;
+            /* 选中时的文字颜色 */
+        }
+        
+        ul {
+            /* 去掉列表样式符号 左侧列表的li */
+            list-style-type: none;
+            /* 无外边距和内边距 */
+            margin: 0;
+            padding: 0;
+            /* 宽度为200像素 */
+            width: 200px;
+            /* 背景颜色为#f1f1f1 */
+            background-color: #f1f1f1;
+            /* 边框为1像素实线，颜色为#ccc */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            /* 防止圆角被压缩 */
+            /* 将导航栏固定在视口上方 */
+            position: sticky;
+            top: 0;
+            /* 每行之间的行高为1.5倍字体高度 */
+            line-height: 1.5;
+            /* 用SimSun字体代替默认字体 */
+            font-family: SimSun, sans-serif;
+        }
+        
+        li {
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+            /* 鼠标移上去时的形状---左侧列表的样式li */
+            font-size: 16px;
+            /* 列表项字体大小 */
+            font-family: "Microsoft YaHei", sans-serif;
+            /* 列表项字体 */
+        }
+        /* 导航栏样式 */
+        
+        #bottom-bar {
+            position: fixed;
+            /* 将导航栏固定在页面上 */
+            right: 50px;
+            /* 导航栏右边距为50像素 */
+            bottom: 50px;
+            /* 导航栏底部距离页面底部为50像素 */
+            z-index: 999;
+            /* 将导航栏设置为最高层级 */
+            display: flex;
+            /* 将导航栏设置为flex布局 */
+        }
+        /* 导航栏项样式链接 */
+        
+        #bottom-bar a {
+            display: inline-block;
+            /* 将a标签转换为内联块级元素 */
+            margin-right: 20px;
+            /* 每个链接右边距为20像素 */
+            padding: 10px;
+            /* 每个链接内边距为10像素 */
+            color: #fff;
+            /* 导航栏项颜色为白色 */
+            background-color: #4CAF50;
+            /* 导航栏项背景颜色为绿色 */
+            border-radius: 5px;
+            /* 设置圆角半径为5像素 */
+            text-decoration: none;
+            /* 不带有下划线或其他标记 */
+        }
+        /* 鼠标悬停时的样式 */
+        
+        #bottom-bar a:hover {
+            background-color: #259656;
+            /* 当鼠标悬停在导航栏项上时，背景颜色变为橙色 */
+        }
+        /* 清除浮动 */
+        
+        .clear-float {
+            clear: both;
+            /* 将父元素的浮动清除掉 */
+        }
+        /* 超链接 */
+        
+        a {
+            color: green;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* 防止右边看不到列表 */
+        
+        #right-list {
+            margin-right: 7%;
+        }
+        /* 右侧列表容器 */
+        
+        #right-list ul {
+            line-height: 2.0;
+            background-color: #fff;
+            padding: 17px;
+            height: 1500px;
+            overflow-y: auto;
+            border: none;
+            word-wrap: break-word;
+            /* 文本换行 */
+            overflow-x: hidden;
+            /* 隐藏溢出的内容 */
+        }
+        /* 
+        #content-1 {
+            white-space: pre-wrap;
+            text-indent: 103px;
+        } */
+        /* ---------------手机样式----------------------------- */
+        /* 手机导航按钮展现右侧的样式 */
+        
+        .toggle-right-list-btn {
+            position: fixed;
+            /* 设置元素为固定定位 */
+            bottom: 210px !important;
+            /* 距离视口底部 20 像素 */
+            left: 20px;
+            /* 距离视口左侧 20 像素 */
+            line-height: 120px;
+            /* 设置为元素高度 */
+            border-radius: 50%;
+            /* 设置边框半径为元素宽度的一半，即创建一个圆形 */
+            background-image: linear-gradient(to bottom, #eeeeee, #e4e4e4);
+            /* 从亮绿色到深绿 */
+            width: 120px;
+            /* 设置宽度为50px */
+            height: 120px;
+            /* 设置高度为50px */
+            font-size: 45px;
+            color: rgb(26, 26, 26);
+            text-align: center;
+            border: 2px solid rgb(196, 196, 196);
+            box-shadow: 0 2px 4px rgba(0, 0.5, 0, 0.5);
+            display: none
+            /* 投影 */
+            /* 投影 */
+        }
+        
+        @media only screen and (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 2),
+        /* 小于max----如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1300px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1300px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1300px) and (min-resolution: 2dppx) {
+            #right-list {
+                margin-right: 1%;
+            }
+        }
+        /* 放大手机右边侧边栏的字体 */
+        
+        @media only screen and (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 2),
+        /* 小于max----如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1300px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1300px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1300px) and (min-resolution: 2dppx) {
+            #right-list li a {
+                font-size: 32px;
+            }
+        }
+        /* 放大手机导航上面的 */
+        
+        @media only screen and (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 2),
+        /* 小于max----如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1300px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1300px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1300px) and (min-resolution: 2dppx) {
+            #header {
+                font-size: 1.9em;
+                width: 100%;
+            }
+        }
+        /* 手机放大字列表左侧 */
+        
+        @media only screen and (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 2),
+        /* 小于max----如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1300px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1300px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1300px) and (min-resolution: 2dppx) {
+            #left-column a {
+                font-size: 36px;
+            }
+        }
+        /* 手机放大字 */
+        
+        @media only screen and (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 2),
+        /*小于max---- 如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1300px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1300px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1300px) and (min-resolution: 2dppx) {
+            [id^="content-"] {
+                font-size: calc(20px + 20px * 1.2);
+                /* 20px + 6px = 26px */
+            }
+        }
+        /* 大屏右边去一点 这个可以 */
+        
+        @media only screen and (min-width: 15300px)
+        {
+            #right-column {
+            
+                        flex-basis: calc(100% - 1000px);
+            }
+        }
+        
+        @media only screen and (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 2),
+        /*小于max---- 如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        only screen and (max-width: 1300px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1300px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1300px) and (min-resolution: 2dppx) {
+            /* 在小于 1200 像素的屏幕中隐藏左侧列表 */
+            #left-column {
+                display: none;
+            }
+        }
+        
+        @media only screen and (min-width: 1300px) {
+            /* 在大于等于 1200 像素的屏幕中隐藏导航按钮 */
+            #zoom-button {
+                display: none;
+            }
+        }
+        /* 隐藏右边的列表小于max---- 如果屏幕宽度小于等于 1500px，并且 WebKit, Gecko, Opera ,设备像素比为2 ,屏幕分辨率192 ,设备像素比为 2,内核的浏览器设备像素比为2 */
+        
+        */ @media only screen and (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (min--moz-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (max-width: 1300px) and (min-device-pixel-ratio: 2),
+        only screen and (max-width: 1300px) and (min-resolution: 192dpi),
+        only screen and (max-width: 1300px) and (min-resolution: 2dppx) {
+            /* #right-column {
+                padding-left: 110;
+            }*/
+            /*  #right-column>div {
+                padding-left: 0;
+            } */
+            /* 隐藏右边的列表 */
+            #right-list {
+                display: none;
+            }
+        }
+        /* 手机导航按钮的样式 */
+        
+        #zoom-button {
+            position: fixed;
+            /* 设置元素为固定定位 */
+            bottom: 50px !important;
+            /* 距离视口底部 20 像素 */
+            left: 20px;
+            /* 距离视口左侧 20 像素 */
+            border-radius: 50%;
+            /* 设置边框半径为元素宽度的一半，即创建一个圆形 */
+            background-image: linear-gradient(to bottom, #29ca29, #008000);
+            /* 从亮绿色到深绿 */
+            width: 120px;
+            /* 设置宽度为50px */
+            height: 120px;
+            /* 设置高度为50px */
+            font-size: 45px;
+            color: rgb(247, 245, 245);
+            border: 2px solid rgb(1, 126, 63);
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0.5, 0, 0.5);
+            /* 投影 */
+        }
+        /* 导航字体手机上*/
+        
+        @media (max-width: 1300px) {
+            .right a {
+                writing-mode: vertical-lr;
+                font-family: "楷体", KaiTi, serif;
+            }
+        }
+        /* 导航宽度手机*/
+        /* @media (max-width: 15000px) {
+            #header {
+                width: 1399px;
+            }
+        } */
+        /* 上导航左侧网站名称宽度电脑*/
+        
+        .left h1 {
+            display: inline-block;
+            width: 300px;
+            /* 控制宽度 */
+            margin-left: 10px;
+        }
+        /* 上导航左侧网站名称往右边去一点*/
+        
+        @media (max-width: 1300px) {
+            .left h1 {
+                margin-left: 30px;
+            }
+        }
+        /* 上导航左侧网站名称宽度手机*/
+        /* @media (max-width: 1300px) {
+        .left h1 {
+
+        width: 270px; /* 控制宽度 */
+        /* -----------------------手机样式----------------------------- */
+        /* 当屏幕宽度小于等于 480px 时，将 .left 的样式设置为强制换行 */
+        
+        @media (max-width: 1300px) {
+            .left {
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="header">
+        <div class="left">
+            <h1>自然音形官网</h1>
+        </div>
+        <!-- <div class="right">官方网站</div> -->
+
+        <div class="right"><a href="https://hanxinma.gitee.io/" target="_blank" style="text-decoration: none; color: white;">官方主站</a> </div>
+     
+        <!-- <div class="right"><a href="#" target="_blank" style="text-decoration: none; color: white;">汉心拼音</a> </div> -->
+        <div class="right"><a href="https://hanxinma.gitee.io/" target="_blank" style="text-decoration: none; color: white;">汉心快打</a> </div>
+        <div class="right"><a href="https://hanxinma.gitee.io/js/yixue " target="_blank" style="text-decoration: none; color: white;">自然易学版</a> </div>
+
+        <div class="right"><a href="http://yaoxiazai.ysepan.com/" target="_blank" style="text-decoration: none; color: white;">下载站</a> </div>
+
+
+
+    </div>
+
+
+    <div id="container">
+        <!-- 左边栏，包含一个无序列表 -->
+        <div id="left-column">
+            <!-- 左边栏 大区域 -->
+            <ul>
+                <li>
+                    <!-- 超链接，属性值为要显示的目标内容的 ID -->
+                    <a href="#" data-target="content-1">自然码介绍</a>
+                </li>
+                <li>
+                    <a href="#" data-target="content-2">自然码双拼学习</a>
+                </li>
+                            <li>
+                    <a href="#" data-target="content-5">自然音形学习和下载安装</a>
+                </li>
+                <li>
+                    <a href="#" data-target="content-3">非音形-辅助码学习</a>
+                </li>
+                <li>
+                    <a href="#" data-target="content-4">非音形-辅码安装</a>
+                </li>
+        
+               
+               
+
+
+
+
+            </ul>
+        </div>
+
+        <!-- 右边栏，包含个 div，每个 div 中是要显示的内容 -->
+
+        <div id="right-column">
+            <!-- 右边栏 大区域 -->
+         <!-- <iframe src="2.html" id="my-iframe" width="100%" height="800" scrolling="no"></iframe> -->
+            <div id="content-1" class="active"> 
+     <h1>自然双拼好处</h1>
+双拼的好处
+
+打字慢头疼?推荐个小技能,让速度提高很多!
+
+启用输入法里的双拼输入法,选“自然码”方案,敲几天字竟这样快,真神奇!开始有点不习惯,但是坚持几天就习惯了。一星期下来速度如全拼或更快,惊讶!掌握它,手指飞,打字手不再痛。真是知道的太晚了。
+
+就说一句话，大多数人，哪怕学过后打字速度比全拼还慢，他都不会回到全拼输入法。
+
+双拼的种类很多，那为什么选自然了。
+
+1，名字好听 2，普及度高，微软系统里带的就有 ，连微软和搜狗的双拼用的都和自然码的基本一样 3，同指双击低更舒适 4，后期可以升级，自然音形，和多种辅助码，就是打字不用选字，实现盲打。
+
+双拼的原理是什么
+比如说，你打“全拼”两个字，按键是quanpin 如果是双拼，按键那就是qrpn
+
+r键上有uan ， n键上有in 所以“全拼”双拼的打法就是qrpn 立刻就感觉键数少了很多
+
+这里面提一下辅助码，比如你打“锝”字要找半天，那你如果用辅助码，那打dej 就立刻出现在第一位了。
+
+j是金字旁的意思
+
+
+
+            </div>
+
+
+            <div id="content-2">
+
+<h1>自然码双拼学习</h1>
+那怎么学自然码双拼了
+
+https://www.bilibili.com/video/BV1AC4y137WQ/
+复制到浏览器中打开，视频教你巧妙轻松学自然双拼
+
+记忆力好的可以背码表，记忆力不好的可以按照我提供的方法学习。
+
+1，在输入法设置中选择双拼输入法
+在输入法设置里,选择“双拼输入”并选择“自然码”方案。初次使用会感觉不习惯和打字慢,但坚持几天后基本不难受,一周后达到全拼速度。
+
+2，记忆力好的可以背码表
+<img src="tupian/微信截图_20230530203400.png" alt="图片描述">
+
+传统的学习方法，选择易记的“顺口溜”(可选)
+
+可以选择一套易记的双拼“顺口溜”来帮助记忆,但实践使用更重要。
+
+<img src="tupian/微信截图_20230530203944.png" alt="图片描述">
+
+
+<h2>自然码记忆口诀</h2>
+你记忆力好可以背一下。但是不建议背。
+
+注意单个字母“a”，啊，输入为“aa”。
+
+零声母对应的打法
+
+a aa
+
+o oo
+
+ang ah
+
+e ee
+
+eng eg
+
+3，输入法助记皮肤，不用背（可选）
+<img src="tupian/微信截图_20230530210058.png" alt="图片描述">
+
+<img src="tupian/微信截图_20230530204749.png" alt="图片描述">
+
+干货提供，上面网盘提供的电脑自然码皮肤，你边打边记。再也不用把键盘贴上纸字了。
+
+
+
+
+<h2>核心干货1，怎么样才能无痛苦学会双拼</h2>
+这是我分享的核心绝招，因为很多人不喜欢背东西
+
+
+
+那就是用手机配合带双拼的键盘打字用几天，你就能记住键盘字母位置了
+
+
+
+重点-等你手机打的差不多了，你才上电脑打
+
+
+
+手机下载讯飞输入法-设置-皮肤里搜索-自然码皮肤键盘
+
+<img src="tupian/微信截图_20230530204801.png" alt="图片描述">
+
+软键盘上有每个按键的韵母提示,易于记忆。无需换输入法,也可在按键旁标注韵母,也可以自己制作输入法皮肤后使用,用几天后不再需要了。
+
+练习网站辅助学习(可选)
+可以在双拼输入法练习网站api.ihint.me/shuang/上选择“自然码”方案练习,但重点还是实践使用。
+
+
+
+<h2>核心干货2，快速提高双拼打字速度强化训练(可选)</h2>
+汉心双拼打字高级自定义强化型训练程序
+
+电脑版点击上面，然后是一个，可以针对你不熟悉的键位，进行专门的强训。
+
+这个是核心，每天练几遍哦，你会感觉学的很快，熟悉感更强。打字的速度也会更快。
+
+以前他们学，都是打大量的文章，来适应，提高肌肉记忆。
+
+现在我发现其实不用，就把你觉得不熟悉的，加强训练就可以了
+
+全拼转双拼需要一定时间适应
+
+全拼拼音和双拼拼法差异大,初期记住双拼方案键位对应,输入时会感慢和生疏,但持续使用几天后会逐渐适应。
+
+多练习、边用边学
+
+在聊天、文章或日常打字时多使用双拼输入法,边用边学,一两周后基本记住和适应。但是需要完全适应的话，得看你打的多不多。多的话，几天到几个星期。不多的话，需要几个月了。也看人，有些人就完全适应的就比较快。有些人就比较慢。
+
+技巧，如果你用我前面提到的强化训练，几天就可以上手。可以快速摆脱，个别字的记不清混淆。
+
+            </div>
+
+
+            <div id="content-3">
+<h1>自然码辅助码学习</h1>
+
+如果你学音形,就不要看这个了
+
+这个是自然原本的辅助码
+
+辅助码是什么？
+
+你打拼音，不是经常要翻页选字吗。辅助码就是可以做到不用选字。
+
+他的原理就是利用汉字的偏旁部首的读音作为形码
+
+比如，踢，偏旁“足”这个字根在什么位置？肯定装z上。你打踢，多打一个形码z就可以不用选字了。这是就辅助码。
+
+所以也有很多叫辅助码叫音形码。这个形是和读音对应的。这就不用像五笔那样背字根了。
+
+提及一下自然码的历史，自然码80年代就有了。那个时候官方主要是作输入法软件，卖软件的。然后就是利用双拼＋形码的方式。然后当时好像需要花几百快买的。当时也有很多人买。可见自然码还是很好用的。后来有更多免费的好用的输入法出来。谁还愿意用收费的了。所以官方自然码就不更新了，官方自然码软件虽然不更新了。但是自然码双拼流行开了。很多输入法软件默认里是有自然码双拼。包括微软系统里也有。只是其他输入法软件只有纯双拼，基本没有辅助码。
+
+我们说的音形和辅助码都是一个意思。他们就是打字不用选字的像五笔字根的一种东西。但是要比五笔字根容易学。
+
+<img src="tupian/微信截图_20230530204902.png" alt="图片描述">
+
+你咋一看，字根好多，那算了我还是不学了吧，背不掉。
+
+但是你仔细看一下。其实，大部分字根都是和读音对应的。比如d上有很多点。t上有土和田。所以很多人也把它叫作音形码
+
+这个还是很容易学的，那有些人说，还是有很多字根，不认得。找不到规律。那我推荐另一个类似的辅助码。它更简单。
+<img src="tupian/微信截图_20230530204920.png" alt="图片描述">
+
+是不是立刻字根少了很多。易学码基本不用学，你看看就可以直接用。不会的字直接打拼音+oopp就可以查到编码，比如：
+<img src="tupian/微信截图_20230530204932.png" alt="图片描述">
+
+码不知道辅助码是多少，就这样查。输入法直接可以查。
+
+易学码就不多说了。这个简单，适合不想学直接用的人。
+
+下面是详情
+
+<h2>辅助码编码规则</h2>
+这里作的真的很详细了。直接看了十几年前的官方文档。
+一、基本原理
+在汉语中，一种发音有很多同音字。如“tian”这个发音，就有“天、田、添、填、甜、恬、舔、掭、腆……”等，在普通拼音或双拼输入法中，要输入其中的一个字需要选择，有时还要翻页，是比较麻烦的。自然码为了解决这个问题采用了辅助码，引入汉字的偏旁部首发音的声母作为音码的补充部分，较好地解决了音码方案中的重码问题。
+自然码在6.0B以后的新版本中采用了新的辅助码，新方案是在原来的辅助形码的基础上进行改造完成，遵照国家语委和国家新闻出版署联合公布的《信息处理用GB13000.1字符集汉字部件规范》（1997年）改进而来。新方案比旧方案更加简单，二义性也更少，而增加的重码并不太多。新的辅助形码方案中采用了最直观的切分方法“切形”，按汉字“形声字”和“会意字”组字的原则。将汉字全部视为由两个部件（半边字）组成，然后分别用这两个字的双拼声母作编码。对于不可拆分的独体字，拆分按照书写的顺序取笔画的读音。
+拼音加辅助形码功能可用于全拼、双拼、声形等所有拼音类编码方案：
+
+
+自然码的辅助形码非常简单，只取两个部分（“部首”和“部件”），一般作为辅助编码时只需输入发音的声母（只有用“GBK切形”查难字时才会用到发音的韵母），因此一般不需要记忆。
+
+
+但是有些需特殊记忆，比如
+<img src="tupian/微信截图_20230530205003.png" alt="图片描述">
+
+
+为避免重码过多，其中一些有发音的部件（如“日月目”等）用了特殊编码（也可用普通发音编码，但位置会在后面）。
+<img src="tupian/微信截图_20230530205032.png" alt="图片描述">
+
+
+
+
+由于汉字中的同音字很多，单纯用拼音输入则有些字需要翻页才能找到，非常不方便。自然码是音形结合码，采用了在拼音码的后面附加辅助形码的办法来减少重码，所以也基本实现了盲打输入，任何汉字都可以用其读音的声母加上读音的韵母再加上辅助码来输入。
+
+<h2>双拼+辅助码的打法举例</h2>
+
+规则：声＋韵＋形
+
+
+例1．输入“李”字的双拼“li”，然后输入“李”字偏旁“木”读音的声母键【M】，按【空格】送出。
+输入“李”字的双拼“li”，然后输入“李”字偏旁“木子”读音的声母键【MZ】，按【空格】送出。      
+例2．输入“婴”（yy+n“女”）， 按【空格】送出。（为什么先女字旁，自然码会根据字典上的习惯，先取部首，也是为了直观和自然）
+输入“婴”（yy+nb“女贝”）， 按【空格】送出。      
+例3．输入“秀”（xq+h“禾”）， 按【空格】送出。
+输入“秀”（xq+hn“禾乃”）， 按【空格】送出。      
+例4．输入“榕”（rs+j“木”）， 按【空格】送出。
+输入“榕”（rs+mr“木容”）， 按【空格】送出。
+一般情况打一个辅助码居多，两个辅助码用的比较少。
+一个辅助码也叫单辅
+
+https://zhuanlan.zhihu.com/p/633964212   更多举例,复制到浏览器打开
+
+<h2>字拆分规则</h2>
+<h2>独体字</h2>
+一般是部首汉字，如：“金木水火土辶皿马皮日月目衣耳”等。独体字全部看成部首，不能进一步拆分出部件，只能由笔画构成。
+
+自然码中的笔画码：
+
+①以横竖起笔的在a键上： “一丨亅レ乛フㄥ”
+
+②以点起笔的在 d 键上：“丶冫氵”【d就是点的意思啦】
+
+③以撇起笔的在 p 键上：“丿彡”【p就是撇的意思啦】
+
+举例：金【jnp，jn是金的自然码双拼，辅助码p是金的第一笔撇p】
+
+
+<h2>有明显部首的汉字</h2>
+
+
+如 “极、版、码、程、想、 福、袋、鳌、游、洪、递”，辅助码就是部首的声母。（注意：部首以新华字典上的为标准，不是以从上到下从左到右的顺序看部首的，比如“架”的部首是“木”）
+
+举例：架【jwm，jw是架的自然码双拼，辅助码m是木的声母m】
+
+说明：如果一个字有明显两个部首，比如“杏”的部首可以是“木”和“口”，所以随意哪个部首当作辅助码都行，也就是输入【xym】或【xyk】两者皆可。
+
+
+<h2>不认识或不是整体字部件的汉字</h2>
+
+
+如“录、芈、暨、 释、稽、躅、摭、谧、荔”，这类字的部首或部件可以用首笔画（尾部用末笔画）或能认识的汉字代替。 【比如 躅＝足＋虫 】
+
+所谓象形字其实也就是单字，它们大多会作为其他比较复杂的字的偏旁部首，考虑到自然码用偏旁部首来作为辅码，你自然不能给偏旁拆偏旁，这就会引起悖论了，所以自然码其实规定了三种基本笔画，不过你应该用不到他们，这个笔画很有早些年手机上的笔画输入法，你可能用过，也可能根本没有听说过。
+
+实际上，现在的 iPhone 上依旧留存这种输入法，这种输入法只有五个笔画“横竖撇点（捺）折”，优点是基本不会重码，缺点是不重码的前提是你输入的足够长……
+自然码的三大笔画则是 a 、 d 、 p。
+
+其中 a 代表了一切 横 、 竖 、 折（折就是笔画里的横折、竖折、横撇等）；
+其中 d 代表了一切 点 （也包括捺，你懂的）；
+其中 p 代表了一切 撇。
+你看，有了这个规则，我们对应一个简单字的时候，就输入它的起笔和停笔即可，按照这个规则，那么“马”的辅码就是“折横”也就是“aa”，“金”的辅码就是“撇横”就是“pa”。
+
+对于辅码，其实是分为单辅码和双辅码——无非就是为了更精确罢了，一般情况下你不需要使用两位辅码，因为很有可能第一位辅码字母就已经满足了你的需求。总之，这里我们的例子都是两位完整辅码，是为了方便你理解辅码的意义。
+形声字
+这类字最常见了，大部分的组词都是这样的字，它们由两部分组成，然后一部分表示声音，一部分表示意思，比如说 “想”，你看，你读它的时候发的是“相”的音，而理解的却是“心”的意思，对吧？
+
+对于这一类的字，它们的偏旁的声母就是辅码了。 显然，“想”的部首是“心”，剩下的部分是“相”，那么“想”的辅码就是“xx”； 再来个例子，“袋”的部首是“衣”，剩下部分是“代”，那么“袋”的辅码就是“yd”。
+
+
+<h2>会意字和转意字</h2>
+
+说白了，这些字和上文中的形声字一样，很容易能被拆分成两部分，但区别在于你可能并不能立即就判断出来哪个部分应该是这个字的偏旁——“思、杏、如”。
+
+你说它“田字头”也对，说它“心字底”也对——其实，这些字本来就是可以看作有两个偏旁的。所以说，这时候，拆偏旁的规则就有点郁闷了——总之，这里你不用纠结，按照直觉随便选一个就行，所以，“思”就有两个辅码“tx”和“xt”——这都是被接受的。
+
+同样的“如”的辅码可以是“nk”，也可以是“kn”，“杏”的辅码是“mk”，也可以是“km”。
+
+这个需要码表支持，如果不支持，就不行。
+
+<h2>非整体合成字</h2>
+
+这些字你往往一眼就能把它们拆成好几个部分，或者说，拆出来的部分并不是常用的小字，这就比较尴尬了——我根本不认识这个字，要怎么读出声母呢？
+
+对于这些字，我们用首尾笔画和小部件来辅码，比如“录”这个字，它一眼就能看出由“彐”和“水”组成，那么“彐”就不是大多数人都能读出来的了，我们则取它的起笔“横折”，也就是“a”，那么“录”的辅码就是“au”了。
+
+再比如“释”，它的偏旁不是“米”，另外半个也不知道是个啥，那么我们可以取“撇”和“丰”，它的辅码就是“pf”。 “谧”则有三部分，那么取偏旁和另外两部分的末尾部分也就是那个“皿”，就是“ym”。
+
+<h2>部首隐蔽的字</h2>
+
+这一部分的字就是那些你一眼不太容易找到部首的字，那么你可以尝试字中明显的小部分，比如“鹰”是“gn”，但也可以是“n”； “颖”可以是“hy”，也可以是“yh”——“页”和“禾”在这里就不会区分的很详细避免你用起来会混淆——实际上就是混着来的，不怕你用错。
+
+<h2>偏旁部首的命名</h2>
+
+说完了字，我们来说说看部首到底怎么命名，因为不同的地方由于各种原因，对于偏旁部首的命名是不同的，所以自然码也只能取称呼比较广泛的一种来命名，但我相信你总能猜出其他的称呼，毕竟这些东西万变不离其宗的。
+
+日、月、曰、目 它们都是圆的，所以用 o 表示；
+扌这是“扶手旁”而非“提手旁”——实际上 t 也是可以的但会和“提土旁”重码；
+彳取“行人”的意思所以用 x 表示——实际上“双人旁”也是可以的但会和“水”重码；
+亠 叫“文字头”；
+灬 不称为“四点底”而取“火”的变体，所以是 h。
+说了这么多，
+
+<h2>总结规则，自然码取码主要优先取大字</h2>
+自然码辅助码核心规则，直观大字优先
+
+1，比如“碧”优先取大字“石”，而不是取“王”或“口”
+
+2，比如“墨”优先取尾部“土”，而不是先取“黑”，自然码就是有一部分字是先取尾部的，但是大部分字是先取头部。这里为什么不大字优先了？因为自然吗一般还以字典里的常用部首为优先。也是为了更直观。
+
+提一下，易学码，上面“碧”就是先取“王”它基本是按照顺序取，取不了才取尾部。
+
+辅助码实践感觉，一般用一位多，用两位少。除非你专业练打字。
+<img src="tupian/微信截图_20230530205049.png" alt="图片描述">
+
+查询自然码辅助码编码
+如果自然码辅助码，不知道怎么打，可以用这个网站查
+
+<h2>自然码辅助码下载</h2>
+<img src="tupian/微信截图_20230530205131.png" alt="图片描述">
+自然码辅助码下载
+这里有很多版本的辅助码，可以下载使用。这个码表很全。基本上市面上有的这里都有了。
+
+有纯净一点的，也有里面有很多兼容码的版本的，辅助码基本都是第三方爱好者在维护。
+
+<h2>辅助码怎么使用和安装</h2>
+一般都是打开输入法设置里的自定义短语
+
+然后把你下载到的码复制到短语里即可。
+
+<img src="tupian/微信截图_20230530205144.png" alt="图片描述">
+
+这个是手心输入法安装自然码辅助码的方法
+
+<img src="tupian/微信截图_20230530205154.png" alt="图片描述">
+
+<h2>自然音形输入法的介绍</h2>
+音形和辅助码的区别
+
+音形基本等同辅助码
+
+但音形输入法软件一般指的是，不管在长的字词都只打4个键。有点类似五笔。
+
+比如，你好nihk
+
+记事本jsbf
+
+多于四字的，都是取，前3个字的首字母和最后一个字的首字母。
+
+然后自然音形输入法是小词库。也就是说很多词是没有的，你只能打单字。而且还是4键上屏。也就是说你打4个键，（不过这个也可以不启用）。只要没重码就会自动上屏。有点像五笔。这个就和小鹤音形是一样的。不过一般刚学的人不太用的惯。
+
+自然音形输入法怎么安装
+
+网盘里下载安装后即可使用
+
+自然音形的好处是，你打熟了，会很快，容易形成盲打。
+
+坏处是前期你很不适应。不追求绝对的速度，可以直接挂辅助码用即可。
+
+自然码你的选择余地很大。什么样的辅助码都可以用。也可以不用。但是一般建议还是加一个辅助码。他们都说。双拼不用辅助码是没有灵魂的。你感觉辅助码难学，可以用自然易学码，这个基本不用学，直接用。即可。你如果感觉取大字，会导致有些大字你不认识。你也可以用取小字的自然汉心码。
+
+
+
+看到这了，你还是感觉我不想学双拼，那你也可以用普通拼音加易学码辅助码，来提速。
+
+所以拼音打字，真的可以媲美五笔了。不用选字的。只是以前我们不知道有辅助码这个东西。
+               
+            </div>
+
+
+            <div id="content-4" >
+<h1>自然码辅助码下载</h1>
+
+
+这个非音形码,是自然挂其他输入法上用的
+
+
+http://yaoxiazai.ysepan.com/
+
+复制到浏览器打开，然后找里面的自然码下载文件夹
+
+<h2>手机辅助码安装看这里</h2> 复制到浏览器打开
+https://www.ixigua.com/7231103593359605812
+
+自然码辅助码下载
+
+
+这里有很多版本的辅助码，可以下载使用。这个码表很全。基本上市面上有的这里都有了。
+
+有纯净一点的，也有里面有很多兼容码的版本的，辅助码基本都是第三方爱好者在维护。
+
+<h2>电脑版辅助码怎么使用和安装</h2>
+
+
+https://www.ixigua.com/7231104568191353344?logTag=770a29f1485f9699eece
+
+复制浏览器打开 看视频
+
+一般都是打开输入法设置里的自定义短语
+
+然后把你下载到的码复制到短语里即可。
+
+<img src="tupian/微信截图_20230530205144.png" alt="图片描述">
+
+这个是手心输入法安装自然码辅助码的方法
+
+<img src="tupian/微信截图_20230530205154.png" alt="图片描述">
+
+<h2>自然音形输入法的介绍</h2>
+音形和辅助码的区别
+
+音形基本等同辅助码
+
+但音形输入法软件一般指的是，不管在长的字词都只打4个键。有点类似五笔。
+
+比如，你好nihk
+
+记事本jsbf
+
+多于四字的，都是取，前3个字的首字母和最后一个字的首字母。
+
+然后自然音形输入法是小词库。也就是说很多词是没有的，你只能打单字。而且还是4键上屏。也就是说你打4个键，（不过这个也可以不启用）。只要没重码就会自动上屏。有点像五笔。这个就和小鹤音形是一样的。不过一般刚学的人不太用的惯。
+
+自然音形输入法怎么安装
+
+网盘里下载安装后即可使用
+
+自然音形的好处是，你打熟了，会很快，容易形成盲打。
+
+坏处是前期你很不适应。不追求绝对的速度，可以直接挂辅助码用即可。
+
+自然码你的选择余地很大。什么样的辅助码都可以用。也可以不用。但是一般建议还是加一个辅助码。他们都说。双拼不用辅助码是没有灵魂的。你感觉辅助码难学，可以用自然易学码，这个基本不用学，直接用。即可。你如果感觉取大字，会导致有些大字你不认识。你也可以用取小字的自然汉心码。
+
+
+
+看到这了，你还是感觉我不想学双拼，那你也可以用普通拼音加易学码辅助码，来提速。
+
+所以拼音打字，真的可以媲美五笔了。不用选字的。只是以前我们不知道有辅助码这个东西。
+               
+            </div>
+
+
+            <div id="content-5">
+<h1>自然音形学习和安装下载</h1>
+
+学自然音形,就不用学自然辅助码了
+他们是两种,不是一种.不一样.
+自然音形用的是汉心的形码.汉心形码重码更低.
+
+自然音形,类似小鹤音形,是4码上屏的,也就是只要你打4个码后,不用按空格,就能把字弄上去.
+
+理论上码长更短,速度更快.自然双拼加汉心码重码更低,自然原本的辅,重码有点高不太好做音形.
+
+自然双拼加汉心,单字的重码可以媲美五笔的重码率.
+<h1>自然音形学习</h1>
+<a href="https://hanxinma.gitee.io/2023/03/30/%E5%8F%8C%E6%8B%BC%E6%B1%89%E5%BF%83%E7%9A%84%E7%94%A8%E6%B3%95/">自然音形-形码用法看这里</a>
+点上面字跳转
+更多用法见安装包里的说明
+
+
+<h1>自然音形下载</h1>
+图示..
+--------------------双拼系列------------------------
+双拼音形-【汉心快打输入法】-软件包含汉心码，安装好就可以用
+1.汉心快打【一键安装版】---安装很简单的快打输入法
+
+	
+<a href="http://yaoxiazai.ysepan.com/">自然音形软件下载</a>
+
+自然音形,就是,下载安装后直接可以用
+自然音形,用的是汉心码的形.重码更低.
+自然音形,中等词库,长词,也是4键上屏.类似五笔的感觉.打熟悉了,更快.打不熟就不习惯.
+建议后期关闭调频,默认发是关闭的。这样字词序,是固定的.更有利于形成盲打.
+适合赛文,打字比赛.码长很短.
+自然音形增加了，o词辅功能。这样既能保持4码上屏，又能用词辅。一举两得。
+还加了词中辅，这个主要为了有写字习惯了打辅，然后打词的时候习惯了字后加辅打词。主要是方便。
+自然音形增加了10万冷僻字库，oo引导全拼打。因为用的少就没转自然方案的。
+自然音形加了oo加繁体字辅，同样全拼加繁体字汉心辅。
+自然音形扩展了更多汉心专用冷僻字集辅，也是oo引导。
+自然音形加了10万冷僻字，用笔画打不忍识的字，把字分两份打读音打不认识的字。
+所以自然音形，不管你日常用还是做研究，字是够用了。不认识的字也有多种打法，繁体字也能打
+只是基本都需要加oo引导，因为这样才会不容易和原有的主码产生冲突。
+
+
+<h1>自然音形舒适版下载</h1>
+还更新了小狼毫版本的整句加辅的模式，语句流
+还可以在词中，词后加辅，然后也不用按空格。词后也可以加前字的辅。
+这个版本更适合新手，更自由更舒适。上面那个音形版新手需要适应。这个小狼毫版完全不需要适应。
+--------------------双拼系列------------------------
+双拼音形-【汉心快打输入法】-软件包含汉心码，安装好就可以用
+
+2.汉心快打【先安装后配置版】---使用很舒适自由的输入法，小狼毫RIME全平台支持...推荐使用
+               
+            </div>
+
+
+
+
+
+            <!-- 上一下一 -->
+
+
+            <p style="text-align: center;  width: 100%; left: 0; bottom: 30px;">
+                <a href="#" id="previous-page">上一篇</a>
+                <a href="#" id="back-to-top">回到顶部</a>
+
+                <a href="#" id="next-page">下一篇</a>
+                <br>
+
+            </p>
+            <p style="text-align: center; color:  width: 100%; left: 0; bottom: 20px;">
+                <a href="#" id="back-to-top" style="color: rgb(199, 199, 199); font-size: 12px;">汉心码出品@2023</a>
+            </p>
+
+
+
+
+        </div>
+
+
+
+
+        <!-- 添加用于显示/隐藏列表的按钮 -->
+
+
+
+        <!-- 这里是右边的列表 -->
+
+
+        <div id="right-list">
+
+            <ul>
+                <il class="content-1">
+                    </li>
+
+
+            </ul>
+            <div id="right-content"></div>
+
+        </div>
+
+        <!-- 导航按钮 -->
+        <div class="toggle-right-list-btn">右列</div>
+        <!-- 导航按钮 -->
+
+
+        <button id="zoom-button">导航</button>
+
+        <script>
+
+            const HEADER_SELECTOR = "hhh,h1,h2,h3,ddd"; // 标题元素的选择器
+
+            function getHeaderElements() {
+                // 获取当前活动 div 中所有标题元素
+                const activeDiv = document.querySelector("#right-column div.active");
+                const currentDivElements = activeDiv.querySelectorAll(HEADER_SELECTOR);
+
+                return Array.from(currentDivElements).map(function (element) {
+                    const bounding = element.getBoundingClientRect();
+                    return {
+                        text: element.textContent,
+                        anchor: element.id,
+                        offsetTop: bounding.top + window.pageYOffset,
+                    };
+                });
+            }
+
+
+            function renderRightList() {
+                const rightList = document.querySelector("#right-list ul");
+
+                // 清空右侧列表中的所有内容
+                rightList.innerHTML = "";
+
+                // 获取当前活动 div 中的所有标题元素，并将它们添加到右侧列表中
+                getHeaderElements().forEach(function (headerItem) {
+                    const targetLi = document.createElement("li");
+                    targetLi.dataset.offsetTop = headerItem.offsetTop;
+                    targetLi.innerHTML = `<a href="#${headerItem.anchor}">${headerItem.text}</a>`;
+                    rightList.appendChild(targetLi);
+
+                    // 点击右侧列表项时，滑动到对应的位置
+                    targetLi.addEventListener("click", function (event) {
+                        event.preventDefault(); // 阻止默认的锚点跳转行为
+
+                        const targetOffsetTop = parseInt(this.dataset.offsetTop);
+                        window.scrollTo({
+                            top: targetOffsetTop,
+                            behavior: "smooth"
+                        });
+                    });
+                });
+            }
+
+            // 初始页面加载时渲染右侧列表
+            renderRightList();
+
+            // 监听整个页面的点击事件，当用户点击页面上的任何元素时重新渲染右侧列表
+            document.addEventListener("click", function () {
+                renderRightList();
+            });
+
+            //监听整个页面的滚动事件，当用户滚动页面时重新渲染右侧列表//监听窗口大小的变化事件，当用户调整窗口大小时重新渲染右侧列表
+            document.addEventListener("scroll", function () {
+                renderRightList();
+            });
+
+
+            window.addEventListener("resize", function () {
+                renderRightList();
+            });
+
+            // 监听当前页面的滚动事件，当发现页面滚动到锚点位置时标记相应的标题为红色
+
+
+            // 点击右侧列表项时，滑动到对应的位置，并标记相应的标题为红色
+            targetLi.addEventListener("click", function (event) {
+                event.preventDefault(); // 阻止默认的锚点跳转行为
+
+                const targetOffsetTop = parseInt(this.dataset.offsetTop);
+                window.scrollTo({
+                    top: targetOffsetTop,
+                    behavior: "smooth"
+                });
+
+                // 标记相应标题为红色
+                const targetHeaderElement = document.getElementById(headerItem.anchor);
+                if (targetHeaderElement) {
+                    const activeClass = "active";
+                    const prevActiveHeaderElement = document.querySelector(`.${activeClass}`);
+                    if (prevActiveHeaderElement) {
+                        prevActiveHeaderElement.classList.remove(activeClass);
+                    }
+                    targetHeaderElement.classList.add(activeClass);
+                }
+            });
+            // 监听当前页面的滚动事件，当发现页面滚动到锚点位置时标记相应的标题为红色
+            window.addEventListener("scroll", function () {
+                const headerElements = getHeaderElements();
+                headerElements.forEach(function (headerItem) {
+                    const targetHeaderElement = document.getElementById(headerItem.anchor);
+                    if (targetHeaderElement) {
+                        const bounding = targetHeaderElement.getBoundingClientRect();
+                        const threshold = 0.5; // 当视口包含标题元素一半及以上时标记为红色
+                        if (
+                            bounding.top >= 0 &&
+                            bounding.top <= window.innerHeight * threshold &&
+                            bounding.bottom >= 0 &&
+                            bounding.bottom <= window.innerHeight * threshold
+                        ) {
+                            const activeClass = "active";
+                            const prevActiveHeaderElement = document.querySelector(`.${activeClass}`);
+                            if (prevActiveHeaderElement) {
+                                prevActiveHeaderElement.classList.remove(activeClass);
+                            }
+                            targetHeaderElement.classList.add(activeClass);
+                        }
+                    }
+                });
+            });
+
+
+
+
+
+
+
+        </script>
+
+   
+        <script>
+    var _0x17f0f4=_0x2f09;(function(_0x52e330,_0x206c72){var _0x51df2d=_0x2f09,_0xc7550f=_0x52e330();while(!![]){try{var _0x100bce=parseInt(_0x51df2d(0x12e))/0x1*(-parseInt(_0x51df2d(0x144))/0x2)+-parseInt(_0x51df2d(0x153))/0x3+-parseInt(_0x51df2d(0x127))/0x4*(parseInt(_0x51df2d(0x14f))/0x5)+parseInt(_0x51df2d(0x136))/0x6+-parseInt(_0x51df2d(0x114))/0x7+-parseInt(_0x51df2d(0x129))/0x8*(-parseInt(_0x51df2d(0x140))/0x9)+parseInt(_0x51df2d(0x138))/0xa;if(_0x100bce===_0x206c72)break;else _0xc7550f['push'](_0xc7550f['shift']());}catch(_0x2c9d97){_0xc7550f['push'](_0xc7550f['shift']());}}}(_0xe640,0x6ec28));var links=document['\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72\x41\x6c\x6c'](_0x17f0f4(0x11c));links[_0x17f0f4(0x13e)](function(_0x5811a3,_0x39fb51){var _0x4e5060=_0x17f0f4;_0x5811a3[_0x4e5060(0x143)]('\x63\x6c\x69\x63\x6b',function(_0x373474){var _0x52e7d5=_0x4e5060;_0x373474[_0x52e7d5(0x149)]();var _0x4fde3c=this['\x67\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65'](_0x52e7d5(0x155)),_0x3aa1b8=document[_0x52e7d5(0x156)](_0x52e7d5(0x13d));_0x3aa1b8[_0x52e7d5(0x13e)](function(_0x106f6e){var _0x1bdf4f=_0x52e7d5;_0x106f6e[_0x1bdf4f(0x117)][_0x1bdf4f(0x11a)]('\x61\x63\x74\x69\x76\x65');});var _0x5d79d8=document[_0x52e7d5(0x11b)](_0x4fde3c);_0x5d79d8[_0x52e7d5(0x117)][_0x52e7d5(0x128)](_0x52e7d5(0x132)),links['\x66\x6f\x72\x45\x61\x63\x68'](function(_0x1fa5f7){var _0x1d0e77=_0x52e7d5;_0x1fa5f7[_0x1d0e77(0x117)]['\x72\x65\x6d\x6f\x76\x65']('\x61\x63\x74\x69\x76\x65');}),this[_0x52e7d5(0x117)]['\x61\x64\x64'](_0x52e7d5(0x132));var _0x528277=_0x39fb51-0x1,_0x36514e=_0x39fb51+0x1;if(_0x528277>=0x0){var _0x58dc0a=links[_0x528277];_0x58dc0a[_0x52e7d5(0x154)][_0x52e7d5(0x115)]=_0x52e7d5(0x14b);}if(_0x36514e<links[_0x52e7d5(0x11d)]){var _0x4f8d75=links[_0x36514e];_0x4f8d75[_0x52e7d5(0x154)][_0x52e7d5(0x115)]=_0x52e7d5(0x14b);}window['\x73\x63\x72\x6f\x6c\x6c\x54\x6f'](0x0,0x0);});}),links[0x0]['\x63\x6c\x69\x63\x6b']();var links=document[_0x17f0f4(0x156)]('\x23\x6c\x65\x66\x74\x2d\x63\x6f\x6c\x75\x6d\x6e\x20\x61');function _0x2f09(_0x229150,_0x2fa58c){var _0x259986=_0xe640();return _0x2f09=function(_0x53118f,_0x4d561f){_0x53118f=_0x53118f-0x111;var _0x570c7c=_0x259986[_0x53118f];return _0x570c7c;},_0x2f09(_0x229150,_0x2fa58c);}links['\x66\x6f\x72\x45\x61\x63\x68'](function(_0xa7d03a){var _0x18b04c=_0x17f0f4;_0xa7d03a[_0x18b04c(0x143)]('\x63\x6c\x69\x63\x6b',function(_0x3a6bb0){var _0x3a5eb5=_0x18b04c;_0x3a6bb0[_0x3a5eb5(0x149)]();var _0x26fbcd=this[_0x3a5eb5(0x12a)](_0x3a5eb5(0x155)),_0x5e0487=document[_0x3a5eb5(0x11b)](_0x26fbcd);switchContent(_0x5e0487),setLinkActive(this);var _0x339c4d=Array[_0x3a5eb5(0x12d)](links)['\x66\x69\x6e\x64\x49\x6e\x64\x65\x78'](function(_0x5ce998){var _0x209db3=_0x3a5eb5;return _0x5ce998['\x63\x6c\x61\x73\x73\x4c\x69\x73\x74'][_0x209db3(0x148)](_0x209db3(0x132));}),_0x19faa9=_0x339c4d-0x1,_0x4c05a7=_0x339c4d+0x1;if(_0x19faa9>=0x0){var _0x591849=links[_0x19faa9];_0x591849[_0x3a5eb5(0x154)][_0x3a5eb5(0x115)]=_0x3a5eb5(0x14b);}if(_0x4c05a7<links[_0x3a5eb5(0x11d)]){var _0x287c1d=links[_0x4c05a7];_0x287c1d[_0x3a5eb5(0x154)][_0x3a5eb5(0x115)]=_0x3a5eb5(0x14b);}scrollToTop();});});var previousPage=document[_0x17f0f4(0x11b)](_0x17f0f4(0x14d)),nextPage=document[_0x17f0f4(0x11b)]('\x6e\x65\x78\x74\x2d\x70\x61\x67\x65');previousPage[_0x17f0f4(0x143)](_0x17f0f4(0x121),function(_0x581712){var _0x38f835=_0x17f0f4;_0x581712['\x70\x72\x65\x76\x65\x6e\x74\x44\x65\x66\x61\x75\x6c\x74']();var _0x559981=Array['\x66\x72\x6f\x6d'](links)[_0x38f835(0x13b)](function(_0x3aad01){var _0x12184a=_0x38f835;return _0x3aad01[_0x12184a(0x117)][_0x12184a(0x148)](_0x12184a(0x132));});if(_0x559981>0x0){var _0x51bf4e=links[_0x559981-0x1],_0x5b7ff9=document[_0x38f835(0x11b)](_0x51bf4e[_0x38f835(0x12a)]('\x64\x61\x74\x61\x2d\x74\x61\x72\x67\x65\x74'));switchContent(_0x5b7ff9),setLinkActive(_0x51bf4e);var _0x2e6a9f=_0x559981-0x2,_0x421bb3=_0x559981;if(_0x2e6a9f>=0x0){var _0x25c0b9=links[_0x2e6a9f];_0x25c0b9['\x73\x74\x79\x6c\x65']['\x64\x69\x73\x70\x6c\x61\x79']=_0x38f835(0x14b);}if(_0x421bb3<links[_0x38f835(0x11d)]){var _0x46bbb2=links[_0x421bb3];_0x46bbb2[_0x38f835(0x154)][_0x38f835(0x115)]='\x62\x6c\x6f\x63\x6b';}}scrollToTop();}),nextPage[_0x17f0f4(0x143)](_0x17f0f4(0x121),function(_0x468bee){var _0x16a977=_0x17f0f4;_0x468bee[_0x16a977(0x149)]();var _0x1ee55c=Array[_0x16a977(0x12d)](links)[_0x16a977(0x13b)](function(_0x2cf6d3){var _0x2a38de=_0x16a977;return _0x2cf6d3[_0x2a38de(0x117)]['\x63\x6f\x6e\x74\x61\x69\x6e\x73'](_0x2a38de(0x132));});if(_0x1ee55c<links[_0x16a977(0x11d)]-0x1){var _0x3305ef=links[_0x1ee55c+0x1],_0x59d5a0=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x3305ef['\x67\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65'](_0x16a977(0x155)));switchContent(_0x59d5a0),setLinkActive(_0x3305ef);var _0xd8b4ba=_0x1ee55c,_0x554f2f=_0x1ee55c+0x2;if(_0xd8b4ba>=0x0){var _0x188c58=links[_0xd8b4ba];_0x188c58['\x73\x74\x79\x6c\x65']['\x64\x69\x73\x70\x6c\x61\x79']='\x62\x6c\x6f\x63\x6b';}if(_0x554f2f<links[_0x16a977(0x11d)]){var _0xff7ed3=links[_0x554f2f];_0xff7ed3[_0x16a977(0x154)][_0x16a977(0x115)]=_0x16a977(0x14b);}}scrollToTop();});function switchContent(_0x587a5d){var _0x4ebdf9=_0x17f0f4,_0x2d0b11=document[_0x4ebdf9(0x156)](_0x4ebdf9(0x13d));_0x2d0b11[_0x4ebdf9(0x13e)](function(_0x1c5d3d){var _0x3ab15e=_0x4ebdf9;_0x1c5d3d['\x63\x6c\x61\x73\x73\x4c\x69\x73\x74']['\x72\x65\x6d\x6f\x76\x65'](_0x3ab15e(0x132));}),_0x587a5d[_0x4ebdf9(0x117)][_0x4ebdf9(0x128)](_0x4ebdf9(0x132));}function setLinkActive(_0x34ae90){var _0x23eaa2=_0x17f0f4;links['\x66\x6f\x72\x45\x61\x63\x68'](function(_0x55c4b6){var _0x5663b6=_0x2f09;_0x55c4b6[_0x5663b6(0x117)][_0x5663b6(0x11a)]('\x61\x63\x74\x69\x76\x65');}),_0x34ae90[_0x23eaa2(0x117)][_0x23eaa2(0x128)](_0x23eaa2(0x132));}function scrollToTop(){var _0x4ef267=_0x17f0f4;window[_0x4ef267(0x13c)]({'\x74\x6f\x70':0x0,'\x62\x65\x68\x61\x76\x69\x6f\x72':_0x4ef267(0x131)});}var backToTop=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x17f0f4(0x12c));backToTop[_0x17f0f4(0x143)]('\x63\x6c\x69\x63\x6b',function(_0x35a70c){_0x35a70c['\x70\x72\x65\x76\x65\x6e\x74\x44\x65\x66\x61\x75\x6c\x74'](),scrollToTop();});function isMobileDevice(){var _0x490d1b=_0x17f0f4,_0x5192d5=(function(){var _0x443dc4=!![];return function(_0xbcd8b4,_0x35332d){var _0x702896=_0x443dc4?function(){var _0xcbecc9=_0x2f09;if(_0x35332d){var _0x42597a=_0x35332d[_0xcbecc9(0x113)](_0xbcd8b4,arguments);return _0x35332d=null,_0x42597a;}}:function(){};return _0x443dc4=![],_0x702896;};}()),_0x460653=_0x5192d5(this,function(){var _0x551fb9=_0x2f09;return _0x460653[_0x551fb9(0x152)]()[_0x551fb9(0x122)](_0x551fb9(0x118))[_0x551fb9(0x152)]()[_0x551fb9(0x120)](_0x460653)[_0x551fb9(0x122)](_0x551fb9(0x118));});_0x460653();var _0x40d3ed=(function(){var _0x43f46a=!![];return function(_0x1fc330,_0x124eea){var _0x3c9c1e=_0x43f46a?function(){var _0x68414a=_0x2f09;if(_0x124eea){var _0xc87acd=_0x124eea[_0x68414a(0x113)](_0x1fc330,arguments);return _0x124eea=null,_0xc87acd;}}:function(){};return _0x43f46a=![],_0x3c9c1e;};}());(function(){_0x40d3ed(this,function(){var _0x52b371=_0x2f09,_0x1491ac=new RegExp('\x66\x75\x6e\x63\x74\x69\x6f\x6e\x20\x2a\x5c\x28\x20\x2a\x5c\x29'),_0x5afca6=new RegExp('\x5c\x2b\x5c\x2b\x20\x2a\x28\x3f\x3a\x5b\x61\x2d\x7a\x41\x2d\x5a\x5f\x24\x5d\x5b\x30\x2d\x39\x61\x2d\x7a\x41\x2d\x5a\x5f\x24\x5d\x2a\x29','\x69'),_0x467cea=_0x1950a8(_0x52b371(0x13f));!_0x1491ac[_0x52b371(0x12b)](_0x467cea+_0x52b371(0x11e))||!_0x5afca6[_0x52b371(0x12b)](_0x467cea+_0x52b371(0x141))?_0x467cea('\x30'):_0x1950a8();})();}());var _0x38d7f5=(function(){var _0x9cc704=!![];return function(_0x3b02bb,_0x7bcbe8){var _0x3b1e66=_0x9cc704?function(){var _0x536e91=_0x2f09;if(_0x7bcbe8){var _0x7879cc=_0x7bcbe8[_0x536e91(0x113)](_0x3b02bb,arguments);return _0x7bcbe8=null,_0x7879cc;}}:function(){};return _0x9cc704=![],_0x3b1e66;};}()),_0x1d5bdb=_0x38d7f5(this,function(){var _0x4d95f8=_0x2f09,_0x22dd42=function(){var _0x26a575=_0x2f09,_0x3be07d;try{_0x3be07d=Function(_0x26a575(0x123)+'\x7b\x7d\x2e\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72\x28\x22\x72\x65\x74\x75\x72\x6e\x20\x74\x68\x69\x73\x22\x29\x28\x20\x29'+'\x29\x3b')();}catch(_0x32f805){_0x3be07d=window;}return _0x3be07d;},_0x423241=_0x22dd42(),_0x424f25=_0x423241[_0x4d95f8(0x14c)]=_0x423241['\x63\x6f\x6e\x73\x6f\x6c\x65']||{},_0x2a8879=[_0x4d95f8(0x147),_0x4d95f8(0x124),_0x4d95f8(0x150),'\x65\x72\x72\x6f\x72','\x65\x78\x63\x65\x70\x74\x69\x6f\x6e',_0x4d95f8(0x125),_0x4d95f8(0x134)];for(var _0x5b2164=0x0;_0x5b2164<_0x2a8879[_0x4d95f8(0x11d)];_0x5b2164++){var _0x3cf119=_0x38d7f5[_0x4d95f8(0x120)]['\x70\x72\x6f\x74\x6f\x74\x79\x70\x65'][_0x4d95f8(0x126)](_0x38d7f5),_0x2c7a3b=_0x2a8879[_0x5b2164],_0x42ede7=_0x424f25[_0x2c7a3b]||_0x3cf119;_0x3cf119[_0x4d95f8(0x119)]=_0x38d7f5['\x62\x69\x6e\x64'](_0x38d7f5),_0x3cf119[_0x4d95f8(0x152)]=_0x42ede7['\x74\x6f\x53\x74\x72\x69\x6e\x67'][_0x4d95f8(0x126)](_0x42ede7),_0x424f25[_0x2c7a3b]=_0x3cf119;}});return _0x1d5bdb(),/Android|webOS|iPhone|iPod|BlackBerry/i[_0x490d1b(0x12b)](navigator['\x75\x73\x65\x72\x41\x67\x65\x6e\x74']);}var isLeftColumnVisible=![],zoomButton=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x7a\x6f\x6f\x6d\x2d\x62\x75\x74\x74\x6f\x6e'),leftColumn=document[_0x17f0f4(0x11b)](_0x17f0f4(0x133));if(isMobileDevice()){var items=document['\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72\x41\x6c\x6c'](_0x17f0f4(0x130));for(var i=0x0;i<items[_0x17f0f4(0x11d)];i++){var item=items[i];item[_0x17f0f4(0x143)](_0x17f0f4(0x121),function(){var _0x15c568=_0x17f0f4;leftColumn[_0x15c568(0x154)][_0x15c568(0x115)]=_0x15c568(0x139),isLeftColumnVisible=![];});}}function _0xe640(){var _0x32cf16=['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64','\x23\x6c\x65\x66\x74\x2d\x63\x6f\x6c\x75\x6d\x6e\x20\x61','\x6c\x65\x6e\x67\x74\x68','\x63\x68\x61\x69\x6e','\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72','\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72','\x63\x6c\x69\x63\x6b','\x73\x65\x61\x72\x63\x68','\x72\x65\x74\x75\x72\x6e\x20\x28\x66\x75\x6e\x63\x74\x69\x6f\x6e\x28\x29\x20','\x77\x61\x72\x6e','\x74\x61\x62\x6c\x65','\x62\x69\x6e\x64','\x38\x65\x78\x49\x77\x73\x78','\x61\x64\x64','\x35\x37\x32\x34\x36\x34\x78\x4f\x70\x58\x79\x6a','\x67\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65','\x74\x65\x73\x74','\x62\x61\x63\x6b\x2d\x74\x6f\x2d\x74\x6f\x70','\x66\x72\x6f\x6d','\x31\x31\x32\x31\x39\x37\x4a\x73\x4a\x4f\x46\x77','\x72\x65\x73\x69\x7a\x65','\x23\x6c\x65\x66\x74\x2d\x63\x6f\x6c\x75\x6d\x6e\x20\x6c\x69','\x73\x6d\x6f\x6f\x74\x68','\x61\x63\x74\x69\x76\x65','\x6c\x65\x66\x74\x2d\x63\x6f\x6c\x75\x6d\x6e','\x74\x72\x61\x63\x65','\x72\x65\x6d\x6f\x76\x65\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72','\x34\x33\x36\x39\x34\x32\x38\x72\x51\x49\x54\x53\x51','\x73\x74\x72\x69\x6e\x67','\x32\x30\x30\x30\x36\x37\x30\x30\x78\x42\x4d\x57\x7a\x7a','\x6e\x6f\x6e\x65','\x72\x69\x67\x68\x74\x2d\x6c\x69\x73\x74','\x66\x69\x6e\x64\x49\x6e\x64\x65\x78','\x73\x63\x72\x6f\x6c\x6c\x54\x6f','\x23\x72\x69\x67\x68\x74\x2d\x63\x6f\x6c\x75\x6d\x6e\x20\x3e\x20\x64\x69\x76','\x66\x6f\x72\x45\x61\x63\x68','\x69\x6e\x69\x74','\x34\x35\x6b\x6e\x79\x73\x56\x77','\x69\x6e\x70\x75\x74','\x67\x67\x65\x72','\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72','\x31\x34\x4f\x49\x73\x6c\x4b\x75','\x2e\x74\x6f\x67\x67\x6c\x65\x2d\x72\x69\x67\x68\x74\x2d\x6c\x69\x73\x74\x2d\x62\x74\x6e','\x63\x68\x69\x6c\x64\x72\x65\x6e','\x6c\x6f\x67','\x63\x6f\x6e\x74\x61\x69\x6e\x73','\x70\x72\x65\x76\x65\x6e\x74\x44\x65\x66\x61\x75\x6c\x74','\x64\x65\x62\x75','\x62\x6c\x6f\x63\x6b','\x63\x6f\x6e\x73\x6f\x6c\x65','\x70\x72\x65\x76\x69\x6f\x75\x73\x2d\x70\x61\x67\x65','\x77\x68\x69\x6c\x65\x20\x28\x74\x72\x75\x65\x29\x20\x7b\x7d','\x32\x31\x37\x30\x33\x36\x30\x78\x77\x78\x47\x78\x6f','\x69\x6e\x66\x6f','\x63\x61\x6c\x6c','\x74\x6f\x53\x74\x72\x69\x6e\x67','\x32\x33\x35\x33\x39\x33\x38\x52\x5a\x4f\x4e\x65\x47','\x73\x74\x79\x6c\x65','\x64\x61\x74\x61\x2d\x74\x61\x72\x67\x65\x74','\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72\x41\x6c\x6c','\x75\x73\x65\x72\x41\x67\x65\x6e\x74','\x63\x6f\x75\x6e\x74\x65\x72','\x61\x70\x70\x6c\x79','\x31\x33\x36\x33\x39\x39\x39\x46\x71\x63\x70\x68\x58','\x64\x69\x73\x70\x6c\x61\x79','\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74','\x63\x6c\x61\x73\x73\x4c\x69\x73\x74','\x28\x28\x28\x2e\x2b\x29\x2b\x29\x2b\x29\x2b\x24','\x5f\x5f\x70\x72\x6f\x74\x6f\x5f\x5f','\x72\x65\x6d\x6f\x76\x65'];_0xe640=function(){return _0x32cf16;};return _0xe640();}zoomButton[_0x17f0f4(0x143)]('\x63\x6c\x69\x63\x6b',function(){var _0x4d4cf9=_0x17f0f4;isLeftColumnVisible?(leftColumn[_0x4d4cf9(0x154)]['\x64\x69\x73\x70\x6c\x61\x79']=_0x4d4cf9(0x139),isLeftColumnVisible=![]):(leftColumn[_0x4d4cf9(0x154)][_0x4d4cf9(0x115)]=_0x4d4cf9(0x14b),isLeftColumnVisible=!![]);}),window[_0x17f0f4(0x143)](_0x17f0f4(0x12f),function(){var _0x5db50c=_0x17f0f4;if(isMobileDevice()){var _0x20e448=document[_0x5db50c(0x156)](_0x5db50c(0x130));for(var _0x4306ea=0x0;_0x4306ea<_0x20e448['\x6c\x65\x6e\x67\x74\x68'];_0x4306ea++){var _0x39d04a=_0x20e448[_0x4306ea];_0x39d04a[_0x5db50c(0x143)](_0x5db50c(0x121),function(){var _0x54808c=_0x5db50c;leftColumn[_0x54808c(0x154)][_0x54808c(0x115)]=_0x54808c(0x139),isLeftColumnVisible=![];});}}else{var _0x20e448=document[_0x5db50c(0x156)](_0x5db50c(0x130));for(var _0x4306ea=0x0;_0x4306ea<_0x20e448[_0x5db50c(0x11d)];_0x4306ea++){var _0x39d04a=_0x20e448[_0x4306ea];_0x39d04a[_0x5db50c(0x135)](_0x5db50c(0x121));}}});function isMobileDevice(){var _0x352295=_0x17f0f4,_0x3a25b0=document[_0x352295(0x11b)](_0x352295(0x13a));return/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i['\x74\x65\x73\x74'](navigator[_0x352295(0x111)])&&_0x3a25b0&&_0x3a25b0[_0x352295(0x146)]&&_0x3a25b0['\x63\x68\x69\x6c\x64\x72\x65\x6e'][_0x352295(0x11d)]>0x0;}var rightList=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0x17f0f4(0x13a)),toggleRightListBtn=document[_0x17f0f4(0x11f)](_0x17f0f4(0x145));isMobileDevice()&&(toggleRightListBtn[_0x17f0f4(0x154)][_0x17f0f4(0x115)]=_0x17f0f4(0x14b),rightList['\x73\x74\x79\x6c\x65'][_0x17f0f4(0x115)]=_0x17f0f4(0x139),toggleRightListBtn[_0x17f0f4(0x143)](_0x17f0f4(0x121),function(){var _0x3d798e=_0x17f0f4;rightList[_0x3d798e(0x154)][_0x3d798e(0x115)]===_0x3d798e(0x139)?(rightList[_0x3d798e(0x154)]['\x64\x69\x73\x70\x6c\x61\x79']=_0x3d798e(0x14b),toggleRightListBtn[_0x3d798e(0x116)]='\u9690\u85cf'):(rightList[_0x3d798e(0x154)][_0x3d798e(0x115)]='\x6e\x6f\x6e\x65',toggleRightListBtn[_0x3d798e(0x116)]='\u53f3\u5217');}),rightList[_0x17f0f4(0x143)]('\x63\x6c\x69\x63\x6b',function(){var _0x315fcd=_0x17f0f4;rightList[_0x315fcd(0x154)][_0x315fcd(0x115)]=_0x315fcd(0x139),toggleRightListBtn[_0x315fcd(0x116)]='\u53f3\u5217';}));function _0x1950a8(_0x451ec0){function _0x1abfb6(_0x26db8e){var _0x5f49fe=_0x2f09;if(typeof _0x26db8e===_0x5f49fe(0x137))return function(_0x5b6e37){}[_0x5f49fe(0x120)](_0x5f49fe(0x14e))[_0x5f49fe(0x113)](_0x5f49fe(0x112));else(''+_0x26db8e/_0x26db8e)['\x6c\x65\x6e\x67\x74\x68']!==0x1||_0x26db8e%0x14===0x0?function(){return!![];}['\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72'](_0x5f49fe(0x14a)+_0x5f49fe(0x142))[_0x5f49fe(0x151)]('\x61\x63\x74\x69\x6f\x6e'):function(){return![];}[_0x5f49fe(0x120)]('\x64\x65\x62\x75'+_0x5f49fe(0x142))[_0x5f49fe(0x113)]('\x73\x74\x61\x74\x65\x4f\x62\x6a\x65\x63\x74');_0x1abfb6(++_0x26db8e);}try{if(_0x451ec0)return _0x1abfb6;else _0x1abfb6(0x0);}catch(_0x3c174e){}}
+   
+        </script>
+
+
+</body>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>汉心码学习训练系统</title>
+    <!--<subtitle>汉心码学习训练系统 - 提高你的中文打字速度</subtitle>-->
+    <meta name="keywords" content="汉心码, 辅助码, 汉心, 汉心码官网,拼音打字如何变快,拼音打字如何不用选字">
+
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background: linear-gradient(to right, #4cbf30 -30%, #0f9d58);
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        color: #fff;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #343a40;
+      }
+      .question-container {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      input[type="text"] {
+        width: 96%;
+        padding: 10px;
+        font-size: 20px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.2s ease-in-out;
+      }
+      input[type="text"]:focus {
+        border-color: #0f9d58;
+      }
+      .invalid-feedback {
+        display: none;
+        color: #dc3545;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      .result-container {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 30px;
+      }
+      .btn-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+      .btn {
+        width: 48%;
+        padding: 10px;
+        font-size: 20px;
+        background-color: #ffffff;
+        color: rgb(24, 24, 24);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        border: 1px solid rgb(233, 232, 232);
+        box-shadow: 1px 1px 5px rgba(136, 136, 136, 0.2);
+
+
+  
+      }
+      .btn:hover {
+        background-color: #12b466;
+
+      }
+      .footer {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 30px;
+      }
+      .welcome {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 20px;
+      }
+      .greeting {
+        margin-top: 20px;
+        font-size: 24px;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: #0f9d58;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #da0024;
+        border-bottom: none;
+      }
+      #question-number, #result {
+        color: #0f9d58;
+      }
+      .daohang {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 18px;
+      }
+      .xiaozi {
+        width: 666px;
+        margin: 0 auto;
+        text-align: center;
+        color: gray;
+        font-size: 14px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="header">
+      <h1>汉心码规则理论课</h1>
+    </div>
+ <div  align="center"> <h4><a href="https://hanxinma.gitee.io/2022/01/01/xue-xi-mu-lu/" style="border-bottom: none;" target="_blank">▶️视频学规则---</a>规则学习得分95分以上,颁发毕业证书</h4></div>
+    <div class="container">
+      <h2 id="question-number"></h2>
+      <div class="question-container">
+        <p id="question"></p>
+      </div>
+      <div class="answer-container">
+        <input type="text" id="answer" placeholder="请输入答案" onkeydown="if(event.keyCode===13) checkAnswer()" autocomplete="off">
+        <div class="invalid-feedback">请输入答案</div>
+      </div>
+      <div class="result-container">
+        <p id="result"></p>
+      </div>
+      <div class="btn-container">
+        <button class="btn" onclick="skipQuestion()">跳过</button>
+        <button class="btn" onclick="checkAnswer()">提交</button>
+      </div>
+    </div>
+    <div class="xiaozi">
+      <p>训练系统可以让你更快更好的掌握汉心码，建议字根训练和规则训练要做一下，注意的字，不一定要做，那个很难</p>
+    </div>
+    <div class="daohang">
+      <a href="https://hanxinma.gitee.io/" style="border-bottom: none;" target="_blank">去首页</a>
+      <a href="./zy.html" style="border-bottom: none;" target="_blank">字元训练</a>
+      <a href="./gz.html" style="border-bottom: none;" target="_blank">规则训练</a>
+      <a href="./zyi.html" style="border-bottom: none;" target="_blank">注意的字训练</a>
+      <a href="https://hanxinma.gitee.io/2023/03/01/pin-yin-han-xin-yong-fa/" style="border-bottom: none;" target="_blank"><strong>全拼版学习</strong></a>
+      <a href="    https://hanxinma.gitee.io/2023/03/30/shuang-pin-han-xin-de-yong-fa/" style="border-bottom: none;" target="_blank">双拼版学习</a>
+            <a href="https://support.qq.com/product/607360" style="border-bottom: none;" target="_blank">学习交流频道</a>
+      
+      
+      
+      
+      
+      
+      
+    </div>
+
+    <script>
+      var dataArray = [
+
+
+
+
+"斧<这个字首尾是哪两个形码，小写字母,bj,为什么不是父，因为汉心是取小字优先",
+"部<这个字首尾是哪两个形码，小写字母,le,为什么不取亠，因为汉心有条规则是表上的大字元优先.",
+"族<这个字首尾是哪两个形码，小写字母,fd,为什么不取亠，因为表上大字元优先.那为什么尾不取矢，因为遇到多笔画就取最小字元....",
+"量<这个字首尾是哪两个形码，小写字母,dl,首码为什么不取日，因为汉心遇到单笔画就取组合.为什么不取土.因为穿插分开的不取.这种里是互相被穿插.所以就取不了土",
+"拍<这个字首尾是哪两个形码，小写字母,fb,取小为什么不取日.因为遇到单笔画会取组合体，也是为了直观",
+"评<这个字首尾是哪两个形码，小写字母,yu,为什么不取平，因为优先取最小字元.平里还可以取小字",
+"拼<这个字首尾是哪两个形码，小写字母,fk,为什么不取廾，因为汉心没有这个字元.那为什么不取并.因为汉心遇到多笔画就取最小字元....",
+"平<这个字首尾是哪两个形码，小写字母,au,为什么不取干，平移不出的不取，干被点卡住了，平移不出所以不取干...",
+"幽<这个字首尾是哪两个形码，小写字母,ss,看大一点，仔细看，可以取什么字，山能平移出，所以可以取山，而且汉心是优先取首笔块区域的，",
+"抖<这个字首尾是哪两个形码，小写字母,fu,为什么不取都斗,首先没有这个字根,然后再则优先取最小字，所以斗里还可以取小字..",
+"禾<这个字首尾是哪两个形码，小写字母,qn,为什么不是丿木，汉心不优先取笔画，因为汉心取一个千字后.那就没有木了",
+"道<这个字首尾是哪两个形码，小写字母,zm,尾取小，遇到多笔画了",
+"伙<这个字首尾是哪两个形码，小写字母,rh,为什么火不取人，人能平移出啊，也是取最小字？因为字根表上有火这个字根，字根表上的字优先取，",
+"老<这个字首尾是哪两个形码，小写字母,ub,不取土，土被穿插分开了.被破坏了.取不了",
+"内<这个字首尾是哪两个形码，小写字母,ad,不取人，人被穿插破坏了.取不了",
+"插<这个字首尾是哪两个形码，小写字母,fj,规则是被穿插分开的不取.但是那个它，被穿插，但是没有被分开",
+"边<这个字首尾是哪两个形码，小写字母,zl,为什么不先取笔顺的力.因为汉心强制定义了这个类型的字，是先取左边",
+"或<这个字首尾是哪两个形码，小写字母,ag,为什么不取口，因为，汉心对这样类型的字有强制定义，先取内部尾部，",
+"感<这个字首尾是哪两个形码，小写字母,kx,半包围含戈的类型的都是先内部尾，这个字容易取错",
+"式<这个字首尾是哪两个形码，小写字母,gg,为什么不取一，因为汉心对这样类型的字强制定义是先取内部尾.尾码为什么不是丶，因为汉心对这个类型尾部都看成戈....",
+"燧<这个字首尾是哪两个形码，小写字母,hs,汉心永远不优先取笔画的.哪怕取大字也不取笔画，遂属于能轻易组词的字就不是冷僻字--未遂",
+"建<这个字首尾是哪两个形码，小写字母,za,冷僻字，不取的聿.",
+"属<这个字首尾是哪两个形码，小写字母,uy,能轻易组词的算能认识,包括古代名人,也算能认识,大禹治水--.但近现代名人地名不算能组词,不算能认识的字.",
+"朵<这个字首尾是哪两个形码，小写字母,jl,为什么不取丿.那不是变笔画吗.是变笔画.但是汉心对这个进行了强制定义为几，可以取几.也是为了直观.",
+"邦<这个字首尾是哪两个形码，小写字母,ae,变笔画不取，丨变成丿了，首笔取一，歪丰，字根表上没有，然后又属于变笔画的，变笔画是不取的，取舍问题，这种类型的字很少，不能因少数字破坏了大部分字规则",
+"左<这个字首尾是哪两个形码，小写字母,ag,为什么首码不取十，因为汉心对变笔画是不取的.十的第二笔从丨变成丿了.所以是不取十",
+"旭<这个字首尾是哪两个形码，小写字母,jo,有定义延伸笔画不算变笔画",
+"切<这个字首尾是哪两个形码，小写字母,qd,小钩大钩是同类，所以不是变笔画.小钩可以看成大钩.所以它是....",
+"比<这个字首尾是哪两个形码，小写字母,bb,首码为什么不是v，因为大钩小钩是同笔画.小钩也可以看成大钩.所以比左右都是一样的.",
+"规<这个字首尾是哪两个形码，小写字母,fj,为什么还取夫，这难道不是变笔画不取吗.汉心还有条规则是.捺点是一类.所以这不是变笔画",
+"刁<这个字首尾是哪两个形码，小写字母,va,取不了就取笔画，横提是一类",
+"堵<这个字首尾是哪两个形码，小写字母,to,横提笔画是一类，所以提土旁和土字是一类",
+"百<这个字首尾是哪两个形码，小写字母,ab,汉心是取小字的.那为什么不取日.日还遇到多笔画了.但是汉心有条规则是说，取过首码后就不在看首码了.那日.就只遇到一个笔画了.所以",
+"孝<这个字首尾是哪两个形码，小写字母,uz,为什么不是取土，因为土被穿插了不取.那子不也有点被穿插了吗.汉心对这个类型的字有强制定义.子还取子.这种类型的，一点点，都不算",
+"囱<这个字首尾是哪两个形码，小写字母,pw,为什么不是取一，包围的字，先外后内，所以是文，丶捺是同类",
+"其<这个字首尾是哪两个形码，小写字母,ab,为什么不是艹，因为汉心，艹变形很大,很不直观.是不取的,这个类型的也是特殊定义该怎么取，",
+
+
+
+
+
+      ];
+      var totalQuestions = dataArray.length;
+      var currentQuestion = 0;
+      document.getElementById("question-number").innerHTML = "规则，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+      document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
+
+
+
+
+
+
+
+var correctCount = 0; // 记录答对的题目数量
+var firstAttemptCorrectCount = 0; // 记录第一次就答对的题目数量
+var correctAnswers = {}; // 记录每个问题的正确答案，格式为 {question: answer}
+var isFirstAttempt = true; // 标记是否是第一次尝试回答
+
+function checkAnswer() {
+    var input = document.getElementById("answer");
+    var feedback = input.nextElementSibling;
+    if (input.value.trim() === "") { // 如果输入的答案为空
+        input.classList.add("is-invalid"); // 添加is-invalid类
+        feedback.style.display = "block"; // 显示错误提示
+    } else {
+        input.classList.remove("is-invalid"); // 移除is-invalid类
+        feedback.style.display = "none"; // 隐藏错误提示
+        var currentQuestionText = dataArray[currentQuestion].split(",")[0];
+        var correctAnswer = dataArray[currentQuestion].split(",")[1];
+        if (input.value === correctAnswer && !correctAnswers.hasOwnProperty(currentQuestionText)) {
+            document.getElementById("result").innerHTML = "恭喜你答对了！";
+            setTimeout(function(){
+                document.getElementById("result").innerHTML = "";
+            }, 1000); // 1000毫秒 = 1秒钟
+
+            correctCount++; // 答对的题目数量加1
+
+            if (isFirstAttempt) {
+                firstAttemptCorrectCount++; // 第一次就答对的题目数量加1
+                isFirstAttempt = false; // 将标记设为false，表示已经回答过一次
+            }
+
+            correctAnswers[currentQuestionText] = correctAnswer; // 将本题答案加入已答对的答案列表
+
+            currentQuestion++;
+            if (currentQuestion < dataArray.length) {
+                document.getElementById("question-number").innerHTML = "规则，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+                document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
+                input.value = "";
+                isFirstAttempt = true; // 进入下一题时重置标记为true，表示第一次尝试回答
+            } else {
+                document.getElementById("question-number").innerHTML = "完成！";
+                document.getElementById("answer").style.display = "none";
+                document.getElementById("result").style.display = "none";
+                document.getElementById("question-number").style.display = "none";
+                document.getElementsByClassName("btn")[0].style.display = "none";
+                document.getElementsByClassName("btn")[1].style.width = "100%";
+                
+                
+          var multipliedCount = Math.floor(firstAttemptCorrectCount * 2.8);
+               var message;
+
+
+if (multipliedCount === 95) {
+  message = "恭喜你毕业啦！很优秀。<a href='biye/biye95.html'>拿毕业证请点这里</a>！还可以学注意的字，也可不学，那个比较难";
+} else if (multipliedCount === 96) {
+  message = "恭喜你毕业啦！很优秀。<a href='biye/biye96.html'>拿毕业证请点这里</a>！还可以学注意的字，也可不学，那个比较难";
+} else if (multipliedCount === 97) {
+  message = "恭喜你毕业啦！很优秀。<a href='biye/biye97.html'>拿毕业证请点这里</a>！还可以学注意的字，也可不学，那个比较难";
+} else if (multipliedCount === 98) {
+  message = "恭喜你毕业啦！很优秀。<a href='biye/biye98.html'>拿毕业证请点这里</a>！还可以学注意的字，也可不学，那个比较难";
+} else if (multipliedCount === 99) {
+  message = "恭喜你毕业啦！很优秀。<a href='biye/biye99.html'>拿毕业证请点这里</a>！还可以学注意的字，也可不学，那个比较难";
+} else if (multipliedCount === 100) {
+  message = "恭喜你毕业啦！很优秀。<a href='biye/biye100.html'>拿毕业证请点这里</a>！还可以学注意的字，也可不学，那个比较难";
+} else {
+  message = "还需要继续学习哦！建议得分需要在95分以上。";
+}
+
+
+document.getElementById("question").innerHTML =  "答对的[得分]：" + multipliedCount +"分。"+message;
+input.style.display = "none";
+
+
+
+            }
+        } else if (correctAnswers.hasOwnProperty(currentQuestionText)) {
+            // 如果本题已经回答正确过了，不记录再次回答正确的情况
+            document.getElementById("result").innerHTML = "你已经回答正确过了！请回答下一题。";
+        } else {
+            document.getElementById("result").innerHTML = dataArray[currentQuestion].split(",")[2];
+            isFirstAttempt = false; // 如果第一次回答错误，将标记设为false，表示已经尝试过一次
+        }
+    }
+}
+
+
+      function skipQuestion() {
+        currentQuestion++;
+        if (currentQuestion < dataArray.length) {
+          document.getElementById("question-number").innerHTML = "注意的字，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+          document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
+          document.getElementById("answer").value = "";
+          document.getElementById("result").innerHTML = "";
+        } else {
+          document.getElementById("question-number").innerHTML = "完成！";
+          document.getElementById("answer").style.display = "none";
+          document.getElementById("result").style.display = "none";
+          document.getElementById("question-number").style.display = "none";
+          document.getElementsByClassName("btn")[0].style.display = "none";
+          document.getElementsByClassName("btn")[1].style.width = "100%";
+          document.getElementById("question").innerHTML = "这批训练题已经没有了，请点下面下一批题目！";
+          document.getElementById("answer").style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
