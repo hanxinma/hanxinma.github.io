@@ -207,8 +207,8 @@ readers do not read off random characters that represent icons */
 .fa-address-book:before {
   content: "\f2b9"; }
 
-/* .fa-address-card:before {
-  content: "\f2bb"; } */
+.fa-address-card:before {
+  content: "\f2bb"; }
 
 .fa-adjust:before {
   content: "\f042"; }
