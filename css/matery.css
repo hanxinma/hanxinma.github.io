@@ -228,7 +228,7 @@ mark {
 }
 
 .card {
-  
+
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
 }
@@ -393,8 +393,8 @@ header .side-nav .social-link {
     border: 1px solid #f44336;
     background-color: #f44336;
     box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.42),
-    0 4px 23px 0 rgba(0, 0, 0, 0.12),
-    0 8px 10px -5px rgba(233, 30, 99, 0.2);
+        0 4px 23px 0 rgba(0, 0, 0, 0.12),
+        0 8px 10px -5px rgba(233, 30, 99, 0.2);
 }
 
 .cover-btns a i {
@@ -504,12 +504,17 @@ header .side-nav .social-link {
 }
 
 .cover-social-link {
-    position: relative; /* 设置元素的定位方式为相对定位 */
-    top: 23vh; /* 设置元素距离视口顶部的高度为23倍视口高度 */
-  
-    width: 100%; /* 设置元素的宽度为100% */
-    text-align: center; /* 设置元素的文本居中对齐 */
+    position: relative;
+    /* 设置元素的定位方式为相对定位 */
+    top: 23vh;
+    /* 设置元素距离视口顶部的高度为23倍视口高度 */
+
+    width: 100%;
+    /* 设置元素的宽度为100% */
+    text-align: center;
+    /* 设置元素的文本居中对齐 */
 }
+
 .cover-social-link a {
     padding: 0 15px;
     font-size: 1.35rem;
@@ -687,6 +692,7 @@ header .go-back i {
         background: -webkit-linear-gradient(135deg, rgba(4, 153, 71, 0.75) 0%, rgba(4, 153, 71, 0.75) 100%);
     }
 }
+
 .index-card {
     margin-top: -10px;
     padding-top: 20px;
@@ -1028,8 +1034,8 @@ article .article-tags .chip {
 
 #artDetail .card {
     box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15),
-    0 5px 15px rgba(0, 0, 0, .07),
-    0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+        0 5px 15px rgba(0, 0, 0, .07),
+        0 2px 5px -5px rgba(0, 0, 0, .1) !important;
 }
 
 #artDetail .tag-cate {
@@ -1189,7 +1195,7 @@ article .article-tags .chip {
 /* 原来的 */
 /* #articleContent .img-item {
     text-align: center;
-} */ 
+} */
 
 #articleContent a {
     padding: 0 2px;
@@ -1197,11 +1203,11 @@ article .article-tags .chip {
     font-weight: 500;
     /* text-decoration: underline; */
     word-wrap: break-word;
-    }
-    
-    #articleContent a:hover {
+}
+
+#articleContent a:hover {
     color: red;
-    }
+}
 
 #articleContent img {
     max-width: 100%;
@@ -1293,6 +1299,7 @@ thead {
 .chip-container {
     margin-top: -300px;
 }
+
 /* 全部内容导航上边距 */
 
 .chip-container .tag-title {
@@ -2044,8 +2051,7 @@ footer .copy-right {
 
 /*二级菜单*/
 
-.nav-menu {
-}
+.nav-menu {}
 
 .nav-menu li .sub-nav {
     position: absolute;
@@ -2141,13 +2147,13 @@ footer .copy-right {
 }
 
 .m-nav-show,
-.m-nav-item > a:hover {
+.m-nav-item>a:hover {
     color: #FFF;
     background: rgba(255, 255, 255, .8);
 }
 
-.m-nav-show > a:before,
-.m-nav-item > a:hover:before {
+.m-nav-show>a:before,
+.m-nav-item>a:hover:before {
     opacity: 1;
 }
 
@@ -2161,15 +2167,26 @@ footer .copy-right {
 
 @media only screen and (max-width: 1000px) {
     .brand-logo {
-        width: 230px !important; /* 设置元素宽度为 3 像素，使用 !important 避免被其他 CSS 覆盖 */
-        overflow: hidden !important; /* 超出部分隐藏，使用 !important 避免被其他 CSS 覆盖 */
-        height: 50px!important;
-        overflow: hidden; /* 超出部分隐藏 */
-  
-      }  
-    
-    
+        /* width: 230px !important;
+      
+        overflow: hidden !important;
+      
+        height: 50px !important;
+        overflow: hidden;
+   */
+
+        /* 设置元素宽度为 3 像素，使用 !important 避免被其他 CSS 覆盖 */
+        overflow: hidden !important;
+        /* 超出部分隐藏，使用 !important 避免被其他 CSS 覆盖 */
+        height: 50px !important;
+        overflow: hidden;
+        /* 超出部分隐藏 */
+        width: 100%;
+        min-width: 90px;
+        max-width: 190px;
+
+
     }
-       
-  
-  
+
+
+}
