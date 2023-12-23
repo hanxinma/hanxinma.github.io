@@ -288,15 +288,18 @@ header .nav-transparent {
     box-shadow: none;
 }
 
+
 header nav .brand-span {
     font-size: 1.45rem;
 }
 
 header .brand-logo .logo-img {
-    height: 45px;
+    height: 45px; /* 改logo大小 */
     vertical-align: middle;
     padding-bottom: 6px;
 }
+
+
 
 header .brand-logo .logo-span {
     font-size: 1.6rem;
@@ -306,6 +309,27 @@ header .brand-logo .logo-span {
 header .brand-logo .waves-effect {
     vertical-align: top;
 }
+/* .brand-logo{
+    padding-bottom: 226px;
+} */
+/*修改顶部 logo 的文字垂直对齐为 top，避免默认 middle 看起来偏下*/
+.logo-img{
+
+    vertical-align: top;   
+}
+/*修改顶部 logo 的文字垂直对齐为 top，避免默认 middle 看起来偏下*/
+.waves-effect {
+
+ vertical-align: top;
+
+}
+/*修改顶部 logo 的文字垂直对齐为 top，避免默认 middle 看起来偏下*/
+.logo-span{
+
+vertical-align: top;
+
+}
+
 
 header .button-collapse i {
     font-size: 1.5rem;
