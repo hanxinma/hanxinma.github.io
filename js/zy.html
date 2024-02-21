@@ -134,8 +134,9 @@
       
     </div>
 
- <div  align="center"> <h4> <a href="https://hanxinma.gitee.io/2022/01/01/xue-xi-mu-lu/" style="border-bottom: none;" target="_blank">🗺️视频巧记字元---</a>学习汉心,第一步,把字元偏旁部首练习一遍。第二步，把规则训练做一遍（下面导航里），然后你就学会了。</h4> </div>
+ <div  align="center"> <h4> <a href="https://hanxinma.gitee.io/2022/01/01/xue-xi-mu-lu/" style="border-bottom: none;" target="_blank">🗺️视频巧记字元---</a>学习汉心,第一步,把视频看一遍。第二步，<a href="zigenxuexi.html "style="border-bottom: none;" target="_blank">点击进入-字根快速记忆训练程序训练一下</a></h4> </div>
   <div  align="center"> 也可以不学，如遇到疑惑可用拼音或双拼+oopp查编码来使用。或选择用易学码。</div>
+   <div  align="center">  </div>
     <div class="container">
       <h2 id="question-number"></h2>
       <div class="question-container">
@@ -149,6 +150,7 @@
         <p id="result"></p>
       </div>
       <div class="btn-container">
+      
         <button class="btn" onclick="skipQuestion()">跳过</button>
         <button class="btn" onclick="checkAnswer()">提交</button>
       </div>
@@ -274,7 +276,7 @@
       ];
       var totalQuestions = dataArray.length;
       var currentQuestion = 0;
-      document.getElementById("question-number").innerHTML = "字元，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+      document.getElementById("question-number").innerHTML = "成字测试（字元)，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
       document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
 
 
