@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- 声明，本代码，可以拿去非商业正规分享使用。但是请在你的页面给个龙码官网，友情超级链接，谢谢！-->
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自然双拼小鹤双拼训练程序</title>
+    <link rel="stylesheet" type="text/css" href="longyangshi.css">
+
+</head>
+
+<body>
+    <div class="容器">
+
+        <h1>汉心快打输入法一条龙学习程序</h1>
+        <a>依次学习→</a>
+        <div class="下拉菜单">
+            <div class="下拉按钮" id="按钮">双拼学习</div>
+            <div class="下拉内容">
+                <a href="#" class="link0" onclick="切换按钮文字(this)">自然双拼</a>
+                <a href="#" class="link2" onclick="切换按钮文字(this)">小鹤双拼</a>
+                <a>二选一即可</a>
+                <a>建议练熟才打字</a>
+                <a>双拼的含义是把长拼音</a>
+                <a>拆分两部分放在两个键上</a>
+                <a>比如:chang双拼就是ih</a>
+                <a>这个程序的好处是</a><a>你练熟了，自然就会用双拼了</a>
+            </div>
+        </div>
+
+        <div class="下拉菜单">
+            <div class="下拉按钮" id="按钮2">汉心辅助码学习</div>
+            <div class="下拉内容">
+                <a href="https://www.douyin.com/user/self?modal_id=7309920229553884453" class="link334446" onclick="切换按钮文字2(this)" target="_blank">说明:辅助码就是偏旁部首,用以打字不选字的辅助,看视频介绍</a>
+                <a href="#" class="link3" onclick="切换按钮文字2(this)">汉心辅字根最少量练习（必学）</a>
+                <a href="#" class="link5" onclick="切换按钮文字2(this)">表上全字根（选学）</a>
+                <a href="https://www.bilibili.com/video/BV1Mc411F7eF/" class="link1111" onclick="切换按钮文字2(this)"
+                    target="_blank">规则快看（必学）</a>
+                <a href="./zy.html" class="link011" onclick="切换按钮文字2(this)" target="_blank">常用字拆字（选学）</a>
+                <a href="./gz.html" class="link011" onclick="切换按钮文字2(this)" target="_blank">规则训练（选学-建议学-给毕业证）</a>
+                <a href="./zyi.html" class="link01222" onclick="切换按钮文字2(this)" target="_blank">注意的字（很难-可不学-给专家证）</a>
+                <a href="https://hanxinma.gitee.io/2022/01/01/xue-xi-mu-lu/" class="link01222" onclick="切换按钮文字2(this)" target="_blank">如果有链接打不开，请看文字版</a>
+            </div>
+        </div>
+
+        <!-- <a href="#" class="link99">汉心辅字根练习</a>
+        <a href="#" class="link2">前500字精简</a> -->
+
+
+        <div class="container2">
+            <div id="当前根显示"></div>
+            <div class="错误消息" id="错误消息"></div>
+            <div class="错误消息二" id="错误消息二"></div>
+
+        </div>
+
+        <!-- ---------------------- -->
+
+        <input type="text" id="用户输入" placeholder="按Ctrl显字根,按空格键学习">
+          <div class="错误消息二" id="错误消息二"></div>
+        <div id="空">
+            <div id="加分值"></div>
+
+
+        </div>
+
+        <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
+        <div id="时间" style="display:none;"></div>
+        <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
+        <div class="训练分数" id="训练分数">总分:<span id="总分数">0</span></div>
+
+        <details class="学习和使用说明">
+            <summary>学习和使用说明</summary>
+            <div>
+                <p><b>建议双拼训练,更多功能里开启听写模式,这样效果更好.</b></p>
+                <p>先学双拼,搞不懂选哪个就选第一个就可以了.双拼练熟了.就可以打字了</p>
+                <p style="color: rgb(145, 0, 0); ">然后点击双拼右边的辅助码,把<b>必学</b>练熟你就学会汉心快打</p>
+                <p style="color: gray; ">然后就可以去网盘里下载对应的输入法就可以用了</p>
+                <p>当然你不下载输入法,直接把码表挂到搜狗或手机里也可以用.</p>
+                <p>下载汉心自然或汉心小鹤输入法,具体看网盘里介绍,或官网里或下载包里的使用介绍</p>
+                <p>一</p>
+                <a href="http://yaoxiazai.ysepan.com"  target="_blank"><b>点我去网盘里下载输入法或码表</b></a>
+                <p>或百度搜索汉心码,汉心快打,也可以找到相关资源</p>
+         
+          
+            </div>
+        </details>
+        <details class="所有根">
+            <summary>本段所有字根</summary>
+            <div id="所有根显示">
+            </div>
+        </details>
+
+
+
+        <details class="更多功能">
+            <summary>更多功能</summary>
+            <div>
+                <button id="refreshButton">保存进度或刷新</button>
+                <button id="听写按钮">听写关开</button>
+                <button id="删除当前根按钮">删除当前根-</button>
+                <button id="打开文件按钮">上传txt文件学习</button>
+                <button onclick="shuffleList()">打乱字根顺序</button>
+                <button id="关闭按钮" onclick="切换答案消失状态()">可关答案消失</button>
+                <button id="关闭动画" onclick="切换字根动画状态()">可关字根动画</button>
+                <button id="toggleButton">自显模式</button>
+                <button id="保存按钮">下载错误次数</button>
+                <button id="加到特训">加到特训=</button>
+                <button id="特训" onclick="特训清空()">特训清空</button>
+                <button onclick="添加一组当前根()">加一组到特训7</button>
+                <button onclick="下载特训()">下载特训</button>
+                <button onclick="后移到最后()">后移到最后0</button>
+                <button onclick="后移到前()">最后移到第一9</button>
+                <button id="播放控制按钮" onclick="切换播放状态()">鼓掌关闭</button>
+                <button id="竞赛模式" onclick="竞赛模式状态()">竞赛模式</button>
+                <button onclick="showDialog()">字根后移位数</button>
+                <div id="dialog" style="display: none;">
+                    <input type="text" id="inputNumber" placeholder="字根后移位数">例:填写200,那答对就后移200位,方便快练一遍.复位(刷新页面)
+                    <button onclick="自定义位数()">确认</button>
+                </div>
+
+
+
+                <div id="学习进度"></div>
+
+
+                <div id="当前根显示2"></div>
+                <input type="text" id="用户输入特训" placeholder="加特训后点这里输入">
+
+
+                <!-- <button id="启用空格" onclick="切换提交模式()">空格提交</button> -->
+                <p>加到特训(快捷键=号),删除当前根(快捷键-号),第一移到最后(快捷键0键).技巧,下载错误,编辑,上传txt强训.</p>
+                <p>电脑端关闭自动保存进度,手机端需要刷新保存进度.总分不乱点会累加</p>
+                <p>可以把老是遗忘加到特训,和完全记得,字根删了,以便加快进程.</p>
+                <p>如果拼音读音不准,属正常,因为语音只能读汉字</p>
+                <p>打开本地txt文件学习-这个功能,可以方便你自己编写语音提示进行训练,也可以把你不熟悉的音节放进去训练.</p>
+
+                <p>txt里文本格式是,文字+tab符+字母+tab符+语音提示中文,例如下</p>
+         
+
+            </div>
+        </details>
+        <!-- <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
+        <div class="训练分数" id="训练分数">总分:<span id="总分数">0</span></div> -->
+
+
+
+
+
+
+        <div class="container">
+            <div class="toggle-button" onclick="切换语音()">
+                <div class="slider"></div>
+            </div>
+            <div>语音</div>
+        </div>
+
+
+        <div class="container">
+            <div class="toggle-button active" onclick="切换音效()">
+                <!-- toggle-button active-->
+                <div class="slider"></div>
+            </div>
+            <div>音效</div>
+        </div>
+
+
+    </div>
+    <a href="https://hanxinma.gitee.io/" target="_blank"><b>汉心快打官网首页</b> </a>
+    <a href="https://hanxinma.gitee.io/longma" target="_blank">友情连接: 龙码 </a>
+    <a href="https://rime.im/" target="_blank">小狼毫 </a>
+    <a href="https://hanxinma.gitee.io/" target="_blank">汉心快打 </a>
+    <a href="https://hanxinma.gitee.io/yixue" target="_blank">易学码 </a>
+    <a href="https://hanxinma.gitee.io/zirj" target="_blank">自然音形 </a>
+    <!-- 声明，本代码，可以拿去非商业正规分享使用。但是请在你的页面给个龙码官网，友情超级链接，或保留上方龙码链接。谢谢！-->
+
+
+    <script src="longma.js"></script>
+    <script src="xunlianz.js"></script>
+
+</body>
+
+</html>
