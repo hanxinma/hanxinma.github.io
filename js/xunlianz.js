@@ -1668,6 +1668,8 @@ let 计时器 = null;
 let 竞赛模式激活 = false;
 
 document.getElementById('竞赛模式').onclick = function () {
+        用户输入 = 1;
+        检查答案() ;
         竞赛模式激活 = !竞赛模式激活;
         if (竞赛模式激活) {
                 // 隐藏包含所有字根的<details>元素
