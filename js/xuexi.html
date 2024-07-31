@@ -20,7 +20,8 @@
             <div class="下拉内容">
                 <a href="#" class="link0" onclick="切换按钮文字(this)">自然双拼</a>
                 <a href="#" class="link2" onclick="切换按钮文字(this)">小鹤双拼</a>
-                <a  style="color: red;">上方二选一即可</a>
+                <a href="#" class="link3" onclick="showGreeting()">常用拼音</a>
+                <a  style="color: red;">上方三选一即可</a>
                 <a>建议练熟才打字</a>
                 <a>双拼的含义是把长拼音</a>
                 <a>拆分两部分放在两个键上</a>
@@ -179,6 +180,12 @@
 
     <script src="longma.js"></script>
     <script src="xunlianz.js"></script>
+    <script>
+        // 定义一个函数，用于在点击链接时弹出弹窗
+        function showGreeting() {
+            alert("常用拼音，就是全拼，不用学，直接学后面的辅助码部分就可以了");
+        }
+    </script>
 
 </body>
 
