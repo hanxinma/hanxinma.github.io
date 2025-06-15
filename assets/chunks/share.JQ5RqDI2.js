@@ -1,1 +1,0 @@
-import{z as o}from"./framework.B8UBlkKL.js";const r={},e={};async function i(t){if(t in e)return e[t];let a=t;t[0]==="/"&&(a=o(t));try{const n=await(await fetch(a)).json();return e[t]=n,n}catch(c){throw c instanceof Error&&alert(`无法下载或解析《${t}》文件：${c.cause}`),c}}export{r as c,i as f};
