@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+  <style>
+    .container {
+      position: relative;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1000px;
+      height: 563px;
+    }
+    
+    .text {
+      position: absolute;
+      top: 59%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 35px;
+      color: #005b99; /* 设置为红色 */
+    }
+    
+        .text2 {
+      position: absolute;
+      top: 82%;
+      left: 77%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      color: #005b99; /* 设置为红色 */
+    }
+    
+    
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="biye.jpg" alt="毕业照片">
+    <div class="text">
+<span>姓名:</span><span id="name"></span>：得分<span id="score"></span><span>分</span>
+    </div>
+
+    <div class="text2" id="date"></div>
+
+  </div>
+
+  <script>
+    let name = prompt("请输入您的姓名：");
+    let score = 95; // 这里假设得分是6
+
+    document.getElementById("name").textContent = name;
+    document.getElementById("score").textContent = score;
+    
+    
+     let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = currentDate.getMonth() + 1;
+    let day = currentDate.getDate();
+    let dateString = year + "年" + month + "月" + day + "日";
+    document.getElementById("date").textContent = "时间：" + dateString;
+  </script>
+</body>
+</html>

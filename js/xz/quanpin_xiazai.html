@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>汉心码下载</title>
+  <style>
+    body {
+
+      background-image: linear-gradient(to right, #4cbf30 -30%, #0f9d58);
+
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+h1 {
+  text-align: center;
+  font-size: 5em;
+  margin: 0.5em;
+  color: #ffffff;
+  font-weight: 400;
+  letter-spacing: 15px; /* 设置字间距为2px */
+}
+    h2 {
+      font-size: 1.2em;
+      color: #ffffff;
+      /* 设置超链接颜色为蓝色 */
+      margin: 0.5em;
+      font-weight: 400;
+      /* 设置字体为细体 */
+    }
+
+    .links {
+      color: white;
+    }
+    .changgui {
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+      /* 去掉超链接下划线 */
+      color: #ffffff;
+      /* 设置超链接颜色为蓝色 */
+      margin: 0 0.5em;
+      /* 添加超链接之间的间距 */
+
+
+
+
+    }
+
+    @media screen and (min-width: 1200px) {
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .link {
+    flex: 1 0 auto;
+  }
+}
+@media screen and (max-width:  1200px) {
+  .links {
+    display: block;
+    font-size: 38px;
+  }
+
+  .link {
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 128px;
+  }
+
+  .changgui {
+      color: white;
+      font-size: 28px;
+      width: 500px;
+    }
+
+}
+
+details {
+  color: white;
+        width: 500px;
+       
+        margin-bottom: 20px;
+        padding: 0;
+      }
+  </style>
+</head>
+
+<body>
+  <h1>汉心全拼版下载</h1>
+
+
+  <div class="links">
+
+
+ 
+    
+
+<div class="link"><h2><a href="http://yaoxiazai.ysepan.com" target="_blank">网盘内下载</a></h2></div>
+<div class="link"><h2><a href="./bei4yong4xia4zai3.html" target="_blank">备用下载地址</a></h2></div>
+<div class="link"><h2><a href="https://gitlab.com/hanxinma/hanxin/-/raw/main/%E5%85%A8%E6%8B%BC%E6%B1%89%E5%BF%83%E7%A0%81/%E6%B1%89%E5%BF%83%E5%85%A8%E6%8B%BC%E7%A0%81%E8%A1%A8.zip?ref_type=heads" target="_blank">码表直接下载</a></h2></div>
+
+
+
+
+  </div>
+
+  <div class="changgui"><br/>
+    汉心全拼版在网盘内文件夹路径提示<br/>
+    <hr>
+    ---------------↓全拼-常用拼音下载↓---------------<br/>
+⭐拼音\全拼版汉心辅助码
+
+  
+ <br/>  <hr>   
+ 【电脑端】建议用这个全拼版。这个安装比较简单<br/>
+ A.💻搜狗配置汉心输入法<br/>
+ <hr> 
+ 【手机端】下载码表导入手心输入法中使用，<br/>
+ 或苹果用仓输入法平台，安卓用同文平台导入汉心电脑版小狼毫部署包即可使用。<br/>
+  <a href="https://hanxinma.gitlab.io/" style="display: flex; align-items: center; justify-content: center; margin: 0 auto;" >回首页</a> 
+  </div>
+
+  <div class="changgui">
+    <br/>
+
+
+
+  </div>
+
+</body>
+<script>
+  window.onload = function () {
+    const h2Elements = document.querySelectorAll('h2');
+    h2Elements.forEach((element, index) => {
+      setTimeout(() => {
+        breathe(element);
+      }, index * 500); // 设置不同的初始延迟，例如每个元素之间相隔500毫秒
+    });
+  }
+
+  function breathe(element) {
+    let opacity = 1;
+    let direction = -0.05;
+
+    setInterval(() => {
+      opacity += direction;
+
+      if (opacity <= 0.1 || opacity >= 1) {
+        direction = -direction;
+      }
+
+      element.style.opacity = opacity;
+    }, 100);
+  }
+
+</script>
+
+</html>

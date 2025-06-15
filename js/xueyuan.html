@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <style>
+    body {
+      background-image: url("https://hanxinma.gitlab.io/medias/img2/%E6%B1%89%E5%BF%83%E5%A4%A7%E5%AD%A6.jpg");
+      background-size: 800px 330px; /* 背景图片的宽度和高度 */
+      background-position: top center;
+      background-repeat: no-repeat; /* 禁止图片重复 */
+      height: 800px;
+    }
+    
+    .container {
+      text-align: center;
+      margin-top: 375px;
+    }
+    
+    .input {
+      margin-bottom: 20px;
+    }
+  </style>
+  
+  <script>
+    function redirectToBaidu() {
+      var input = document.getElementById("inputText").value;
+      if (input === "1001") {
+        window.location.href = "https://hanxinma.gitlab.io/js/zy.html";
+      }
+    }
+    function handleInputKeyPress(event) {
+      if (event.key === "Enter") {
+        redirectToBaidu();
+      }
+    }
+    function redirectToBaidu2() {
+      var input = document.getElementById("inputText2").value;
+      if (input === "1002") {
+        window.location.href = "https://hanxinma.gitlab.io/js/gz.html";
+      }
+    }
+    function handleInputKeyPress2(event) {
+      if (event.key === "Enter") {
+        redirectToBaidu2();
+      }
+    }
+    function redirectToBaidu3() {
+      var input = document.getElementById("inputText3").value;
+      if (input === "1003") {
+        window.location.href = "https://hanxinma.gitlab.io/js/zyi.html";
+      }
+    }
+
+    function handleInputKeyPress3(event) {
+      if (event.key === "Enter") {
+        redirectToBaidu3();
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="input">
+      <input type="text" id="inputText" placeholder="填写学习班级号的数字" onKeyDown="handleInputKeyPress(event)">
+      <button onClick="redirectToBaidu()">拼音形码班第一学期,汉心码,字根课,网络班级教室在,1001号</button>
+    </br>这个最基本的,记忆字根用的,学完后会颁发奖状，学完这个基本会用了。
+    </div>
+    <div class="input">
+      <input type="text" id="inputText2" placeholder="填写学习班级号的数字" onKeyDown="handleInputKeyPress2(event)">
+      <button onClick="redirectToBaidu2()">拼音形码班第二学期,汉心码,规则理论课,网络班级教室在,1002号</button>
+    </br> 这个是学习规则的,学完会颁发毕业证。学完这个，就等于学会了。
+    </div>
+    <div class="input">
+      <input type="text" id="inputText3" placeholder="填写学习班级号的数字" onKeyDown="handleInputKeyPress3(event)">
+      <button onClick="redirectToBaidu3()">拼音形码班第三学期,汉心码,注意的字研究生课,网络班级教室在,1003号</button>
+    </br> 这个很难，一般也不用学，喜欢研究的可以学。这个学完会成专家，会颁发专家证。
+    </div>
+    
+    
+<div>
+</br></br></br>
+
+
+<iframe src="https://hanxinma.gitlab.io/2023/09/01/han-xin-ma-xue-xi-xi-tong/" width="800" height="600"></iframe>
+  </div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>汉心码辅助码在线查询</title>
+
+
+
+    <!--<subtitle>汉心码学习训练系统 - 提高你的中文打字速度</subtitle>-->
+    <meta name="keywords" content="汉心码, 辅助码查询, 自然辅助码查询，小雨点辅助码查询，快手辅助码查询，小鹤辅助码查询，汉心, 汉心码官网,拼音打字如何变快,拼音打字如何不用选字">
+  <style>
+	#tixin {
+			color: #05abd4;
+			margin-top: 20px;
+		}
+        #div {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+
+    .myDiv {
+      background-color: #05abd4;
+      height: 300px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      padding: 40px;
+      color: #fff;
+      text-align: center;
+    }
+    #searchTool {
+      background-color: #e4980c;
+      height: calc(100% - 100px);
+    }
+    .result-item {
+      display: flex;
+      align-items: center;
+      margin-top: 50px;
+    }
+    .result-item:first-child {
+      font-weight: bold;
+    }
+    .result-item span {
+      margin-right: 10px;
+    }
+    table {
+      border-collapse: collapse;
+     
+       font-family: SimSun, STSong, "宋体", sans-serif;
+        margin: 50px 10px 0;
+    }
+    td, th {
+      border: 1px solid black;
+      padding: 5px;
+    }
+
+    #search {
+
+    margin-right: 10px;
+    width: 300px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    }
+
+    #search-btn {
+    width: 80px;
+    height: 43px;
+    line-height: 30px; /* 修改为你需要的高度 */
+    border: none;
+    background-color: #ffffff;
+    color: rgb(22, 22, 22);
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    }
+    @media screen and (max-width: 768px) {
+      .myDiv {
+        flex-direction: column;
+      }
+      #search, #search-btn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      #search-btn {
+        width: 100%;
+      }
+      .myDiv {
+        padding: 10px;
+      }
+    }
+    
+    a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+header {
+
+  color: #fff;
+
+  font-size: 30px;
+}
+
+main {
+    color: #fff;
+  padding: 20px;
+} 
+
+     @media only screen and (max-width: 1000px) {
+            /* 在屏幕宽度小于等于 600px 时应用下面的样式 */
+
+      
+       #search {
+            width: 76%;
+            margin-top: 20px;
+        }
+
+        #search-btn {
+            width: 80%;
+            color: gray;
+        }
+        
+        header {
+			padding-top: 70px; }
+	    .myDiv {
+   
+      height: 500px;		
+  }
+			
+          }
+  </style>
+
+</head>
+<body>
+  <div class="myDiv">
+    <div>
+    <div>
+    <header>
+      
+      <h1>汉心码查询</h1>
+    
+    </header>
+    
+   
+
+    </div>
+
+    <input type="text" id="search">
+    
+
+    	<button id="search-btn" onclick="showTip()">查询</button>
+
+
+    <main>
+        <p><a href="https://hanxinma.gitlab.io" >去首页</a></p>
+    </main>
+  </div></div>
+  <div id="tixin" style="display: none;"></div>
+   <div style="margin-top: 20px; color: gray;    padding-left: 20px;            padding-right: 20px;" >请输入一个汉字检索。提醒:以字母为准，字根部首是用户提供的,没有仔细校对，可能会有错的。发现错误可以yaoxiazai.yespan.com导航上留言给我们<br>汉心码可以在输入法里直接用拼音+oopp直接可查编码. Ctrl+D可以收藏网页. 网址hanxinma.gitlab.io/js/hxcx<br>如果对字的拆法有疑问,请仔细阅读规则,或可以到后面这个检索答案<a href=" https://hanxinma.gitlab.io/js/weishenme.html" style="color: #05abd4;">搜为什么这样取</a></div>  
+  
+              <div style="margin-top: 10px; color: gray;" >以字母为准,字根部首是用户编写,仅供参考 </div>
+    
+   
+  <div id="result"></div><br/>
+ <script src="./汉心码查码.js"></script>
+	<script>
+		function showTip() {
+			// 获取 #tixin 元素
+			var tixinElement = document.getElementById("tixin");
+
+			// 设置提示信息
+			tixinElement.innerHTML = "看下方";
+
+			// 显示 #tixin 元素
+			tixinElement.style.display = "block";
+		}
+	</script>
+</body>
+</html>

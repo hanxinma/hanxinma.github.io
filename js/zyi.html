@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>汉心码学习训练系统</title>
+    <!--<subtitle>汉心码学习训练系统 - 提高你的中文打字速度</subtitle>-->
+    <meta name="keywords" content="汉心码, 辅助码, 汉心, 汉心码官网,拼音打字如何变快,拼音打字如何不用选字">
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background: linear-gradient(to right, #4cbf30 -30%, #0f9d58);
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        color: #fff;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #343a40;
+      }
+      .question-container {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      input[type="text"] {
+        width: 96%;
+        padding: 10px;
+        font-size: 20px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.2s ease-in-out;
+      }
+      input[type="text"]:focus {
+        border-color: #0f9d58;
+      }
+      .invalid-feedback {
+        display: none;
+        color: #dc3545;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      .result-container {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 30px;
+      }
+      .btn-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+      .btn {
+        width: 48%;
+        padding: 10px;
+        font-size: 20px;
+        background-color: #ffffff;
+        color: rgb(24, 24, 24);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        border: 1px solid rgb(233, 232, 232);
+        box-shadow: 1px 1px 5px rgba(136, 136, 136, 0.2);
+
+
+  
+      }
+      .btn:hover {
+        background-color: #12b466;
+
+      }
+      .footer {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 30px;
+      }
+      .welcome {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 20px;
+      }
+      .greeting {
+        margin-top: 20px;
+        font-size: 24px;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: #0f9d58;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #da0024;
+        border-bottom: none;
+      }
+      #question-number, #result {
+        color: #0f9d58;
+      }
+      .daohang {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 18px;
+      }
+      .xiaozi {
+        width: 666px;
+        margin: 0 auto;
+        text-align: center;
+        color: gray;
+        font-size: 14px;
+      }
+    </style>
+
+
+  </head>
+  <body>
+    <div class="header">
+      <h1>汉心码研究生课</h1>
+    </div>
+ <div  align="center"> <h4><a href="https://hanxinma.gitlab.io/js/weishenme.html" style="border-bottom: none;" target="_blank">解题和答案---</a>注意的字-很难,但是满分可以获得专家证书</h4></div>
+    <div class="container">
+      <h2 id="question-number"></h2>
+      <div class="question-container">
+        <p id="question"></p>
+      </div>
+      <div class="answer-container">
+        <input type="text" id="answer" placeholder="请输入答案" onkeydown="if(event.keyCode===13) checkAnswer()">
+        <div class="invalid-feedback">请输入答案</div>
+      </div>
+      <div class="result-container">
+        <p id="result"></p>
+      </div>
+      <div class="btn-container">
+        <button class="btn" onclick="skipQuestion()">跳过</button>
+        <button class="btn" onclick="checkAnswer()">提交</button>
+      </div>
+    </div>
+    <div class="xiaozi">
+      <p>训练系统可以让你更快更好的掌握汉心码，建议字根训练和规则训练要做一下，注意的字，不一定要做，那个很难</p>
+    </div>
+    <div class="daohang">
+      <a href="https://hanxinma.gitlab.io/" style="border-bottom: none;" target="_blank">去首页</a>
+      <a href="./zy.html" style="border-bottom: none;" target="_blank">字元训练</a>
+      <a href="./gz.html" style="border-bottom: none;" target="_blank">规则训练</a>
+      <a href="./zyi.html" style="border-bottom: none;" target="_blank">注意的字训练</a>
+      <a href="https://hanxinma.gitlab.io/2023/03/01/pin-yin-han-xin-yong-fa/" style="border-bottom: none;" target="_blank"><strong>全拼版学习</strong></a>
+      <a href="    https://hanxinma.gitlab.io/2023/03/30/shuang-pin-han-xin-de-yong-fa/" style="border-bottom: none;" target="_blank">双拼版学习</a>
+            <a href="https://support.qq.com/product/607360" style="border-bottom: none;" target="_blank">学习交流频道</a>
+    </div>
+
+    <script>
+      var dataArray = [
+
+
+
+"窆<这个字首尾是哪两个形码，小写字母,gf,取分块区域，所以上面不是多笔画",
+"朵<这个字首尾是哪两个形码，小写字母,jl,为森么不取丿.那不是变笔画吗.是变笔画.但是汉心对这个进行了强制定义为几，可以取几.也是为了直观.",
+"方<这个字首尾是哪两个形码，小写字母,wp,注意尾笔顺是什么",
+"促<这个字首尾是哪两个形码，小写字母,rr,注意尾笔字元",
+"巷<这个字首尾是哪两个形码，小写字母,cv,注意巳，是一样的，字根上有两个字根",
+"飓<这个字首尾是哪两个形码，小写字母,fb,注意风，风的几平移不出",
+"飘<这个字首尾是哪两个形码，小写字母,xx,注意尾不取风，因为取小",
+"欧<这个字首尾是哪两个形码，小写字母,kr,首不取区，因为取小",
+"呕<这个字首尾是哪两个形码，小写字母,kx,注意尾部不取区",
+"函<这个字首尾是哪两个形码，小写字母,la,注意中间可以取成字",
+"盈<这个字首尾是哪两个形码，小写字母,nm,不明显，注意上面是什么",
+"拯<这个字首尾是哪两个形码，小写字母,fi,注意右边那个字能认识",
+"爽<这个字首尾是哪两个形码，小写字母,an,大平移不出，所以不取大.",
+"基<这个字首尾是哪两个形码，小写字母,qt,这个需要特别注意.可以取成字，也不取艹，因为不直观",
+"风<这个字首尾是哪两个形码，小写字母,jx,小钩大钩是什么....",
+"哥<这个字首尾是哪两个形码，小写字母,ak,变笔画不取",
+"邦<这个字首尾是哪两个形码，小写字母,ae,变笔画不取",
+"叛<这个字首尾是哪两个形码，小写字母,dy,为森么不取半，因为汉心是对变笔画不取.",
+"龙<这个字首尾是哪两个形码，小写字母,ab,注意，尾笔是丶，但是这个有强制定义.这个类型的不取丶",
+"拢<这个字首尾是哪两个形码，小写字母,fb,注意，尾笔是丶，但是这个有强制定义.这个类型的不取丶",
+"拨<这个字首尾是哪两个形码，小写字母,fy,，尾笔是丶，但是这个有强制定义.这个类型的不取丶",
+"拔<这个字首尾是哪两个形码，小写字母,fy,，尾笔是丶，但是这个有强制定义.这个类型的不取丶",
+"左<这个字首尾是哪两个形码，小写字母,ag,为森么首码不取十，因为汉心对变笔画是不取的.十的第二笔从丨变成丿了.所以是不取十",
+"青<这个字首尾是哪两个形码，小写字母,ao,没那个字根，也取不了成字....",
+"熬<这个字首尾是哪两个形码，小写字母,ae,小字取不了.就取大字",
+"耕<这个字首尾是哪两个形码，小写字母,fj,这个需要特意记一下，不明显.",
+"尖<这个字首尾是哪两个形码，小写字母,ad,上面不是小，变笔画不取",
+"尪<这个字首尾是哪两个形码，小写字母,aw,那不是九",
+"切<这个字首尾是哪两个形码，小写字母,qd,大钩小钩是同笔画.所以左边那个是七",
+"规<这个字首尾是哪两个形码，小写字母,fj,为森么还取夫，这难道不是变笔画不取吗.汉心还有条规则是.捺点是一类.所以这不是变笔画",
+"秦<这个字首尾是哪两个形码，小写字母,ah,啥都取不了就取笔画",
+"鸠<这个字首尾是哪两个形码，小写字母,jn,为森么不取折，那不是变笔画吗.汉心有条规则，是大钩小钩是一样的.所以这不属于变笔画",
+"颜<这个字首尾是哪两个形码，小写字母,wr,这种类型的字优先取亠",
+"拜<这个字首尾是哪两个形码，小写字母,pf,变笔画不取，不能取手，尾部仔细看可以取什么，小字",
+"偶<这个字首尾是哪两个形码，小写字母,rd,尾是冷僻字",
+"咸<这个字首尾是哪两个形码，小写字母,kg,为森么不取丿或者一，因为汉心对含戈这个类型的字有强制定义，就是先取内部尾，然后取戈",
+"感<这个字首尾是哪两个形码，小写字母,kx,首码容易取咸，但是想想，其实不是",
+"或<这个字首尾是哪两个形码，小写字母,ag,为森么不取口，因为，汉心对这样类型的字有强制定义，先取内部尾部，",
+"卫<这个字首尾是哪两个形码，小写字母,ea,卩在上面有那个字根一模一样的",
+"民<这个字首尾是哪两个形码，小写字母,vv,要理解只要是折，都是那个东西",
+"擒<这个字首尾是哪两个形码，小写字母,fl,笔画不优先，取成字",
+"虤<这个字首尾是哪两个形码，小写字母,hj,小勾大勾是一样的，所以",
+"麸<这个字首尾是哪两个形码，小写字母,mf,点捺是同笔画所以那个可以是",
+"走<这个字首尾是哪两个形码，小写字母,tr,不能先取十，优先土，土字元表上有，分块看.也是土",
+"注<这个字首尾是哪两个形码，小写字母,dv,为森么不是土，因为表上有王字元.大字元优先.然后字元遇到单笔画.那不是说小字元吗.小字元，不是最小字元",
+"槐<这个字首尾是哪两个形码，小写字母,lv,尾可以取小字元要取小",
+"插<这个字首尾是哪两个形码，小写字母,fj,那个被穿插是定义成看有没有被彻底分开的.所以",
+"仓<这个字首尾是哪两个形码，小写字母,rv,，就是这个字元",
+"农<这个字首尾是哪两个形码，小写字母,dh,注意这个字元容易被忽视",
+"港<这个字首尾是哪两个形码，小写字母,dv,巳是一样的",
+"炮<这个字首尾是哪两个形码，小写字母,hv,不取包，取小字元，有那个字元，有灰色延笔画说明，也有巳这个字根",
+"路<这个字首尾是哪两个形码，小写字母,zk,首码为森么不取口.因为汉心是表内大字元优先取的哦",
+"婞<这个字首尾是哪两个形码，小写字母,nu,尾部取小，遇到多笔画了",
+"蝻<这个字首尾是哪两个形码，小写字母,iu,为森么不是南，因为汉心取小字元的.那为森么不是干.干也不是小字.不是说单笔画取组合体的码.但是还有一个规则遇到多笔画怎么样...",
+"羽<这个字首尾是哪两个形码，小写字母,xx,字元遇到单笔画.所以，不能取冫",
+"均<这个字首尾是哪两个形码，小写字母,td,为森么不就均或冫.取小也不对取大也不对.那要取什么.汉心最小字元遇到单笔画，就怎么样...",
+"乘<这个字首尾是哪两个形码，小写字母,qn,为森么不取丿.这个的确不直观.仔细看.汉心不到不得以，不会取笔画的.那为森么不取禾，因为取小字优先",
+"重<这个字首尾是哪两个形码，小写字母,pa,为森么不是土，因为有穿插不取",
+"兆<这个字首尾是哪两个形码，小写字母,ed,先取首笔字块区域.不但完全按照笔顺.是首笔块区域.区域.所以是，，，，",
+"具<这个字首尾是哪两个形码，小写字母,ab,且不是，，，，",
+"扫<这个字首尾是哪两个形码，小写字母,fa,彐不是字元",
+"带<这个字首尾是哪两个形码，小写字母,aj,不是艹",
+"眷<这个字首尾是哪两个形码，小写字母,dm,注意这种类型的该字母取",
+"任<这个字首尾是哪两个形码，小写字母,rr,注意，单笔画要组合",
+"告<这个字首尾是哪两个形码，小写字母,pk,汉心没有上面这个字元",
+"貌<这个字首尾是哪两个形码，小写字母,pe,注意这种类型的改怎么取",
+"卉<这个字首尾是哪两个形码，小写字母,ua,注意尾部汉心没有这个字元",
+"余<这个字首尾是哪两个形码，小写字母,rx,注意尾部这个字元是在什么键上",
+"追<这个字首尾是哪两个形码，小写字母,za,注意右边那个类型改怎么取",
+"肉<这个字首尾是哪两个形码，小写字母,nr,优先取内，内基本可以平移出内",
+"死<这个字首尾是哪两个形码，小写字母,db,延伸笔画还取，所以",
+"钱<这个字首尾是哪两个形码，小写字母,jg,右边把它当成什么字....",
+"虎<这个字首尾是哪两个形码，小写字母,aj,注意这种类型的该怎么取",
+"某<这个字首尾是哪两个形码，小写字母,gl,注意首字的读音是什么",
+"律<这个字首尾是哪两个形码，小写字母,ra,注意右边的那个字该怎么取",
+"象<这个字首尾是哪两个形码，小写字母,en,注意这个类型尾部该怎么取",
+"家<这个字首尾是哪两个形码，小写字母,gn,尾部是冷僻字",
+"流<这个字首尾是哪两个形码，小写字母,dv,尾部也啥都取不了",
+"汤<这个字首尾是哪两个形码，小写字母,dp,尾部取不了字",
+"觏<这个字首尾是哪两个形码，小写字母,aj,首部，不是艹",
+"即<这个字首尾是哪两个形码，小写字母,ve,这种类型注意怎么取",
+"既<这个字首尾是哪两个形码，小写字母,vv,没有左边那个字元",
+"译<这个字首尾是哪两个形码，小写字母,ya,尾部也不是丰",
+"登<这个字首尾是哪两个形码，小写字母,vd,首部注意怎么取",
+"然<这个字首尾是哪两个形码，小写字母,pe,首部是没有那个字元的，注意怎么取",
+"谁<这个字首尾是哪两个形码，小写字母,ya,汉心也没有右边那个字元.汉心是尽量让字根变的很少，所以不到不得以，不会加字根上去，特别难认的",
+"惟<这个字首尾是哪两个形码，小写字母,xa,同样，那个难认的，当冷僻字处理",
+"句<这个字首尾是哪两个形码，小写字母,pk,注意这种类型的怎么取",
+"下<这个字首尾是哪两个形码，小写字母,ab,注意尾部怎么取",
+"逆<这个字首尾是哪两个形码，小写字母,zp,注意尾部怎么取",
+"贯<这个字首尾是哪两个形码，小写字母,vr,注意首部怎么取",
+"眉<这个字首尾是哪两个形码，小写字母,vm,注意这个首部怎么取，汉心是没这个字元的",
+"惑<这个字首尾是哪两个形码，小写字母,hx,因为首码是笔画.笔画不优先，大字优先.所以是...",
+"蹙<这个字首尾是哪两个形码，小写字母,xr,这种类型的字首码都是....含个戈的...",
+"憨<这个字首尾是哪两个形码，小写字母,gx,笔画不优先取.那取大字",
+"静<这个字首尾是哪两个形码，小写字母,qv,没这个字根，也不取笔画.那只能取大字.尾不尾部也一样",
+"勖<这个字首尾是哪两个形码，小写字母,ml,注意这个字，上面像日，其实仔细看.那不是日.",
+"戤<这个字首尾是哪两个形码，小写字母,ng,是取小",
+"斟<这个字首尾是哪两个形码，小写字母,uu,不是其，因为遇到单笔画就怎么样,斗取最小字元",
+"鹎<这个字首尾是哪两个形码，小写字母,bn,卑，是一个可以认识的字，要注意卑鄙...",
+"镧<这个字首尾是哪两个形码，小写字母,jj,请柬，这个字也能认识，需要注意",
+"缱<这个字首尾是哪两个形码，小写字母,sq,尾取笔画，不优先，然后就要取大字.因为小字取不了，只能取大字",
+"蔬<这个字首尾是哪两个形码，小写字母,cu,尾码小字取不了，不优先笔画",
+"燧<这个字首尾是哪两个形码，小写字母,hs,不优先笔画",
+"豫<这个字首尾是哪两个形码，小写字母,vx,没那个字根，也不优先笔画",
+"腋<这个字首尾是哪两个形码，小写字母,oy,不优先笔画",
+"榉<这个字首尾是哪两个形码，小写字母,lj,不优先笔画",
+"苹<这个字首尾是哪两个形码，小写字母,cu,平，其实，可以取最小字元，很多有十字的字根，都取十.比如，斗，平.除非是土，土在字根表上",
+
+
+
+
+      ];
+      var totalQuestions = dataArray.length;
+      var currentQuestion = 0;
+      document.getElementById("question-number").innerHTML = "注意的字，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+      document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
+
+   
+   
+   
+   
+var correctCount = 0; // 记录答对的题目数量
+var firstAttemptCorrectCount = 0; // 记录第一次就答对的题目数量
+var correctAnswers = {}; // 记录每个问题的正确答案，格式为 {question: answer}
+var isFirstAttempt = true; // 标记是否是第一次尝试回答
+
+function checkAnswer() {
+    var input = document.getElementById("answer");
+    var feedback = input.nextElementSibling;
+    if (input.value.trim() === "") { // 如果输入的答案为空
+        input.classList.add("is-invalid"); // 添加is-invalid类
+        feedback.style.display = "block"; // 显示错误提示
+    } else {
+        input.classList.remove("is-invalid"); // 移除is-invalid类
+        feedback.style.display = "none"; // 隐藏错误提示
+        var currentQuestionText = dataArray[currentQuestion].split(",")[0];
+        var correctAnswer = dataArray[currentQuestion].split(",")[1];
+        if (input.value === correctAnswer && !correctAnswers.hasOwnProperty(currentQuestionText)) {
+            document.getElementById("result").innerHTML = "恭喜你答对了！";
+            setTimeout(function(){
+                document.getElementById("result").innerHTML = "";
+            }, 1000); // 1000毫秒 = 1秒钟
+
+            correctCount++; // 答对的题目数量加1
+
+            if (isFirstAttempt) {
+                firstAttemptCorrectCount++; // 第一次就答对的题目数量加1
+                isFirstAttempt = false; // 将标记设为false，表示已经回答过一次
+            }
+
+            correctAnswers[currentQuestionText] = correctAnswer; // 将本题答案加入已答对的答案列表
+
+            currentQuestion++;
+            if (currentQuestion < dataArray.length) {
+                document.getElementById("question-number").innerHTML = "规则，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+                document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
+                input.value = "";
+                isFirstAttempt = true; // 进入下一题时重置标记为true，表示第一次尝试回答
+            } else {
+                document.getElementById("question-number").innerHTML = "完成！";
+                document.getElementById("answer").style.display = "none";
+                document.getElementById("result").style.display = "none";
+                document.getElementById("question-number").style.display = "none";
+                document.getElementsByClassName("btn")[0].style.display = "none";
+                document.getElementsByClassName("btn")[1].style.width = "100%";
+                
+                
+          var multipliedCount = Math.floor(firstAttemptCorrectCount * 0.93);
+               var message;
+
+
+if (multipliedCount === 100) {
+  message = "恭喜您,获得汉心码专家认证，只要对每个字都搞明白为什么这样取,你就是汉心码的专家了,特此发证书以示鼓励,点<a href='biye/biyezj.html'>这里领取</a>！";
+
+} else {
+  message = "你已经很优秀了,只是这里的题目很难,大部分答对了就可以了.但是专家证书是需要得满分才能有。";
+}
+
+
+document.getElementById("question").innerHTML =  "答对的[得分]：" + multipliedCount +"分。"+message;
+input.style.display = "none";
+
+
+
+            }
+        } else if (correctAnswers.hasOwnProperty(currentQuestionText)) {
+            // 如果本题已经回答正确过了，不记录再次回答正确的情况
+            document.getElementById("result").innerHTML = "你已经回答正确过了！请回答下一题。";
+        } else {
+            document.getElementById("result").innerHTML = dataArray[currentQuestion].split(",")[2];
+            isFirstAttempt = false; // 如果第一次回答错误，将标记设为false，表示已经尝试过一次
+        }
+    }
+}
+
+
+      function skipQuestion() {
+        currentQuestion++;
+        if (currentQuestion < dataArray.length) {
+          document.getElementById("question-number").innerHTML = "注意的字，第 " + (currentQuestion + 1) + " 题 / 共 " + totalQuestions + " 题";
+          document.getElementById("question").innerHTML = dataArray[currentQuestion].split(",")[0];
+          document.getElementById("answer").value = "";
+          document.getElementById("result").innerHTML = "";
+        } else {
+          document.getElementById("question-number").innerHTML = "完成！";
+          document.getElementById("answer").style.display = "none";
+          document.getElementById("result").style.display = "none";
+          document.getElementById("question-number").style.display = "none";
+          document.getElementsByClassName("btn")[0].style.display = "none";
+          document.getElementsByClassName("btn")[1].style.width = "100%";
+          document.getElementById("question").innerHTML = "这批训练题已经没有了，请点下面下一批题目！";
+          document.getElementById("answer").style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
