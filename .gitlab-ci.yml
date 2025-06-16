@@ -1,11 +1,17 @@
+image: node:latest 
+ 
 pages:
-  stage: deploy
+  cache:
+    paths:
+      - node_modules/
   script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
+    - npm install -g pnpm 
+    - pnpm install 
+    - pnpm build 
+    - mv docs/.vitepress/dist public 
   artifacts:
     paths:
-    - public
+      - public 
   only:
-  - master
+    - master
+

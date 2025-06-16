@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://tiger-code.com/practise.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://tiger-code.com/images/favicon.png">
+  <link rel="stylesheet" href="./字根入门练习_files/base.css">
+  <link rel="stylesheet" href="./字根入门练习_files/header.css">
+  <link rel="stylesheet" href="./字根入门练习_files/footer.css">
+  <link rel="stylesheet" href="./字根入门练习_files/common.css">
+  <!-- <link rel="stylesheet" href="css/study.css"> -->
+  <link rel="stylesheet" href="./字根入门练习_files/practise.css">
+  <!-- 引入jQuery模块 -->
+  <script src="./字根入门练习_files/host.js"></script>
+  
+  <script src="./字根入门练习_files/jq.js"></script>
+  <script src="./字根入门练习_files/axios.min.js"></script>
+  <script src="./字根入门练习_files/common.js"></script>
+  <!-- 引入bootstrap.js模块 -->
+  <script src="./字根入门练习_files/boot.js"></script>
+      <link href="./字根入门练习_files/boot.css" rel="stylesheet">
+
+  <title>字根入门练习</title>
+</head>
+
+<body style="">
+  <div class="showOnLog"></div>
+  
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="">
+     源于虎码练习程序,仅供学习测试使用
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav module-left">
+<button id="button1">第一批训练题</button>  
+<button id="button2">第二批训练题</button>  
+<button id="button3">第三批训练题</button>  
+  
+<script>  
+document.getElementById('button1').addEventListener('click', function() {  
+    window.location.href = 'index.html';  
+});  
+document.getElementById('button2').addEventListener('click', function() {  
+    window.location.href = 'index2.html';  
+});  
+document.getElementById('button3').addEventListener('click', function() {  
+    window.location.href = 'index3.html';  
+});  
+</script>
+
+ 
+                </ul>
+        </li>
+
+                                
+              <!-- <li role="separator" class="divider"></li> -->
+            </ul>
+          </li>
+
+        <ul class="nav navbar-nav navbar-right module-right hidden">
+    <li class="hello"><span><span id="loginTime"></span>，<span id="uname"></span><span><a href="https://tiger-code.com/practise.html#" id="logout"> 注销</a></span></span></li>
+         
+        </ul> 
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="main-content">
+    <div class="container">
+      <div class="row mt-10">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 pt-20 bg-white primary-shadow study">
+            <div class="h-100">
+                <div class="top">
+                    <div class="floatleft">
+                       
+                        
+                        
+                    </div>
+                
+                
+                
+                    <div class="floatright">
+                      <span>
+                        &nbsp;当前:<strong id="cur">1</strong>&nbsp;最高:<strong id="max">1</strong>&nbsp;总数:<strong id="all">241</strong>&nbsp;积分:<strong id="score">0</strong>
+                      </span>
+                      <label onchange="changeMainRoot()">
+                        <input type="checkbox" id="main-root">
+                        
+                      </label>
+                      
+                    </div>
+                
+                </div>
+                <div class="center80">
+                    <p id="root">口〇</p>
+                    <p id="code">dk</p>
+            
+                    <input id="input" class="form-control" style="display: inline-block;" type="text" oninput="inputChanged()">
+            
+            
+                <p id="tip">实在想不起可以按空格</p>
+                <progress id="progress" value="1" max="241"></progress>
+              
+                  <div class="color-box hidden login-color-box">
+                    <div class="box1">
+                      <div class="title">当前排行</div>
+                      <div class="trank"><span class="ranknum"></span></div>
+                    </div>
+                    <div class="box2">
+                      <div class="title">距上一名分差</div>
+                      <div class="trank"><span class="diffScore"></span></div>
+                    </div>
+                    <div class="box3">
+                      <div class="title">目前段位</div>
+                      <div class="trank"><span class="tdrww"></span></div>
+                    </div>
+                    <div class="box4">
+                      <div class="title">最高连击</div>
+                      <div class="trank"><span class="tchi"></span></div>
+                    </div>
+                  </div>
+                  <div class="color-box unlogin-color-box">
+            
+
+                  </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+     <div class="row mt-10">
+      <div class="col-md-2"></div>
+      <div class="col-md-8  bg-white primary-shadow ">
+    
+        <div class="col-md-2"></div>
+     </div>
+    </div>
+  </div>
+  <div class="footer hidden visible-lg">
+   
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+   
+  <style>
+
+
+
+
+@font-face {
+        font-family: 'TumanPUA';
+        src: url("./fonts/TumanPUA.ttf");
+        /* src: url("./fonts/LXGWWenKaiGBScreenR.ttf"); */
+    }
+
+#root {
+  font-family: Consolas, Lucida Console, Helvetica, Arial, Times New Roman, Georgia, TumanPUA, Simsun, Simsum-ExtB, Simsun-ExtG, TH-Sung-TP2, TH-Sung-TP0, serif, sans-serif !important;
+  
+
+    margin: auto;
+    font-size: 5rem;
+    text-align: center;
+    width: 100%;
+}
+
+#code {
+  height: 5rem;
+font-family: Consolas, Lucida Console, Bookerly, Helvetica, Arial, Times New Roman, Georgia, serif, sans-serif !important;
+    margin: auto;
+    font-size: 3.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+    #tip {
+        font-size: 13px;
+        margin-top: 1.5rem;
+    }
+
+
+
+    .center80 {
+        margin: auto;
+        position: absolute;
+        top: 20%;
+        font-size: 30px;
+
+
+        text-align: center;
+        width: 100%;
+
+    }
+
+    .top {
+        margin: auto;
+
+        text-align: center;
+        width: 100%;	
+        font-size: small;		
+    }
+
+
+    .floatleft {
+        margin: 0.3rem;
+        text-align: center;
+        float: left;
+    
+    }
+
+
+
+    .floatright {
+        margin: 0.3rem;
+        text-align: center;
+        float: right;
+        clear: right;
+
+    }
+
+
+
+    #input {
+
+        padding: 0.3rem;
+        font-size: 1rem;
+        text-align: center;
+        width: 20%;
+    }
+
+    
+    </style>
+    
+ 
+    <script src="./字根入门练习_files/practice3.js"></script>
+    
+    
+
+    <script id="allow-copy_script">(function e(){var e=!1;document.addEventListener("allow_copy",(function(t){e=t.detail.unlock}));var t=["copy","cut","contextmenu","selectstart","mousedown","mouseup","mousemove","keydown","keypress","keyup"],n=function(t){e&&(t.stopPropagation(),t.stopImmediatePropagation&&t.stopImmediatePropagation())};t.forEach((function(e){document.documentElement.addEventListener(e,n,{capture:!0})}))})()</script>
+
+</body></html>
