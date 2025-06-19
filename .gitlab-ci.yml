@@ -1,11 +1,11 @@
 # .gitlab-ci.yml  修正版 
-
-
 pages:
   script:
-    - rm -rf public  # 先删除可能存在的旧目录 
-    - mkdir public   # 新建空目录 
-    - cp -r $(ls -A | grep -v '^public$') public/  # 排除public自身 
+    - rm -rf public               # 先清理旧目录 
+    - mkdir public 
+    - find . -maxdepth 1 -not -name 'public' -exec cp -r {} public/ \;  # 安全复制 
   artifacts:
     paths:
       - public 
+  only:
+    - master 
