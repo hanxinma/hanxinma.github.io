@@ -1,10 +1,10 @@
-image: node:latest 
- 
+# .gitlab-ci.yml  修正版 
 pages:
   script:
-    - echo "直接部署根目录内容"
+    - mkdir -p public 
+    - cp -r * public/  # 复制所有内容到public目录 
   artifacts:
     paths:
-      - .   # 关键修改：使用根目录所有内容 
+      - public  # 必须指定此目录 
   only:
     - master 

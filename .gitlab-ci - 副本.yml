@@ -21,3 +21,6 @@ git push github master
 
  
 git push origin master  # 推送
+
+
+git add . && git commit -m "更新描述" && git push origin master && git push github master 
