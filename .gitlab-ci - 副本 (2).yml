@@ -1,0 +1,11 @@
+# .gitlab-ci.yml  
+image: node:latest 
+ 
+pages:
+  script:
+    - echo "无需构建步骤，直接使用 public/ 目录内容"
+  artifacts:
+    paths:
+      - public  # 直接将该目录作为部署源 
+  only:
+    - master 
