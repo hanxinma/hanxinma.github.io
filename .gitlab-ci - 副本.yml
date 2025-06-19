@@ -9,3 +9,15 @@ pages:
     - public
   only:
   - master
+
+
+# 完整流程（含提交修改） 
+git add .
+git commit -m "更新描述"
+git push github master  # 推送
+ 
+# 简化版（已提交时直接推送）
+git push github master 
+
+ 
+git push origin master  # 推送
