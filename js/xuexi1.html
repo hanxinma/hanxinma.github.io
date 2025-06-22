@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!-- 声明，本代码，可以拿去非商业正规分享使用。但是请在你的页面给个龙码官网，友情超级链接，谢谢！-->
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龙码音形拼音字根训练</title>
+    <link rel="stylesheet" type="text/css" href="longyangshi.css">
+
+</head>
+
+<body>
+    <div class="容器">
+
+        <h1>龙码快速学会程序</h1>
+
+        <a href="#" class="link0">声母(必学)</a>
+        <a href="#" class="link1">韵母组(需练熟-必学)</a>
+           <a href="#" class="link3">韵母单(练速度-选学)</a>
+    <!-- -------    <a href="xuexi2.html" class="link99">韵母单(练条反)</a> ---------- -->
+        <a href="#" class="link2">前500字精简-(选学)</a>
+         
+<p style="font-size: 0.85em; color: gray;">必学的要练熟，快的话3小时学会龙码，慢的话3天。</p>
+
+
+        <div class="container2">
+            <div id="当前根显示"></div>
+            <div class="错误消息" id="错误消息"></div>
+            <div class="错误消息二" id="错误消息二"></div>
+
+        </div>
+
+        <!-- ---------------------- -->
+
+        <input type="text" id="用户输入" placeholder="点此输入（按空格显答案）">
+        <div id="空">
+            <div id="加分值"></div>
+
+
+        </div>
+           
+        <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
+        <div id="时间" style="display:none;"></div>
+        <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
+        <div class="训练分数" id="训练分数">总分:<span id="总分数">0</span></div>
+
+        <details class="学习说明">
+            <summary>学习说明</summary>
+            <div>
+            
+                              <p><b>默认模式无语音，开启语音模式在更多功能里（语音模式，推荐用这个，但新人用不好），手机端无效</b></p>
+                                     <p style="color: gray; ">启用语音模式后，ctrl显示题目,Enter重新语音,更多功能里可开显拼音,但是不建议看拼音</p>
+                <p><b>默认模式训练，建议把拼音读出来（或默读，也有助记忆），否则打字容易想不起来</b></p>
+                
+
+                <p>先把声母练熟,在把韵母组练熟,这样就学会了.手机端语音无效</p>               
+                <p style="color: gray; ">韵母组练熟了,就可以上手打字,但是会有痛苦期.非痛苦,建议韵母单也练熟.</p>
+                <p style="color: gray; ">练熟的感觉就是,不用想就知道怎么打</p>
+                <p>注意:语音读的是汉字所以拼音音准，不准.拼音打字想音为主,看字母不利于条反.</p>
+         
+                <p><a href="https://hanxinma.gitlab.io/longma/index_files/longma.png" target="_blank">点击这里查看大图片</a></p>
+
+                <img src="./index_files/龙码归并键位图.jpg" width=72% alt="龙码归并键位图">
+                
+            </div>
+        </details>
+        <details class="所有根">
+            <summary>本段所有字根</summary>
+            <div id="所有根显示">
+            </div>
+        </details>
+
+
+
+        <details class="更多功能">
+            <summary>更多功能</summary>
+            <div>
+                <button id="语音模式">语音模式</button>
+                <button onclick="显示当前根ctrl()">Ctrl显示</button>
+                <button onclick="回车键()">回车再读</button>
+                <button id="refreshButton">保存进度或刷新</button>
+                <button id="听写按钮">听写关开</button>
+                <button id="秒显按钮">秒显关开</button>
+                <button id="删除当前根按钮">删除当前根-</button>
+                <button id="打开文件按钮">上传txt文件学习</button>
+                <button onclick="shuffleList()">打乱字根顺序</button>
+                <button id="关闭按钮" onclick="切换答案消失状态()">可关答案消失</button>
+                <button id="关闭动画" onclick="切换字根动画状态()">可关字根动画</button>
+                <button id="toggleButton">自显模式</button>
+                <button id="保存按钮">下载错误次数</button>
+                <button id="加到特训">加到特训=</button>
+                <button id="条反模式">条反模式</button>
+                <button onclick="条反时间自定义()">条反时间</button>
+                <button id="特训" onclick="特训清空()">特训清空</button>
+                <button onclick="添加一组当前根()">加一组到特训7</button>
+                <button onclick="下载特训()">下载特训</button>
+                <button onclick="后移到最后()">后移到最后0</button>
+                <button onclick="后移到前()">最后移到第一9</button>
+                <button id="播放控制按钮" onclick="切换播放状态()">鼓掌关闭</button>
+                <button id="竞赛模式" onclick="竞赛模式状态()">竞赛模式</button>
+                <button onclick="showDialog()">字根后移位数</button>
+                <div id="dialog" style="display: none;">
+                    <input type="text" id="inputNumber" placeholder="字根后移位数">例:填写200,那答对就后移200位,方便快练一遍.复位(刷新页面)
+                    <button onclick="自定义位数()">确认</button>
+                </div>
+
+
+
+                <div id="学习进度"></div>
+
+
+                <div id="当前根显示2"></div>
+                <input type="text" id="用户输入特训" placeholder="加特训后点这里输入">
+
+
+                <!-- <button id="启用空格" onclick="切换提交模式()">空格提交</button> -->
+                   <p><b>---功能说明---</b></p>
+                        
+                <p>电脑端关闭自动保存进度,手机端需要刷新保存进度.总分不乱点会累加</p>
+           
+                   <p>按钮上的符号符号数字代表快捷键</p>
+                  <p> 语音模式-推荐使用,防止打字想不起来键位</p>
+                       <p> 加到特训-当你发现这个字根字母,你老是记不住,可以加到特训,在下方强训一下.</p>
+                 <p>  加一组到特训-基本同上,只是一次会加一组进去</p>
+                  
+                  <p> 秒显关开-打开后,题目就显示几秒后消失,有助于你想音训练</p>
+                   <p>删除当前根-有些学会的,可以给删了,可以加快进度</p>
+                  <p> 答案消失-打开后,答案就一直显示</p>
+                  <p> 自显模式-新的没有学过的字根,会自动显示答案让你学习,不清分.</p>
+                  <p> 下载错误次数-可以帮助你知道哪些字根你记的不熟,可以上传到txt里在训练一下.</p>
+             
+                <p>   条反模式-他是当你在几秒回答不了,就自动清分并显示答案,可以让你有紧迫感.</p>
+                 <p>  后移到最后-有些字根你记住了,不想训练,可以把他移到最后面.</p>
+                <p>   鼓掌关闭-如果系统有鼓掌声,觉得烦,可关闭</p>
+                <p>   竞赛模式-可以记录一个时间段,你的得分,方便截图分享.</p>
+               <p>    字根后移位数-写上100后,基本每个字根只要答对了,就移到最后面,不会重复出现,加快训练进度.</p>
+        
+                                
+                                
+       <p>----------</p>
+       
+                <p>上传txt文件学习-这个功能,可以方便你自己编写语音提示进行训练,也可以把你不熟悉的音节放进去训练.</p>
+
+                <p>txt里文本格式是,文字+tab符+字母+tab符+语音提示中文,例如下</p>
+                <p> ing k 语音文本列 第3列 是语音读的文本</p>
+                <p> 冫 d 语音文本列</p>
+                
+
+
+            </div>
+        </details>
+        <!-- <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
+        <div class="训练分数" id="训练分数">总分:<span id="总分数">0</span></div> -->
+
+
+
+
+
+
+        <div class="container">
+            <div class="toggle-button" onclick="切换语音()">
+                <div class="slider"></div>
+            </div>
+            <div>语音</div>
+        </div>
+
+
+        <div class="container">
+            <div class="toggle-button active" onclick="切换音效()">
+                <!-- toggle-button active-->
+                <div class="slider"></div>
+            </div>
+            <div>音效</div>
+        </div>
+
+
+    </div>
+    <a href="https://hanxinma.gitlab.io/longma" target="_blank"><b>龙码官网首页</b> </a>
+    <a href="https://hanxinma.gitlab.io/longma" target="_blank">友情连接: 龙码 </a>
+    <a href="https://rime.im/" target="_blank">小狼毫 </a>
+    <a href="https://hanxinma.gitlab.io/" target="_blank">汉心快打 </a>
+    <a href="https://hanxinma.gitlab.io/yixue" target="_blank">易学码 </a>
+    <a href="https://hanxinma.gitlab.io/zirj" target="_blank">自然音形 </a>
+    <!-- 声明，本代码，可以拿去非商业正规分享使用。但是请在你的页面给个龙码官网，友情超级链接，或保留上方龙码链接。谢谢！-->
+
+
+    <script src="longma.js"></script>
+    <script src="xunlianz.js"></script>
+
+
+</body>
+
+</html>
