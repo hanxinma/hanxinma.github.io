@@ -141,7 +141,7 @@ h1 {
 .toggle-button {
     width: 30px;
     height: 15px;
-    background-color: #4CAF50;
+    background-color: #ccc;;
 
     border-radius: 20px;
     position: relative;
@@ -163,7 +163,7 @@ h1 {
 }
 
 .toggle-button.active {
-    background-color: #888;
+    background-color: #4CAF50;
 
 }
 

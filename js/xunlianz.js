@@ -33,6 +33,7 @@ function saveData() {
 
 
 
+// 更新总分数的值函数
 function 更新总分数的值() {
         document.getElementById('总分数').innerText = 答对总分数.toFixed(0);  // 将总分数更新到页面上
 
