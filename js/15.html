@@ -2,26 +2,41 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>汉心快打 - 完整功能集成版</title>
     <style>
         :root { --accent: #3498db; --bg: #f2f2f7; --key: #ffffff; --border: #d1d1d6; --dark: #2c3e50; }
-        body { margin: 0; padding: 0; font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        
+        /* 核心修复：使用 dvh 动态视口高度，并确保 body 不会溢出无法滚动 */
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: -apple-system, sans-serif; 
+            background: var(--bg); 
+            display: flex; 
+            flex-direction: column; 
+            height: 100vh; /* 回退方案 */
+            height: 100dvh; /* 适配移动端动态工具栏 */
+            overflow: hidden; 
+            position: fixed; /* 防止橡皮筋回弹导致的遮挡 */
+            width: 100%;
+        }
         
         /* 导航与状态 */
-        #nav-header { background: var(--dark); color: white; padding: 12px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 1005; }
+        #nav-header { background: var(--dark); color: white; padding: 12px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 1005; flex-shrink: 0; }
         #nav-header h1 { margin: 0; font-size: 16px; }
         #nav-links { margin-top: 2px; font-size: 10px; }
         #nav-links a { color: #bdc3c7; text-decoration: none; margin: 0 8px; }
-        #status-bar { font-size: 11px; background: #34495e; color: white; padding: 5px 12px; display: flex; justify-content: space-between; }
+        #status-bar { font-size: 11px; background: #34495e; color: white; padding: 5px 12px; display: flex; justify-content: space-between; flex-shrink: 0; }
         
         /* 编辑区 */
-        #da { flex: 1; width: 100%; padding: 15px; font-size: 18px; border: none; outline: none; resize: none; box-sizing: border-box; background: #fff; line-height: 1.5; }
+        #da { flex: 1; width: 100%; padding: 15px; font-size: 18px; border: none; outline: none; resize: none; box-sizing: border-box; background: #fff; line-height: 1.5; overflow-y: auto; }
         
-        /* 候选词面板 - PC端跟随，移动端固定 */
+        /* 候选词面板 */
         #ime-panel { 
             background: #fff; border: 1px solid var(--border); display: none; align-items: center; 
             height: 44px; z-index: 2000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); white-space: nowrap;
+            flex-shrink: 0;
         }
         #ime-code { color: var(--accent); font-weight: bold; padding: 2px 6px; font-size: 13px; background: #ebf5fb; border-radius: 4px; margin: 0 5px; }
         #ime-list { display: flex; flex: 1; overflow-x: auto; scrollbar-width: none; }
@@ -30,10 +45,9 @@
         .first { color: var(--accent); font-weight: bold; }
         
         /* 键盘区 */
-        #kb-container { background: #d1d5db; position: relative; z-index: 999; padding-bottom: env(safe-area-inset-bottom); }
+        #kb-container { background: #d1d5db; position: relative; z-index: 999; padding-bottom: env(safe-area-inset-bottom); flex-shrink: 0; }
         #keyboard { padding: 5px 2px; display: flex; flex-direction: column; gap: 4px; user-select: none; }
         .kb-row { display: flex; justify-content: center; gap: 4px; }
-        /* 关键：空行不占位 */
         .kb-row:not(:empty) { height: 40px; } 
         .key { background: var(--key); height: 40px; flex: 1; max-width: 45px; display: flex; align-items: center; justify-content: center; border-radius: 5px; font-size: 16px; box-shadow: 0 1px 1px rgba(0,0,0,0.2); cursor: pointer; }
         .key:active { background: #b0b8c0; }
@@ -51,8 +65,9 @@
             border-radius: 4px 4px 0 0; cursor: pointer;
         }
 
-        /* PC端浮动光标跟随 */
+        /* PC端浮动 */
         @media screen and (min-width: 769px) {
+            body { position: static; height: 100vh; }
             #kb-container { position: fixed; bottom: 0; left: 0; right: 0; transform: translateY(100%); transition: transform 0.3s; }
             #kb-container.show { transform: translateY(0); }
             .pc-float { position: absolute; border-radius: 5px; min-width: 150px; width: auto; padding-right: 10px; }
@@ -62,7 +77,6 @@
             #ime-panel { position: relative; width: 100%; left: 0 !important; top: 0 !important; border-radius: 0; box-shadow: none; }
         }
 
-        /* 光标测距镜像层 */
         #mirror { position: absolute; visibility: hidden; white-space: pre-wrap; word-wrap: break-word; top:0; left:0; pointer-events: none; }
     </style>
 </head>
@@ -74,7 +88,7 @@
 </div>
 
 <div id="status-bar">
-    <span id="state-hint">自动复制文字已开启，切换到其他界面ctrl+v就可以粘贴输入的文字</span>
+    <span id="state-hint">自动复制文字已开启，粘贴请用ctrl+v</span>
     <span id="mode-indicators">
         <span id="ind-sync" style="color:#27ae60">●自复</span>
         <span id="ind-auto" style="margin-left:8px">○四码</span>
@@ -264,24 +278,19 @@ class SmartIME {
         const m = document.getElementById('mirror');
         const style = window.getComputedStyle(this.da);
         const panel = document.getElementById('ime-panel');
-        
         m.style.font = style.font; 
         m.style.width = style.width; 
         m.style.padding = style.padding;
         m.style.lineHeight = style.lineHeight;
         m.textContent = this.da.value.substring(0, this.da.selectionStart);
-        
         const span = document.createElement('span'); 
         span.textContent = '|'; 
         m.appendChild(span);
-
         const rect = this.da.getBoundingClientRect();
         let left = rect.left + span.offsetLeft - this.da.scrollLeft;
         let top = rect.top + span.offsetTop - this.da.scrollTop + 32;
-
         const windowWidth = window.innerWidth;
         if (left + 250 > windowWidth) left = windowWidth - 260;
-        
         panel.style.left = Math.max(10, left) + "px"; 
         panel.style.top = top + "px";
     }
