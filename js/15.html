@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>汉心快打 - 完整功能集成版</title>
+    <style>
+        :root { --accent: #3498db; --bg: #f2f2f7; --key: #ffffff; --border: #d1d1d6; --dark: #2c3e50; }
+        body { margin: 0; padding: 0; font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        
+        /* 导航与状态 */
+        #nav-header { background: var(--dark); color: white; padding: 12px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 1005; }
+        #nav-header h1 { margin: 0; font-size: 16px; }
+        #nav-links { margin-top: 2px; font-size: 10px; }
+        #nav-links a { color: #bdc3c7; text-decoration: none; margin: 0 8px; }
+        #status-bar { font-size: 11px; background: #34495e; color: white; padding: 5px 12px; display: flex; justify-content: space-between; }
+        
+        /* 编辑区 */
+        #da { flex: 1; width: 100%; padding: 15px; font-size: 18px; border: none; outline: none; resize: none; box-sizing: border-box; background: #fff; line-height: 1.5; }
+        
+        /* 候选词面板 - PC端跟随，移动端固定 */
+        #ime-panel { 
+            background: #fff; border: 1px solid var(--border); display: none; align-items: center; 
+            height: 44px; z-index: 2000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); white-space: nowrap;
+        }
+        #ime-code { color: var(--accent); font-weight: bold; padding: 2px 6px; font-size: 13px; background: #ebf5fb; border-radius: 4px; margin: 0 5px; }
+        #ime-list { display: flex; flex: 1; overflow-x: auto; scrollbar-width: none; }
+        .cand { padding: 0 10px; font-size: 18px; line-height: 44px; cursor: pointer; color: #333; }
+        .cand b { color: #999; font-weight: normal; margin-right: 3px; font-size: 12px; }
+        .first { color: var(--accent); font-weight: bold; }
+        
+        /* 键盘区 */
+        #kb-container { background: #d1d5db; position: relative; z-index: 999; padding-bottom: env(safe-area-inset-bottom); }
+        #keyboard { padding: 5px 2px; display: flex; flex-direction: column; gap: 4px; user-select: none; }
+        .kb-row { display: flex; justify-content: center; gap: 4px; }
+        /* 关键：空行不占位 */
+        .kb-row:not(:empty) { height: 40px; } 
+        .key { background: var(--key); height: 40px; flex: 1; max-width: 45px; display: flex; align-items: center; justify-content: center; border-radius: 5px; font-size: 16px; box-shadow: 0 1px 1px rgba(0,0,0,0.2); cursor: pointer; }
+        .key:active { background: #b0b8c0; }
+        .key-active { background: var(--accent) !important; color: white; }
+        
+        .func-row { height: 38px !important; }
+        .func-row .key { font-size: 11px; max-width: 65px; }
+        .btn-wide { flex: 1.2; }
+        .btn-space { flex: 2; max-width: 120px; font-weight: bold; }
+
+        #kb-trigger-bar {
+            position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+            background: #d1d5db; text-align: center; height: 24px; line-height: 24px;
+            width: 80px; font-size: 10px; color: #333; border: 1px solid #999; border-bottom: none;
+            border-radius: 4px 4px 0 0; cursor: pointer;
+        }
+
+        /* PC端浮动光标跟随 */
+        @media screen and (min-width: 769px) {
+            #kb-container { position: fixed; bottom: 0; left: 0; right: 0; transform: translateY(100%); transition: transform 0.3s; }
+            #kb-container.show { transform: translateY(0); }
+            .pc-float { position: absolute; border-radius: 5px; min-width: 150px; width: auto; padding-right: 10px; }
+        }
+        @media screen and (max-width: 768px) {
+            #kb-trigger-bar { display: none; }
+            #ime-panel { position: relative; width: 100%; left: 0 !important; top: 0 !important; border-radius: 0; box-shadow: none; }
+        }
+
+        /* 光标测距镜像层 */
+        #mirror { position: absolute; visibility: hidden; white-space: pre-wrap; word-wrap: break-word; top:0; left:0; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+<div id="nav-header">
+    <h1>汉心快打输入法</h1>
+    <div id="nav-links"><a href="/">首页</a><a href="/pan" target="_blank">网盘</a></div>
+</div>
+
+<div id="status-bar">
+    <span id="state-hint">自动复制文字已开启，切换到其他界面ctrl+v就可以粘贴输入的文字</span>
+    <span id="mode-indicators">
+        <span id="ind-sync" style="color:#27ae60">●自复</span>
+        <span id="ind-auto" style="margin-left:8px">○四码</span>
+    </span>
+</div>
+
+<textarea id="da" spellcheck="false" inputmode="none" placeholder="使用下方虚拟键盘开始输入..."></textarea>
+
+<div id="ime-panel">
+    <span id="ime-code"></span>
+    <div id="ime-list"></div>
+</div>
+
+<div id="kb-container">
+    <div id="kb-trigger-bar">虚拟键盘 ▲</div>
+    <div id="keyboard">
+        <div class="kb-row" id="row1"></div>
+        <div class="kb-row" id="row2"></div>
+        <div class="kb-row" id="row3"></div>
+        <div class="kb-row" id="row4"></div>
+        <div class="kb-row func-row">
+            <div id="caps-toggle" class="key" onmousedown="ime.toggleCaps(event)">ABC</div>
+            <div id="punc-toggle" class="key" onmousedown="ime.togglePuncMode(event)">中标</div>
+            <div id="symbol-toggle" class="key" onmousedown="ime.toggleSymbolMode(event)">符</div>
+            <div id="auto-toggle" class="key" onmousedown="ime.toggleAutoSubmit(event)">四码</div>
+            <div id="copy-toggle" class="key key-active" onmousedown="ime.toggleAutoCopy(event)">自复</div>
+        </div>
+        <div class="kb-row func-row">
+            <div class="key btn-wide" onmousedown="ime.turnPage('PREV', event)">«</div>
+            <div class="key btn-space" onmousedown="ime.virtualAction('SPACE', event)">空格</div>
+            <div class="key btn-wide" onmousedown="ime.turnPage('NEXT', event)">»</div>
+            <div class="key btn-wide" onmousedown="ime.virtualAction('BACK', event)">退格</div>
+        </div>
+    </div>
+</div>
+
+<div id="mirror"></div>
+
+<script>
+const dict = { 
+    'a': ['啊'], 'b': ['吧'], 'd': ['的'], 'e': ['二'], 'f': ['非'], 'g': ['个'], 'h': ['好'],
+    'i': ['出'], 'j': ['就'], 'k': ['看'], 'l': ['了'], 'm': ['没'], 'n': ['你'], 'o': ['哦'],
+    'p': ['拍'], 'q': ['去'], 'r': ['人'], 's': ['是'], 't': ['他'], 'u': ['是'], 'v': ['这'],
+    'w': ['我'], 'x': ['像'], 'y': ['有'], 'z': ['在'],
+};
+const puncMap = { ',': '，', '.': '。', ';': '；', ':': '：', '!': '！', '?': '？' };
+const symbols = [
+    ["，", "。", "？", "！", "：", "；", "“", "”", "（", "）"],
+    ["、", "—", "～", "《", "》", "【", "】", "‘", "’", "…"],
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+    [",", ".", "?", "!", "/", "@", "#", "$", "%", "&"] 
+];
+
+class SmartIME {
+    constructor() {
+        this.da = document.getElementById('da');
+        this.buffer = "";
+        this.candidates = [];
+        this.pageIndex = 0;
+        this.pageSize = 5;
+        this.isCaps = false;
+        this.isAutoCopy = true; 
+        this.isAutoSubmit = false;
+        this.isSymbolMode = false;
+        this.puncMode = 'CN';
+        this.init();
+    }
+
+    init() {
+        this.renderKB();
+        window.addEventListener('keydown', (e) => this.handlePCKey(e));
+        window.addEventListener('focus', () => { if (this.isAutoCopy) this.da.value = ""; this.reset(); });
+        window.addEventListener('blur', () => {
+            if (this.isAutoCopy && this.da.value.trim().length > 0) {
+                this.da.select();
+                try { document.execCommand('copy'); } catch (err) { navigator.clipboard.writeText(this.da.value).catch(()=>{}); }
+            }
+        });
+        document.getElementById('kb-trigger-bar').onclick = () => {
+            const container = document.getElementById('kb-container');
+            const isShowing = container.classList.toggle('show');
+            document.getElementById('kb-trigger-bar').textContent = isShowing ? '收起 ▼' : '键盘 ▲';
+            if(isShowing) this.da.focus();
+        };
+    }
+
+    toggleAutoCopy(e) { e.preventDefault(); this.isAutoCopy = !this.isAutoCopy; document.getElementById('copy-toggle').classList.toggle('key-active', this.isAutoCopy); document.getElementById('ind-sync').textContent = this.isAutoCopy ? '●自复' : '○自复'; document.getElementById('ind-sync').style.color = this.isAutoCopy ? '#27ae60' : '#bdc3c7'; }
+    toggleAutoSubmit(e) { e.preventDefault(); this.isAutoSubmit = !this.isAutoSubmit; document.getElementById('auto-toggle').classList.toggle('key-active', this.isAutoSubmit); document.getElementById('ind-auto').textContent = this.isAutoSubmit ? '●四码' : '○四码'; }
+    togglePuncMode(e) { e.preventDefault(); this.puncMode = this.puncMode === 'CN' ? 'EN' : 'CN'; const btn = document.getElementById('punc-toggle'); btn.textContent = this.puncMode === 'CN' ? '中标' : '英标'; btn.classList.toggle('key-active', this.puncMode === 'EN'); }
+    toggleCaps(e) { e.preventDefault(); this.isSymbolMode = false; this.isCaps = !this.isCaps; document.getElementById('symbol-toggle').classList.remove('key-active'); document.getElementById('caps-toggle').classList.toggle('key-active', this.isCaps); this.renderKB(); }
+    toggleSymbolMode(e) { e.preventDefault(); this.isSymbolMode = !this.isSymbolMode; document.getElementById('symbol-toggle').classList.toggle('key-active', this.isSymbolMode); this.renderKB(); }
+
+    renderKB() {
+        const charRows = ["qwertyuiop".split(""), "asdfghjkl".split(""), "zxcvbnm".split("")];
+        const rows = this.isSymbolMode ? symbols : charRows;
+        for(let i=1; i<=4; i++) {
+            const container = document.getElementById(`row${i}`);
+            const rowData = rows[i-1];
+            if (!rowData) { container.innerHTML = ""; container.style.display = "none"; continue; }
+            container.style.display = "flex";
+            container.innerHTML = "";
+            rowData.forEach(char => {
+                const displayChar = (!this.isSymbolMode && this.isCaps) ? char.toUpperCase() : char;
+                const k = document.createElement('div');
+                k.className = 'key';
+                k.textContent = displayChar;
+                k.onmousedown = (e) => {
+                    e.preventDefault();
+                    if (this.isSymbolMode) { this.submit(char); this.isSymbolMode = false; document.getElementById('symbol-toggle').classList.remove('key-active'); this.renderKB(); }
+                    else if (this.isCaps) this.submit(displayChar);
+                    else { this.buffer += char; this.refresh(); }
+                };
+                container.appendChild(k);
+            });
+        }
+    }
+
+    handlePCKey(e) {
+        if (document.activeElement !== this.da || e.ctrlKey || e.metaKey) return;
+        const key = e.key;
+        if (/^[a-z]$/.test(key)) { e.preventDefault(); this.buffer += key; this.refresh(); }
+        else if (this.buffer) {
+            e.preventDefault();
+            if (key === ' ') this.select(0);
+            else if (key === 'Backspace') { this.buffer = this.buffer.slice(0,-1); this.buffer ? this.refresh() : this.reset(); }
+            else if (key === '=') this.turnPage('NEXT');
+            else if (key === '-') this.turnPage('PREV');
+            else if (/^[1-5]$/.test(key)) this.select(parseInt(key)-1);
+        } else if (this.puncMode === 'CN' && puncMap[key]) {
+            e.preventDefault();
+            this.submit(puncMap[key]);
+        }
+    }
+
+    turnPage(dir, e) { if(e) e.preventDefault(); if (!this.buffer) return; const maxPage = Math.ceil(this.candidates.length / this.pageSize) - 1; if (dir === 'NEXT' && this.pageIndex < maxPage) this.pageIndex++; else if (dir === 'PREV' && this.pageIndex > 0) this.pageIndex--; this.renderUI(); }
+
+    submit(text) {
+        const start = this.da.selectionStart;
+        this.da.value = this.da.value.slice(0, start) + text + this.da.value.slice(this.da.selectionEnd);
+        this.da.selectionStart = this.da.selectionEnd = start + text.length;
+        this.reset();
+    }
+
+    virtualAction(type, e) {
+        e.preventDefault();
+        if (type === 'BACK') {
+            if (this.buffer) { this.buffer = this.buffer.slice(0, -1); this.refresh(); }
+            else { const s = this.da.selectionStart; if (s > 0) { this.da.value = this.da.value.slice(0, s-1) + this.da.value.slice(s); this.da.selectionStart = this.da.selectionEnd = s-1; } }
+        } else if (type === 'SPACE') { this.buffer ? this.select(0) : this.submit(' '); }
+    }
+
+    select(idx) { 
+        const actualIdx = (this.pageIndex * this.pageSize) + idx;
+        const target = this.candidates[actualIdx];
+        if (target) this.submit(target);
+        else if (!this.isAutoSubmit) this.submit(this.buffer); 
+    }
+
+    refresh() {
+        if (!this.buffer) return this.reset();
+        this.pageIndex = 0; 
+        let exact = dict[this.buffer] || [];
+        let others = [];
+        for (let k in dict) if (k.startsWith(this.buffer) && k !== this.buffer) others = others.concat(dict[k]);
+        this.candidates = [...new Set([...exact, ...others])];
+        if (this.isAutoSubmit && this.buffer.length >= 4) {
+            if (this.candidates.length > 0) this.select(0);
+            else this.reset(); 
+            return;
+        }
+        this.renderUI();
+    }
+
+    renderUI() {
+        const panel = document.getElementById('ime-panel');
+        panel.style.display = 'flex';
+        document.getElementById('ime-code').textContent = this.buffer;
+        const start = this.pageIndex * this.pageSize;
+        const visible = this.candidates.slice(start, start + this.pageSize);
+        document.getElementById('ime-list').innerHTML = visible.map((w, i) => `<div class="cand ${i===0 && this.pageIndex===0?'first':''}" onmousedown="event.preventDefault(); ime.submit('${w}')"><b>${i+1}</b>${w}</div>`).join('');
+        if (window.innerWidth > 768) { panel.className = 'pc-float'; this.updatePCPos(); }
+    }
+
+    reset() { this.buffer = ""; this.pageIndex = 0; document.getElementById('ime-panel').style.display = 'none'; }
+    
+    updatePCPos() {
+        const m = document.getElementById('mirror');
+        const style = window.getComputedStyle(this.da);
+        const panel = document.getElementById('ime-panel');
+        
+        m.style.font = style.font; 
+        m.style.width = style.width; 
+        m.style.padding = style.padding;
+        m.style.lineHeight = style.lineHeight;
+        m.textContent = this.da.value.substring(0, this.da.selectionStart);
+        
+        const span = document.createElement('span'); 
+        span.textContent = '|'; 
+        m.appendChild(span);
+
+        const rect = this.da.getBoundingClientRect();
+        let left = rect.left + span.offsetLeft - this.da.scrollLeft;
+        let top = rect.top + span.offsetTop - this.da.scrollTop + 32;
+
+        const windowWidth = window.innerWidth;
+        if (left + 250 > windowWidth) left = windowWidth - 260;
+        
+        panel.style.left = Math.max(10, left) + "px"; 
+        panel.style.top = top + "px";
+    }
+}
+const ime = new SmartIME();
+</script>
+</body>
+</html>
