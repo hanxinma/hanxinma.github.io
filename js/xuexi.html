@@ -1,198 +1,1067 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
 <!-- 声明，本代码，可以拿去非商业正规分享使用。但是请在你的页面给个龙码官网，友情超级链接，谢谢！-->
-<html lang="zh-cn">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自然双拼小鹤双拼训练程序</title>
-    <link rel="stylesheet" type="text/css" href="longyangshi.css">
+    <title>龙码音形拼音字根训练</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Noto Sans SC', -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e0e5ec 0%, #d0d5dc 100%);
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            padding: 2.5rem 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+.nav-cards {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 0;
+            margin: -2.5rem -2rem 1.5rem -2rem;
+            padding: 1rem 2rem 0 2rem;
+            background: #0097a1;
+            border-radius: 20px 20px 0 0;
+        }
+
+.nav-dropdown {
+            position: relative;
+            flex: 1;
+            margin: 0;
+            padding: 0;
+            border-radius: 20px 20px 0 0;
+            background: transparent;
+        }
+
+        .nav-dropdown:first-child {
+            margin-left: 0;
+            border-radius: 20px 0 0 0;
+        }
+
+        .nav-dropdown:last-child {
+            margin-right: 0;
+            border-radius: 0 20px 0 0;
+        }
+
+        .nav-dropdown-wrapper {
+            display: flex;
+            margin: -2.5rem -2rem 1.5rem -2rem;
+            padding: 1rem 2rem 0 2rem;
+            background: #0097a1;
+            border-radius: 20px 20px 0 0;
+            width: calc(100% + 4rem);
+            max-width: none;
+            box-sizing: border-box;
+            align-items: stretch;
+        }
+
+        .nav-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 12px;
+            background: #fdfdfd;
+            color:#0097a1;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 20px 0 0 0;
+            white-space: nowrap;
+        }
+
+        .nav-dropdown:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .nav-dropdown-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 10px;
+            background: #00a8b0;
+            border-radius: 15px 15px 0 0;
+            color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            height: 100%;
+            box-sizing: border-box;
+            opacity: 0.7;
+        }
+
+        .nav-dropdown-btn:hover {
+            background: #00b5c2;
+            opacity: 0.85;
+        }
+
+        .nav-dropdown.active .nav-dropdown-btn {
+            background: white;
+            color: #0097a1;
+            opacity: 1;
+            font-weight: 600;
+            box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-arrow {
+            font-size: 0.7rem;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown.open .nav-arrow {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            z-index: 100;
+        }
+
+        .nav-dropdown.open .nav-dropdown-content {
+            display: block;
+        }
+
+        .nav-dropdown-item {
+            padding: 14px 20px;
+            color: #666;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .nav-dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .nav-dropdown-item:hover {
+            background: #f5f5f5;
+        }
+
+        .nav-dropdown-item.active {
+            background: #0097a1;
+            color: white;
+        }
+
+        .nav-card {
+            flex: 1;
+            padding: 16px 8px 20px 8px;
+            background: #00a8b0;
+            border-radius: 15px 15px 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            margin: 0 1px;
+        }
+
+        .nav-card:hover {
+            background: #00b5c2;
+            color: white;
+        }
+
+        .nav-card.active {
+            background: white;
+            color: #0097a1;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+            font-weight: 600;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: -2px;
+        }
+
+        .nav-desc {
+            font-size: 0.75rem;
+            color: #999;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .voice-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .voice-toggle>div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .voice-toggle input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #0097a1;
+            margin: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+
+            border-radius: 50px;
+            font-size: 2rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #eee;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-inner {
+            height: 100%;
+            background: #0097a1;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .progress-text {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1.5rem;
+        }
+
+        .zigen-display {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            color: #1a1a1a;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+
+        .hint {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 2rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+        }
+
+        .first-hint {
+            background: #fff8e1;
+            color: #f57c00;
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .error-hint {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            margin-top: 0.25rem;
+            visibility: hidden;
+        }
+
+        input {
+            padding: 4px 6px 2px 6px;
+            /* 改小内边距 */
+            font-size: 2rem;
+            /* 改小字体 */
+            max-width: 120px;
+            /* 改窄最大宽度 */
+            width: 100%;
+
+
+
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            text-align: center;
+            line-height: 1;
+            border: 2px solid #999;
+            border-radius: 10px;
+            outline: none;
+            text-transform: lowercase;
+            transition: border-color 0.2s;
+            caret-color: transparent;
+            background: transparent;
+            color: #999;
+        }
+
+        input:focus {
+            border-color: #999;
+        }
+
+        input.input-error {
+            border-color: #999;
+            background: transparent;
+        }
+
+        input:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .stat-value.mastered {
+            color: #0097a1;
+        }
+
+        .stat-value.wrong {
+            color: #2b2b2b;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 0.25rem;
+        }
+
+        .reset-btn {
+            background: none;
+            border: none;
+            color: #0097a1;
+            cursor: pointer;
+            font-size: 0.85rem;
+            padding: 8px 16px;
+            margin-top: 1rem;
+        }
+
+        .reset-btn:hover {
+            text-decoration: underline;
+        }
+
+        .zigen-display.error {
+            color: #d32f2f;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-8px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(8px);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pop {
+            animation: pop 0.2s ease-out;
+        }
+
+        /* 庆祝弹窗 */
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .celebration.show {
+            display: flex;
+        }
+
+        .celebration-content {
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .celebration-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .celebration-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .celebration-btn {
+            background: #0097a1;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="容器">
 
-        <h1>汉心快打输入法快速轻松学习程序</h1>
-        <a>依次学习→</a>
-        <div class="下拉菜单">
-            <div class="下拉按钮" id="按钮">双拼学习</div>
-            <div class="下拉内容">
-                <a href="#" class="link0" onclick="切换按钮文字(this)">自然双拼</a>
-                <a href="#" class="link2" onclick="切换按钮文字(this)">小鹤双拼</a>
-                <a href="#" class="link22" onclick="showGreeting()">常用拼音</a>
-                <a  style="color: red;">上方三选一即可</a>
-                <a>建议练熟才打字</a>
-                <a>双拼的含义是把长拼音</a>
-                <a>拆分两部分放在两个键上</a>
-                <a>比如:chang双拼就是ih</a>
-                <a>这个程序的好处是</a><a>你练熟了，自然就会用双拼了</a>
-                   <a href="https://hanxinma.gitlab.io/longma/" class="link222">龙码乱序声调双拼（难）</a>
+<div class="container">
+<div class="nav-dropdown-wrapper">
+            <!-- 依次学习标签 -->
+            <div class="nav-label">
+                <span>依次</span>
+                <span>学习→ 
+</span>
             </div>
-        </div>
-
-        <div class="下拉菜单">
-            <div class="下拉按钮" id="按钮2">汉心辅助码学习</div>
-            <div class="下拉内容">
-                <a href="https://www.douyin.com/user/self?modal_id=7309920229553884453" class="link334446" onclick="切换按钮文字2(this)" target="_blank">说明:辅助码就是偏旁部首,用以打字不选字的辅助,看视频介绍</a>
-                <a href="#" class="link3" onclick="切换按钮文字2(this)"  style="color: red;">汉心辅字根最少量练习（必学）</a>
-                <a href="#" class="link5" onclick="切换按钮文字2(this)">表上全字根（选学）</a>
-                <a href="https://www.bilibili.com/video/BV1Mc411F7eF/" class="link1111" onclick="切换按钮文字2(this)"
-                    target="_blank"  style="color: red;" >规则快看（必学）</a>
-                <a href="./zy.html" class="link011" onclick="切换按钮文字2(this)" target="_blank">常用字拆字（选学）</a>
-                <a href="./gz.html" class="link011" onclick="切换按钮文字2(this)" target="_blank"  style="color: red;">规则训练（选学-建议学-给毕业证）</a>
-                <a href="./zyi.html" class="link01222" onclick="切换按钮文字2(this)" target="_blank">注意的字（很难-可不学-给专家证）</a>
-                <a href="https://hanxinma.gitlab.io/" class="link01222" onclick="切换按钮文字2(this)" target="_blank">如果有链接打不开，请看文字版</a>
-            </div>
-        </div>
-
-
-        <div class="下拉菜单">
-            <div  class="下拉按钮" id="按钮3">网页版输入法</div>
-            <div class="下拉内容">
-                <a href="https://hanxinma.gitlab.io/js/shouye.html" class="link334446666" onclick="切换按钮文字23(this)" target="_blank">在线体验汉心网页版输入法</a>
-                
-            </div>
-        </div>
-        <!-- <a href="#" class="link99">汉心辅字根练习</a>
-        <a href="#" class="link2">前500字精简</a> -->
-
-
-        <div class="container2">
-            <div id="当前根显示"></div>
-            <div class="错误消息" id="错误消息"></div>
-            <div class="错误消息二" id="错误消息二"></div>
-
-        </div>
-
-        <!-- ---------------------- -->
-
-        <input type="text" id="用户输入" placeholder="按Ctrl显字根,按空格键学习">
-          <div class="错误消息二" id="错误消息二"></div>
-        <div id="空">
-            <div id="加分值"></div>
-
-
-        </div>
-
-        <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
-        <div id="时间" style="display:none;"></div>
-        <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
-        <div class="训练分数" id="训练分数">总分:<span id="总分数">0</span></div>
-
-        <details class="学习和使用说明">
-            <summary>学习和使用说明</summary>
-            <div>
-                <p><b>建议双拼训练,更多功能里开启听写模式,这样效果更好.</b></p>
-                <p>先学双拼,搞不懂选哪个就选第一个就可以了.双拼练熟了.就可以打字了</p>
-                <p style="color: rgb(145, 0, 0); ">然后点击双拼右边的辅助码,把<b>必学</b>练熟你就学会汉心快打</p>
-                <p style="color: gray; ">然后就可以去网盘里下载对应的输入法就可以用了</p>
-                <p>当然你不下载输入法,直接把码表挂到搜狗或手机里也可以用.</p>
-                <p>下载汉心自然或汉心小鹤输入法,具体看网盘里介绍,或官网里或下载包里的使用介绍</p>
-                <p>一</p>
-                <a href="http://yaoxiazai.ysepan.com"  target="_blank"><b>点我去网盘里下载输入法或码表</b></a>
-                <p>或百度搜索汉心码,汉心快打,也可以找到相关资源</p>
-         
-          
-            </div>
-        </details>
-        <details class="所有根">
-            <summary>本段所有字根</summary>
-            <div id="所有根显示">
-            </div>
-        </details>
-
-
-
-        <details class="更多功能">
-            <summary>更多功能</summary>
-            <div>
-                <button id="refreshButton">保存进度或刷新</button>
-                <button id="听写按钮">听写关开</button>
-                <button id="删除当前根按钮">删除当前根-</button>
-                <button id="打开文件按钮">上传txt文件学习</button>
-                <button onclick="shuffleList()">打乱字根顺序</button>
-                <button id="关闭按钮" onclick="切换答案消失状态()">可关答案消失</button>
-                <button id="关闭动画" onclick="切换字根动画状态()">可关字根动画</button>
-                <button id="toggleButton">自显模式</button>
-                <button id="保存按钮">下载错误次数</button>
-                <button id="加到特训">加到特训=</button>
-                <button id="特训" onclick="特训清空()">特训清空</button>
-                <button onclick="添加一组当前根()">加一组到特训7</button>
-                <button onclick="下载特训()">下载特训</button>
-                <button onclick="后移到最后()">后移到最后0</button>
-                <button onclick="后移到前()">最后移到第一9</button>
-                <button id="播放控制按钮" onclick="切换播放状态()">鼓掌关闭</button>
-                <button id="竞赛模式" onclick="竞赛模式状态()">竞赛模式</button>
-                <button onclick="showDialog()">字根后移位数</button>
-                <div id="dialog" style="display: none;">
-                    <input type="text" id="inputNumber" placeholder="字根后移位数">例:填写200,那答对就后移200位,方便快练一遍.复位(刷新页面)
-                    <button onclick="自定义位数()">确认</button>
+            
+            <!-- 双拼学习下拉菜单 -->
+            <div class="nav-dropdown">
+                <div class="nav-dropdown-btn" id="nav-dropdown-btn" onclick="toggleDropdown('dropdown1')">
+                    <span id="nav-current">双拼学习</span>
+                    <span class="nav-arrow">▼</span>
                 </div>
-
-
-
-                <div id="学习进度"></div>
-
-
-                <div id="当前根显示2"></div>
-                <input type="text" id="用户输入特训" placeholder="加特训后点这里输入">
-
-
-                <!-- <button id="启用空格" onclick="切换提交模式()">空格提交</button> -->
-                <p>加到特训(快捷键=号),删除当前根(快捷键-号),第一移到最后(快捷键0键).技巧,下载错误,编辑,上传txt强训.</p>
-                <p>电脑端关闭自动保存进度,手机端需要刷新保存进度.总分不乱点会累加</p>
-                <p>可以把老是遗忘加到特训,和完全记得,字根删了,以便加快进程.</p>
-                <p>如果拼音读音不准,属正常,因为语音只能读汉字</p>
-                <p>打开本地txt文件学习-这个功能,可以方便你自己编写语音提示进行训练,也可以把你不熟悉的音节放进去训练.</p>
-
-                <p>txt里文本格式是,文字+tab符+字母+tab符+语音提示中文,例如下</p>
-         
-
+                <div class="nav-dropdown-content" id="dropdown1">
+                    <div class="nav-dropdown-item" data-index="0" onclick="selectNav(0)">自然双拼</div>
+                    <div class="nav-dropdown-item" data-index="1" onclick="selectNav(1)">小鹤双拼</div>
+                    <div class="nav-dropdown-item" style="color: #999;">常用拼音不用学</div>
+                    <div class="nav-dropdown-item" style="color: red;">上方三选一即可</div>
+                    <div class="nav-dropdown-item" style="color: #999;">建议练熟才打字</div>
+                    <div class="nav-dropdown-item" style="color: #999;">双拼的含义是把长拼音</div>
+                    <div class="nav-dropdown-item" style="color: #999;">拆分两部分放在两个键上</div>
+                    <div class="nav-dropdown-item" style="color: #999;">比如:chang双拼就是ih</div>
+                    <div class="nav-dropdown-item" onclick="selectExternalLink('https://hanxinma.gitlab.io/longma/')">
+                        龙码乱序声调双拼（难）</div>
+                </div>
             </div>
-        </details>
-        <!-- <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
-        <div class="训练分数" id="训练分数">总分:<span id="总分数">0</span></div> -->
 
-
-
-
-
-
-        <div class="container">
-            <div class="toggle-button" onclick="切换语音()">
-                <div class="slider"></div>
+<!-- 汉心辅助码学习下拉菜单 -->
+            <div class="nav-dropdown">
+                <div class="nav-dropdown-btn" onclick="toggleDropdown('dropdown2')">
+                    <span id="nav-current-2">汉心辅助码</span>
+                    <span class="nav-arrow">▼</span>
+                </div>
+                <div class="nav-dropdown-content" id="dropdown2">
+                    <div class="nav-dropdown-item" style="color: red;" data-index="2" onclick="selectNav(2)">汉心最少量练习（必学）</div>
+                    <div class="nav-dropdown-item" data-index="3" onclick="selectNav(3)">全部字根练习</div>
+                    <div class="nav-dropdown-item" style="color: red;"
+                        onclick="selectExternalLink('https://www.bilibili.com/video/BV1Mc411F7eF/')">规则快看（必学）</div>
+                    <div class="nav-dropdown-item" onclick="selectExternalLink('./zy.html')">常用字拆字（选学）</div>
+                    <div class="nav-dropdown-item" onclick="selectExternalLink('./gz.html')">规则训练（选学-建议学）</div>
+                    <div class="nav-dropdown-item" onclick="selectExternalLink('./zyi.html')">注意的字（很难-可不学）</div>
+                </div>
             </div>
-            <div>语音</div>
+
+<!-- 网页版输入法下拉菜单 -->
+            <div class="nav-dropdown">
+                <div class="nav-dropdown-btn" onclick="toggleDropdown('dropdown3')">
+                    <span>网页版输入法</span>
+                    <span class="nav-arrow">▼</span>
+                </div>
+                <div class="nav-dropdown-content" id="dropdown3">
+                    <div class="nav-dropdown-item"
+                        onclick="selectExternalLink('https://hanxinma.gitlab.io/js/shouye.html')">在线体验汉心网页版输入法</div>
+                </div>
+            </div>
         </div>
 
+        <div class="badge">汉心龙超级记忆训练</div>
 
-        <div class="container">
-            <div class="toggle-button active" onclick="切换音效()">
-                <!-- toggle-button active-->
-                <div class="slider"></div>
+        <div class="voice-toggle">
+            <div>
+                <input type="checkbox" id="voice-toggle">
+                <label for="voice-toggle">开启语音</label>
             </div>
-            <div>音效</div>
+            <div>
+                <input type="checkbox" id="hide-zigen">
+                <label for="hide-zigen">隐藏字根</label>
+            </div>
         </div>
 
+        <div class="progress-bar">
+            <div class="progress-inner" id="progress-inner"></div>
+        </div>
+        <div class="progress-text" id="progress-text">0%</div>
 
+        <div class="zigen-display" id="zigen-box">王</div>
+        <div class="hint" id="hint-box"></div>
+
+
+
+        <input type="text" id="input-el" placeholder="" autocomplete="off" spellcheck="false">
+        <div class="error-hint" id="error-answer"></div>
+
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value mastered" id="stat-mastered">0</div>
+                <div class="stat-label">已牢记</div>
+
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="stat-learning">0</div>
+                <div class="stat-label">待学习</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value wrong" id="stat-wrong">0</div>
+                <div class="stat-label">强化</div>
+            </div>
+        </div>
+
+        <button class="reset-btn" id="reset-btn">重置</button>
+        <button class="reset-btn" onclick="location.href='../index.html'">首页</button>
+        <div class="nav-desc">必学的要练熟，快的话3小时学会龙码，慢的话3天</div>
     </div>
-    <a href="https://hanxinma.gitlab.io/" target="_blank"><b>汉心快打官网首页</b> </a>
-    <a href="https://hanxinma.gitlab.io/longma" target="_blank">友情连接: 龙码 </a>
-    <a href="https://rime.im/" target="_blank">小狼毫 </a>
-    <a href="https://hanxinma.gitlab.io/" target="_blank">汉心快打 </a>
-    <a href="https://hanxinma.gitlab.io/yixue" target="_blank">易学码 </a>
-    <a href="https://hanxinma.gitlab.io/zirj" target="_blank">自然音形 </a>
-    <!-- 声明，本代码，可以拿去非商业正规分享使用。但是请在你的页面给个龙码官网，友情超级链接，或保留上方龙码链接。谢谢！-->
 
+    <div class="celebration" id="celebration">
+        <div class="celebration-content">
+            <div class="celebration-icon">🎉</div>
+            <div class="celebration-title">恭喜完成!</div>
+            <button class="celebration-btn" id="celebration-btn">开始复习</button>
+        </div>
+    </div>
 
-    <script src="longma.js"></script>
-    <script src="xunlianz.js"></script>
     <script>
-        // 定义一个函数，用于在点击链接时弹出弹窗
-        function showGreeting() {
-            alert("常用拼音，就是全拼，不用学，直接学后面的辅助码部分就可以了");
-        }
+
+
+
+        let 根队列1 = ['ian\tm\t一安', 'ang\th\t昂', 'ia\tw\t一啊鸭', 'uan\tr\t无安', 'ai\tl\t哎', 'uang\td\t无昂汪', 'un\tp\t晕', 'iao\tc\t一凹', 'ui\tv\t薇', '整体音节eng\teg\t哼', 'ie\tx\t噎', 'eng\tg\t哼', 'ch\ti\t吃', 'zh\tv\t只', 've\tt\t约', 'ue\tt\t约', 'ang\tah\t昂', 'iong\ts\t一翁', 'a\taa\t啊', 'ing\ty\t鹰', 'iu\tq\t优', 'ong\ts\t翁', 'e\tee\t屙', 'uai\ty\t屋挨', 'an\tj\t安', 'in\tn\t音', 'ao\tk\t凹', 'ua\tw\t无挖', 'uo\to\t无窝', 'ou\tb\t欧', 'iang\td\t一肮', 'o\too\t窝', 'ei\tz\t黑', 'sh\tu\t是', 'en\tf\t恩']
+
+        let 根队列2 = ['in\tb\t音', 'an\tj\t安', 'ue\tt\t约', 'iu\tq\t优', 'un\ty\t晕', 'o\too\t窝', 'uai\tk\t屋挨', 'ia\tx\t一啊鸭', '整体音节eng\teg\t哼', 'iang\tl\t一肮', 'uo\to\t无窝', 'ie\tp\t噎', 'a\taa\t啊', 'ian\tm\t一安', 'sh\tu\t是', 'eng\tg\t哼', 'ao\tc\t凹', 'uang\tl\t无昂汪', 'ei\tw\t黑', 'ui\tv\t薇', 'iong\ts\t一翁', 'ai\td\t哎', 'uan\tr\t无安', 'ing\tk\t鹰', 'ua\tx\t无挖', 'zh\tv\t只', 'iao\tn\t一凹', 'en\tf\t恩', 'ong\ts\t翁', 'e\tee\t屙', 'ch\ti\t吃', 'ou\tz\t欧', 'ang\th\t昂', 'ang\tah\t昂']
+        let 根队列3 = ['⺈（尔头）\te', '⺮\tv', '⻊\tz', '宀冖（像锅盖）\tg', '疒\tb', '刂\td', '阝卩\te', '攵\tw', '匚(像匡)\tk', '缶(fou3)\tf', '弗\tf', '戈\tg', '纟幺\ts', '木（和林有关）\tl', '廿（像艹）\tc', '朩（去横就是小）\tx', '日月(像圆的)\to', '彡\tp', '丶冫氵\td', '山（平舌山)\ts', '饣\tu', '忄\tx', '厶龴(像ㄥ折)\tv', '扌（扶手）\tf', '亠\tw', '𧘇（在衣键下面）\th', '口(喝口)\tk', '囗(围字大口)\tw', '一丨（字母里有横）\ta', '衤（衣服漂亮）\tp', '乂\tx', '辶廴\tz', '酉(you3)\ty', '爫（撇起笔）\tp', '乛ㄥ（所有含折笔画都是这个键）\tv', '龴\tv'];
+
+        let 根队列4 = ['扌\tf', '缶\tf', '攵\tw', '彳\tr', '八\tb', '犭\tq', '小口\tk', '饣\tu', '丶\td', '厂\ti', '爫\tp', '礻\tp', '乛\tv', '四\ts', '𧘇\th', '⻊\tz', '虫\ti', '匕\tb', '十\tu', '冫\td', '廴\tz', '目\tm', '匚\tk', '朩\tx', '讠\ty', '忄\tx', '西\tx', '弗\tf', '王\tw', '立\tl', '丿\tp', '厶\tv', '木\tl', '疒\tb', '亻\tr', '衤\tp', '丨\ta', '戈\tg', '囗\tw', '幺\ts', '廿\tc', '乀\tn', 'ㄥ\tv', '辶\tz', '纟\ts', '阝\te', '亠\tw', '山\ts', '火\th', '方\tf', '米\tm', '卩\te', '⺈\te', '龴\tv', '⺮\tv', '冖\tg', '刂\td', '田\tt', '月\to', '禾\th', '日\to', '广\tg', '人\tr', '乂\tx', '宀\tg', '钅\tj', '氵\td', '彡\tp', '土\tt', '酉\ty', '一\ta', '艹\tc'];
+        //let 根队列6=['斧,答字首尾两个部首的字母\tbj\t\t为什么不是父，因为汉心是取小字优先', '部\tle\t\t为什么不取亠，因为汉心有条规则是表上的大字元优先', '族\tfd\t\t为什么不取亠，因为表上大字元优先，那为什么尾不取矢，因为遇到多笔画就取最小字元', '量\tdl\t\t首码为什么不取日，因为汉心遇到单笔画就取组合，为什么不取土，因为穿插分开的不取，这种里是互相被穿插，所以就取不了土', '拍\tfb\t\t取小为什么不取日，因为遇到单笔画会取组合体，也是为了直观', '评\tyu\t\t为什么不取平，因为优先取最小字元，平里还可以取小字', '拼\tfk\t\t为什么不取廾，因为汉心没有这个字元，那为什么不取并，因为汉心遇到多笔画就取最小字元', '平\tau\t\t为什么不取干，平移不出的不取，干被点卡住了，平移不出所以不取干', '幽\tss\t\t看大一点，仔细看，可以取什么字，山能平移出，所以可以取山，而且汉心是优先取首笔块区域的', '抖\tfu\t\t为什么不取都斗，首先没有这个字根，然后再则优先取最小字，所以斗里还可以取小字', '禾\tqn\t\t为什么不是丿木，汉心不优先取笔画，因为汉心取一个千字后，那就没有木了', '道\tzm\t\t尾取小，遇到多笔画了', '伙\trh\t\t为什么火不取人，人能平移出啊，也是取最小字？因为字根表上有火这个字根，字根表上的字优先取', '老\tub\t\t不取土，土被穿插分开了，被破坏了，取不了', '内\tad\t\t不取人，人被穿插破坏了，取不了', '插\tfj\t\t规则是被穿插分开的不取，但是那个它，被穿插，但是没有被分开', '边\tzl\t\t为什么不先取笔顺的力，因为汉心强制定义了这个类型的字，是先取左边', '或\tag\t\t为什么不取口，因为，汉心对这样类型的字有强制定义，先取内部尾部', '感\tkx\t\t半包围含戈的类型的都是先内部尾，这个字容易取错', '式\tgg\t\t为什么不取一，因为汉心对这样类型的字强制定义是先取内部尾，尾码为什么不是丶，因为汉心对这个类型尾部都看成戈', '燧\ths\t\t汉心永远不优先取笔画的，哪怕取大字也不取笔画，遂属于能轻易组词的字就不是冷僻字--未遂', '建\tza\t\t冷僻字，不取的聿', '属\tuy\t\t能轻易组词的算能认识，包括古代名人，也算能认识，大禹治水--，但近现代名人地名不算能组词，不算能认识的字', '朵\tjl\t\t为什么不取丿，那不是变笔画吗，是变笔画，但是汉心对这个进行了强制定义为几，可以取几，也是为了直观', '邦\tae\t\t变笔画不取，丨变成丿了，首笔取一，歪丰，字根表上没有，然后又属于变笔画的，变笔画是不取的，取舍问题，这种类型的字很少，不能因少数字破坏了大部分字规则', '左\tag\t\t为什么首码不取十，因为汉心对变笔画是不取的，十的第二笔从丨变成丿了，所以是不取十', '旭\tjo\t\t有定义延伸笔画不算变笔画', '切\tqd\t\t小钩大钩是同类，所以不是变笔画，小钩可以看成大钩，所以它是', '比\tbb\t\t首码为什么不是v，因为大钩小钩是同笔画，小钩也可以看成大钩，所以比左右都是一样的', '规\tfj\t\t为什么还取夫，这难道不是变笔画不取吗，汉心还有条规则是，捺点是一类，所以这不是变笔画', '刁\tva\t\t取不了就取笔画，横提是一类', '堵\tto\t\t横提笔画是一类，所以提土旁和土字是一类', '百\tab\t\t汉心是取小字的，那为什么不取日，日还遇到多笔画了，但是汉心有条规则是说，取过首码后就不在看首码了，那日，就只遇到一个笔画了，所以', '孝\tuz\t\t为什么不是取土，因为土被穿插了不取，那子不也有点被穿插了吗，汉心对这个类型的字有强制定义，子还取子，这种类型的，一点点，都不算', '囱\tpw\t\t为什么不是取一，包围的字，先外后内，所以是反攵，丶捺是同类', '其\tab\t\t为什么不是艹，因为汉心，艹变形很大，很不直观，是不取的，这个类型的也是特殊定义该怎么取']
+        //let 根队列7 =['红(纟工)部首代表的两个字母\tsg\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '优(亻尤)\try\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '围(囗韦)\tww\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '文(亠乂)\twx\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '枚(木攵)\tlw\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '尔(⺈小)\tex\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '鱼(⺈一)\tea\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '叩(口卩)\tke\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '学(⺍子)\tez\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '黑(丨灬)\tae\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '单(丷丨)\tea\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '捷(扌人)\tfr\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '孩(子人)\tzr\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '酒(氵酉)\tdy\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '泰(一氺)\tau\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '幸(土十)\ttu\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '有(一月)\tao\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '爱(爫又)\tpy\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '被(礻又)\tpy\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '杉(木彡)\tlp\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '邦(一阝)\tae\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '岭(山龴)\tsv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '罢(罒厶)\tsv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '缺(缶乀)\tfn\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '越(土戈)\ttg\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '农(丶衣底部)\tdh\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '区(匚乂)\tkx\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '林(木木)\tll\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '跳(⻊兆)\tzv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '杀(乂朩)\txx\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '要(西女)\txn\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '革(廿丨)\tca\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '已(乛ㄥ)\tvv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '乙(乛ㄥ)\tvv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '九(丿ㄥ)\tpv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '事(一乛)\tav\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '习(乛冫)\tvd\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '竭(立ㄥ)\tlv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '鼎(目乛)\tmv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '今(人乛)\trv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '亏(二乛)\tev\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '民(乛ㄥ)\tvv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '以(ㄥ人)\tvr\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '气(丿ㄥ)\tpv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '云(二厶)\tev\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '卷(丶㔾)\tdv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '父(八乂)\tbx\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '饮(饣人)\tur\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '定(宀人)\tgr\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '罕(冖干)\tgg\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '到(至刂)\tvd\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '建(廴丨)\tza\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '过(辶寸)\tzc\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '等(⺮寸)\tvc\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '草(艹十)\tcu\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '疼(疒冬)\tbd\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '铁(钅失)\tju\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '放(方攵)\tfw\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '幻(幺乛)\tsv\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '阳(阝日)\teo\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '猫(犭田)\tqt\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '很(彳畏底部)\trh\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。', '卫(卩一)\tea\t\t必要字根已在前面的练习里，但还有很多字根不在练习里，因为那些靠常识能猜到，全记收益比很低。']
+
+        (function () {
+            'use strict';
+
+            // 所有根队列数据
+            var allData = [
+                根队列1,  // index 0: 自然双拼
+                根队列2,  // index 1: 小鹤双拼
+                根队列3,  // index 2: 汉心最少量练习
+                根队列4   // index 3: 全部字根练习
+            ];
+            var currentDataIndex = 0;
+
+            // 转换函数：将原始数据转为DATA格式
+            function convertData(rawArr) {
+                return rawArr.map(function (item) {
+                    var parts = item.split('\t');
+                    return {
+                        name: parts[0] || '',       // 字根
+                        key: parts[1] || '',        // 编码
+                        rel: parts[2] || ''         // 汉字（相关字）
+                    };
+                });
+            }
+
+            // 字根数据
+            var DATA = convertData(根队列1);
+
+            // 算法参数
+            var STEPS = [1, 2, 4, 8, 16, 32];
+            var MASTERED_LEVEL = 6;
+            var MASTERED_FLAG = 99;
+            var STORAGE_KEY = 'zima_training_progress';
+
+            // 获取当前队列的storage key
+            function getStorageKey() {
+                return STORAGE_KEY + '_' + currentDataIndex;
+            }
+
+            // 状态
+            var records = [];
+            var masteredCount = 0;
+            var wrongCount = 0;
+            var isShowingWrong = false;
+
+            // 切换数据
+            function switchData(index) {
+                currentDataIndex = index;
+                DATA = convertData(allData[index]);
+                // 加载对应队列的进度
+                if (!loadProgress()) {
+                    initFresh();
+                } else {
+                    updateUI();
+                }
+            }
+
+            // DOM 元素
+            var inputEl, zigenBox, hintBox, errorAnswer, progressInner, progressText;
+            var statMastered, statLearning, statWrong, celebrationEl, voiceToggle, hideZigenToggle;
+
+            // 保存进度到 localStorage
+            function saveProgress() {
+                var data = {
+                    records: records,
+                    masteredCount: masteredCount,
+                    wrongCount: wrongCount
+                };
+                try {
+                    localStorage.setItem(getStorageKey(), JSON.stringify(data));
+                } catch (e) {
+                    console.log('保存进度失败', e);
+                }
+            }
+
+            // 从 localStorage 加载进度
+            function loadProgress() {
+                try {
+                    var saved = localStorage.getItem(getStorageKey());
+                    if (saved) {
+                        var data = JSON.parse(saved);
+                        // 验证数据格式是否正确
+                        if (Array.isArray(data.records) && data.records.length > 0) {
+                            records = data.records;
+                            masteredCount = data.masteredCount || 0;
+                            wrongCount = data.wrongCount || 0;
+                            return true;
+                        }
+                    }
+                } catch (e) {
+                    console.log('加载进度失败', e);
+                }
+                return false;
+            }
+
+            // 初始化 DOM
+            function initDOM() {
+                inputEl = document.getElementById('input-el');
+                zigenBox = document.getElementById('zigen-box');
+                hintBox = document.getElementById('hint-box');
+                errorAnswer = document.getElementById('error-answer');
+                progressInner = document.getElementById('progress-inner');
+                progressText = document.getElementById('progress-text');
+                statMastered = document.getElementById('stat-mastered');
+                statLearning = document.getElementById('stat-learning');
+                statWrong = document.getElementById('stat-wrong');
+                celebrationEl = document.getElementById('celebration');
+                voiceToggle = document.getElementById('voice-toggle');
+                hideZigenToggle = document.getElementById('hide-zigen');
+
+                // 绑定按钮事件
+                document.getElementById('reset-btn').onclick = resetApp;
+                document.getElementById('celebration-btn').onclick = closeCelebration;
+            }
+
+            // 语音朗读
+            function speakText(text) {
+                if (!voiceToggle || !voiceToggle.checked) return;
+                if (!text) return;
+
+                var utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'zh-CN';
+                utterance.rate = 0.8;
+                speechSynthesis.cancel();
+                speechSynthesis.speak(utterance);
+            }
+
+            // 初始化游戏（全新开始）
+            function initFresh() {
+                records = [];
+                for (var i = 0; i < DATA.length; i++) {
+                    records.push([-1, i]); // [level, index]
+                }
+                masteredCount = 0;
+                wrongCount = 0;
+                isShowingWrong = false;
+
+                if (celebrationEl) {
+                    celebrationEl.classList.remove('show');
+                }
+
+                saveProgress();
+                updateUI();
+            }
+
+            // 更新界面
+            function updateUI() {
+                // 清理已牢记的
+                while (records.length > 0 && records[0][0] === MASTERED_FLAG) {
+                    records.shift();
+                }
+
+                if (records.length === 0) {
+                    if (celebrationEl) {
+                        celebrationEl.classList.add('show');
+                    }
+                    return;
+                }
+
+                var level = records[0][0];
+                var dataIdx = records[0][1];
+                var card = DATA[dataIdx];
+
+                // 更新字根
+                zigenBox.textContent = card.name;
+                zigenBox.classList.remove('shake', 'error');
+
+                // 隐藏/显示字根
+                var isHidden = hideZigenToggle && hideZigenToggle.checked;
+                if (isHidden) {
+                    zigenBox.style.visibility = 'hidden';
+                } else {
+                    zigenBox.style.visibility = 'visible';
+                    // 新学的字根(level=-1)用浅绿色
+                    if (level === -1) {
+                        zigenBox.style.color = '#0097a1';
+                    } else {
+                        zigenBox.style.color = '#1a1a1a';
+                    }
+                }
+
+                // 更新提示
+                if (level === -1) {
+                    hintBox.innerHTML = '<div class="first-hint">学习请输入： <b>' + card.key + '</b></div>';
+                    // 学习状态也朗读rel数据
+                    if (card.rel) {
+                        speakText(card.rel);
+                    }
+                } else if (card.rel) {
+                    // 朗读相关内容（无论是否隐藏显示）
+                    speakText(card.rel);
+                    // 非学习状态下，如果开启了隐藏字根，则隐藏rel提示
+                    if (isHidden) {
+                        hintBox.innerHTML = '';
+                    } else {
+                        hintBox.innerHTML = '<div style="color:#999;">相关：' + card.rel + '</div>';
+                    }
+                } else {
+                    hintBox.innerHTML = '<div style="color:#999;">忘记请按空格键</div>';
+                }
+                errorAnswer.style.visibility = 'hidden';
+
+                // 更新进度
+                var percent = Math.round((masteredCount / DATA.length) * 100);
+                progressInner.style.width = percent + '%';
+                progressText.textContent = percent + '% 已牢记';
+
+                // 更新统计
+                statMastered.textContent = masteredCount;
+                statLearning.textContent = records.length;
+                statWrong.textContent = wrongCount;
+
+                // 重置输入框
+                inputEl.value = '';
+                inputEl.disabled = false;
+                inputEl.className = '';
+                inputEl.placeholder = '';
+                inputEl.focus();
+            }
+
+            // 答对
+            function handleCorrect() {
+                if (records.length === 0) return;
+
+                var currentRecord = records.shift();
+                var newLevel = currentRecord[0] === -1 ? 0 : currentRecord[0] + 1;
+
+                // 视觉反馈
+                zigenBox.classList.add('pop');
+                inputEl.classList.add('pop');
+
+                if (newLevel >= MASTERED_LEVEL) {
+                    currentRecord[0] = MASTERED_FLAG;
+                    masteredCount++;
+                    records.push(currentRecord);
+                } else {
+                    var jump = STEPS[newLevel] || 32;
+                    var insertPos = Math.min(jump, records.length);
+                    records.splice(insertPos, 0, currentRecord);
+                    currentRecord[0] = newLevel;
+                }
+
+                // 保存进度
+                saveProgress();
+                setTimeout(updateUI, 150);
+            }
+
+            // 答错
+            function handleWrong(showAnswer) {
+                if (isShowingWrong) return;
+                if (records.length === 0) return;
+
+                isShowingWrong = true;
+                wrongCount++;
+
+                var level = records[0][0];
+                var dataIdx = records[0][1];
+                var card = DATA[dataIdx];
+
+                // 字根抖动并变红
+                zigenBox.style.animation = 'none';
+                zigenBox.offsetHeight;
+                zigenBox.style.animation = '';
+                zigenBox.style.color = '#d32f2f'; // 用 inline 样式确保覆盖
+                zigenBox.classList.add('shake', 'error');
+
+                // 显示答案
+                if (showAnswer !== false) {
+                    errorAnswer.textContent = '正确答案：' + card.key;
+                    errorAnswer.style.visibility = 'visible';
+                }
+
+                // 禁用输入
+                inputEl.disabled = true;
+                inputEl.placeholder = '按任意键重试';
+
+                // 重置 level
+                records[0][0] = 0;
+
+                // 保存进度
+                saveProgress();
+            }
+
+            // 继续
+            function continueFromWrong() {
+                if (!isShowingWrong) return;
+
+                isShowingWrong = false;
+                inputEl.classList.remove('input-error');
+                inputEl.disabled = false;
+                inputEl.placeholder = '';
+                inputEl.value = '';
+                inputEl.focus();
+            }
+
+            // 庆祝
+            function closeCelebration() {
+                if (celebrationEl) {
+                    celebrationEl.classList.remove('show');
+                }
+                records = [];
+                for (var i = 0; i < DATA.length; i++) {
+                    records.push([0, i]);
+                }
+                masteredCount = 0;
+                wrongCount = 0;
+                saveProgress();
+                updateUI();
+            }
+
+            // 重置（清空进度）
+            function resetApp() {
+                if (confirm('确定要重置所有进度吗？')) {
+                    initFresh();
+                }
+            }
+
+            // 输入处理
+            function onInput(e) {
+                if (isShowingWrong) return;
+                if (records.length === 0) return;
+
+                var currentRecord = records[0];
+                var card = DATA[currentRecord[1]];
+                var val = e.target.value.toLowerCase().trim();
+
+                if (val.length < card.key.length) return;
+
+                if (val === card.key) {
+                    handleCorrect();
+                } else {
+                    handleWrong();
+                }
+            }
+
+            // 键盘处理
+            function onKeydown(e) {
+                if (e.key === ' ' && !isShowingWrong) {
+                    e.preventDefault();
+                    handleWrong();
+                } else if (isShowingWrong) {
+                    continueFromWrong();
+                }
+            }
+
+            // 启动
+            function start() {
+                initDOM();
+
+                // 下拉菜单切换（支持多个下拉菜单）
+                window.toggleDropdown = function (dropdownId) {
+                    // 关闭所有其他下拉菜单
+                    document.querySelectorAll('.nav-dropdown').forEach(function (d) {
+                        if (d.querySelector('.nav-dropdown-content').id !== dropdownId) {
+                            d.classList.remove('open');
+                        }
+                    });
+                    // 切换当前下拉菜单
+                    var dropdown = document.getElementById(dropdownId).parentElement;
+                    dropdown.classList.toggle('open');
+                };
+
+                // 导航选择
+                window.selectNav = function (index) {
+                    // 关闭所有下拉菜单
+                    document.querySelectorAll('.nav-dropdown').forEach(function (d) {
+                        d.classList.remove('open');
+                    });
+
+                    // 获取当前选择的项目
+                    var items = document.querySelectorAll('.nav-dropdown-item[data-index]');
+                    var selectedItem = null;
+                    for (var i = 0; i < items.length; i++) {
+                        if (parseInt(items[i].getAttribute('data-index')) === index) {
+                            selectedItem = items[i];
+                            break;
+                        }
+                    }
+
+                    if (selectedItem) {
+                        // 更新按钮显示的文字
+                        var btn = selectedItem.closest('.nav-dropdown').querySelector('.nav-dropdown-btn span:first-child');
+                        if (btn && !btn.classList.contains('nav-arrow')) {
+                            btn.textContent = selectedItem.textContent;
+                        }
+
+                        // 更新active状态
+                        items.forEach(function (item) {
+                            item.classList.remove('active');
+                        });
+                        selectedItem.classList.add('active');
+
+// 高亮当前导航
+                        document.querySelectorAll('.nav-dropdown').forEach(function (d) {
+                            d.classList.remove('active');
+                        });
+                        selectedItem.closest('.nav-dropdown').classList.add('active');
+
+                        // 切换数据
+                        switchData(index);
+                    }
+                };
+
+// 外部链接跳转
+                window.selectExternalLink = function (url) {
+                    window.open(url, '_blank');
+                };
+
+                // 点击其他地方关闭下拉菜单
+                document.addEventListener('click', function (e) {
+                    if (!e.target.closest('.nav-dropdown')) {
+                        document.querySelectorAll('.nav-dropdown').forEach(function (d) {
+                            d.classList.remove('open');
+                        });
+                    }
+                });
+
+                // 尝试加载保存的进度，如果没有则重新开始
+                if (!loadProgress()) {
+                    initFresh();
+                } else {
+                    updateUI();
+                }
+
+                inputEl.oninput = onInput;
+                inputEl.onkeydown = onKeydown;
+                document.onkeydown = onKeydown;
+
+                // 强制锁定输入框焦点
+                function lockFocus() {
+                    inputEl.focus();
+                }
+                // 页面加载后立即锁定
+                setTimeout(lockFocus, 10);
+                // 防止输入框失去焦点
+                inputEl.onblur = function () {
+                    setTimeout(lockFocus, 10);
+                };
+                // 点击页面任意位置时重新聚焦
+                document.addEventListener('click', lockFocus);
+                document.addEventListener('touchstart', lockFocus);
+            }
+
+            // 等 DOM 加载完
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', start);
+            } else {
+                start();
+            }
+        })();
     </script>
 
 </body>

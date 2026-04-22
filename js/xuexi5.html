@@ -1,191 +1,836 @@
 <!DOCTYPE html>
-<!-- 声明，本代码，可以拿去非商业正规分享使用。但是请在你的页面给个龙码官网，友情超级链接，谢谢！-->
-<html lang="zh-cn">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>龙码音形拼音字根训练</title>
-    <link rel="stylesheet" type="text/css" href="longyangshi.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Noto Sans SC', -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e0e5ec 0%, #d0d5dc 100%);
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            padding: 2.5rem 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .nav-cards {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 0;
+            margin: -2.5rem -2rem 1.5rem -2rem;
+            padding: 1rem 2rem 0 2rem;
+            background: #0097a1;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .nav-card {
+            flex: 1;
+            padding: 16px 8px 20px 8px;
+            background: #00a8b0;
+            border-radius: 15px 15px 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            margin: 0 1px;
+        }
+
+        .nav-card:hover {
+            background: #00b5c2;
+            color: white;
+        }
+
+        .nav-card.active {
+            background: white;
+            color: #0097a1;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+            font-weight: 600;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: -2px;
+        }
+
+        .nav-desc {
+            font-size: 0.75rem;
+            color: #999;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .voice-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .voice-toggle>div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .voice-toggle input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #0097a1;
+            margin: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+
+            border-radius: 50px;
+            font-size: 2rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #eee;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-inner {
+            height: 100%;
+            background: #0097a1;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .progress-text {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1.5rem;
+        }
+
+        .zigen-display {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            color: #1a1a1a;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+
+        .hint {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 2rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+        }
+
+        .first-hint {
+            background: #fff8e1;
+            color: #f57c00;
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .error-hint {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            margin-top: 0.25rem;
+            visibility: hidden;
+        }
+
+        input {
+            padding: 4px 6px 2px 6px;
+            /* 改小内边距 */
+            font-size: 2rem;
+            /* 改小字体 */
+            max-width: 120px;
+            /* 改窄最大宽度 */
+            width: 100%;
+
+
+
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            text-align: center;
+            line-height: 1;
+            border: 2px solid #999;
+            border-radius: 10px;
+            outline: none;
+            text-transform: lowercase;
+            transition: border-color 0.2s;
+            caret-color: transparent;
+            background: transparent;
+            color: #999;
+        }
+
+        input:focus {
+            border-color: #999;
+        }
+
+        input.input-error {
+            border-color: #999;
+            background: transparent;
+        }
+
+        input:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .stat-value.mastered {
+            color: #0097a1;
+        }
+
+        .stat-value.wrong {
+            color: #2b2b2b;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 0.25rem;
+        }
+
+        .reset-btn {
+            background: none;
+            border: none;
+            color: #0097a1;
+            cursor: pointer;
+            font-size: 0.85rem;
+            padding: 8px 16px;
+            margin-top: 1rem;
+        }
+
+        .reset-btn:hover {
+            text-decoration: underline;
+        }
+
+        .zigen-display.error {
+            color: #d32f2f;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-8px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(8px);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pop {
+            animation: pop 0.2s ease-out;
+        }
+
+        /* 庆祝弹窗 */
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .celebration.show {
+            display: flex;
+        }
+
+        .celebration-content {
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .celebration-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .celebration-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .celebration-btn {
+            background: #0097a1;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="容器">
 
-        <h1>自然龙码快速学会程序</h1>
-
-         <!-- -------    <a href="#" class="link0">声母(必学)</a>---------- -->
-        <a href="#" class="link1">韵母组(需练熟-必学)</a>
-           <a href="#" class="link3">韵母单(练速度-选学)</a>
-    <!-- -------    <a href="xuexi2.html" class="link99">韵母单(练条反)</a> ---------- -->
-    <a href="#" class="link2">前500字精简-(选学)</a> 
+    <div class="container">
+        <div class="nav-cards">
+            <div class="nav-card active">韵母必学</div>
+            <div class="nav-card">单韵选学</div>
+            <div class="nav-card">前500字选学</div>
          
-<p style="font-size: 0.85em; color: gray;">必学的要练熟，快的话3小时学会龙码，慢的话3天。</p>
-
-
-        <div class="container2">
-            <div id="当前根显示"></div>
-            <div class="错误消息" id="错误消息"></div>
-            <div class="错误消息二" id="错误消息二"></div>
-
         </div>
 
-        <!-- ---------------------- -->
-
-        <input type="text" id="用户输入" placeholder="点此输入（按空格显答案）">
-        <div id="空">
-            <div id="加分值"></div>
 
 
-        </div>
-           
-        <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
-        <div id="时间" style="display:none;"></div>
-        <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
-        <div class="训练分数" id="训练分数">总分:<span id="总分数">0</span></div>
+        <div class="badge">自然龙超级记忆训练</div>
 
-        <details class="学习说明">
-            <summary>学习说明</summary>
+        <div class="voice-toggle">
             <div>
-            
-                              <p><b>默认模式无语音，开启语音模式在更多功能里（语音模式，推荐用这个，但新人用不好），手机端无效</b></p>
-                                     <p style="color: gray; ">启用语音模式后，ctrl显示题目,Enter重新语音,更多功能里可开显拼音,但是不建议看拼音</p>
-                <p><b>默认模式训练，建议把拼音读出来（或默读，也有助记忆），否则打字容易想不起来</b></p>
-                
-
-                <p>先把声母练熟,在把韵母组练熟,这样就学会了.手机端语音无效</p>               
-                <p style="color: gray; ">韵母组练熟了,就可以上手打字,但是会有痛苦期.非痛苦,建议韵母单也练熟.</p>
-                <p style="color: gray; ">练熟的感觉就是,不用想就知道怎么打</p>
-                <p>注意:语音读的是汉字所以拼音音准，不准.拼音打字想音为主,看字母不利于条反.</p>
-         
-
-                
+                <input type="checkbox" id="voice-toggle">
+                <label for="voice-toggle">开启语音</label>
             </div>
-        </details>
-        <details class="所有根">
-            <summary>本段所有字根</summary>
-            <div id="所有根显示">
-            </div>
-        </details>
-
-
-
-        <details class="更多功能">
-            <summary>更多功能</summary>
             <div>
-                <button id="语音模式">语音模式</button>
-                <button onclick="显示当前根ctrl()">Ctrl显示</button>
-                <button onclick="回车键()">回车再读</button>
-                <button id="refreshButton">保存进度或刷新</button>
-                <button id="听写按钮">听写关开</button>
-                <button id="秒显按钮">秒显关开</button>
-                <button id="删除当前根按钮">删除当前根-</button>
-                <button id="打开文件按钮">上传txt文件学习</button>
-                <button onclick="shuffleList()">打乱字根顺序</button>
-                <button id="关闭按钮" onclick="切换答案消失状态()">可关答案消失</button>
-                <button id="关闭动画" onclick="切换字根动画状态()">可关字根动画</button>
-                <button id="toggleButton">自显模式</button>
-                <button id="保存按钮">下载错误次数</button>
-                <button id="加到特训">加到特训=</button>
-                <button id="条反模式">条反模式</button>
-                <button onclick="条反时间自定义()">条反时间</button>
-                <button id="特训" onclick="特训清空()">特训清空</button>
-                <button onclick="添加一组当前根()">加一组到特训7</button>
-                <button onclick="下载特训()">下载特训</button>
-                <button onclick="后移到最后()">后移到最后0</button>
-                <button onclick="后移到前()">最后移到第一9</button>
-                <button id="播放控制按钮" onclick="切换播放状态()">鼓掌关闭</button>
-                <button id="竞赛模式" onclick="竞赛模式状态()">竞赛模式</button>
-                <button onclick="showDialog()">字根后移位数</button>
-                <div id="dialog" style="display: none;">
-                    <input type="text" id="inputNumber" placeholder="字根后移位数">例:填写200,那答对就后移200位,方便快练一遍.复位(刷新页面)
-                    <button onclick="自定义位数()">确认</button>
-                </div>
-
-
-
-                <div id="学习进度"></div>
-
-
-                <div id="当前根显示2"></div>
-                <input type="text" id="用户输入特训" placeholder="加特训后点这里输入">
-
-
-                <!-- <button id="启用空格" onclick="切换提交模式()">空格提交</button> -->
-                   <p><b>---功能说明---</b></p>
-                        
-                <p>电脑端关闭自动保存进度,手机端需要刷新保存进度.总分不乱点会累加</p>
-           
-                   <p>按钮上的符号符号数字代表快捷键</p>
-                  <p> 语音模式-推荐使用,防止打字想不起来键位</p>
-                       <p> 加到特训-当你发现这个字根字母,你老是记不住,可以加到特训,在下方强训一下.</p>
-                 <p>  加一组到特训-基本同上,只是一次会加一组进去</p>
-                  
-                  <p> 秒显关开-打开后,题目就显示几秒后消失,有助于你想音训练</p>
-                   <p>删除当前根-有些学会的,可以给删了,可以加快进度</p>
-                  <p> 答案消失-打开后,答案就一直显示</p>
-                  <p> 自显模式-新的没有学过的字根,会自动显示答案让你学习,不清分.</p>
-                  <p> 下载错误次数-可以帮助你知道哪些字根你记的不熟,可以上传到txt里在训练一下.</p>
-             
-                <p>   条反模式-他是当你在几秒回答不了,就自动清分并显示答案,可以让你有紧迫感.</p>
-                 <p>  后移到最后-有些字根你记住了,不想训练,可以把他移到最后面.</p>
-                <p>   鼓掌关闭-如果系统有鼓掌声,觉得烦,可关闭</p>
-                <p>   竞赛模式-可以记录一个时间段,你的得分,方便截图分享.</p>
-               <p>    字根后移位数-写上100后,基本每个字根只要答对了,就移到最后面,不会重复出现,加快训练进度.</p>
-        
-                                
-                                
-       <p>----------</p>
-       
-                <p>上传txt文件学习-这个功能,可以方便你自己编写语音提示进行训练,也可以把你不熟悉的音节放进去训练.</p>
-
-                <p>txt里文本格式是,文字+tab符+字母+tab符+语音提示中文,例如下</p>
-                <p> ing k 语音文本列 第3列 是语音读的文本</p>
-                <p> 冫 d 语音文本列</p>
-                
-
-
+                <input type="checkbox" id="hide-zigen">
+                <label for="hide-zigen">隐藏字根</label>
             </div>
-        </details>
-        <!-- <div class="训练分数" id="训练分数"><span id="单分数"></span></div>
-        <div class="训练分数" id="训练分数">总分:<span id="总分数">0</span></div> -->
-
-
-
-
-
-
-        <div class="container">
-            <div class="toggle-button" onclick="切换语音()">
-                <div class="slider"></div>
-            </div>
-            <div>语音</div>
         </div>
 
+        <div class="progress-bar">
+            <div class="progress-inner" id="progress-inner"></div>
+        </div>
+        <div class="progress-text" id="progress-text">0%</div>
 
-        <div class="container">
-            <div class="toggle-button active" onclick="切换音效()">
-                <!-- toggle-button active-->
-                <div class="slider"></div>
+        <div class="zigen-display" id="zigen-box">王</div>
+        <div class="hint" id="hint-box"></div>
+
+
+
+        <input type="text" id="input-el" placeholder="" autocomplete="off" spellcheck="false">
+        <div class="error-hint" id="error-answer"></div>
+
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value mastered" id="stat-mastered">0</div>
+                <div class="stat-label">已牢记</div>
+
             </div>
-            <div>音效</div>
+            <div class="stat-item">
+                <div class="stat-value" id="stat-learning">0</div>
+                <div class="stat-label">待学习</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value wrong" id="stat-wrong">0</div>
+                <div class="stat-label">强化</div>
+            </div>
         </div>
 
-
+        <button class="reset-btn" id="reset-btn">重置</button>
+        <button class="reset-btn" onclick="location.href='../index.html'">首页</button>
+        <div class="nav-desc">必学的要练熟，快的话3小时学会龙码，慢的话3天</div>
     </div>
-    <a href="\longma\" target="_blank"><b>龙码官网首页</b> </a>
-    <a href="\longma\" target="_blank">友情连接: 龙码 </a>
-    <a href="https://rime.im/" target="_blank">小狼毫 </a>
-    <a href="\hanxin\" target="_blank">汉心快打 </a>
-    <a href="\yixue\" target="_blank">易学码 </a>
-    <a href="\ziran" target="_blank">自然音形 </a>
-    <!-- 声明，本代码，可以拿去非商业正规分享使用。但是请在你的页面给个龙码官网，友情超级链接，或保留上方龙码链接。谢谢！-->
 
-    <script src="xlongshuang.js"></script>
+    <div class="celebration" id="celebration">
+        <div class="celebration-content">
+            <div class="celebration-icon">🎉</div>
+            <div class="celebration-title">恭喜完成!</div>
+            <button class="celebration-btn" id="celebration-btn">开始复习</button>
+        </div>
+    </div>
 
-    <script src="xxunlianz.js"></script>
-  
+    <script>
+
+
+
+let 根队列0 = ['āáǎà\tlumi\t啊', 'āi ái ǎi ài\tbduo\t哎', 'ān án ǎn àn\tnkoj\t安', 'āng áng ǎng àng\tuwpd\t昂', 'āo áo ǎo ào\tqixv\t凹', 'ēéěè\treli\t屙', 'ēi éi ěi èi\tirjf\t黑', 'ēn én ěn èn\tesoo\t恩', 'ēng éng ěng èng\tcfyf\t哼', 'ērérěrèr\tqkuh\t屙', 'īíǐì\tjbgt\t衣', 'iā iá iǎ ià\tdcnx\t一啊鸭', 'iān ián iǎn iàn\trvpa\t一安', 'iāng iáng iǎng iàng\tyiue\t一肮', 'iāo iáo iǎo iào\tmull\t一凹', 'iē ié iě iè\tkscq\t噎', 'īn ín ǐn ìn\thcxv\t音', 'īng íng ǐng ìng\tenww\t鹰', 'iōng ióng iǒng\tpke\t一翁', 'iū iú iǔ iù\tzmzo\t优', 'ōóǒò\tpeig\t窝', 'ōng óng ǒng òng\tkjny\t翁', 'ōu óu ǒu òu\txazr\t欧', 'ūúǔù\talmh\t污', 'ǖǘǚǜ\thmsf\t淤', 'uā uá uǎ uà\tstgg\t无挖', 'uāi uái uǎi uài\tgspf\t屋挨', 'uān uán uǎn uàn\tdosc\t无安', 'uāng uáng uǎng uàng\twbue\t无昂汪', 'üē üé üě üè\tuiod\t约', 'uī uí uǐ uì\ttwvf\t薇', 'ūn ún ǔn ùn\tgfor\t晕', 'uō uó uǒ uò\tsllp\t无窝'];
+
+
+
+let 根队列1 = ['ā\tl\t啊\tlumi', 'á\tu\t拿\tlumi', 'ǎ\tm\t法\tlumi', 'à\ti\t那\tlumi', 'āi\tb\t哎\tbduo', 'ái\td\t来\tbduo', 'ǎi\tu\t矮\tbduo', 'ài\to\t爱\tbduo', 'ān\tn\t安\tnqoj', 'án\tk\t啽\tnqoj', 'ǎn\to\t赶\tnqoj', 'àn\tj\t暗\tnqoj', 'āng\tu\t汤\tuwpd', 'áng\tw\t狼\tuwpd', 'ǎng\tp\t涨\tuwpd', 'àng\td\t浪浪\tuwpd', 'āo\tq\t凹\tqixv', 'áo\ti\t鳌\tqixv', 'ǎo\tx\t袄\tqixv', 'ào\tv\t澳\tqixv', 'ē\tr\t屙\tqkuh', 'é\te\t俄\tqkuh', 'ě\tl\t惹惹\tqkuh', 'è\ti\t饿\tqkuh', 'ēi\ti\t黑\tirjk', 'éi\tr\t没\tirjk', 'ěi\tj\t给\tirjk', 'èi\tf\t被内\tirjk', 'ēn\te\t恩\tesoo', 'én\ts\t人\tesoo', 'ěn\to\t本\tesoo', 'èn\to\t摁\tesoo', 'ēng\tc\t哼\tcfyf', 'éng\tf\t能\tcfyf', 'ěng\ty\t冷\tcfyf', 'èng\tf\t蹦蹦\tcfyf', 'ī\tj\t衣\tjbgt', 'í\tb\t姨\tjbgt', 'ǐ\tg\t以\tjbgt', 'ì\tt\t议\tjbgt', 'iā\td\t一啊鸭\tdcnx', 'iá\tc\t一啊牙\tdcnx', 'iǎ\tn\t一啊雅\tdcnx', 'ià\tx\t一啊亚\tdcnx', 'iān\tr\t一安\trvpa', 'ián\tv\t一安延\trvpa', 'iǎn\tp\t一俺\trvpa', 'iàn\ta\t一按\trvpa', 'iāng\ty\t一肮\tyiue', 'iáng\ti\t一昂\tyiue', 'iǎng\tu\t一痒\tyiue', 'iàng\te\t一盎\tyiue', 'iāo\tm\t一凹\tmull', 'iáo\tu\t一熬\tmull', 'iǎo\tl\t一袄\tmull', 'iào\tl\t一傲\tmull', 'iē\tk\t噎\tkscq', 'ié\ts\t爷\tkscq', 'iě\tc\t也\tkscq', 'iè\tq\t夜\tkscq', 'īn\th\t音\thcxv', 'ín\tc\t银\thcxv', 'ǐn\tx\t引\thcxv', 'ìn\tv\t印\thcxv', 'īng\te\t鹰\tenww', 'íng\tn\t迎\tenww', 'ǐng\tw\t影\tenww', 'ìng\tw\t硬\tenww', 'iōng\tp\t一翁\tpkeh', 'ióng\tk\t一容\tpkeh', 'iǒng\te\t一永\tpkeh', 'iòng\th\t一用\tpkeh', 'iū\tz\t优\tzmzo', 'iú\tm\t油\tzmzo', 'iǔ\tz\t有\tzmzo', 'iù\to\t右\tzmzo', 'ō\tp\t窝\tpeig', 'ó\te\t模\tpeig', 'ǒ\ti\t我\tpeig', 'ò\tg\t握\tpeig', 'ōng\tk\t翁\tkjny', 'óng\tj\t龙\tkjny', 'ǒng\tn\t哄\tkjny', 'òng\ty\t送\tkjny', 'ōu\tx\t欧\txabr', 'óu\ta\t头\txabr', 'ǒu\tz\t呕\txazr', 'òu\tr\t怄\txabr', 'ū\ta\t污\talmh', 'ù\th\t物\talmh', 'ú\tl\t无无\talmh', 'ǔ\tm\t五\talmh', 'ǖ\th\t淤\thmsf', 'ǚ\ts\t雨水\thmsf', 'ǘ\tm\t余额\thmsf', 'ǜ\tf\t寓\thmsf', 'uā\ts\t无挖\tstgg', 'uá\tt\t无娃\tstgg', 'uǎ\tg\t无瓦\tstgg', 'uà\tg\t无袜\tstgg', 'uāi\tg\t屋i\tgspf', 'uái\ts\t无挨\tgspf', 'uǎi\tp\t屋矮\tgspf', 'uài\tf\t无爱\tgspf', 'uān\td\t无安\tdosc', 'uán\to\t鱼圆\tdosc', 'uǎn\ts\t无俺们\tdosc', 'uàn\tc\t无按\tdosc', 'uāng\tw\t无昂汪\twbue', 'uáng\tb\t无昂王\twbue', 'uǎng\tu\t无昂网\twbue', 'uàng\te\t无盎忘\twbue', 'üē\tu\t约\tuiod', 'üé\ti\t学\tuiod', 'üě\to\t雪花\tuiod', 'üè\td\t月\tuiod', 'uī\tt\t薇\ttwvf', 'uí\tw\t违\ttwvf', 'uǐ\tv\t伟\ttwvf', 'uì\tf\t未\ttwvf', 'ūn\tg\t晕\tgfor', 'ún\tf\t云\tgfor', 'ǔn\to\t稳\tgfor', 'ùn\tr\t运\tgfor', 'uō\ts\t无窝\tsllp', 'uó\tl\t无涡涡\tsllp', 'uǒ\tl\t无我\tsllp', 'uò\tp\t无握\tsllp', 'ēr\tq\t儿一\tqkuh', 'ér\tk\t儿\tqkuh', 'ěr\tu\t耳\tqkuh', 'èr\th\t二\tqkuh'];
+
+let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\tyz', '个\tgi', '人\trs', '这\tvi', '上\tud', '中\tvk', '大\tdi', '为\twk', '来\tld', '我\twi', '到\tdv', '出\tia', '以\tyg', '时\tub', '和\the', '地\tdt', '们\tms', '可\tkl', '下\txx', '对\tdf', '生\tuc', '就\tjo', '过\tgp', '能\tnf', '他\ttl', '多\tds', '说\tus', '而\tek', '于\tym', '之\tvj', '用\tyy', '年\tnv', '行\txn', '家\tjd', '方\tfu', '后\thr', '成\tif', '开\tkb', '面\tma', '好\thx', '小\txl', '心\txh', '所\tsl', '法\tfm', '进\tjv', '着\tvi', '同\ttj', '经\tje', '定\tdw', '都\tdx', '然\trp', '与\tys', '本\tbo', '其\tqb', '两\tlu', '点\tdp', '问\two', '主\tvm', '天\ttr', '高\tgq', '长\tiw', '三\tsn', '将\tje', '国\tgl', '全\tqo', '些\txk', '看\tka', '只\tvg', '公\tgk', '等\tdy', '正\tvf', '者\tvl', '没\tmr', '重\tij', '向\txe', '样\tyd', '学\txi', '手\tuz', '关\tgd', '种\tvy', '二\teh', '处\tih', '头\tta', '回\thw', '话\thg', '身\tue', '给\tgj', '别\tbs', '月\tyd', '少\tux', '水\tuv', '安\tan', '解\tjc', '更\tgf', '总\tzn', '管\tgs', '光\tgw', '教\tjm', '神\tus', '山\tun', '场\tip', '张\tvu', '受\tur', '交\tjm', '非\tfi', '求\tqm', '风\tfc', '算\tsc', '王\tww', '快\tkf', '海\thu', '女\tns', '强\tqi', '条\ttu', '感\tgo', '转\tvs', '传\tio', '民\tmc', '往\twp', '论\tlr', '花\ths', '收\tux', '华\tht', '请\tqw', '夫\tfa', '战\tva', '双\tuw', '准\tvo', '达\tdu', '引\tyx', '照\tvv', '整\tvy', '展\tvo', '虽\tst', '云\tyf', '界\tjq', '约\tyu', '尔\teu', '九\tjz', '究\tjz', '除\til', '黄\thb', '军\tjg'];
+        (function () {
+            'use strict';
+
+            // 所有根队列数据
+            var allData = [
+                根队列0,
+                根队列1,
+                根队列2,
+          
+            ];
+            var currentDataIndex = 0;
+
+            // 转换函数：将原始数据转为DATA格式
+            function convertData(rawArr) {
+                return rawArr.map(function (item) {
+                    var parts = item.split('\t');
+                    return {
+                        name: parts[0] || '',       // 字根
+                        key: parts[1] || '',        // 编码
+                        rel: parts[2] || ''         // 汉字（相关字）
+                    };
+                });
+            }
+
+            // 字根数据
+            var DATA = convertData(根队列0);
+
+            // 算法参数
+            var STEPS = [1, 2, 4, 8, 16, 32];
+            var MASTERED_LEVEL = 6;
+            var MASTERED_FLAG = 99;
+            var STORAGE_KEY = 'zima_training_progress';
+
+            // 获取当前队列的storage key
+            function getStorageKey() {
+                return STORAGE_KEY + '_' + currentDataIndex;
+            }
+
+            // 状态
+            var records = [];
+            var masteredCount = 0;
+            var wrongCount = 0;
+            var isShowingWrong = false;
+
+            // 切换数据
+            function switchData(index) {
+                currentDataIndex = index;
+                DATA = convertData(allData[index]);
+                // 加载对应队列的进度
+                if (!loadProgress()) {
+                    initFresh();
+                } else {
+                    updateUI();
+                }
+            }
+
+            // DOM 元素
+            var inputEl, zigenBox, hintBox, errorAnswer, progressInner, progressText;
+            var statMastered, statLearning, statWrong, celebrationEl, voiceToggle, hideZigenToggle;
+
+            // 保存进度到 localStorage
+            function saveProgress() {
+                var data = {
+                    records: records,
+                    masteredCount: masteredCount,
+                    wrongCount: wrongCount
+                };
+                try {
+                    localStorage.setItem(getStorageKey(), JSON.stringify(data));
+                } catch (e) {
+                    console.log('保存进度失败', e);
+                }
+            }
+
+            // 从 localStorage 加载进度
+            function loadProgress() {
+                try {
+                    var saved = localStorage.getItem(getStorageKey());
+                    if (saved) {
+                        var data = JSON.parse(saved);
+                        // 验证数据格式是否正确
+                        if (Array.isArray(data.records) && data.records.length > 0) {
+                            records = data.records;
+                            masteredCount = data.masteredCount || 0;
+                            wrongCount = data.wrongCount || 0;
+                            return true;
+                        }
+                    }
+                } catch (e) {
+                    console.log('加载进度失败', e);
+                }
+                return false;
+            }
+
+            // 初始化 DOM
+            function initDOM() {
+                inputEl = document.getElementById('input-el');
+                zigenBox = document.getElementById('zigen-box');
+                hintBox = document.getElementById('hint-box');
+                errorAnswer = document.getElementById('error-answer');
+                progressInner = document.getElementById('progress-inner');
+                progressText = document.getElementById('progress-text');
+                statMastered = document.getElementById('stat-mastered');
+                statLearning = document.getElementById('stat-learning');
+                statWrong = document.getElementById('stat-wrong');
+                celebrationEl = document.getElementById('celebration');
+                voiceToggle = document.getElementById('voice-toggle');
+                hideZigenToggle = document.getElementById('hide-zigen');
+
+                // 绑定按钮事件
+                document.getElementById('reset-btn').onclick = resetApp;
+                document.getElementById('celebration-btn').onclick = closeCelebration;
+            }
+
+            // 语音朗读
+            function speakText(text) {
+                if (!voiceToggle || !voiceToggle.checked) return;
+                if (!text) return;
+
+                var utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'zh-CN';
+                utterance.rate = 0.8;
+                speechSynthesis.cancel();
+                speechSynthesis.speak(utterance);
+            }
+
+            // 初始化游戏（全新开始）
+            function initFresh() {
+                records = [];
+                for (var i = 0; i < DATA.length; i++) {
+                    records.push([-1, i]); // [level, index]
+                }
+                masteredCount = 0;
+                wrongCount = 0;
+                isShowingWrong = false;
+
+                if (celebrationEl) {
+                    celebrationEl.classList.remove('show');
+                }
+
+                saveProgress();
+                updateUI();
+            }
+
+            // 更新界面
+            function updateUI() {
+                // 清理已牢记的
+                while (records.length > 0 && records[0][0] === MASTERED_FLAG) {
+                    records.shift();
+                }
+
+                if (records.length === 0) {
+                    if (celebrationEl) {
+                        celebrationEl.classList.add('show');
+                    }
+                    return;
+                }
+
+                var level = records[0][0];
+                var dataIdx = records[0][1];
+                var card = DATA[dataIdx];
+
+                // 更新字根
+                zigenBox.textContent = card.name;
+                zigenBox.classList.remove('shake', 'error');
+
+                // 隐藏/显示字根
+                var isHidden = hideZigenToggle && hideZigenToggle.checked;
+                if (isHidden) {
+                    zigenBox.style.visibility = 'hidden';
+                } else {
+                    zigenBox.style.visibility = 'visible';
+                    // 新学的字根(level=-1)用浅绿色
+                    if (level === -1) {
+                        zigenBox.style.color = '#0097a1';
+                    } else {
+                        zigenBox.style.color = '#1a1a1a';
+                    }
+                }
+
+                // 更新提示
+                if (level === -1) {
+                    hintBox.innerHTML = '<div class="first-hint">学习请输入： <b>' + card.key + '</b></div>';
+                    // 学习状态也朗读rel数据
+                    if (card.rel) {
+                        speakText(card.rel);
+                    }
+                } else if (card.rel) {
+                    // 朗读相关内容（无论是否隐藏显示）
+                    speakText(card.rel);
+                    // 非学习状态下，如果开启了隐藏字根，则隐藏rel提示
+                    if (isHidden) {
+                        hintBox.innerHTML = '';
+                    } else {
+                        hintBox.innerHTML = '<div style="color:#999;">相关：' + card.rel + '</div>';
+                    }
+                } else {
+                    hintBox.innerHTML = '<div style="color:#999;">忘记请按空格键</div>';
+                }
+                errorAnswer.style.visibility = 'hidden';
+
+                // 更新进度
+                var percent = Math.round((masteredCount / DATA.length) * 100);
+                progressInner.style.width = percent + '%';
+                progressText.textContent = percent + '% 已牢记';
+
+                // 更新统计
+                statMastered.textContent = masteredCount;
+                statLearning.textContent = records.length;
+                statWrong.textContent = wrongCount;
+
+                // 重置输入框
+                inputEl.value = '';
+                inputEl.disabled = false;
+                inputEl.className = '';
+                inputEl.placeholder = '';
+                inputEl.focus();
+            }
+
+            // 答对
+            function handleCorrect() {
+                if (records.length === 0) return;
+
+                var currentRecord = records.shift();
+                var newLevel = currentRecord[0] === -1 ? 0 : currentRecord[0] + 1;
+
+                // 视觉反馈
+                zigenBox.classList.add('pop');
+                inputEl.classList.add('pop');
+
+                if (newLevel >= MASTERED_LEVEL) {
+                    currentRecord[0] = MASTERED_FLAG;
+                    masteredCount++;
+                    records.push(currentRecord);
+                } else {
+                    var jump = STEPS[newLevel] || 32;
+                    var insertPos = Math.min(jump, records.length);
+                    records.splice(insertPos, 0, currentRecord);
+                    currentRecord[0] = newLevel;
+                }
+
+                // 保存进度
+                saveProgress();
+                setTimeout(updateUI, 150);
+            }
+
+            // 答错
+            function handleWrong(showAnswer) {
+                if (isShowingWrong) return;
+                if (records.length === 0) return;
+
+                isShowingWrong = true;
+                wrongCount++;
+
+                var level = records[0][0];
+                var dataIdx = records[0][1];
+                var card = DATA[dataIdx];
+
+                // 字根抖动并变红
+                zigenBox.style.animation = 'none';
+                zigenBox.offsetHeight;
+                zigenBox.style.animation = '';
+                zigenBox.style.color = '#d32f2f'; // 用 inline 样式确保覆盖
+                zigenBox.classList.add('shake', 'error');
+
+                // 显示答案
+                if (showAnswer !== false) {
+                    errorAnswer.textContent = '正确答案：' + card.key;
+                    errorAnswer.style.visibility = 'visible';
+                }
+
+                // 禁用输入
+                inputEl.disabled = true;
+                inputEl.placeholder = '按任意键重试';
+
+                // 重置 level
+                records[0][0] = 0;
+
+                // 保存进度
+                saveProgress();
+            }
+
+            // 继续
+            function continueFromWrong() {
+                if (!isShowingWrong) return;
+
+                isShowingWrong = false;
+                inputEl.classList.remove('input-error');
+                inputEl.disabled = false;
+                inputEl.placeholder = '';
+                inputEl.value = '';
+                inputEl.focus();
+            }
+
+            // 庆祝
+            function closeCelebration() {
+                if (celebrationEl) {
+                    celebrationEl.classList.remove('show');
+                }
+                records = [];
+                for (var i = 0; i < DATA.length; i++) {
+                    records.push([0, i]);
+                }
+                masteredCount = 0;
+                wrongCount = 0;
+                saveProgress();
+                updateUI();
+            }
+
+            // 重置（清空进度）
+            function resetApp() {
+                if (confirm('确定要重置所有进度吗？')) {
+                    initFresh();
+                }
+            }
+
+            // 输入处理
+            function onInput(e) {
+                if (isShowingWrong) return;
+                if (records.length === 0) return;
+
+                var currentRecord = records[0];
+                var card = DATA[currentRecord[1]];
+                var val = e.target.value.toLowerCase().trim();
+
+                if (val.length < card.key.length) return;
+
+                if (val === card.key) {
+                    handleCorrect();
+                } else {
+                    handleWrong();
+                }
+            }
+
+            // 键盘处理
+            function onKeydown(e) {
+                if (e.key === ' ' && !isShowingWrong) {
+                    e.preventDefault();
+                    handleWrong();
+                } else if (isShowingWrong) {
+                    continueFromWrong();
+                }
+            }
+
+            // 启动
+            function start() {
+                initDOM();
+
+                // 绑定导航点击事件
+                var navCards = document.querySelectorAll('.nav-card');
+                navCards.forEach(function (card, index) {
+                    card.onclick = function () {
+                        // 移除所有active
+                        navCards.forEach(function (c) { c.classList.remove('active'); });
+                        // 添加active到当前
+                        card.classList.add('active');
+
+                        // 根据索引切换数据
+                        switchData(index);
+                    };
+                });
+
+                // 尝试加载保存的进度，如果没有则重新开始
+                if (!loadProgress()) {
+                    initFresh();
+                } else {
+                    updateUI();
+                }
+
+                inputEl.oninput = onInput;
+                inputEl.onkeydown = onKeydown;
+                document.onkeydown = onKeydown;
+
+                // 强制锁定输入框焦点
+                function lockFocus() {
+                    inputEl.focus();
+                }
+                // 页面加载后立即锁定
+                setTimeout(lockFocus, 10);
+                // 防止输入框失去焦点
+                inputEl.onblur = function () {
+                    setTimeout(lockFocus, 10);
+                };
+                // 点击页面任意位置时重新聚焦
+                document.addEventListener('click', lockFocus);
+                document.addEventListener('touchstart', lockFocus);
+            }
+
+            // 等 DOM 加载完
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', start);
+            } else {
+                start();
+            }
+        })();
+    </script>
 
 </body>
 
