@@ -706,9 +706,12 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
                     errorAnswer.style.visibility = 'visible';
                 }
 
-                // 禁用输入
-                inputEl.disabled = true;
-                inputEl.placeholder = '按任意键重试';
+                // 手机端：保持输入框可用，避免键盘收起
+                inputEl.placeholder = '点击继续';
+                inputEl.blur();
+                setTimeout(function() {
+                    inputEl.focus();
+                }, 10);
 
                 // 重置 level
                 records[0][0] = 0;
@@ -723,9 +726,9 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
 
                 isShowingWrong = false;
                 inputEl.classList.remove('input-error');
-                inputEl.disabled = false;
                 inputEl.placeholder = '';
                 inputEl.value = '';
+                // 手机端：保持焦点，键盘不收起
                 inputEl.focus();
             }
 
@@ -753,7 +756,11 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
 
             // 输入处理
             function onInput(e) {
-                if (isShowingWrong) return;
+                if (isShowingWrong) {
+                    e.target.value = '';
+                    continueFromWrong();
+                    return;
+                }
                 if (records.length === 0) return;
 
                 var currentRecord = records[0];
