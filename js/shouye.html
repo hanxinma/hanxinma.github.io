@@ -346,7 +346,7 @@ k 是喜的尾部口，所以是 k。
             <div class="kb-row" id="row3"></div>
             <div class="kb-row" id="row4"></div>
             <div class="kb-row func-row">
-                <div class="key btn-wide" onmousedown="ime.copyAllContent(event)">复制</div>
+                <div class="key btn-wide" onmousedown="ime.cutAllContent(event)">剪切</div>
                 <div id="caps-toggle" class="key" onmousedown="ime.toggleCaps(event)">ABC</div>
                 <div id="punc-toggle" class="key" onmousedown="ime.togglePuncMode(event)">中标</div>
                 <div id="symbol-toggle" class="key" onmousedown="ime.toggleSymbolMode(event)">符</div>
@@ -658,16 +658,36 @@ k 是喜的尾部口，所以是 k。
             /**
              * 复制所有内容到剪贴板
              */
-            copyAllContent(e) {
+            /**
+             * 剪切所有内容到剪贴板并清空
+             */
+            cutAllContent(e) {
                 if (e) e.preventDefault();
                 if (this.da.value.length === 0) return;
+
+                // 先全选
                 this.da.select();
+
+                const performCut = () => {
+                    // 执行清空和重置
+                    this.da.value = "";
+                    this.reset();
+                    // 提示（可选，因为剪切通常有视觉反馈）
+                    console.log("内容已剪切并清空");
+                };
+
                 try {
-                    document.execCommand('copy');
-                    alert("已成功复制全部文字到剪贴板");
+                    // 尝试使用旧版命令执行剪切（在某些浏览器更兼容焦点逻辑）
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        performCut();
+                    }
                 } catch (err) {
+                    // 尝试使用现代 Clipboard API
                     navigator.clipboard.writeText(this.da.value).then(() => {
-                        alert("已成功复制全部文字到剪贴板");
+                        performCut();
+                    }).catch(err => {
+                        alert("剪切失败，请手动操作");
                     });
                 }
             }
