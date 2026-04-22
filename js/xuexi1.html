@@ -729,7 +729,10 @@
                 inputEl.disabled = false;
                 inputEl.placeholder = '';
                 inputEl.value = '';
-                inputEl.focus();
+                // 延迟聚焦以唤起手机键盘
+                setTimeout(function() {
+                    inputEl.focus();
+                }, 50);
             }
 
             // 庆祝
