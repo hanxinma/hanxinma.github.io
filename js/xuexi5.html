@@ -706,12 +706,9 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
                     errorAnswer.style.visibility = 'visible';
                 }
 
-                // 手机端：保持输入框可用，避免键盘收起
-                inputEl.placeholder = '点击继续';
-                inputEl.blur();
-                setTimeout(function() {
-                    inputEl.focus();
-                }, 10);
+                // 禁用输入（使用readOnly避免手机键盘收起）
+                inputEl.readOnly = true;
+                inputEl.placeholder = '按任意键重试';
 
                 // 重置 level
                 records[0][0] = 0;
@@ -726,9 +723,9 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
 
                 isShowingWrong = false;
                 inputEl.classList.remove('input-error');
+                inputEl.readOnly = false;
                 inputEl.placeholder = '';
                 inputEl.value = '';
-                // 手机端：保持焦点，键盘不收起
                 inputEl.focus();
             }
 
@@ -756,12 +753,15 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
 
             // 输入处理
             function onInput(e) {
-                if (isShowingWrong) {
-                    e.target.value = '';
-                    continueFromWrong();
+                if (isShowingWrong) return;
+                if (records.length === 0) return;
+
+                // 检测空格键（手机软键盘输入的空格字符）
+                if (e.target.value.indexOf(' ') !== -1) {
+                    e.target.value = e.target.value.replace(/\s/g, '');
+                    handleWrong();
                     return;
                 }
-                if (records.length === 0) return;
 
                 var currentRecord = records[0];
                 var card = DATA[currentRecord[1]];
