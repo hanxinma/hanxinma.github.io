@@ -530,6 +530,9 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
                 return false;
             }
 
+            // 检测是否为手机端
+            var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
             // 初始化 DOM
             function initDOM() {
                 inputEl = document.getElementById('input-el');
@@ -544,6 +547,23 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
                 celebrationEl = document.getElementById('celebration');
                 voiceToggle = document.getElementById('voice-toggle');
                 hideZigenToggle = document.getElementById('hide-zigen');
+
+                // 手机端隐藏语音开关和隐藏字根开关
+                var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                if (isMobile) {
+                    if (voiceToggle) {
+                        var voiceToggleDiv = voiceToggle.parentNode;
+                        if (voiceToggleDiv) {
+                            voiceToggleDiv.style.display = 'none';
+                        }
+                    }
+                    if (hideZigenToggle) {
+                        var hideZigenDiv = hideZigenToggle.parentNode;
+                        if (hideZigenDiv) {
+                            hideZigenDiv.style.display = 'none';
+                        }
+                    }
+                }
 
                 // 绑定按钮事件
                 document.getElementById('reset-btn').onclick = resetApp;
