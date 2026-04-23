@@ -481,6 +481,7 @@
             var masteredCount = 0;
             var wrongCount = 0;
             var isShowingWrong = false;
+            var isInputBlocked = false;
 
             // 切换数据
             function switchData(index) {
@@ -550,6 +551,23 @@
                 // 绑定按钮事件
                 document.getElementById('reset-btn').onclick = resetApp;
                 document.getElementById('celebration-btn').onclick = closeCelebration;
+
+                // 手机端隐藏语音开关和隐藏字根开关
+                var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                if (isMobile) {
+                    if (voiceToggle) {
+                        var voiceToggleDiv = voiceToggle.parentNode;
+                        if (voiceToggleDiv) {
+                            voiceToggleDiv.style.display = 'none';
+                        }
+                    }
+                    if (hideZigenToggle) {
+                        var hideZigenDiv = hideZigenToggle.parentNode;
+                        if (hideZigenDiv) {
+                            hideZigenDiv.style.display = 'none';
+                        }
+                    }
+                }
             }
 
             // 语音朗读
@@ -709,8 +727,8 @@
                     errorAnswer.style.visibility = 'visible';
                 }
 
-                // 禁用输入
-                inputEl.disabled = true;
+                // 禁用输入（使用标志位，避免手机键盘收起）
+                isInputBlocked = true;
                 inputEl.placeholder = '按任意键重试';
 
                 // 重置 level
@@ -725,8 +743,8 @@
                 if (!isShowingWrong) return;
 
                 isShowingWrong = false;
+                isInputBlocked = false;
                 inputEl.classList.remove('input-error');
-                inputEl.disabled = false;
                 inputEl.placeholder = '';
                 inputEl.value = '';
                 inputEl.focus();
@@ -757,7 +775,15 @@
             // 输入处理
             function onInput(e) {
                 if (isShowingWrong) return;
+                if (isInputBlocked) return;
                 if (records.length === 0) return;
+
+                // 检测空格键（手机软键盘输入的空格字符）
+                if (e.target.value.indexOf(' ') !== -1) {
+                    e.target.value = e.target.value.replace(/\s/g, '');
+                    handleWrong();
+                    return;
+                }
 
                 var currentRecord = records[0];
                 var card = DATA[currentRecord[1]];

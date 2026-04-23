@@ -544,7 +544,7 @@
             </div>
         </div>
 
-        <div class="badge">汉心龙超级记忆训练</div>
+        <div class="badge">汉心码快速记忆训练</div>
 
         <div class="voice-toggle">
             <div>
@@ -589,7 +589,7 @@
 
         <button class="reset-btn" id="reset-btn">重置</button>
         <button class="reset-btn" onclick="location.href='../index.html'">首页</button>
-        <div class="nav-desc">必学的要练熟，快的话3小时学会龙码，慢的话3天</div>
+       
     </div>
 
     <div class="celebration" id="celebration">
@@ -656,6 +656,7 @@
             var masteredCount = 0;
             var wrongCount = 0;
             var isShowingWrong = false;
+            var isInputBlocked = false;
 
             // 切换数据
             function switchData(index) {
@@ -721,6 +722,23 @@
                 celebrationEl = document.getElementById('celebration');
                 voiceToggle = document.getElementById('voice-toggle');
                 hideZigenToggle = document.getElementById('hide-zigen');
+
+                // 手机端隐藏语音开关和隐藏字根开关
+                var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                if (isMobile) {
+                    if (voiceToggle) {
+                        var voiceToggleDiv = voiceToggle.parentNode;
+                        if (voiceToggleDiv) {
+                            voiceToggleDiv.style.display = 'none';
+                        }
+                    }
+                    if (hideZigenToggle) {
+                        var hideZigenDiv = hideZigenToggle.parentNode;
+                        if (hideZigenDiv) {
+                            hideZigenDiv.style.display = 'none';
+                        }
+                    }
+                }
 
                 // 绑定按钮事件
                 document.getElementById('reset-btn').onclick = resetApp;
@@ -884,8 +902,8 @@
                     errorAnswer.style.visibility = 'visible';
                 }
 
-                // 禁用输入
-                inputEl.disabled = true;
+                // 禁用输入（使用标志位避免手机键盘收起）
+                isInputBlocked = true;
                 inputEl.placeholder = '按任意键重试';
 
                 // 重置 level
@@ -900,8 +918,8 @@
                 if (!isShowingWrong) return;
 
                 isShowingWrong = false;
+                isInputBlocked = false;
                 inputEl.classList.remove('input-error');
-                inputEl.disabled = false;
                 inputEl.placeholder = '';
                 inputEl.value = '';
                 inputEl.focus();
@@ -932,7 +950,15 @@
             // 输入处理
             function onInput(e) {
                 if (isShowingWrong) return;
+                if (isInputBlocked) return;
                 if (records.length === 0) return;
+
+                // 检测空格键（手机软键盘输入的空格字符）
+                if (e.target.value.indexOf(' ') !== -1) {
+                    e.target.value = e.target.value.replace(/\s/g, '');
+                    handleWrong();
+                    return;
+                }
 
                 var currentRecord = records[0];
                 var card = DATA[currentRecord[1]];
