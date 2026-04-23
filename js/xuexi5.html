@@ -478,6 +478,7 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
             var masteredCount = 0;
             var wrongCount = 0;
             var isShowingWrong = false;
+            var isInputBlocked = false;
 
             // 切换数据
             function switchData(index) {
@@ -706,8 +707,8 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
                     errorAnswer.style.visibility = 'visible';
                 }
 
-                // 禁用输入（使用readOnly避免手机键盘收起）
-                inputEl.readOnly = true;
+                // 禁用输入（使用标志位，避免手机键盘收起）
+                isInputBlocked = true;
                 inputEl.placeholder = '按任意键重试';
 
                 // 重置 level
@@ -722,8 +723,8 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
                 if (!isShowingWrong) return;
 
                 isShowingWrong = false;
+                isInputBlocked = false;  // 解除输入阻塞，不禁用输入框
                 inputEl.classList.remove('input-error');
-                inputEl.readOnly = false;
                 inputEl.placeholder = '';
                 inputEl.value = '';
                 inputEl.focus();
@@ -754,6 +755,7 @@ let 根队列2 = ['的\tdr', '一\tyj', '是\tut', '不\tbh', '在\tzo', '有\ty
             // 输入处理
             function onInput(e) {
                 if (isShowingWrong) return;
+                if (isInputBlocked) return;  // 答错时阻止输入，但不收起键盘
                 if (records.length === 0) return;
 
                 // 检测空格键（手机软键盘输入的空格字符）
