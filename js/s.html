@@ -1,154 +1,800 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
 <head>
-
     <meta charset="UTF-8">
-  <title>一对多双拼辅助码查询</title>
-
-
-
-    <!--<subtitle>汉心码学习训练系统 - 提高你的中文打字速度</subtitle>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汉字编码搜索</title>
     <meta name="keywords" content="汉心码, 辅助码查询, 自然辅助码查询，小雨点辅助码查询，快手辅助码查询，小鹤辅助码查询，汉心, 汉心码官网,拼音打字如何变快,拼音打字如何不用选字">
-  <style>
 
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0;
-    }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .myDiv {
-      background-color: #089168;
-      height: 300px;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #fff;
+            min-height: 100vh;
+        }
 
-      padding: 40px;
-      color: #fff;
-      text-align: center;
-    }
-    #searchTool {
-      background-color: #089168;
-      height: calc(100% - 100px);
-    }
-    .result-item {
-      display: flex;
-      align-items: center;
-      margin-top: 50px;
-    }
-    .result-item:first-child {
-      font-weight: bold;
-    }
-    .result-item span {
-      margin-right: 10px;
-    }
-    table {
-      border-collapse: collapse;
-      margin-top: 50px;
-    }
-    td, th {
-      border: 1px solid black;
-      padding: 5px;
-    }
+        /* 首页样式 - Google风格 */
+        .home-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-    #search {
+        .logo {
+            font-family: 'ZCOOL QingKe HuangYou', cursive;
+            font-size: 72px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
 
-    margin-right: 10px;
-    width: 300px;
-    height: 30px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 16px;
-    }
+        .logo .g1 {
+            color: #4285f4;
+        }
 
-    #search-btn {
-    width: 80px;
-    height: 43px;
-    line-height: 30px; /* 修改为你需要的高度 */
-    border: none;
-    background-color: #ffffff;
-    color: rgb(22, 22, 22);
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5px;
-    }
-    @media screen and (max-width: 768px) {
-      .myDiv {
-        flex-direction: column;
-      }
-      #search, #search-btn {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 10px;
-      }
-      #search-btn {
-        width: 100%;
-      }
-      .myDiv {
-        padding: 10px;
-      }
-    }
-    
-    a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
+        .logo .g2 {
+            color: #ea4335;
+        }
 
-header {
+        .logo .g3 {
+            color: #fbbc05;
+        }
 
-  color: #fff;
+        .logo .g4 {
+            color: #4285f4;
+        }
 
-  font-size: 30px;
-}
+        .logo .g5 {
+            color: #34a853;
+        }
 
-main {
-    color: #fff;
-  padding: 20px;
-} 
-  </style>
+        .logo .g6 {
+            color: #ea4335;
+        }
 
+        .search-container {
+            width: 100%;
+            max-width: 584px;
+            position: relative;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 48px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 0 16px;
+            box-shadow: none;
+            transition: box-shadow 0.2s;
+        }
+
+        .search-box:hover,
+        .search-box:focus-within {
+            box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            color: #9aa0a6;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        #searchInput {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #202124;
+            background: transparent;
+        }
+
+        .search-btns {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .search-btns button {
+            height: 36px;
+            padding: 0 16px;
+            font-size: 14px;
+            color: #3c4043;
+            background: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .search-btns button:hover {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+            border-color: #dadce0;
+            color: #202124;
+        }
+
+        .tips {
+            margin-top: 24px;
+            font-size: 13px;
+            color: #70757a;
+        }
+
+        /* 搜索结果页样式 */
+        .result-page {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid #ebebeb;
+            position: sticky;
+            top: 0;
+            background: #fff;
+        }
+
+        .result-header .logo-small {
+            font-family: 'ZCOOL QingKe HuangYou', cursive;
+            font-size: 24px;
+            font-weight: 500;
+            margin-right: 24px;
+            cursor: pointer;
+        }
+
+        .result-header .search-container {
+            max-width: 692px;
+        }
+
+        .result-header .search-box {
+            height: 44px;
+            background: #fff;
+            border: 1px solid #dfe1e5;
+        }
+
+        #resultSearchInput {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #202124;
+            background: transparent;
+        }
+
+        .result-content {
+            max-width: 800px;
+            margin: 16px 24px;
+            padding: 0 8px;
+        }
+
+        .result-stats {
+            font-size: 14px;
+            color: #70757a;
+            margin-bottom: 8px;
+            padding: 0 8px;
+        }
+
+        .header-legend {
+            background: #f8f9fa;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #5f6368;
+        }
+
+        .header-legend strong {
+            color: #202124;
+            margin-right: 8px;
+        }
+
+        .header-legend span {
+            margin-right: 16px;
+            white-space: nowrap;
+        }
+
+        .result-item {
+            background: #fff;
+            border: 1px solid #dfe1e5;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.08);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .result-item:hover {
+            box-shadow: 0 4px 12px rgba(32, 33, 36, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 14px;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .result-table th {
+            background: #e7e7e7;
+            color: #777777;
+            padding: 10px 12px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 13px;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .result-table th:last-child {
+            border-right: none;
+            border-radius: 0 8px 0 0;
+        }
+
+        .result-table th:first-child {
+            border-radius: 8px 0 0 0;
+        }
+
+        .result-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e8e8e8;
+            border-right: 1px solid #f0f0f0;
+            background: #fafbfc;
+        }
+
+        .result-table td:last-child {
+            border-right: none;
+        }
+
+        .result-table tr:last-child td:first-child {
+            border-radius: 0 0 0 8px;
+        }
+
+        .result-table tr:last-child td:last-child {
+            border-radius: 0 0 8px 0;
+        }
+
+        .result-table td:first-child {
+            font-size: 32px;
+            font-weight: 500;
+            color: #1a73e8;
+        }
+
+        .result-table td:not(:first-child) {
+            font-size: 16px;
+            color: #4d5156;
+            line-height: 1.5;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 24px;
+            padding: 16px 8px;
+        }
+
+        .page-btn {
+            padding: 8px 16px;
+            font-size: 14px;
+            border: 1px solid #dadce0;
+            background: #fff;
+            color: #5f6368;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .page-btn:hover {
+            background: #f8f9fa;
+            border-color: #4285f4;
+            color: #4285f4;
+        }
+
+        .page-btn.active {
+            background: #4285f4;
+            color: #fff;
+            border-color: #4285f4;
+        }
+
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .page-info {
+            font-size: 14px;
+            color: #5f6368;
+            padding: 0 12px;
+        }
+
+        .filter-btn {
+            padding: 6px 14px;
+            font-size: 13px;
+            border: 1px solid #dadce0;
+            background: #fff;
+            color: #5f6368;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            background: #f8f9fa;
+            border-color: #4285f4;
+            color: #4285f4;
+        }
+
+        .filter-btn.active {
+            background: #4285f4;
+            color: #fff;
+            border-color: #4285f4;
+        }
+
+        .highlight {
+            background: #ffeb3b;
+            padding: 1px 3px;
+            border-radius: 3px;
+        }
+
+        .no-result {
+            padding: 40px 8px;
+            color: #70757a;
+            font-size: 16px;
+        }
+
+        .back-home {
+            position: absolute;
+            right: 24px;
+            font-size: 14px;
+            color: #1a0dab;
+            cursor: pointer;
+        }
+
+        .back-home:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body>
-  <div class="myDiv">
-    <div>
-    <div>
-    <header>
-      
-      <h1>辅助码搜索</h1>
-    
-    </header>
-    
-   
 
+<body>
+    <!-- 首页 -->
+    <div class="home-page" id="homePage">
+        <div class="logo">
+            <span class="g1">汉</span><span class="g2">心</span><span class="g3">搜</span><span class="g4">索</span>
+        </div>
+        <div class="search-container">
+            <div class="search-box">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="searchInput" placeholder="输入汉字、字母、字根或说明..." autocomplete="off">
+            </div>
+        </div>
+        <div class="search-btns">
+            <button id="searchBtn">搜索</button>
+            <a href="../index.html" style="text-decoration: none; display: inline-block;"><button
+                    id="luckyBtn">首页</button></a>
+        </div>
+        <div class="tips">输入任意关键字词即可搜索汉心辅码相关信息（查码）（取码理由）</div>
     </div>
 
-    <input type="text" id="search">
-    
-    <button id="search-btn">搜索</button>
+    <!-- 搜索结果页 -->
+    <div class="result-page" id="resultPage">
+        <div class="result-header">
+            <div class="logo-small" onclick="goHome()">
+                <span style="color: #4285f4">汉</span><span style="color: #ea4335">心</span><span
+                    style="color: #fbbc05">搜</span><span style="color: #4285f4">索</span>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="resultSearchInput" autocomplete="off">
+                </div>
+            </div>
+            <span class="back-home" onclick="goHome()">返回</span>
+            <a href="../index.html" class="back-home" style="right: 100px;">首页</a>
+        </div>
+        <div class="result-content">
+            <div class="filter-buttons" id="filterButtons"></div>
+            <div class="result-stats" id="resultStats"></div>
+            <div id="resultList"></div>
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </div>
+
+    <script src="data1.js"></script>
+    <script src="data2.js"></script>
+    <script src="data3.js"></script>
+    <script src="data4.js"></script>
+    <script>
 
 
-    <main>
-        <p><a href="https://hanxinma.gitlab.io">去首页</a></p>
-    </main>
-  </div></div>
-    <div style="margin-top: 30px; color: gray;" >汉心码拼音+oopp直接可查编码. Ctrl+D可以收藏网页. 网址hanxinma.gitlab.io/js/s</div>
-  <div id="result"></div>
- <script src="./ss.js"></script>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?8520e3c41904434f20741b02eaddde4b";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+        // 解析单个数据源（自动检测分隔符：逗号或制表符）
+        function parseSingleData(dataArray, sourceName) {
+            // 检测分隔符（逗号或制表符）
+            const firstLine = dataArray[0];
+            const delimiter = firstLine.includes('\t') ? '\t' : ',';
 
+            const headers = firstLine.split(delimiter).map(h => h.trim());
+
+
+            let searchableColumns = null;
+            let startRow = 1;
+
+            if (dataArray.length > 1) {
+                const secondLine = dataArray[1].trim();
+                const values = secondLine.split(delimiter).map(v => v.trim());
+
+                if (values.every(v => v === '0' || v === '1')) {
+                    searchableColumns = values.map(v => v === '1');
+                    startRow = 2;
+                }
+            }
+
+            const rows = [];
+            for (let i = startRow; i < dataArray.length; i++) {
+                const line = dataArray[i].trim();
+                if (!line) continue; // 跳过空行
+
+                const values = line.split(delimiter);
+                const row = {};
+                headers.forEach((h, idx) => {
+                    row[h] = values[idx] ? values[idx].trim() : '';
+                });
+                // 保存数据源信息和原始列名
+                row._source = sourceName;
+                row._headers = headers;
+                rows.push(row);
+            }
+            return { headers, rows, searchableColumns };
+        }
+
+        // 解析所有数据源（按优先级顺序，排在前面的数据源结果会显示在前面）
+        function parseAllData() {
+            const allDataSources = [];
+
+            // 自动检测所有以 dataArray 开头的变量
+            // 优先级：dataArray > dataArray + 数字（按数字排序）
+            const dataArrays = [];
+
+            // 首先添加 dataArray（主数据源，优先级最高）
+            if (typeof dataArray !== 'undefined') {
+                dataArrays.push({ name: 'dataArray', data: dataArray, priority: 0 });
+            }
+
+            // 扫描 window 对象查找其他 dataArray 开头的变量
+            for (let key in window) {
+                if (key.startsWith('dataArray') && key !== 'dataArray') {
+                    // 提取数字部分用于排序
+                    const numMatch = key.match(/dataArray(\d+)/);
+                    const priority = numMatch ? parseInt(numMatch[1]) : 999;
+                    dataArrays.push({ name: key, data: window[key], priority: priority });
+                }
+            }
+
+            // 按优先级排序（数字小的在前）
+            dataArrays.sort((a, b) => a.priority - b.priority);
+
+            // 解析所有数据源
+            dataArrays.forEach(item => {
+                allDataSources.push({ name: item.name, ...parseSingleData(item.data, item.name) });
+            });
+
+            console.log('已加载的数据源:', allDataSources.map(ds => ds.name));
+
+            return allDataSources;
+        }
+
+        const dataSources = parseAllData();
+
+        // 合并所有数据用于搜索（保留数据源信息）
+        const allData = dataSources.flatMap(ds =>
+            ds.rows.map(row => ({ ...row, _sourceHeaders: ds.headers }))
+        );
+
+        // 获取所有唯一的列名
+        const allHeaders = [...new Set(dataSources.flatMap(ds => ds.headers))];
+
+        // 高亮匹配文本
+        function highlightText(text, keyword) {
+            if (!keyword) return text;
+            const regex = new RegExp(`(${escapeRegex(keyword)})`, 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
+        }
+
+        function escapeRegex(str) {
+            return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // 当前搜索列
+        let currentSearchColumn = 'all';
+
+        // 搜索并显示结果
+        function doSearch(keyword, column = 'all') {
+            if (!keyword.trim()) return;
+
+            currentSearchColumn = column;
+            const lowerKeyword = keyword.toLowerCase();
+
+            // 按数据源优先级顺序搜索，高优先级的结果显示在前面
+            let filtered = [];
+
+            // 遍历每个数据源（按优先级顺序）
+            dataSources.forEach(ds => {
+                let dsFiltered;
+                if (column === 'all') {
+                    // 搜索所有列（根据searchableColumns过滤）
+                    dsFiltered = ds.rows.filter(row => {
+                        return Object.entries(row).some(([key, val], idx) => {
+                            // 跳过内部字段
+                            if (key.startsWith('_')) return false;
+                            // 如果该数据源有searchableColumns，检查当前列是否可搜索
+                            if (ds.searchableColumns && ds.searchableColumns[idx] === false) {
+                                return false;
+                            }
+                            return val && typeof val === 'string' && val.toLowerCase().includes(lowerKeyword);
+                        });
+                    });
+                } else {
+                    // 只搜索指定列（检查该列是否可搜索）
+                    const colIndex = ds.headers.indexOf(column);
+                    // 如果该列在当前数据源中被标记为不可搜索，则跳过
+                    if (ds.searchableColumns && ds.searchableColumns[colIndex] === false) {
+                        dsFiltered = [];
+                    } else {
+                        dsFiltered = ds.rows.filter(row => {
+                            return row[column] && typeof row[column] === 'string' &&
+                                row[column].toLowerCase().includes(lowerKeyword);
+                        });
+                    }
+                }
+                filtered = filtered.concat(dsFiltered);
+            });
+
+            // 切换到结果页
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('resultPage').style.display = 'block';
+            document.getElementById('resultPage').style.background = '#fff';
+            document.getElementById('resultSearchInput').value = keyword;
+
+            // 更新按钮状态
+            updateFilterButtons(column);
+
+            // 聚焦搜索框并选中文字
+            setTimeout(() => {
+                const input = document.getElementById('resultSearchInput');
+                input.focus();
+                input.select();
+            }, 10);
+
+            // 保存搜索结果和当前页码
+            window.currentSearchResults = filtered;
+            window.currentPage = 1;
+            window.currentKeyword = keyword;
+
+            // 显示结果
+            displayResults();
+        }
+
+        // 显示结果（支持分页）
+        function displayResults() {
+            const resultList = document.getElementById('resultList');
+            const resultStats = document.getElementById('resultStats');
+            const pagination = document.getElementById('pagination');
+
+            const filtered = window.currentSearchResults || [];
+            const currentPage = window.currentPage || 1;
+            const pageSize = 20;
+            const totalPages = Math.ceil(filtered.length / pageSize);
+
+            resultStats.textContent = `找到约 ${filtered.length} 条结果 （${(Math.random() * 0.5).toFixed(2)} 秒）`;
+
+            if (filtered.length === 0) {
+                resultList.innerHTML = '<div class="no-result">没有找到与 "' + window.currentKeyword + '" 相关的结果</div>';
+                pagination.innerHTML = '';
+                return;
+            }
+
+            // 计算当前页的数据
+            const startIndex = (currentPage - 1) * pageSize;
+            const endIndex = Math.min(startIndex + pageSize, filtered.length);
+            const pageData = filtered.slice(startIndex, endIndex);
+
+            // 为每个结果动态生成表格（使用该行数据实际拥有的列）
+            const html = pageData.map(row => {
+                // 获取该行实际拥有的列名（排除内部字段）
+                const rowHeaders = Object.keys(row).filter(k => !k.startsWith('_'));
+
+                // 动态生成表头
+                const theadHtml = rowHeaders.map(h => `<th>${h}</th>`).join('');
+                // 动态生成数据行
+                const tbodyHtml = rowHeaders.map(h => `<td>${highlightText(row[h] || '', window.currentKeyword)}</td>`).join('');
+
+                return `
+                <div class="result-item">
+                    <table class="result-table">
+                        <thead>
+                            <tr>${theadHtml}</tr>
+                        </thead>
+                        <tbody>
+                            <tr>${tbodyHtml}</tr>
+                        </tbody>
+                    </table>
+                </div>
+            `}).join('');
+
+            resultList.innerHTML = html;
+
+            // 生成分页控件
+            generatePagination(totalPages, currentPage, filtered.length);
+        }
+
+        // 生成分页控件
+        function generatePagination(totalPages, currentPage, totalItems) {
+            const pagination = document.getElementById('pagination');
+
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+
+            let html = '';
+
+            // 上一页按钮
+            html += `<button class="page-btn" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>上一页</button>`;
+
+            // 页码信息
+            html += `<span class="page-info">第 ${currentPage} / ${totalPages} 页 (共 ${totalItems} 条)</span>`;
+
+            // 下一页按钮
+            html += `<button class="page-btn" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>下一页</button>`;
+
+            pagination.innerHTML = html;
+        }
+
+        // 跳转到指定页
+        function goToPage(page) {
+            if (page < 1 || page > Math.ceil(window.currentSearchResults.length / 20)) return;
+            window.currentPage = page;
+            displayResults();
+            // 滚动到结果顶部
+            document.querySelector('.result-content').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 更新筛选按钮状态
+        function updateFilterButtons(activeColumn) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.column === activeColumn) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // 按列搜索
+        function searchByColumn(column) {
+            const keyword = document.getElementById('resultSearchInput').value;
+            if (keyword.trim()) {
+                doSearch(keyword, column);
+            }
+        }
+
+        // 返回首页
+        function goHome() {
+            document.getElementById('homePage').style.display = 'flex';
+            document.getElementById('resultPage').style.display = 'none';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchInput').focus();
+        }
+
+        // 手气不错 - 随机显示一个
+        function feelingLucky() {
+            const random = allData[Math.floor(Math.random() * allData.length)];
+            doSearch(random['字']);
+        }
+
+        // 事件绑定
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            doSearch(document.getElementById('searchInput').value);
+        });
+
+        document.getElementById('luckyBtn').addEventListener('click', feelingLucky);
+
+        document.getElementById('searchInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                doSearch(e.target.value);
+            }
+        });
+
+        document.getElementById('resultSearchInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                doSearch(e.target.value);
+            }
+        });
+
+        // 初始化筛选按钮
+        function initFilterButtons() {
+            const container = document.getElementById('filterButtons');
+            let html = '';
+
+
+            const searchableHeaders = new Set();
+            dataSources.forEach(ds => {
+                ds.headers.forEach((h, idx) => {
+
+                    if (!ds.searchableColumns || ds.searchableColumns[idx] !== false) {
+                        searchableHeaders.add(h);
+                    }
+                });
+            });
+
+            searchableHeaders.forEach(h => {
+                html += `<button class="filter-btn" data-column="${h}" onclick="searchByColumn('${h}')">搜${h}</button>`;
+            });
+
+            html += `<button class="filter-btn active" data-column="all" onclick="searchByColumn('all')">搜全部</button>`;
+            container.innerHTML = html;
+        }
+
+        // 页面加载时初始化按钮
+        try {
+            initFilterButtons();
+            console.log('数据加载成功:', dataSources);
+            console.log('所有列名:', allHeaders);
+        } catch (e) {
+            console.error('初始化失败:', e);
+        }
+
+        // 首页输入框自动聚焦
+        document.getElementById('searchInput').focus();
+
+        // 结果页搜索框自动聚焦
+        function focusResultSearch() {
+            setTimeout(() => {
+                const resultInput = document.getElementById('resultSearchInput');
+                if (resultInput) {
+                    resultInput.focus();
+                    resultInput.select();
+                }
+            }, 50);
+        }
+    </script>
 </body>
+
 </html>
