@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全站搜索 - 汉心码</title>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #fff;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .search-container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 584px;
+            margin: 0 auto;
+            height: 48px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 0 16px;
+            box-shadow: none;
+            transition: box-shadow 0.2s;
+            background: #fff;
+        }
+        .search-box:hover, .search-box:focus-within {
+            box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+        }
+        #searchInput {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #202124;
+            background: transparent;
+            padding: 0 10px;
+        }
+        .search-btn {
+            height: 36px;
+            padding: 0 16px;
+            font-size: 14px;
+            color: #3c4043;
+            background: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 20px;
+        }
+        .search-btn:hover {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+            border-color: #dadce0;
+            color: #202124;
+        }
+        .tips {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #70757a;
+        }
+        .back-link {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        .back-link a {
+            color: #1a0dab;
+            text-decoration: none;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        #searchResults {
+            max-width: 800px;
+            margin: 30px auto;
+        }
+        .result-item {
+            background: #fff;
+            border: 1px solid #dfe1e5;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        .result-item h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+        .result-item h3 a {
+            color: #1a0dab;
+            text-decoration: none;
+        }
+        .result-item h3 a:hover {
+            text-decoration: underline;
+        }
+        .result-item p {
+            margin: 0 0 8px 0;
+            color: #545454;
+            line-height: 1.5;
+        }
+        .result-item .url {
+            color: #006621;
+            font-size: 14px;
+        }
+        .no-result {
+            padding: 40px 20px;
+            text-align: center;
+            color: #70757a;
+            font-size: 16px;
+        }
+        .google-search {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .google-search button {
+            height: 36px;
+            padding: 0 16px;
+            font-size: 14px;
+            color: #3c4043;
+            background: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .google-search button:hover {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+            border-color: #dadce0;
+            color: #202124;
+        }
+        .match-info {
+            font-size: 12px;
+            color: #70757a;
+            margin-top: 8px;
+            padding: 4px 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .highlight {
+            background: #ffeb3b;
+            padding: 1px 3px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1 style="margin-bottom: 30px; color: #202124;">全站搜索</h1>
+        <div class="search-box">
+            <svg class="search-icon" style="width: 20px; height: 20px; color: #9aa0a6; margin-right: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input type="text" id="searchInput" placeholder="输入关键字搜索全站内容..." autocomplete="off">
+        </div>
+        <button class="search-btn" onclick="doSearch()">搜索</button>
+        <div class="tips">使用 Google 搜索汉心码网站的所有内容</div>
+        <div class="back-link">
+            <a href="https://hanxinma.gitlab.io/">返回首页</a>
+        </div>
+        <div id="searchResults"></div>
+    </div>
+
+    <script>
+        // 网站页面索引（自动从sitemap获取或手动维护）
+        let sitePages = [];
+
+        // 尝试从sitemap获取网站页面列表
+        async function fetchSiteMap() {
+            try {
+                // 尝试获取sitemap
+                const response = await fetch('/sitemap.xml');
+                if (response.ok) {
+                    const text = await response.text();
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(text, 'text/xml');
+                    const urls = xmlDoc.querySelectorAll('url loc');
+                    
+                    // 从sitemap提取页面信息
+                    sitePages = Array.from(urls).map(url => {
+                        const loc = url.textContent;
+                        // 从URL提取页面标题
+                        const pathParts = loc.split('/').filter(part => part);
+                        const fileName = pathParts[pathParts.length - 1];
+                        const title = fileName.replace(/\.html$/, '').replace(/_/g, ' ');
+                        
+                        return {
+                            title: title,
+                            url: loc,
+                            description: '' // 初始为空，后续可以抓取页面内容填充
+                        };
+                    });
+                } else {
+                    console.log('无法获取sitemap，使用默认页面列表');
+                    // 如果无法获取sitemap，使用默认页面列表
+                    sitePages = [
+                        { title: "汉心码官网首页", url: "https://hanxinma.gitlab.io/", description: "汉心码官方网站，提供汉心码输入法下载和学习资源" },
+                        { title: "汉心快打拼音输入法网页版", url: "https://hanxinma.gitlab.io/js/pinyinban.html", description: "免安装拼音输入法，打字不用翻页" },
+                        { title: "汉心快打小鹤版", url: "https://hanxinma.gitlab.io/js/xiaoheban.html", description: "小鹤双拼输入法网页版" },
+                        { title: "汉心快打自然版", url: "https://hanxinma.gitlab.io/js/ziranban.html", description: "自然码双拼输入法网页版" },
+                        { title: "双拼快速学习程序小鹤自然", url: "https://hanxinma.gitlab.io/js/xuexi.html", description: "双拼快速学习程序" },
+                        { title: "汉字编码搜索", url: "https://hanxinma.gitlab.io/js/weishenme.html", description: "汉心码汉字编码查询" },
+                        { title: "汉心码学习训练系统", url: "https://hanxinma.gitlab.io/js/zy.html", description: "汉心码学习训练系统" },
+                        { title: "汉心快打网页输入法", url: "https://hanxinma.gitlab.io/js/shouye.html", description: "汉心快打网页输入法" },
+                        { title: "双拼学习", url: "https://hanxinma.gitlab.io/js/shuangpin.html", description: "双拼学习" },
+                        { title: "汉心码查码", url: "https://hanxinma.gitlab.io/js/hxcx.html", description: "汉心码查码" },
+                        { title: "一对多双拼辅助码查询", url: "https://hanxinma.gitlab.io/js/s.html", description: "一对多双拼辅助码查询" },
+                        { title: "易学码官网", url: "https://hanxinma.gitlab.io/js/yixue.html", description: "易学码双拼学习站" },
+                        { title: "下载中心", url: "https://hanxinma.gitlab.io/js/xz/index.html", description: "汉心码软件下载中心，提供最新版本的汉心码输入法下载" },
+                        { title: "汉心码的由来", url: "https://hanxinma.gitlab.io/wenzhang/汉心码的由来.html", description: "汉心码的由来和发展历程" }
+                    ];
+                }
+            } catch (error) {
+                console.error('获取sitemap失败:', error);
+                // 使用默认页面列表
+                sitePages = [
+                    { title: "汉心码官网首页", url: "https://hanxinma.gitlab.io/", description: "汉心码官方网站，提供汉心码输入法下载和学习资源" },
+                    { title: "汉心快打拼音输入法网页版", url: "https://hanxinma.gitlab.io/js/pinyinban.html", description: "免安装拼音输入法，打字不用翻页" },
+                    { title: "汉心快打小鹤版", url: "https://hanxinma.gitlab.io/js/xiaoheban.html", description: "小鹤双拼输入法网页版" },
+                    { title: "汉心快打自然版", url: "https://hanxinma.gitlab.io/js/ziranban.html", description: "自然码双拼输入法网页版" },
+                    { title: "双拼快速学习程序小鹤自然", url: "https://hanxinma.gitlab.io/js/xuexi.html", description: "双拼快速学习程序" },
+                    { title: "汉字编码搜索", url: "https://hanxinma.gitlab.io/js/weishenme.html", description: "汉心码汉字编码查询" },
+                    { title: "汉心码学习训练系统", url: "https://hanxinma.gitlab.io/js/zy.html", description: "汉心码学习训练系统" },
+                    { title: "汉心快打网页输入法", url: "https://hanxinma.gitlab.io/js/shouye.html", description: "汉心快打网页输入法" },
+                    { title: "双拼学习", url: "https://hanxinma.gitlab.io/js/shuangpin.html", description: "双拼学习" },
+                    { title: "汉心码查码", url: "https://hanxinma.gitlab.io/js/hxcx.html", description: "汉心码查码" },
+                    { title: "一对多双拼辅助码查询", url: "https://hanxinma.gitlab.io/js/s.html", description: "一对多双拼辅助码查询" },
+                    { title: "易学码官网", url: "https://hanxinma.gitlab.io/js/yixue.html", description: "易学码双拼学习站" },
+                    { title: "下载中心", url: "https://hanxinma.gitlab.io/js/xz/index.html", description: "汉心码软件下载中心，提供最新版本的汉心码输入法下载" },
+                    { title: "汉心码的由来", url: "https://hanxinma.gitlab.io/wenzhang/汉心码的由来.html", description: "汉心码的由来和发展历程" }
+                ];
+            }
+        }
+
+        // 辅助函数：转义正则表达式中的特殊字符
+        function escapeRegex(str) {
+            return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        function doSearch() {
+            const keyword = document.getElementById('searchInput').value.trim();
+            if (!keyword) return;
+
+            // 对关键词进行分词
+            const keywordTokens = tokenize(keyword);
+
+            // 搜索匹配的页面，使用更智能的匹配算法
+            const results = sitePages.map(page => {
+                let score = 0;
+                let matches = [];
+
+                // 对页面标题和描述进行分词
+                const titleTokens = tokenize(page.title);
+                const descTokens = tokenize(page.description);
+
+                // 计算关键词与页面内容的匹配度
+                keywordTokens.forEach(kw => {
+                    // 检查关键词是否完全匹配标题中的某个词
+                    const titleMatch = titleTokens.find(token => token === kw);
+                    if (titleMatch) {
+                        score += 10;
+                        matches.push({field: 'title', text: page.title, type: 'exact', keyword: kw});
+                    }
+
+                    // 检查关键词是否是标题中某个词的前缀
+                    const titlePrefix = titleTokens.find(token => token.startsWith(kw));
+                    if (titlePrefix && titlePrefix !== kw) {
+                        score += 5;
+                        matches.push({field: 'title', text: page.title, type: 'prefix', keyword: kw});
+                    }
+
+                    // 检查关键词是否完全匹配描述中的某个词
+                    const descMatch = descTokens.find(token => token === kw);
+                    if (descMatch) {
+                        score += 5;
+                        matches.push({field: 'description', text: page.description, type: 'exact', keyword: kw});
+                    }
+
+                    // 检查关键词是否是描述中某个词的前缀
+                    const descPrefix = descTokens.find(token => token.startsWith(kw));
+                    if (descPrefix && descPrefix !== kw) {
+                        score += 3;
+                        matches.push({field: 'description', text: page.description, type: 'prefix', keyword: kw});
+                    }
+
+                    // 检查关键词是否包含在标题中（不分词）
+                    if (page.title.includes(kw)) {
+                        score += 3;
+                        matches.push({field: 'title', text: page.title, type: 'contains', keyword: kw});
+                    }
+
+                    // 检查关键词是否包含在描述中（不分词）
+                    if (page.description.includes(kw)) {
+                        score += 2;
+                        matches.push({field: 'description', text: page.description, type: 'contains', keyword: kw});
+                    }
+                });
+
+                return { ...page, score, matches };
+            }).filter(page => page.score > 0) // 只返回有匹配的页面
+              .sort((a, b) => b.score - a.score); // 按得分降序排序
+
+            // 显示搜索结果
+            displayResults(results, keyword);
+        }
+
+        // 简单的中文分词函数
+        function tokenize(text) {
+            // 常用中文词汇表（简化版）
+            const commonWords = [
+                '汉心', '快打', '拼音', '输入法', '网页', '小鹤', '自然', '双拼',
+                '学习', '程序', '汉字', '编码', '搜索', '查询', '系统', '训练',
+                '下载', '中心', '查码', '辅助', '一对多', '易学', '官网',
+                '汉心码', '汉心快打', '输入法网页版', '小鹤版', '自然版',
+                '学习程序', '训练系统', '软件下载', '网页输入法', '双拼学习',
+                '查码', '辅助码', '双拼辅助码', '学习站', '易学码'
+            ];
+
+            const tokens = [];
+            let remaining = text;
+
+            // 先匹配长词
+            const sortedWords = [...commonWords].sort((a, b) => b.length - a.length);
+
+            while (remaining.length > 0) {
+                let matched = false;
+
+                // 尝试匹配词汇表中的词
+                for (const word of sortedWords) {
+                    if (remaining.startsWith(word)) {
+                        tokens.push(word);
+                        remaining = remaining.substring(word.length);
+                        matched = true;
+                        break;
+                    }
+                }
+
+                // 如果没有匹配到词汇表中的词，则按单字分词
+                if (!matched) {
+                    tokens.push(remaining[0]);
+                    remaining = remaining.substring(1);
+                }
+            }
+
+            return tokens;
+        }
+
+        function displayResults(results, keyword) {
+            const resultContainer = document.getElementById('searchResults');
+
+            if (results.length === 0) {
+                resultContainer.innerHTML = '<div class="no-result">没有找到与 "' + keyword + '" 相关的结果</div>' +
+                    '<div class="google-search"><button onclick="searchWithGoogle(\'' + keyword + '\')">使用 Google 搜索</button></div>';
+                return;
+            }
+
+            const html = results.map(page => {
+                // 高亮标题中的所有匹配关键词
+                let highlightedTitle = page.title;
+                const keywords = tokenize(keyword);
+                keywords.forEach(kw => {
+                    const regex = new RegExp(`(${escapeRegex(kw)})`, 'gi');
+                    highlightedTitle = highlightedTitle.replace(regex, '<span class="highlight">$1</span>');
+                });
+
+                // 高亮描述中的所有匹配关键词
+                let highlightedDesc = page.description;
+                keywords.forEach(kw => {
+                    const regex = new RegExp(`(${escapeRegex(kw)})`, 'gi');
+                    highlightedDesc = highlightedDesc.replace(regex, '<span class="highlight">$1</span>');
+                });
+
+                return `
+                <div class="result-item">
+                    <h3><a href="${page.url}" target="_blank">${highlightedTitle}</a></h3>
+                    <p>${highlightedDesc}</p>
+                    <p class="url">${page.url}</p>
+                    <div class="match-info">匹配度: ${page.score}分</div>
+                </div>
+            `}).join('');
+
+            resultContainer.innerHTML = html + '<div class="google-search"><button onclick="searchWithGoogle(\'' + keyword + '\')">使用 Google 搜索更多结果</button></div>';
+        }
+
+        function searchWithGoogle(keyword) {
+            const searchUrl = `https://www.google.com/search?q=site:hanxinma.gitlab.io+${encodeURIComponent(keyword)}`;
+            window.open(searchUrl, '_blank');
+        }
+
+        // 支持回车键搜索
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                doSearch();
+            }
+        });
+
+        // 页面加载时初始化
+        window.addEventListener('DOMContentLoaded', async function() {
+            // 获取sitemap
+            await fetchSiteMap();
+            
+            // 聚焦搜索框
+            document.getElementById('searchInput').focus();
+        });
+    </script>
+</body>
+</html>

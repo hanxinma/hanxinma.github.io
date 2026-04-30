@@ -1,0 +1,78 @@
+
+/* 确保锚点导航正常工作 */
+.outline-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.outline-link:hover {
+  color: var(--vp-c-brand);
+}
+
+/* 确保锚点目标位置正确显示 */
+:target {
+  scroll-margin-top: 80px;
+}
+
+/* 自定义滚动行为 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 确保目录项可点击且样式正确 */
+.vp-doc .outline-link {
+  display: block;
+  padding: 4px 0;
+  border-radius: 4px;
+}
+
+.vp-doc .outline-link:hover {
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* 隐藏没有ID的标题的链接图标 */
+.vp-doc .outline-item:not(.has-id) .outline-link-icon {
+  display: none;
+}
+
+/* 添加可点击性指示器 */
+.vp-doc .outline-link.has-id::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 0;
+  background-color: var(--vp-c-brand);
+  transition: height 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.vp-doc .outline-link.has-id:hover::after {
+  height: 100%;
+}
+
+/* 确保大纲容器样式正确 */
+.vp-doc .outline {
+  position: sticky;
+  top: 32px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  padding-right: 16px;
+}
+
+/* 自定义滚动条 */
+.vp-doc .outline::-webkit-scrollbar {
+  width: 6px;
+}
+
+.vp-doc .outline::-webkit-scrollbar-thumb {
+  background-color: var(--vp-c-border);
+  border-radius: 3px;
+}
+
+.vp-doc .outline::-webkit-scrollbar-thumb:hover {
+  background-color: var(--vp-c-brand);
+}

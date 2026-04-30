@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全站搜索 - 汉心码</title>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #fff;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .search-container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 584px;
+            margin: 0 auto;
+            height: 48px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 0 16px;
+            box-shadow: none;
+            transition: box-shadow 0.2s;
+            background: #fff;
+        }
+        .search-box:hover, .search-box:focus-within {
+            box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+        }
+        #searchInput {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #202124;
+            background: transparent;
+            padding: 0 10px;
+        }
+        .search-btn {
+            height: 36px;
+            padding: 0 16px;
+            font-size: 14px;
+            color: #3c4043;
+            background: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 20px;
+        }
+        .search-btn:hover {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+            border-color: #dadce0;
+            color: #202124;
+        }
+        .tips {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #70757a;
+        }
+        .back-link {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        .back-link a {
+            color: #1a0dab;
+            text-decoration: none;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        #searchResults {
+            max-width: 800px;
+            margin: 30px auto;
+        }
+        .result-item {
+            background: #fff;
+            border: 1px solid #dfe1e5;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        .result-item h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+        .result-item h3 a {
+            color: #1a0dab;
+            text-decoration: none;
+        }
+        .result-item h3 a:hover {
+            text-decoration: underline;
+        }
+        .result-item p {
+            margin: 0 0 8px 0;
+            color: #545454;
+            line-height: 1.5;
+        }
+        .result-item .url {
+            color: #006621;
+            font-size: 14px;
+        }
+        .no-result {
+            padding: 40px 20px;
+            text-align: center;
+            color: #70757a;
+            font-size: 16px;
+        }
+        .google-search {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .google-search button {
+            height: 36px;
+            padding: 0 16px;
+            font-size: 14px;
+            color: #3c4043;
+            background: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .google-search button:hover {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+            border-color: #dadce0;
+            color: #202124;
+        }
+        .match-info {
+            font-size: 12px;
+            color: #70757a;
+            margin-top: 8px;
+            padding: 4px 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .highlight {
+            background: #ffeb3b;
+            padding: 1px 3px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1 style="margin-bottom: 30px; color: #202124;">全站搜索</h1>
+        <div class="search-box">
+            <svg class="search-icon" style="width: 20px; height: 20px; color: #9aa0a6; margin-right: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input type="text" id="searchInput" placeholder="输入关键字搜索全站内容..." autocomplete="off">
+        </div>
+        <button class="search-btn" onclick="doSearch()">搜索</button>
+        <div class="tips">使用 Google 搜索汉心码网站的所有内容</div>
+        <div class="back-link">
+            <a href="https://hanxinma.gitlab.io/">返回首页</a>
+        </div>
+        <div id="searchResults"></div>
+    </div>
+
+    <script>
+        // 网站主要页面列表
+        const sitePages = [
+            { title: "汉心快打拼音输入法网页版", url: "https://hanxinma.gitlab.io/js/pinyinban.html", description: "免安装拼音输入法，打字不用翻页" },
+            { title: "汉心快打小鹤版", url: "https://hanxinma.gitlab.io/js/xiaoheban.html", description: "小鹤双拼输入法网页版" },
+            { title: "汉心快打自然版", url: "https://hanxinma.gitlab.io/js/ziranban.html", description: "自然码双拼输入法网页版" },
+            { title: "双拼快速学习程序小鹤自然", url: "https://hanxinma.gitlab.io/js/xuexi.html", description: "双拼快速学习程序" },
+            { title: "汉字编码搜索", url: "https://hanxinma.gitlab.io/js/weishenme.html", description: "汉心码汉字编码查询" },
+            { title: "汉心码学习训练系统", url: "https://hanxinma.gitlab.io/js/zy.html", description: "汉心码学习训练系统" },
+            { title: "下载中心", url: "https://hanxinma.gitlab.io/js/xz/index.html", description: "汉心码软件下载" },
+            { title: "汉心快打网页输入法", url: "https://hanxinma.gitlab.io/js/shouye.html", description: "汉心快打网页输入法" },
+            { title: "双拼学习", url: "https://hanxinma.gitlab.io/js/shuangpin.html", description: "双拼学习" },
+            { title: "汉心码查码", url: "https://hanxinma.gitlab.io/js/hxcx.html", description: "汉心码查码" },
+            { title: "一对多双拼辅助码查询", url: "https://hanxinma.gitlab.io/js/s.html", description: "一对多双拼辅助码查询" },
+            { title: "易学码官网", url: "https://hanxinma.gitlab.io/js/yixue.html", description: "易学码双拼学习站" }
+        ];
+
+        // 高亮匹配文本
+        function highlightText(text, keyword) {
+            if (!keyword) return text;
+            const regex = new RegExp(`(${escapeRegex(keyword)})`, 'gi');
+            return text.replace(regex, '<span style="background: #ffeb3b; padding: 1px 3px; border-radius: 3px;">$1</span>');
+        }
+
+        function escapeRegex(str) {
+            return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        function doSearch() {
+            const keyword = document.getElementById('searchInput').value.trim();
+            if (!keyword) return;
+
+            const lowerKeyword = keyword.toLowerCase();
+            
+            // 分割关键词，支持多词搜索
+            const keywords = lowerKeyword.split(/\s+/).filter(k => k.length > 0);
+            
+            // 搜索匹配的页面，使用更智能的匹配算法
+            const results = sitePages.map(page => {
+                let score = 0;
+                let matches = [];
+                
+                keywords.forEach(kw => {
+                    // 标题完全匹配，得分最高
+                    if (page.title.toLowerCase() === kw) {
+                        score += 10;
+                        matches.push({field: 'title', text: page.title, type: 'exact'});
+                    }
+                    // 标题包含关键词
+                    else if (page.title.toLowerCase().includes(kw)) {
+                        score += 5;
+                        matches.push({field: 'title', text: page.title, type: 'partial'});
+                    }
+                    // 模糊匹配：标题包含关键词的大部分字符
+                    else if (fuzzyMatch(page.title.toLowerCase(), kw)) {
+                        score += 3;
+                        matches.push({field: 'title', text: page.title, type: 'fuzzy'});
+                    }
+                    // 描述包含关键词
+                    if (page.description.toLowerCase().includes(kw)) {
+                        score += 3;
+                        matches.push({field: 'description', text: page.description, type: 'partial'});
+                    }
+                    // 模糊匹配：描述包含关键词的大部分字符
+                    else if (fuzzyMatch(page.description.toLowerCase(), kw)) {
+                        score += 2;
+                        matches.push({field: 'description', text: page.description, type: 'fuzzy'});
+                    }
+                    // URL包含关键词
+                    if (page.url.toLowerCase().includes(kw)) {
+                        score += 2;
+                        matches.push({field: 'url', text: page.url, type: 'partial'});
+                    }
+                    
+                    // 新增：检查关键词是否是标题/描述中某个词的前缀
+                    if (isPrefixOfAnyWord(page.title.toLowerCase(), kw)) {
+                        score += 4;
+                        matches.push({field: 'title', text: page.title, type: 'prefix'});
+                    }
+                    if (isPrefixOfAnyWord(page.description.toLowerCase(), kw)) {
+                        score += 2;
+                        matches.push({field: 'description', text: page.description, type: 'prefix'});
+                    }
+                    
+                    // 新增：检查标题/描述是否包含关键词的所有字符
+                    if (containsAllChars(page.title.toLowerCase(), kw)) {
+                        score += 2;
+                        matches.push({field: 'title', text: page.title, type: 'chars'});
+                    }
+                    if (containsAllChars(page.description.toLowerCase(), kw)) {
+                        score += 1;
+                        matches.push({field: 'description', text: page.description, type: 'chars'});
+                    }
+                });
+                
+                return { ...page, score, matches };
+            }).filter(page => page.score > 0) // 只返回有匹配的页面
+              .sort((a, b) => b.score - a.score); // 按得分降序排序
+
+            // 显示搜索结果
+            displayResults(results, keyword);
+        }
+        
+        // 模糊匹配函数：检查字符串是否包含关键词的大部分字符
+        function fuzzyMatch(str, keyword) {
+            // 如果关键词比字符串长，直接返回false
+            if (keyword.length > str.length) {
+                return false;
+            }
+            
+            // 计算关键词中有多少字符在字符串中
+            let matchCount = 0;
+            for (let i = 0; i < keyword.length; i++) {
+                if (str.includes(keyword[i])) {
+                    matchCount++;
+                }
+            }
+            
+            // 如果匹配的字符超过70%，则认为匹配成功
+            return matchCount / keyword.length >= 0.7;
+        }
+        
+        // 检查关键词是否是字符串中某个词的前缀
+        function isPrefixOfAnyWord(str, keyword) {
+            // 将字符串分割成词（按空格、标点等分割）
+            const words = str.split(/[\s\u4e00-\u9fa5]+/);
+            
+            // 检查关键词是否是任意一个词的前缀
+            for (let word of words) {
+                if (word.length > 0 && word.startsWith(keyword)) {
+                    return true;
+                }
+            }
+            
+            // 对于中文，检查关键词是否是字符串中某个连续字符序列的前缀
+            if (/[\u4e00-\u9fa5]/.test(keyword)) {
+                // 检查关键词是否是字符串中某个连续字符序列的前缀
+                for (let i = 0; i <= str.length - keyword.length; i++) {
+                    if (str.substring(i, i + keyword.length) === keyword) {
+                        return true;
+                    }
+                }
+            }
+            
+            return false;
+        }
+        
+        // 新增：检查字符串是否包含关键词的所有字符，顺序可以不一致
+        function containsAllChars(str, keyword) {
+            const strChars = str.split('');
+            const keywordChars = keyword.split('');
+            
+            // 检查关键词中的每个字符是否都在字符串中
+            for (let char of keywordChars) {
+                const index = strChars.indexOf(char);
+                if (index === -1) {
+                    return false;
+                }
+                strChars.splice(index, 1); // 移除已匹配的字符，避免重复匹配
+            }
+            
+            return true;
+        }
+
+        function displayResults(results, keyword) {
+            const resultContainer = document.getElementById('searchResults');
+            
+            if (results.length === 0) {
+                resultContainer.innerHTML = '<div class="no-result">没有找到与 "' + keyword + '" 相关的结果</div>' +
+                    '<div class="google-search"><button onclick="searchWithGoogle(\'' + keyword + '\')">使用 Google 搜索</button></div>';
+                return;
+            }
+
+            const html = results.map(page => {
+                // 高亮标题中的所有匹配关键词
+                let highlightedTitle = page.title;
+                keywords = keyword.toLowerCase().split(/\s+/).filter(k => k.length > 0);
+                keywords.forEach(kw => {
+                    const regex = new RegExp(`(${escapeRegex(kw)})`, 'gi');
+                    highlightedTitle = highlightedTitle.replace(regex, '<span class="highlight">$1</span>');
+                });
+                
+                // 高亮描述中的所有匹配关键词
+                let highlightedDesc = page.description;
+                keywords.forEach(kw => {
+                    const regex = new RegExp(`(${escapeRegex(kw)})`, 'gi');
+                    highlightedDesc = highlightedDesc.replace(regex, '<span class="highlight">$1</span>');
+                });
+                
+                return `
+                <div class="result-item">
+                    <h3><a href="${page.url}" target="_blank">${highlightedTitle}</a></h3>
+                    <p>${highlightedDesc}</p>
+                    <p class="url">${page.url}</p>
+                    <div class="match-info">匹配度: ${page.score}分</div>
+                </div>
+            `}).join('');
+
+            resultContainer.innerHTML = html + '<div class="google-search"><button onclick="searchWithGoogle(\'' + keyword + '\')">使用 Google 搜索更多结果</button></div>';
+        }
+
+        function searchWithGoogle(keyword) {
+            const searchUrl = `https://www.google.com/search?q=site:hanxinma.gitlab.io+${encodeURIComponent(keyword)}`;
+            window.open(searchUrl, '_blank');
+        }
+
+        // 支持回车键搜索
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                doSearch();
+            }
+        });
+
+        // 页面加载时聚焦搜索框
+        document.getElementById('searchInput').focus();
+    </script>
+</body>
+</html>
